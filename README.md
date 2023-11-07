@@ -39,26 +39,18 @@ int main(void) {
 **치킨**먹다가 ~~두드러기~~ 남.
 
 cd 폴더명
-git clone 주소 -> 해당 폴더 안에 리포지토리 파일명이 생성됨
-
-git add 파일명.확장명 -> staging area로 올라감 / 다시 내려보내고 싶을 때 -> git reset 파일명.확장명
-	모든 파일 올리고 싶을 때 -> git add .
- 
-git commit -m "업데이트에 대한 표시 느낌"
-
-git push
-
-git checkout -- 파일명.확장명 -> 수정 사항 삭제
-
-git log
-
-git status
-
-git reset --hard(옵션임) 해시값 -> 해시값 변경 내역 이후 모든 변경사항 삭제
-git push -f -> 위의 명령어 이후 깃허브에 적용하기 위해선 -f 옵션을 붙여야함.
-
-git commit --amend -> unix cui 편집기로 들어가서 "업데이트에 대한 표시 느낌"을 변경할 수 있음.
-		      a 누르고 편집하고 ESC -> :wq! 로 저장후 나갈 수 있음.
+*   git clone 주소 -> 해당 폴더 안에 리포지토리 파일명이 생성됨
+*   git add 파일명.확장명 -> staging area로 올라감 / 다시 내려보내고 싶을 때 -> git reset 파일명.확장명
+    모든 파일 올리고 싶을 때 -> git add .
+*   git commit -m "업데이트에 대한 표시 느낌"
+*   git push
+*   git checkout -- 파일명.확장명 -> 수정 사항 삭제
+*   git log
+*   git status
+*   git reset --hard(옵션임) 해시값 -> 해시값 변경 내역 이후 모든 변경사항 삭제
+*   git push -f -> 위의 명령어 이후 깃허브에 적용하기 위해선 -f 옵션을 붙여야함.
+*   git commit --amend -> unix cui 편집기로 들어가서 "업데이트에 대한 표시 느낌"을 변경할 수 있음.
+   *    a 누르고 편집하고 ESC -> :wq! 로 저장후 나갈 수 있음.
 
 
 1. 해당 프로젝트에 소속된 사람이 아닌 경우
