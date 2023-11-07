@@ -38,7 +38,8 @@ int main(void) {
 
 **치킨**먹다가 ~~두드러기~~ 남.
 
-cd 폴더명
+* 깃과 깃허브를 설치하고 git config --global user.name steamEggMaster 과 git config --global user.email [내이메일] 입력해주어 환경설정하기 
+* cd 폴더명
 * git clone 주소 -> 해당 폴더 안에 리포지토리 파일명이 생성됨
 * git add 파일명.확장명 -> staging area로 올라감 / 다시 내려보내고 싶을 때 -> git reset 파일명.확장명
    * 모든 파일 올리고 싶을 때 -> git add .
