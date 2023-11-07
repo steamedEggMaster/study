@@ -40,14 +40,18 @@ int main(void) {
 
 cd 폴더명
 git clone 주소 -> 해당 폴더 안에 리포지토리 파일명이 생성됨
+
 git add 파일명.확장명 -> staging area로 올라감 / 다시 내려보내고 싶을 때 -> git reset 파일명.확장명
 	모든 파일 올리고 싶을 때 -> git add .
+ 
 git commit -m "업데이트에 대한 표시 느낌"
+
 git push
 
 git checkout -- 파일명.확장명 -> 수정 사항 삭제
 
 git log
+
 git status
 
 git reset --hard(옵션임) 해시값 -> 해시값 변경 내역 이후 모든 변경사항 삭제
