@@ -1,2 +1,8 @@
 정확한 계산을 위해선 실수보다는 정수 연산으로 수행할 것.
-0으로 나누는 것은 예외발생, x / 0.0 -> Infinity
+
+0으로 나누는 것은 ArithmaticException 예외발생
+x / 0.0 -> Infinity
+x % 0.0 -> NaN
+두 상태에서 연산 수행 시 계속 Infinity and NaN 나옴. -> Double.isInfinite(변수) / Double.isNaN(변수)를 통해 t or f 반환.
+
+논리 연산자 - &&, ||, ^, !
