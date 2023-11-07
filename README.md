@@ -73,7 +73,7 @@ git merge 브랜치명 - 해당 브랜치와 현재 브랜치내용을 통합함
 git branch -d 브랜치명 - 해당 브랜치 제거
 
 -------------------------------------------------------------------
-git log - History commit 내역 확인 가능
+git log : History commit 내역 확인 가능
 git log --stat - 해당 파일에 몇줄이 추가되었는가 확인 가능
 git log --graph
 git log -p
