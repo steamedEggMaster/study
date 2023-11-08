@@ -36,22 +36,28 @@ do{~}while(조건식); //세미클론 필수
 문자열 - 불변
 String a = '홍길동'의 ad == string b = '홍길동'의 ad
 String a = new String("홍길동")의 ad != String b = new String("홍길동")의 ad
-String객체명.length() - 길이 반환(int)
-String객체명.charAt(int inedx) - 문자반환(char)
-String객체명.indexOf(String str) - 문자열이 첫번째로 나타나는 index값 반환
+*String객체명.length() - 길이 반환(int)
+*String객체명.charAt(int inedx) - 문자반환(char)
+*String객체명.indexOf(String str) - 문자열이 첫번째로 나타나는 index값 반환 / 없으면 -1 반환
 String객체명.substring(int beginIndex) - 지정된 인덱스부터 끝까지의 문자열 반환(new)
 String객체명.substring(int bI, int eI(n+1)) - 지정범위(n)까지의 문자열 반환(new)
-String객체명.replace(원래문자열, 변경문자열) - 변경된 새 문자열 반환(동일 주소 참조 X) - new 사용 느낌
 String객체명.toUpperCase() - 모든 문자 대문자 변환 후 반환(new)
 String객체명.toLowerCase() - 모든 문자 소문자 변환 후 반환(new)
-String객체명.equals(obj) - true/false 반환
+*String객체명.equals(obj) - 문자열을 비교하여 true/false 반환
 String객체명.equalsIgnoreCase(String str) - 대소문자 상관 X true/false 반환
 String객체명.startsWith(String str) - 해당 접두사 시작 여부 true/false 반환
 String객체명.endsWith(String str) - 해당 접미사 끝 여부 true/false 반환
-String객체명.contains(CharSequence s) - 특정 문자(열) 포함 여부 true/false 반환
-String객체명.replace(기존문자(열), 변경문자(열)) - 변경문자로 바꾼 새 문자열 반환(new)
-String객체명.split(정규표현식) - 정규표현식으로 문자열을 나눈 문자열 배열 반환(String[])
+*String객체명.contains(CharSequence s) - 특정 문자(열) 포함 여부 true/false 반환
+*String객체명.replace(기존문자(열), 변경문자(열)) - 변경문자로 바꾼 새 문자열 반환(new)
+*String객체명.split(정규표현식) - 정규표현식으로 문자열을 나눈 문자열 배열 반환(String[])
 String객체명.trim() - 앞뒤 공백 제거 문자열 반환(new)
-String객체명.valueOf(int, double, boolean, char, str) - 문자열 형태로 변환 후 반환(new)
+*String객체명.valueOf(int, double, boolean, char, str) - 문자열 형태로 변환 후 반환(new)
 String객체명.isEmpty() - 빈 문자열 여부 true/false
 String객체명.concat(String str) - str을 뒤에 연결하여 반환(new)
+--------------------------------------------------------------------------------
+배열(Array) - 생성 후 길이 변경 불가.
+1. 타입[] 변수 = new 타입[n]; //타입별 기본 값으로 초기화 //참조 타입 배열 -> null로 초기화
+2. 타입[] 변수; 변수 = new 타입[] {~,~,~}; //그냥 {~,~,~}시 컴파일 에러
+3. 타입[] 변수 = {~,~,~};
+** 배열을 함수에 call by reference 시 함수명(new 타입[] {~,~,~}) 이렇게 해줘야함
+배열명.length - 길이 반환
