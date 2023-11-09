@@ -57,4 +57,6 @@ super.메소드명() - 부모클래스의 메소드 호출
 3. 새로운 예외를 throw 불가.
 @Override - 어노테이션(Annotation) = 컴파일러가 재정의를 한 것인지 확인하게 함
         ****부모클래스에 어떤 메서드를 Override 하고싶을 때 Ctrl + Space / Source가서 선택하면 Override할 함수를 쉽게 선택 가능함.****
-        
+
+final 클래스 - 자식클래스가 생성될 수 없는 클래스(extends 불가) / 접근제어자 final 클명{}
+final 메서드 - Overriding 불가 메서드 / 접근제어자 final 반환타입 메명()
