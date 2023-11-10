@@ -48,3 +48,11 @@ pom.xml 설정하기
 4. <packaging>  : 패키징 타입 설정
     - jar : 자바 프로젝트 압축 파일
     - war : 웹 어플리케이션을 위한 패키징 방식
+프로젝트 의존 설정
+1. <dependencies> : 라이브러리 의존성 정보를 가지고 있는 dependency 태그를 묶은 태그
+2. <dependency> : 각 라이브러리의 정보를 담는 태그
+3. <groupId> : 의존성 라이브러리의 group ID
+4. <artifactId> : 의존성  라이브러리의 아티팩트 ID
+5. <version> : 의존성 라이브러리의 버전
+6. <scope> : 해당 라이브러리의 이용 범위를 지정 /compile(default), provided, runtime 옵
+7. <optional> : 다른 프로젝트에서 이 프로젝트를 의존성 설정을 할 경우 사용할지 결정
