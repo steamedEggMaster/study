@@ -54,5 +54,15 @@ pom.xml 설정하기
 3. <groupId> : 의존성 라이브러리의 group ID
 4. <artifactId> : 의존성  라이브러리의 아티팩트 ID
 5. <version> : 의존성 라이브러리의 버전
-6. <scope> : 해당 라이브러리의 이용 범위를 지정 /compile(default), provided, runtime 옵
+6. <scope> : 해당 라이브러리의 이용 범위를 지정 /compile(default), provided, runtime, test, system 옵션
 7. <optional> : 다른 프로젝트에서 이 프로젝트를 의존성 설정을 할 경우 사용할지 결정
+------------------------------------------------------------------------
+MVC(Model View Controller) 패턴 - 디자인 패턴 중 하나 / 분업 및 협업 원활 / 독립적 운영 가능
+Controller - 모델, 뷰 사이의 브리지 역할
+Model - 데이터 처리 영역
+View - 데이터를 보여주는 화면 영역
+------------------------------------------------------------------------
+@RequestMapping = value, method로 정의하여 API 개발 / 고전 방법이라 사용 X
+@GetMapping(value = "/~")
+@PathVariable - get형식의 요청에서 매개변수(파라미터)를 전달하기 위해 URL에 값을 담아 요청하는 방법
+@RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
