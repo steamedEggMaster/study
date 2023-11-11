@@ -66,3 +66,4 @@ View - 데이터를 보여주는 화면 영역
 @GetMapping(value = "/~")
 @PathVariable - get형식의 요청에서 매개변수(파라미터)를 전달하기 위해 URL에 값을 담아 요청하는 방법
 @RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
+DTO - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
