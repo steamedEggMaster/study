@@ -85,6 +85,13 @@ this.부모필드 / this.부모메서드 로 접근은 가능! "부모 객체를
 추상(abstract) 메서드 - [접근제어자] abstract 반환타입 메소드명(); / 추상클래스 안에서만 가질 수 있음 / 
                        자식클래스에서 구현 필수!(하고싶지 않다면 자식클래스에도 abstract 붙이기)
 --------------------------------------------------------------------------------
+봉인된(sealed) 클래스 - [접근제어자] sealed class 클명 permits 자식클명1, ... {}
+해당 자식 클래스들만 상속이 가능함.
+sealed 클래스를 상속받는 자식클래스들은 final / sealed / non-sealed를 지정해야함.
+1. [접근제어자] final class 클명 extends sealed클명 {} 
+2. [접근제어자] sealed class 클명 extends sealed클명 {}
+3. [접근제어자] non-sealed class 클명 extends sealed클명 {} - 봉인을 해제하여 계속된 상속이 가능해짐.
+
 인터페이스 - 다형성 구현에 핵심 / 사용자 - 리모콘(interface) - TV(interface의 메서드들을 구현한 객체) 생각하기
 [접근제어자] interface 인터명 {
 1.  [public static final] 필드 - 값 대입 필수 / 인터명.필드명으로 접근
