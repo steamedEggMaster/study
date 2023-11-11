@@ -1,4 +1,7 @@
- 메이븐(Maven) - pom.xml
+**alt + insert 키**
+
+
+메이븐(Maven) - pom.xml
 대표적 태그 설명
 1. modelVersion : 메이븐 버전 의미
 2. groupId : 프로젝트 그룹 id 의미, 대표 사이트 도메인을 역순으로 적어 사용.
