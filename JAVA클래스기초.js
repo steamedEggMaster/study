@@ -105,8 +105,9 @@ sealed 클래스를 상속받는 자식클래스들은 final / sealed / non-seal
 
 default 메서드 - 인터페이스에서 실행코드를 가진 메소드, 구현 객체가 있어야지만 사용이 가능함(객체 소속 메서드).
     사용 이유 : 인터페이스를 구현하는 모든 객체에서 동일한 역할을 하는 메서드 작성을 줄이기 위해
-               구현클래스에서 Overriding도 가능함. - public returntype 메서드명() 으로 구현클래스에서 사용 //defualt 예약어 사용안함.
+               구현클래스에서 Overriding도 가능함. - public returntype 메서드명() 으로 구현클래스에서 override //defualt 예약어 사용안함.
 
-static 메서드 - 구현 객체 없이도 사용 가능한 (인터페이스 소속 메서드) / 인터명.static메서드명() 으로 접근
+static 메서드 - 인터페이스에서 실행코드를 가진 메소드, 구현 객체 없이도 사용 가능한 (인터페이스 소속 메서드)
+               인터명.static메서드명() 으로 접근
 
 private 메서드 - default 메서드, static 메서드의 중복된 코드 작성을 줄이기 위해 사용.
