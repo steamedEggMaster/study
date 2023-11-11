@@ -84,13 +84,17 @@ this.부모필드 / this.부모메서드 로 접근은 가능! "부모 객체를
     필드, 메소드, 추상메소드, static, 상수 등 가질 수 있음
 추상(abstract) 메서드 - abstract 반환타입 메소드명(); / 추상클래스 안에서만 가질 수 있음 / 자식클래스에서 구현 필수!(하고싶지 않다면 자식클래스에도 abstract 붙이기)
 --------------------------------------------------------------------------------
- 인터페이스 - 다형성 구현에 핵심 / 사용자 - 리모콘(interface) - TV(interface의 메서드들을 구현한 객체) 생각하기
+인터페이스 - 다형성 구현에 핵심 / 사용자 - 리모콘(interface) - TV(interface의 메서드들을 구현한 객체) 생각하기
 [접근제어자] interface 인터명 {
-1.  public static final 필드
-2.  public abstract 메서드
-3.  public default 메서드
+1.  [public static final] 필드 //public static final 안붙여도 필드 선언 시 자동으로 붙음. 값 대입 필수 //인터명.필드명으로 접근
+2.  [public abstract] 메서드 
+3.  [public] default 메서드
 4.  public static 메서드
 5.  private 메서드
 6.  private static 메서드 }
 [접근제어자] class 구현클명 implements 인터명1, .. { 인터명들의 메서드 구현 }
-인터명 객체명 = new 구현클명();
+인터명 객체명 = new 구현클명(); //으로 main에서 사용
+
+default 메소드 - 인터페이스에서 실행코드를 가진 메소드, 구현 객체가 있어야지만 사용이 가능함.
+    사용 이유 : 인터페이스를 구현하는 모든 객체에서 동일한 역할을 하는 메서드 작성을 줄이기 위해
+               구현클래스에서 Overriding도 가능함. - public returntype 메서드명() 으로 구현클래스에서 사용 //defualt 예약어 사용안함.
