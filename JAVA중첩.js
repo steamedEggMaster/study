@@ -15,8 +15,8 @@
 정적 멤버 클래스
 [접근제한자] class 클명A {
     [public | private | default] static class 클명B {}
-    static 클명B 객체명 = new 클명B(); //static int a = 10; 이렇게 만드는것처럼 정적필드로 객체를 만들 수가 있는 것.
-    static 리턴타입 메소드명(){
+1.  static 클명B 객체명 = new 클명B(); //static int a = 10; 이렇게 만드는것처럼 정적필드로 객체를 만들 수가 있는 것.
+2.  static 리턴타입 메소드명(){
       클명B 객체명 = new 클명B(); //static 클래스이기 때문에 static 메서드 안에서 만들 수가 있다.
 }
 외부에서 사용하기 위해서
