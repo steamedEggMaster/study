@@ -70,3 +70,12 @@ View - 데이터를 보여주는 화면 영역
 @PathVariable - get형식의 요청에서 매개변수(파라미터)를 전달하기 위해 URL에 값을 담아 요청하는 방법
 @RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
 DTO - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
+------------------------------------------------------------------------
+POST API - 리소스를 추가하기 위해 사용되는 API
+@PostMapping : POST API를 제작하기 위해 사용되는 어노테이션(annotation) / @RequestMapping + POST method의 조합
+@RequestBody를 사용하여 Body에 담겨있는 값을 받아야함. - Talend API에서 JSON으로 작성함.
+{ //간략한 JSON 예시
+  "name" : "Flature",
+  "email" : "cksdud5014@naver.com",
+  "organization" : "cksdud-Studio"
+}
