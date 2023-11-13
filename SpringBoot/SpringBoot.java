@@ -1,11 +1,12 @@
 **alt + insert 키**
 
 Spring Boot 서비스 구조
-(F.E)  (------------------Spring Boot------------------------------)  
+(F.E)  (------------------Spring Boot------------------------------)
+                                                    (DB와직접통신영역)
 Client <-DTO-> Controller <-DTO-> Service <-Entity-> DAO(Repository) <-Entity-> DB
                                      |                     |
-                                Servicelmpl             DAOlmpl
-
+                                ServiceImpl             DAOImpl
+Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
 
 메이븐(Maven) - pom.xml
 대표적 태그 설명
