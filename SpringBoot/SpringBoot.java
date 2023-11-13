@@ -92,3 +92,6 @@ Swagger 설정 방법
 Put API - 해당 리소스 존재 시 갱신, 리소스 존재 X 시 새로 생성하는 API (=POST API)
 Delete API - 서버를 통해 리소스를 삭제하기 위해 사용되는 API
 ResponseEntity 클래스 - Spring Framework에서 제공하는 클래스 중 HttpEntity라는 클래스를 상속받아 사용하는 클래스
+------------------------------------------------------------------------
+Lombok - 반복되는 메서드를 annotation을 사용하여 자동으로 작성해주는 라이브러리
+@Getter @Setter @ToString @Data @NoArgConstructor @AllArgConstructor
