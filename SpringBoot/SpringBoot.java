@@ -88,3 +88,7 @@ Swagger 라이브러리 - 서버로 요청되는 API 리스트를 HTML 화면으
 Swagger 설정 방법
 @Configuration : 어노테이션 기반 환경 구성을 돕는 어노테이션
 @Bean : 개발자가 직접 제어가 불가능한 외부 라이브러리 등을 Bean으로 만들 경우에 사용.
+------------------------------------------------------------------------
+Put API - 해당 리소스 존재 시 갱신, 리소스 존재 X 시 새로 생성하는 API (=POST API)
+Delete API - 서버를 통해 리소스를 삭제하기 위해 사용되는 API
+ResponseEntity 클래스 - Spring Framework에서 제공하는 클래스 중 HttpEntity라는 클래스를 상속받아 사용하는 클래스
