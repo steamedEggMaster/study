@@ -1,5 +1,10 @@
 **alt + insert 키**
-  
+
+Spring Boot 서비스 구조
+(F.E)  (------------------Spring Boot------------------------------)  
+Client <-DTO-> Controller <-DTO-> Service <-Entity-> DAO(Repository) <-Entity-> DB
+                                     |                     |
+                                Servicelmpl             DAOlmpl
 
 
 메이븐(Maven) - pom.xml
@@ -94,4 +99,12 @@ Delete API - 서버를 통해 리소스를 삭제하기 위해 사용되는 API
 ResponseEntity 클래스 - Spring Framework에서 제공하는 클래스 중 HttpEntity라는 클래스를 상속받아 사용하는 클래스
 ------------------------------------------------------------------------
 Lombok - 반복되는 메서드를 annotation을 사용하여 자동으로 작성해주는 라이브러리
-@Getter @Setter @ToString @Data @NoArgConstructor @AllArgConstructor
+Pom파일에서 라이브러리 의존성 설정을 해줘야함.
+@Getter@Setter 
+@ToString - toString 메소드 자동 생성
+@NoArgConstructor - 파라미터 없는 생성자 생성
+@AllArgConstructor - 모든 필드값을 파라미터로 갖는 생성자 생성
+@RequiredArgsConstructor - 필드값 중 final이나 @NotNull 값을 갖는 생성자를 생성
+등등 있음.
+------------------------------------------------------------------------
+Entity, DAO, Repository, Entity
