@@ -1,4 +1,4 @@
-**alt + insert 키**
+**alt + insert 키** / CRUD(Create, Review, Update, Delete)
 
 Spring Boot 서비스 구조
 (F.E)  (------------------Spring Boot------------------------------)
@@ -108,4 +108,6 @@ Pom파일에서 라이브러리 의존성 설정을 해줘야함.
 @RequiredArgsConstructor - 필드값 중 final이나 @NotNull 값을 갖는 생성자를 생성
 등등 있음.
 ------------------------------------------------------------------------
-Entity, DAO, Repository, Entity
+Entity(Domain) : 실제 DB table과 1:1 매핑됨. / 이 클래스의 필드는 각 테이블 내부의 컬럼(애트리뷰트)을 의미
+DAO - Repository : Entity에 의해 생성된 DB에 접근하는 메소드를 사용하기 위한 interface 
+Entity
