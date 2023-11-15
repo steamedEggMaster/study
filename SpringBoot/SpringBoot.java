@@ -112,3 +112,6 @@ Entity(Domain) : 실제 DB table과 1:1 매핑됨. / 이 클래스의 필드는 
 Repository : Entity에 의해 생성된 DB에 접근하는 메소드를 사용하기 위한 interface 
 DAO(Data Access Object) : DB에 접근하는 객체를 의미(Persistence Layer) / DB를 사용하여 데이터 조회 및 조작 기능 전담.
 DTO(Data Transfer Object) : VO(Value Object, VO일땐 읽기 전용)로 불리기도함 / 계층간 데이터 교환을 위한 객체를 의미.
+------------------------------------------------------------------------
+ORM(Object Relational Mapping) : 어플리케이션의 객체(Java의 데이터 클래스)와 관계형 DB의 데이터를 자동으로 매핑해주는 것. / 대표적으로 JPA, Hibernate 등
+장점 : "SQL 쿼리가 아닌 직관적인 코드로 조작" / "재사용 및 유지보수 편리" - ORM은 독립적으로 작성됨. / "DBMS에 대한 종속성 감소".
