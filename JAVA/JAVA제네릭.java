@@ -26,3 +26,4 @@ public static <T> BoxGM<T> boxing(T t){
 ------------------------------------------------------------------------------------------
 와일드카드 타입 파라미터 - 제네릭 타입을 "매개값" 이나 "리턴값"으로 사용 시 타입 파라미터로 ?(와일드카드)를 사용
 genericWildCard 예제 잘 확인하기.
+Person - applicant - Course - WildCardExample 순
