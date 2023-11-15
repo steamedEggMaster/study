@@ -115,3 +115,6 @@ DTO(Data Transfer Object) : VO(Value Object, VO일땐 읽기 전용)로 불리�
 ------------------------------------------------------------------------
 ORM(Object Relational Mapping) : 어플리케이션의 객체(Java의 데이터 클래스)와 관계형 DB의 데이터를 자동으로 매핑해주는 것. / 대표적으로 JPA, Hibernate 등
 장점 : "SQL 쿼리가 아닌 직관적인 코드로 조작" / "재사용 및 유지보수 편리" - ORM은 독립적으로 작성됨. / "DBMS에 대한 종속성 감소".
+단점 : 복잡성이 커질 경우 ORM만으로 구현하기 어려움 / 잘못 구현 시 속도 저하 발생 / 대형 쿼리는 별도로 튜닝이 필요할 수 있음.
+JPA(Java Persistance API) : ORM과 관련된 interface 모음(Java 진영에서 표준 ORM) / ORM이 큰 개념이라고 하면, JPA는 더 구체화 시킨 스펙을 포함함.
+  Hibernate - ORM Framework 중 하나, JPA 실제 구현체 중 가장 많이 사용.
