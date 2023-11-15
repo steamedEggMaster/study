@@ -16,7 +16,7 @@ return new 클명();
 3. 제네릭 메소드 - 타입 파라미터를 가지고 있는 메서드
 ex) 
 public static <T> BoxGM<T> boxing(T t){
-		BoxGM<T> box = new BoxGM<>();
-		box.setT(t);
-		return box;
+	BoxGM<T> box = new BoxGM<>();
+	box.setT(t);
+	return box;
 }
