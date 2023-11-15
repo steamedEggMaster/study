@@ -111,4 +111,4 @@ Pom파일에서 라이브러리 의존성 설정을 해줘야함.
 Entity(Domain) : 실제 DB table과 1:1 매핑됨. / 이 클래스의 필드는 각 테이블 내부의 컬럼(애트리뷰트)을 의미
 Repository : Entity에 의해 생성된 DB에 접근하는 메소드를 사용하기 위한 interface 
 DAO(Data Access Object) : DB에 접근하는 객체를 의미(Persistence Layer) / DB를 사용하여 데이터 조회 및 조작 기능 전담.
-DTO(Data Transfer Object)
+DTO(Data Transfer Object) : VO(Value Object, VO일땐 읽기 전용)로 불리기도함 / 계층간 데이터 교환을 위한 객체를 의미.
