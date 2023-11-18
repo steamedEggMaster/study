@@ -7,7 +7,7 @@ ex) 게임, 클라이언트-서버
 멀티스레드에서는 실행중인 스레드가 존재 시 프로세스 종료 X.
 ---------------------------------------------------------------------------------------------
 1. Thread클래스로 작업 스레드 객체 직접 생성 - Thread 스레드객체명 = new Thread(Runnable 객체명); //Runnable upcasting
-2. Thread의 자식클래스를 정의하여 작업 스레드 생성
+2. Thread의 자식클래스를 정의하여 작업 스레드 생성 - Thread 스객명 = new Thread() { run() 오버라이딩 };
 class 구현클명 implements Runnable {
   @Override
   public void run() {
