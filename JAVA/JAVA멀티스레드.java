@@ -75,9 +75,15 @@ notify() - wait()에 의해 일시정지된 모든 스레드를 RUNNABLE 상태�
 스객명.setDemon(true); - 해당 스레드객체를 데몬 스레드로 변환
 스객명.start();
 ---------------------------------------------------------------------------------------------
+**스레드풀**************** - 작업 스레드를 제한된 개수만큼 정해 놓고 작업 큐에 들어오는 작업들을 스레드가 하나씩 맡아 처리하는 방식.
+java.util.concurrent 패키지에서 스레드풀 생성을 위한 "ExecutorService 인터페이스", "Executors 클래스" 제공.
 
+Executors 클래스의 정적 메서드 newCatchedThread() - 0개에서 시작하여, 작업량 증가에 따라 int의 최대값만큼 스레드 수 증가, 60초 동안 스레드가 놀고 있다면 해당 스레드 제거.
+Executors 클래스의 정적 메서드 newFixedThreadPool(최대 스레드 개수) - 0개에서 시작하여, 작업량 증가에 따라 최대 개수까지 스레드 수가 증가하지만, 놀고있는 스레드를 자동으로 제거하지 못함.
 
+ExecutorService 객체명 = Executors.newCatchedThread();
+ExecutorService 객체명 = Executors.newFixedThreadPool(최대 스레드 개수);
 
-
-
-
+ExecutorService 객체명 = new ThreadPoolExecutors( //ThreadPoolExecutors의 부모 클래스가 ExecutorService를 구현하였기에 upcasting가능.
+  코어스레드 개수, //초기에는 0개이고, 증가한 후 놀고있는 스레드를 제거할 때, 최소로 남겨놓는 수
+  최대스레드 개수, 놀고있는 시간, 놀고있는 시간 단위, 작업 큐 - new synchronousQueue<Runnable>() );
