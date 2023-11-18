@@ -91,21 +91,19 @@ ExecutorService 객체명A = new ThreadPoolExecutors( //ThreadPoolExecutors의 �
 객체명A.shutdown() - 현재 처리 중인 작업 + 작업 큐에 대기하는 모든 작업 처리 후 스레드풀 종료.
 객체명A.shutdownNow() - 현재 작업 처리 중인 스레드를 interrupt하여 작업 중지 후 스레드풀 종료 -> 작업 큐에 있는 미처리 작업(Runnable)의 목록을 List<Runnable>에 담아 return.
 ---------------------------------------------------------------------------------------------
-작업 생성과 처리 요청 - 하나의 작업은 "Runnable(리턴값 X)"이나 "Callable<T> (리턴타입 T)" 구현 클래스로 표현.
+작업 생성과 처리 요청 - 하나의 작업은 "Runnable(리턴값 X)"이나 "Callable<T> (리턴타입 T)" 구현 클래스로 표현. -> 작업 큐에 넣으면 알아서 처리해줌.
 Callable 익명 객체 구현
 new Callable<T> {
   @Override
   public T call() throws Exception {
     //작업 내용
-    return T; }}
+    return T; }};
 
-
-
-
-
-
-
-
-                                                                                     
+작업 큐에 작업을 넣는 방법.
+1. Runnable객체 - 객체명A.execute(Runnable객체);
+2. Callable객체 - 객체명A.submit(Callable<T> 객체명); - Future<T>객체를 return.
+                  Future<T> 객체명B = 객체명A.submit(Callable<T> 객체명);
+                  객체명B.get(); - call() 메소드가 리턴한 값을 리턴. - call() 메서드가 값을 리턴할 때까지 객체명B.get()을 읽은 스레드는 일시정지 상태가 됨.
+                                                                                   
 
   
