@@ -86,12 +86,26 @@ ExecutorService 객체명A = Executors.newFixedThreadPool(최대 스레드 개�
 ExecutorService 객체명A = new ThreadPoolExecutors( //ThreadPoolExecutors의 부모 클래스가 ExecutorService를 구현하였기에 upcasting가능.
   코어스레드 개수, //초기에는 0개이고, 증가한 후 놀고있는 스레드를 제거할 때, 최소로 남겨놓는 수
   최대스레드 개수, 놀고있는 시간, 놀고있는 시간 단위, 작업 큐 - new synchronousQueue<Runnable>() );
-
+---------------------------------------------------------------------------------------------
 스레드풀 종료
 객체명A.shutdown() - 현재 처리 중인 작업 + 작업 큐에 대기하는 모든 작업 처리 후 스레드풀 종료.
 객체명A.shutdownNow() - 현재 작업 처리 중인 스레드를 interrupt하여 작업 중지 후 스레드풀 종료 -> 작업 큐에 있는 미처리 작업(Runnable)의 목록을 List<Runnable>에 담아 return.
+---------------------------------------------------------------------------------------------
+작업 생성과 처리 요청 - 하나의 작업은 "Runnable(리턴값 X)"이나 "Callable<T> (리턴타입 T)" 구현 클래스로 표현.
+Callable 익명 객체 구현
+new Callable<T> {
+  @Override
+  public T call() throws Exception {
+    //작업 내용
+    return T; }}
 
 
 
+
+
+
+
+
+                                                                                     
 
   
