@@ -4,7 +4,7 @@ ex) 게임, 클라이언트-서버
 ---------------------------------------------------------------------------------------------
 모든 자바 프로그램은 메인스레드가 main()메소드를 실행하면서 시작. -> main()메소드의 마지막코드 or return 만나면 실행 종료.
 자바는 작업 스레드를 객체로 관리 - Thread 객체명 = Thread.currentThread(); System.out.println(currThread.getName());
-멀티스레드에서는 실행중인 스레드가 존재 시 프로세스 종료 X.
+"멀티스레드에서는 실행중인 스레드가 존재 시 프로세스 종료 X."
 ---------------------------------------------------------------------------------------------
 작업 스레드 생성 방법
 1. Thread클래스로 작업 스레드 객체 직접 생성 - Thread 스레드객체명 = new Thread(Runnable 객체명); //Runnable upcasting
@@ -80,10 +80,11 @@ java.util.concurrent 패키지에서 스레드풀 생성을 위한 "ExecutorServ
 
 Executors 클래스의 정적 메서드 newCatchedThread() - 0개에서 시작하여, 작업량 증가에 따라 int의 최대값만큼 스레드 수 증가, 60초 동안 스레드가 놀고 있다면 해당 스레드 제거.
 Executors 클래스의 정적 메서드 newFixedThreadPool(최대 스레드 개수) - 0개에서 시작하여, 작업량 증가에 따라 최대 개수까지 스레드 수가 증가하지만, 놀고있는 스레드를 자동으로 제거하지 못함.
-
 ExecutorService 객체명 = Executors.newCatchedThread();
 ExecutorService 객체명 = Executors.newFixedThreadPool(최대 스레드 개수);
 
 ExecutorService 객체명 = new ThreadPoolExecutors( //ThreadPoolExecutors의 부모 클래스가 ExecutorService를 구현하였기에 upcasting가능.
   코어스레드 개수, //초기에는 0개이고, 증가한 후 놀고있는 스레드를 제거할 때, 최소로 남겨놓는 수
   최대스레드 개수, 놀고있는 시간, 놀고있는 시간 단위, 작업 큐 - new synchronousQueue<Runnable>() );
+
+스레드풀 종료
