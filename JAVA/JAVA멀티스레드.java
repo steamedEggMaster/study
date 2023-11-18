@@ -6,8 +6,8 @@ ex) 게임, 클라이언트-서버
 자바는 작업 스레드를 객체로 관리 - Thread 객체명 = Thread.currentThread(); System.out.println(currThread.getName());
 멀티스레드에서는 실행중인 스레드가 존재 시 프로세스 종료 X.
 ---------------------------------------------------------------------------------------------
-Thread클래스로 작업 스레드 객체 직접 생성 - Thread 스레드객체명 = new Thread(Runnable 객체명); //Runnable upcasting
-스레드객체명.start(); - run() 함수 실행. - 메인스레드와 동시 실행됨.
+1. Thread클래스로 작업 스레드 객체 직접 생성 - Thread 스레드객체명 = new Thread(Runnable 객체명); //Runnable upcasting
+2. Thread의 자식클래스를 정의하여 작업 스레드 생성
 class 구현클명 implements Runnable {
   @Override
   public void run() {
@@ -15,3 +15,6 @@ class 구현클명 implements Runnable {
   }}
 Runnable 객체명A =  new 구현클명(); //upcasting
 Thread thread = new Thread(객체명A);
+
+스레드객체명.start(); - run() 함수 실행. - 메인스레드와 동시 실행됨.
+예제 - multiThread - BeepPrintExample1,2,3
