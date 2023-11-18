@@ -17,6 +17,6 @@ class 구현클명 implements Runnable {
 Runnable 객체명A =  new 구현클명(); //upcasting
 Thread thread = new Thread(객체명A);
 
-스레드객체명.start(); - run() 함수 실행. - 메인스레드와 동시 실행됨.
+스레드객체명.start(); - run() 함수 실행. - 메인스레드와 동시 실행됨. //Runnable의 run과 Thread의 run은 다른것임.
 Thread.sleep(숫자); - 스레드의 쉬는시간을 설정.
 예제 - multiThread - BeepPrintExample1,2,3
