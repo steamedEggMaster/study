@@ -77,9 +77,9 @@ notify() - wait()에 의해 일시정지된 모든 스레드를 RUNNABLE 상태�
 ---------------------------------------------------------------------------------------------
 **스레드풀**************** - 작업 스레드를 제한된 개수만큼 정해 놓고 작업 큐에 들어오는 작업들을 스레드가 하나씩 맡아 처리하는 방식.
 java.util.concurrent 패키지에서 스레드풀 생성을 위한 "ExecutorService 인터페이스", "Executors 클래스" 제공.
-
-Executors 클래스의 정적 메서드 newCatchedThread() - 0개에서 시작하여, 작업량 증가에 따라 int의 최대값만큼 스레드 수 증가, 60초 동안 스레드가 놀고 있다면 해당 스레드 제거.
-Executors 클래스의 정적 메서드 newFixedThreadPool(최대 스레드 개수) - 0개에서 시작하여, 작업량 증가에 따라 최대 개수까지 스레드 수가 증가하지만, 놀고있는 스레드를 자동으로 제거하지 못함.
+  
+Executors.newCatchedThread() - 0개에서 시작하여, 작업량 증가에 따라 int의 최대값만큼 스레드 수 증가, 60초 동안 스레드가 놀고 있다면 해당 스레드 제거.
+Executors.newFixedThreadPool(최대 스레드 개수) - 0개에서 시작하여, 작업량 증가에 따라 최대 개수까지 스레드 수가 증가하지만, 놀고있는 스레드를 자동으로 제거하지 못함.
 ExecutorService 객체명 = Executors.newCatchedThread();
 ExecutorService 객체명 = Executors.newFixedThreadPool(최대 스레드 개수);
 
@@ -88,3 +88,10 @@ ExecutorService 객체명 = new ThreadPoolExecutors( //ThreadPoolExecutors의 �
   최대스레드 개수, 놀고있는 시간, 놀고있는 시간 단위, 작업 큐 - new synchronousQueue<Runnable>() );
 
 스레드풀 종료
+shutdown() - 현재 처리 중인 작업 + 작업 큐에 대기하는 모든 작업 처리 후 스레드풀 종료.
+shutdownNow() - 현재 작업 처리 중인 스레드를 interrupt하여 작업 중지 후 스레드풀 종료 -> 작업 큐에 있는 미처리 작업(Runnable)의 목록을 List<Runnable>에 담아 return.
+
+
+
+
+  
