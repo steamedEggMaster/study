@@ -7,7 +7,7 @@ ex) 게임, 클라이언트-서버
 "멀티스레드에서는 실행중인 스레드가 존재 시 프로세스 종료 X."
 ---------------------------------------------------------------------------------------------
 작업 스레드 생성 방법
-1. Thread클래스로 작업 스레드 객체 직접 생성 - Thread 스레드객체명 = new Thread(Runnable 객체명); //Runnable upcasting
+1. Thread클래스로 작업 스레드 객체 직접 생성 - Thread 스레드객체명 = new Thread(Runnable 객체명); //Runnable upcasting //Runnable = 스레드가 처리해야할 작업내용을 가진 객체
 2. Thread의 자식클래스를 정의하여 작업 스레드 생성 in 익명객체 - Thread 스객명 = new Thread() { run() 오버라이딩 };
 3. Thread의 자식클래스를 정의하여 작업 스레드 생성 in 실제 클래스 - 다른 클래스에서 만든 후 main()에서 객체선언 후 객체명.start();
 4. Runnable 인터페이스 구현 후 사용 - 
@@ -80,16 +80,16 @@ java.util.concurrent 패키지에서 스레드풀 생성을 위한 "ExecutorServ
   
 Executors.newCatchedThread() - 0개에서 시작하여, 작업량 증가에 따라 int의 최대값만큼 스레드 수 증가, 60초 동안 스레드가 놀고 있다면 해당 스레드 제거.
 Executors.newFixedThreadPool(최대 스레드 개수) - 0개에서 시작하여, 작업량 증가에 따라 최대 개수까지 스레드 수가 증가하지만, 놀고있는 스레드를 자동으로 제거하지 못함.
-ExecutorService 객체명 = Executors.newCatchedThread();
-ExecutorService 객체명 = Executors.newFixedThreadPool(최대 스레드 개수);
+ExecutorService 객체명A = Executors.newCatchedThread();
+ExecutorService 객체명A = Executors.newFixedThreadPool(최대 스레드 개수);
 
-ExecutorService 객체명 = new ThreadPoolExecutors( //ThreadPoolExecutors의 부모 클래스가 ExecutorService를 구현하였기에 upcasting가능.
+ExecutorService 객체명A = new ThreadPoolExecutors( //ThreadPoolExecutors의 부모 클래스가 ExecutorService를 구현하였기에 upcasting가능.
   코어스레드 개수, //초기에는 0개이고, 증가한 후 놀고있는 스레드를 제거할 때, 최소로 남겨놓는 수
   최대스레드 개수, 놀고있는 시간, 놀고있는 시간 단위, 작업 큐 - new synchronousQueue<Runnable>() );
 
 스레드풀 종료
-shutdown() - 현재 처리 중인 작업 + 작업 큐에 대기하는 모든 작업 처리 후 스레드풀 종료.
-shutdownNow() - 현재 작업 처리 중인 스레드를 interrupt하여 작업 중지 후 스레드풀 종료 -> 작업 큐에 있는 미처리 작업(Runnable)의 목록을 List<Runnable>에 담아 return.
+객체명A.shutdown() - 현재 처리 중인 작업 + 작업 큐에 대기하는 모든 작업 처리 후 스레드풀 종료.
+객체명A.shutdownNow() - 현재 작업 처리 중인 스레드를 interrupt하여 작업 중지 후 스레드풀 종료 -> 작업 큐에 있는 미처리 작업(Runnable)의 목록을 List<Runnable>에 담아 return.
 
 
 
