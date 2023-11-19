@@ -25,6 +25,19 @@ try{
 리소스 자동 닫기
 리소스 = 데이터를 제공하는 객체 / 파일 open-close 필수.
 1. finally에서 리소스객체명.close();
-2. AutoCloseable 인터페이스의 close()함수를 구현한 클래스로 finally- 리소스객체명.close()없이 자동 종료.
+2." AutoCloseable" 인터페이스의 close()함수를 구현한 클래스를 사용하여 finally-리소스객체명.close()없이 자동 종료.
 resourceClose예제 잘보기
 --------------------------------------------------------------------------------------------------------------
+예외 떠넘기기
+[접근제한자] return타입 메서드명(매개변수...) throws 예외클래스1, 예외클래스2 ... {} //해당 함수를 부른 곳으로 예외를 넘겨 그곳에서 예외를 처리하게 함.
+ex)
+  try{
+    value();
+  } catch(ClassNotFoundException e) {
+  }
+  public static void value() throws ClassNotFoundException { //catch로 예외 넘김
+    Class.forName("~");
+  }
+넘길 예외클래스가 많은 경우
+1. [접근제한자] return타입 메서드명(매개변수...) throws Exception {}
+2. [접근제한자] return타입 메서드명(매개변수...) throws Throwable {}
