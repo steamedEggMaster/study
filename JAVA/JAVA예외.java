@@ -10,9 +10,9 @@ try{
 } [finally] { //필수 X
   //항상 실행 코드
 }
-System.out.print(e.getMessage()); - 예외 사유 출력.
-System.out.print(e.toString()); - 예외 이름과 예외 사유 출력.
-e.printStackTrace(); - 예외 이름, 예외 사유, 발생 코드 라인 출력.
+1. System.out.print(e.getMessage()); - 예외 사유 출력.
+2. System.out.print(e.toString()); - 예외 이름과 예외 사유 출력.
+3. e.printStackTrace(); - 예외 이름, 예외 사유, 발생 코드 라인 출력.
 일반 예외는 에러가 뜨며 try-catch를 만들라고 함.
 --------------------------------------------------------------------------------------------------------------
 예외 종류에 따른 처리
@@ -47,8 +47,32 @@ ex)
 main() throws Exception {} 을 통해 JVM이 예외처리를 하게할 수 있음. -> 예외 내용 콘솔 출력함. //좋지 않음.
 --------------------------------------------------------------------------------------------------------------
 사용자 정의 예외
+1. 만드는법
 public class 예외클명Exception  extends [Exception(일반 예외일 경우) / RuntimeException(실행 예외일 경우] {
   public 예외클명Exception() { } //기본 생성자
   public 예외클명Exception(String message) { super(message) } //예외 메시지를 입력받는 생성자
   //getMessage()의 리턴값으로 사용하기 위해 예외메시지(message)를 부모 생성자 매개값으로 넘김
 }
+2. 사용법
+return타입 메소드명() throws 예외클명Exception {
+  ...
+1.throw new 예외클명Exception();
+2.throw new 예외클명Exception("에러메시지");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
