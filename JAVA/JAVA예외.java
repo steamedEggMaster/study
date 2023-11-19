@@ -59,8 +59,7 @@ return타입 메소드명() throws 예외클명Exception { //호출한 곳으로
 1.throw new 예외클명Exception();
 2.throw new 예외클명Exception("에러메시지");
 }
-
-
+UserException 예제 잘 보기
 
 
 
