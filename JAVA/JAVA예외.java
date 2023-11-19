@@ -54,7 +54,7 @@ public class 예외클명Exception  extends [Exception(일반 예외일 경우) 
   //getMessage()의 리턴값으로 사용하기 위해 예외메시지(message)를 부모 생성자 매개값으로 넘김
 }
 2. 사용법
-return타입 메소드명() throws 예외클명Exception {
+return타입 메소드명() throws 예외클명Exception { //호출한 곳으로 예외 떠넘김.
   ...
 1.throw new 예외클명Exception();
 2.throw new 예외클명Exception("에러메시지");
