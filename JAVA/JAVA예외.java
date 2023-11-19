@@ -38,6 +38,9 @@ ex)
   public static void value() throws ClassNotFoundException { //catch로 예외 넘김
     Class.forName("~");
   }
+
 넘길 예외클래스가 많은 경우
 1. [접근제한자] return타입 메서드명(매개변수...) throws Exception {}
 2. [접근제한자] return타입 메서드명(매개변수...) throws Throwable {}
+
+main() throws Exception {} 을 통해 JVM이 예외처리를 하게할 수 있음. -> 예외 내용 콘솔 출력함. //좋지 않음.
