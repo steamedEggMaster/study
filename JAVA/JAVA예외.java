@@ -42,5 +42,13 @@ ex)
 넘길 예외클래스가 많은 경우
 1. [접근제한자] return타입 메서드명(매개변수...) throws Exception {}
 2. [접근제한자] return타입 메서드명(매개변수...) throws Throwable {}
+로 , , , , 없이 쉽게 넘기기 가능.
 
 main() throws Exception {} 을 통해 JVM이 예외처리를 하게할 수 있음. -> 예외 내용 콘솔 출력함. //좋지 않음.
+--------------------------------------------------------------------------------------------------------------
+사용자 정의 예외
+public class 예외클명Exception  extends [Exception(일반 예외일 경우) / RuntimeException(실행 예외일 경우] {
+  public 예외클명Exception() { } //기본 생성자
+  public 예외클명Exception(String message) { super(message) } //예외 메시지를 입력받는 생성자
+  //getMessage()의 리턴값으로 사용하기 위해 예외메시지(message)를 부모 생성자 매개값으로 넘김
+}
