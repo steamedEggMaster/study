@@ -52,3 +52,5 @@ iterator을 이용하여 Set의 요소들 하나씩 얻기 - List에서도 됨.
         1. iter객체명.hasNext(); - if(iter객체명.hasNext()){ iter객체명.next(); }로 사용해야함.
         2. iter객체명.next(); - next()를 처음사용 시 첫 요소를 포인터한 후 그 요소를 가져오고, next()할때마다 한칸씩 이동하며 요소를 포인터함. / hasNext()와 함께 사용.
         3. iter객체명.remove(); - 해당 포인터에 연결된 요소를 해당 Set객체에서 삭제. / next() 호출 당 1번씩만 사용 가능.
+
+1. HashSet<E> - 다른 객체라도, hashCode() 동일 -> equals() true -> 저장 X.
