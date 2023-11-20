@@ -59,27 +59,27 @@ Set의 요소들 하나씩 얻기 - List에서도 됨.
 Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
   키, 값으로 구성된 엔트리 저장 / 키 중복 X, 값 중복 O
 객체 추가.
-Map객체명.put(K key, V value);
+1. Map객체명.put(K key, V value);
 
 객체 변경.
-Map객체명.replace(K key, V value); 
-Map객체명.replace(K key, V oldvalue, V newvalue);
+2. Map객체명.replace(K key, V value); 
+3. Map객체명.replace(K key, V oldvalue, V newvalue);
 
 객체 제거.
-Map객체명.clear();
-Map객체명.remove(K key); - 해당 key가 있으면 {key, value} 삭제 후 value 반환 / key가 없다면 null 반환.
-Map객체명.remove(K key, V value); - 해당 key가 없다면 에러 발생.
+4. Map객체명.clear();
+5. Map객체명.remove(K key); - 해당 key가 있으면 {key, value} 삭제 후 value 반환 / key가 없다면 null 반환.
+6. Map객체명.remove(K key, V value); - 해당 key가 없다면 에러 발생.
 
 정보 얻기.
-Map객체명.get(K key); - value값 반환 / value 없을 시 null 반환
-Map객체명.size();
-Map객체명.isEmpty():
-Map객체명.equals(Map객체명2);
-Map객체명.containsKey(K key):
-Map객체명.containsValue(V value):
-Map객체명.keySet();
-Map객체명.values();
-Map객체명.entrySet();
+7. Map객체명.get(K key); - value값 반환 / value 없을 시 null 반환.
+8. Map객체명.size();
+9. Map객체명.isEmpty();
+10.Map객체명.equals(Map객체명2);
+11.Map객체명.containsKey(K key);
+12.Map객체명.containsValue(V value);
+13.Map객체명.keySet(); - 모든 key를 포함하는 Set 반환.
+14.Map객체명.values(); - 모든 value를 포함하는 Collection 반환.
+15.Map객체명.entrySet(); - 모든 key-value 쌍을 포함하는 Set 반환.
 
 
 
