@@ -38,7 +38,7 @@ Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet, TreeSet
 
 객체 삭제.
 2. Set객체명.clear();
-3. Set객체명.remove(obj); - 값 제거 후 true 반환
+3. Set객체명.remove(obj); - 값 제거 후 true 반환 / "요소 얻기 2번 방법에서 사용시 에러 발생, 1번(Iterator)으로 해야함."
 
 정보 얻기.
 4. Set객체명.size();
@@ -46,11 +46,12 @@ Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet, TreeSet
 6. Set객체명.equals(obj);
 7. Set객체명.contains(obj);
 
-iterator을 이용하여 Set의 요소들 하나씩 얻기 - List에서도 됨.
-8. Iterator<E> iter객체명 = Set객체명.iterator();
+Set의 요소들 하나씩 얻기 - List에서도 됨.
+1. Iterator<E> iter객체명 = Set객체명.iterator();
       Iterator<E> 메서드. 
         1. iter객체명.hasNext(); - if(iter객체명.hasNext()){ iter객체명.next(); }로 사용해야함.
         2. iter객체명.next(); - next()를 처음사용 시 첫 요소를 포인터한 후 그 요소를 가져오고, next()할때마다 한칸씩 이동하며 요소를 포인터함. / hasNext()와 함께 사용.
         3. iter객체명.remove(); - 해당 포인터에 연결된 요소를 해당 Set객체에서 삭제. / next() 호출 당 1번씩만 사용 가능.
-
+2. for(E e : set객체명) { } - "Iterable<E>가 구현되어 있는 클래스/인터페이스는 전부 사용 가능."
+        
 1. HashSet<E> - 다른 객체라도, hashCode() 동일 -> equals() true -> 저장 X.
