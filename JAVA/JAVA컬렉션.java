@@ -58,19 +58,19 @@ Set의 요소들 하나씩 얻기 - List에서도 됨.
 ----------------------------------------------------------------------------------------------------------
 Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
   키, 값으로 구성된 엔트리 저장 / 키 중복 X, 값 중복 O
-객체 추가.
+객체 추가
 1. Map객체명.put(K key, V value);
 
-객체 변경.
+객체 변경
 2. Map객체명.replace(K key, V value); 
 3. Map객체명.replace(K key, V oldvalue, V newvalue);
 
-객체 제거.
+객체 제거
 4. Map객체명.clear();
 5. Map객체명.remove(K key); - 해당 key가 있으면 {key, value} 삭제 후 value 반환 / key가 없다면 null 반환.
 6. Map객체명.remove(K key, V value); - 해당 key가 없다면 에러 발생.
 
-정보 얻기.
+정보 얻기
 7. Map객체명.get(K key); - value값 반환 / value 없을 시 null 반환.
 8. Map객체명.size();
 9. Map객체명.isEmpty();
