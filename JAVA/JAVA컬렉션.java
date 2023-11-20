@@ -59,7 +59,7 @@ Set의 요소들 하나씩 얻기 - List에서도 됨.
 Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
   키, 값으로 구성된 엔트리 저장 / 키 중복 X, 값 중복 O
 객체 추가
-1. Map객체명.put(K key, V value);
+1. Map객체명.put(K key, V value); - 저장 후 값 반환.
 
 객체 변경
 2. Map객체명.replace(K key, V value); 
