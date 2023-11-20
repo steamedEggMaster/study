@@ -27,6 +27,7 @@ List<E> 컬렉션 - 구현 클래스 : ArrayList, Vector, LinkedList
 11. 객체명.equals(obj);
 12. 객체명.contains(obj);
 13. 객체명.toArray();
+14. 객체명.hashCode();
 
 1. ArrayList<E> - 제한 없이 객체 추가 가능. / "삭제, 삽입이 빈번한 경우 LinkedList를 사용하는 것이 바람직"
 2. Vector<E> - ArrayList와 동일구조 / "동기화된 메소드로 구성되어 있음" -> 멀티스레드 환경에서 안전하게 사용 가능.
@@ -45,6 +46,7 @@ Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet, TreeSet
 5. Set객체명.isEmpty();
 6. Set객체명.equals(obj);
 7. Set객체명.contains(obj);
+8. Set객체명.hashCode();
 
 Set의 요소들 하나씩 얻기 - List에서도 됨.
 1. Iterator<E> iter객체명 = Set객체명.iterator();
@@ -53,5 +55,32 @@ Set의 요소들 하나씩 얻기 - List에서도 됨.
         2. iter객체명.next(); - next()를 처음사용 시 첫 요소를 포인터한 후 그 요소를 가져오고, next()할때마다 한칸씩 이동하며 요소를 포인터함. / hasNext()와 함께 사용.
         3. iter객체명.remove(); - 해당 포인터에 연결된 요소를 해당 Set객체에서 삭제. / next() 호출 당 1번씩만 사용 가능.
 2. for(E e : set객체명) { } - "Iterable<E>가 구현되어 있는 클래스/인터페이스는 전부 사용 가능."
-        
-1. HashSet<E> - 다른 객체라도, hashCode() 동일 -> equals() true -> 저장 X.
+----------------------------------------------------------------------------------------------------------
+Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
+  키, 값으로 구성된 엔트리 저장 / 키 중복 X, 값 중복 O
+객체 추가
+Map객체명.put(K key, V value);
+
+객체 제거
+Map객체명.clear();
+Map객체명.remove(K key); - 해당 key가 있으면 {key, value} 삭제 후 value 반환 / key가 없다면 null 반환.
+Map객체명.remove(K key, V value); - 해당 key가 없다면 에러 발생
+
+정보 얻기.
+Map객체명.get(K key); - value값 반환 / value 없을 시 null 반환
+Map객체명.size();
+Map객체명.isEmpty():
+Map객체명.equals(Map객체명2);
+Map객체명.containsKey(K key):
+Map객체명.containsValue(V value):
+
+
+
+
+
+
+
+
+
+
+  
