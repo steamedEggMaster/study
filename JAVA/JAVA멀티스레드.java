@@ -95,7 +95,7 @@ ExecutorService 객체명A = new ThreadPoolExecutors( //ThreadPoolExecutors의 �
 Callable 익명 객체 구현
 new Callable<T> {
   @Override
-  public T call() throws Exception {
+  public T call() throws Exception { //인터페이스에 이렇게 정의되어있어서 throws Exception을 붙여야함.
     //작업 내용
     return T; }};
 
