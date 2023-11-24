@@ -89,18 +89,25 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 1. TreeSet - 이진 트리 기반 Set컬렉션. / 자동적으로 "객체의 크기를 비교"하여 정렬함(오름차순 default).
   TreeSet<E> TreeSet객체명 = new TreeSet<E>; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
 검색관련 메서드
-1. TreeSet객체명.first(); - 가장 작은 크기 객체 return.
-2. TreeSet객체명.last(); - 가장 큰 크기 객체 return.
-3. TreeSet객체명.lower(E e); - 주어진 객체의 바로 아래 크기 객체 return, 없다면 null.
-4. TreeSet객체명.higher(E e); - 주어진 객체의 바로 위 크기 객체 return, 없다면 null.
-5. TreeSet객체명.floor(E e); - 주어진 객체와 동등한 객체 존재 시 해당 객체 return, 없으면 바로 아래 크기 객체 return.
-
-
+-1. TreeSet객체명.first(); - "가장 작은" 크기 객체 return, empty면 NoSuchElementException.
+-2. TreeSet객체명.last(); - "가장 큰" 크기 객체 return, empty면 NoSuchElementException.
+-3. TreeSet객체명.lower(E e); - 주어진 객체의 "바로 아래" 크기 객체 return, 없다면 null.
+-4. TreeSet객체명.higher(E e); - 주어진 객체의 "바로 위" 크기 객체 return, 없다면 null.
+-5. TreeSet객체명.floor(E e); - 주어진 객체와 동등한 객체 존재 시 해당 객체 return, 없으면 "바로 아래" 크기 객체 return.
+-6. TreeSet객체명.ceiling(E e); - 주어진 객체와 동등한 객체 존재 시 해당 객체 return, 없으면 "바로 위" 크기 객체 return.
+-7. TreeSet객체명.pollFirst(); - 가장 작은 크기 객체 return 후 "해당 객체 제거". empty면 null.
+-8. TreeSet객체명.pollLast(); - 가장 큰 크기 객체 return 후 "해당 객체 제거". empty면 null.
+-9. TreeSet객체명.descendingIterator(); - 내림차순으로 정렬된 Itorator return.
+-10. TreeSet객체명.descendingSet(); - 내림차순으로 정렬된 NavigableSet return.
+  
 2. TreeMap - 이진 트리 기반 Map컬렉션. / 자동적으로 "키를 비교"하여 낮은 키 왼쪽 자식노드, 높은 키 오른쪽 자식노드에 "Entry객체" 저장.(오름차순 default)
   TreeMap<K, V> 객체명 = new TreeMap<>;
-
-
-
+검색관련 메서드
+-1. TreeMap객체명.firstEntry(); - 가장 작은 키값 엔트리 return, empty면 null.
+-2. TreeMap객체명.firstKey(); - 가장 작은 키값 return, empty면 NoSuchElementException.
+-3. TreeMap객체명.lastEntry(); - 가장 큰 키값 엔트리 return, empty면 null.
+-4. TreeMap객체명.lastKey(); - 가장 큰 키값 return, empty면 NoSuchElementException.
+-5. TreeMap객체명.lowerEntry(); - 
 ----------------------------------------------------------------------------------------------------------
 Comparable<E>과 Comparator
 자동적으로 정렬을 가능하려면 해당 객체가 Comparable<E>인터페이스 - compaerTo(obj) 구현하고 있어야함. - 대부분의 클래스가 구현클래스지만 안되어있으면 사용자정의구현해야함.
