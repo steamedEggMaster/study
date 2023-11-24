@@ -54,7 +54,7 @@ Set의 요소들 하나씩 얻기 - List에서도 됨.
         1. iter객체명.hasNext(); - if(iter객체명.hasNext()){ iter객체명.next(); }로 사용해야함.
         2. iter객체명.next(); - next()를 처음사용 시 첫 요소를 포인터한 후 그 요소를 가져오고, next()할때마다 한칸씩 이동하며 요소를 포인터함. / hasNext()와 함께 사용.
         3. iter객체명.remove(); - 해당 포인터에 연결된 요소를 해당 Set객체에서 삭제. / next() 호출 당 1번씩만 사용 가능.
-2. for(E e : set객체명) { } - "Iterable<E>가 구현되어 있는 클래스/인터페이스는 전부 사용 가능."
+2. for(E e : set객체명) { } - "Iterable<E>가 구현되어 있는 클래스/인터페이스는 전부 사용 가능." / Map은 불가 -> EntrySet을 받아서 수행.
 ----------------------------------------------------------------------------------------------------------
 Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
   키, 값으로 구성된 엔트리 저장 / 키 중복 X, 값 중복 O.
@@ -79,7 +79,29 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 12.Map객체명.containsValue(V value);
 13.Map객체명.keySet(); - 모든 key를 포함하는 Set 반환.
 14.Map객체명.values(); - 모든 value를 포함하는 Collection 반환.
-15.Map객체명.entrySet(); - 모든 key-value 쌍을 포함하는 Set 반환.
+15.Map객체명.entrySet(); - 모든 key-value 쌍을 포함하는 Set 반환. / "Set<Entry<K, V>> 객체명 = map객체명.entrySet()"  -> for-each사용 가능해짐.
+
+1. HashMap<K, V> - 키로 사용할 객체가 hashCode()의 리턴값이 같고 equals()가 true일 경우 저장 X. -> 값은 마지막에 저장하는 키의 값으로 변경.
+2. HashTable<K, V> - hashMap과 내부 구조가 동일. but, 모든 함수 synchronized.
+3. Properties<K, V> - HashTable의 자식클래스. key와 value의 타입을 String으로 제한. / 주로 .properties 확장자 파일을 읽을 때 사용(.
+----------------------------------------------------------------------------------------------------------
+검색기능 강화 컬렉션
+1. TreeSet - 이진 트리 기반 Set컬렉션. / 자동적으로 "객체의 크기를 비교"하여 정렬함(오름차순 default).
+  TreeSet<E> 객체명 = new TreeSet<E>; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
+2. TreeMap - 이진 트리 기반 Map컬렉션. / 자동적으로 "키를 비교"하여 낮은 키 왼쪽 자식노드, 높은 키 오른쪽 자식노드에 "Entry객체" 저장.(오름차순 default)
+  TreeMAp<K, V> 객체명 = new TreeMap<E>;
+
+Comparable<E>과 Comparator
+자동적으로 정렬을 가능하려면 해당 객체가 Comparable<E>인터페이스 - compaerTo(obj) 구현하고 있어야함. - 대부분의 클래스가 구현클래스지만 안되어있으면 사용자정의구현해야함.
+ex)
+[접근제한자] class 클래스명A implements Comparable<클래스명A> { //해당 클래스의 객체끼리 비교하기 때문에 <클래스명A>
+  [접근제한자] 비교타입 비교객체;
+  public int compareTo(클래스명A 객체명){
+    return -1(this.비교객체 < 객체명.비교객체)
+    return 0(this.비교객체 = 객체명.비교객체)
+    return 1(this.비교객체 > 객체명.비교객체)
+  }
+}
 
 
 
@@ -87,6 +109,3 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 
 
 
-
-
-  
