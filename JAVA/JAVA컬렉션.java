@@ -39,7 +39,7 @@ Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet, TreeSet
 
 객체 삭제.
 2. Set객체명.clear();
-3. Set객체명.remove(obj); - 값 제거 후 true 반환 / "요소 얻기 2번 방법에서 사용시 에러 발생, 1번(Iterator)으로 해야함."
+3. Set객체명.remove(obj); - 값 제거 후 true return / "요소 얻기 2번 방법에서 사용시 에러 발생, 1번(Iterator)으로 해야함."
 
 정보 얻기.
 4. Set객체명.size();
@@ -77,9 +77,9 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 10.Map객체명.equals(Map객체명2);
 11.Map객체명.containsKey(K key);
 12.Map객체명.containsValue(V value);
-13.Map객체명.keySet(); - 모든 key를 포함하는 Set 반환.
-14.Map객체명.values(); - 모든 value를 포함하는 Collection 반환.
-15.Map객체명.entrySet(); - 모든 key-value 쌍을 포함하는 Set 반환. / "Set<Entry<K, V>> 객체명 = map객체명.entrySet()"  -> for-each사용 가능해짐.
+13.Map객체명.keySet(); - 모든 key를 포함하는 Set return.
+14.Map객체명.values(); - 모든 value를 포함하는 Collection return.
+15.Map객체명.entrySet(); - 모든 key-value 쌍을 포함하는 Set return. / "Set<Entry<K, V>> 객체명 = map객체명.entrySet()"  -> for-each사용 가능해짐.
 
 1. HashMap<K, V> - 키로 사용할 객체가 hashCode()의 리턴값이 같고 equals()가 true일 경우 저장 X. -> 값은 마지막에 저장하는 키의 값으로 변경.
 2. HashTable<K, V> - hashMap과 내부 구조가 동일. but, 모든 함수 synchronized.
@@ -87,10 +87,21 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 ----------------------------------------------------------------------------------------------------------
 검색기능 강화 컬렉션
 1. TreeSet - 이진 트리 기반 Set컬렉션. / 자동적으로 "객체의 크기를 비교"하여 정렬함(오름차순 default).
-  TreeSet<E> 객체명 = new TreeSet<E>; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
+  TreeSet<E> TreeSet객체명 = new TreeSet<E>; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
+검색관련 메서드
+1. TreeSet객체명.first(); - 가장 작은 크기 객체 return.
+2. TreeSet객체명.last(); - 가장 큰 크기 객체 return.
+3. TreeSet객체명.lower(E e); - 주어진 객체의 바로 아래 크기 객체 return, 없다면 null.
+4. TreeSet객체명.higher(E e); - 주어진 객체의 바로 위 크기 객체 return, 없다면 null.
+5. TreeSet객체명.floor(E e); - 주어진 객체와 동등한 객체 존재 시 해당 객체 return, 없으면 바로 아래 크기 객체 return.
+
+
 2. TreeMap - 이진 트리 기반 Map컬렉션. / 자동적으로 "키를 비교"하여 낮은 키 왼쪽 자식노드, 높은 키 오른쪽 자식노드에 "Entry객체" 저장.(오름차순 default)
   TreeMap<K, V> 객체명 = new TreeMap<>;
 
+
+
+----------------------------------------------------------------------------------------------------------
 Comparable<E>과 Comparator
 자동적으로 정렬을 가능하려면 해당 객체가 Comparable<E>인터페이스 - compaerTo(obj) 구현하고 있어야함. - 대부분의 클래스가 구현클래스지만 안되어있으면 사용자정의구현해야함.
 ex)
@@ -104,16 +115,17 @@ ex)
 }
 
 Comparable을 구현하지 않은 클래스로 TreeSet, TreeMap 생성 시 비교자(Comparator)을 제공하면 비교해줌.
-1. TreeSet<E> 객체명B = new TreeSet<E>( new ComparatorImpl() ); 
-2. TreeSet<K, V> 객체명C = new TreeMap<E>( new ComparatorImpl() );
+1. TreeSet<E> 객체명B = new TreeSet<E>( new 클래스명9Comparator() ); //Comparator-compare()을 구현한 클래스를 의미
+2. TreeSet<K, V> 객체명C = new TreeMap<E>( new 클래스명9Comparator() );
 비교자(Comparator) - Comparator<E>인터페이스-compare(obj1, obj2) 구현 클래스.
 ex)
-[접근제한자] class 클래스명B implements Comparator<클래스명A>{
-  public int compare(클래스명B 객체명1, 클래스명B 객체명2){
+[접근제한자] class 클래스명9Comparator implements Comparator<클래스명>{
+  public int compare(클래스명9 객체명1, 클래스명9 객체명2){
     return -1(객체명1.비교변수 < 객체명2.비교변수)
     return 0(객체명1.비교변수 = 객체명2.비교변수)
     return 1(객체명1.비교변수 > 객체명2.비교변수)
-
+  }
+}
 
 
 
