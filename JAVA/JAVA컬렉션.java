@@ -89,17 +89,17 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 1. TreeSet - 이진 트리 기반 Set컬렉션. / 자동적으로 "객체의 크기를 비교"하여 정렬함(오름차순 default).
   TreeSet<E> 객체명 = new TreeSet<E>; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
 2. TreeMap - 이진 트리 기반 Map컬렉션. / 자동적으로 "키를 비교"하여 낮은 키 왼쪽 자식노드, 높은 키 오른쪽 자식노드에 "Entry객체" 저장.(오름차순 default)
-  TreeMAp<K, V> 객체명 = new TreeMap<E>;
+  TreeMap<K, V> 객체명 = new TreeMap<>;
 
 Comparable<E>과 Comparator
 자동적으로 정렬을 가능하려면 해당 객체가 Comparable<E>인터페이스 - compaerTo(obj) 구현하고 있어야함. - 대부분의 클래스가 구현클래스지만 안되어있으면 사용자정의구현해야함.
 ex)
 [접근제한자] class 클래스명A implements Comparable<클래스명A> { //해당 클래스의 객체끼리 비교하기 때문에 <클래스명A>
-  [접근제한자] 비교타입 비교객체;
+  [접근제한자] 비교타입 비교변수;
   public int compareTo(클래스명A 객체명){
-    return -1(this.비교객체 < 객체명.비교객체)
-    return 0(this.비교객체 = 객체명.비교객체)
-    return 1(this.비교객체 > 객체명.비교객체)
+    return -1(this.비교변수 < 객체명.비교변수)
+    return 0(this.비교변수 = 객체명.비교변수)
+    return 1(this.비교변수 > 객체명.비교변수)
   }
 }
 
