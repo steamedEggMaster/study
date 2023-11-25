@@ -111,6 +111,17 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 -6. TreeMap객체명.lowerKey(K key); - 주어진 키값 "바로 아래" 키값 return, 없다면 null.
 -7. TreeMap객체명.higherEntry(K key); - 주어진 키값 "바로 위" 엔트리 return, 없다면 null.
 -8. TreeMap객체명.higherKey(K key); - 주어진 키값 "바로 위" 키값 return, 없다면 null.
+-9. TreeMap객체명.floorEntry(K key); - 주어진 키와 동등한 키 존재 시 해당 Enetry return, 없다면 바로 아래 키 Entry return, empty면 null.
+-10.TreeMap객체명.floorKey(k key); - 주어진 키와 동등한 키 존재 시 해당 키값 return, 없다면 바로 아래 키값 return, empty면 null.
+-11.TreeMap객체명.ceilingEntry(K key); - 주어진 키와 동등한 키 존재 시 해당 Enetry return, 없다면 바로 위 키 Entry return, empty면 null.
+-12.TreeMap객체명.ceilingKey(K key); - 주어진 키와 동등한 키 존재 시 해당 키값 return, 없다면 바로 위 키값 return, empty면 null.
+-13.TreeMap객체명.pollFirstEntry(); - 가장 작은 키값 엔트리 return 후 해당 엔트리 제거, empty면 null.
+-14.TreeMap객체명.pollLastEntry(); - 가장 큰 키값 엔트리 return 후 해당 엔트리 제거, empty면 null.
+-15.TreeMap객체명.descendingKeySet(); - 내림차순으로 정렬된 키의 NavigableSet return.
+-16.TreeMap객체명.descendingMap(); - 내림차순으로 정렬된 엔트리의 NavigableMap return.
+-17.TreeMap객체명.headMap(K toKey, boolean inclusive);
+-18.TreeMap객체명.tailMap(K fromKey, boolean inclusive);
+-19.TreeMap객체명.subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive);
 ----------------------------------------------------------------------------------------------------------
 Comparable<E>과 Comparator
 자동적으로 정렬을 가능하려면 해당 객체가 Comparable<E>인터페이스 - compaerTo(obj) 구현하고 있어야함. - 대부분의 클래스가 구현클래스지만 안되어있으면 사용자정의구현해야함.
