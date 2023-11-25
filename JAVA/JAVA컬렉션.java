@@ -162,15 +162,28 @@ Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
 -1. queue객체명.offer(E e);
 -2. queue객체명.poll(); - 맨 위의 객체 삭제하면서 return, empty면 null.
 -3. queue객체명.peek(); - 맨 위의 객체 삭제안하고 return, empty면 null. 
+----------------------------------------------------------------------------------------------------------
+동기화된 컬렉션
+ArrayList, HashSet, HashMap를 멀티스레드에서 사용하고 싶을 때 동기화시킴.
+List<T> list객체명 = Collections.synchronizedList(List<T> list객체명2);
+Map<K, V> map객체명 = Collections.synchronizedMap(Map<K, V> map객체명2);
+Set<T> set객체명 = Collections.synchronizedSet(Set<T> set객체명2);
+----------------------------------------------------------------------------------------------------------
+수정할 수 없는 컬렉션 - 요소를 추가, 삭제불가능한 컬렉션.
+1. List, Set, Map 인터페이스의 정적메서드 of
+List<E> list객체명 = List.of(E e, E e2...);
+Set<E> set객체명 = Set.of(E e, E e2...);
+Map<K, V> map객체명 = Map.of(k, v, k2, v2, ...);
 
+2. List, Set, Map 인터페이스의 정적메서드 copyOf
+List<E> list객체명 = List.copyOf(E e, E e2...);
+Set<E> set객체명 = Set.copyOf(E e, E e2...);
+Map<K, V> map객체명 = Map.copyOf(k, v, k2, v2, ...);
 
-
-
-
-
-
-
-
+3. 배열로부터 수정 불가능한 List컬렉션 만들기 - ArrayList와 List는 DTO로 많이 쓰여서 읽기전용이 많음
+ex)
+Stringp[] arr = {"A", "B", "C"};
+List<String> list객체명 = Arrays.asList(arr);
 
 
 
