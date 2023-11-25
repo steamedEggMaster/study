@@ -149,7 +149,52 @@ ex)
 }
 ----------------------------------------------------------------------------------------------------------
 LIFO와 FIFO 컬렉션
-컬렉션 프레임워크는 LIFO - stack 클래스 / FIFO  - Queue 인터페이스 제공.
+컬렉션 프레임워크는 LIFO(push/pop) - stack<E>클래스 / FIFO(offer/poll)  - Queue<E>인터페이스 제공.
+1. stack<E>클래스 - Vector<E>클래스 상속.
+Stack<E> stack객체명 = new Stack<E>();
+-1. stack객체명.push(E e);
+-2. stack객체명.pop();
+-3. stack객체명.peek(); - 맨 위의 객체를 리턴.
+-4. stack객체명.empty();
+
+2. Queue<E>인터페이스 - 대표적인 구현 클래스:LinkedList<E>
+Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
+-1. queue객체명.offer(E e);
+-2. queue객체명.poll(); - 맨 위의 객체 삭제하면서 return, empty면 null.
+-3. queue객체명.peek(); - 맨 위의 객체 삭제안하고 return, empty면 null. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
