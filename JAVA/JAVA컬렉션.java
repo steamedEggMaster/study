@@ -98,7 +98,10 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 -7. TreeSet객체명.pollFirst(); - "가장 작은 크기" 객체 return 후 "해당 객체 제거". empty면 null.
 -8. TreeSet객체명.pollLast(); - "가장 큰 크기" 객체 return 후 "해당 객체 제거". empty면 null.
 -9. TreeSet객체명.descendingIterator(); - "내림차순"으로 정렬된 Itorator return.
--10. TreeSet객체명.descendingSet(); - "내림차순"으로 정렬된 NavigableSet return.
+-10.NavigableSet<E> Navi객체명 = TreeSet객체명.descendingSet(); - "내림차순"으로 정렬된 NavigableSet return.
+-11.NavigableSet<E> Navi객체명 = TreeSet객체명.headSet(K toKey, boolean inclusive);
+-12.NavigableSet<E> Navi객체명 = TreeMap객체명.tailSet(K fromKey, boolean inclusive);
+-13.NavigableSet<E> Navi객체명 = TreeMap객체명.subSet(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive);
   
 2. TreeMap - 이진 트리 기반 Map컬렉션. / 자동적으로 "키를 비교"하여 낮은 키 왼쪽 자식노드, 높은 키 오른쪽 자식노드에 "Entry객체" 저장.(오름차순 default)
   TreeMap<K, V> 객체명 = new TreeMap<>;
@@ -117,11 +120,12 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 -12.TreeMap객체명.ceilingKey(K key); - 주어진 키와 "동등한 키 존재 시" 해당 키값 return, 없다면 바로 위 키값 return, empty면 null.
 -13.TreeMap객체명.pollFirstEntry(); - "가장 작은 키값" 엔트리 return 후 해당 엔트리 제거, empty면 null.
 -14.TreeMap객체명.pollLastEntry(); - "가장 큰 키값" 엔트리 return 후 해당 엔트리 제거, empty면 null.
--15.TreeMap객체명.descendingKeySet(); - "내림차순"으로 정렬된 키의 NavigableSet return.
--16.TreeMap객체명.descendingMap(); - "내림차순"으로 정렬된 엔트리의 NavigableMap return.
--17.TreeMap객체명.headMap(K toKey, boolean inclusive);
--18.TreeMap객체명.tailMap(K fromKey, boolean inclusive);
--19.TreeMap객체명.subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive);
+-15.NavigableSet<E> Navi객체명 = TreeMap객체명.navigableKeySet();  
+-16.NavigableSet<E> Navi객체명 = TreeMap객체명.descendingKeySet(); - "내림차순"으로 정렬된 키의 NavigableSet return.
+-17.NavigableMap<K, V> Navi객체명 = TreeMap객체명.descendingMap(); - "내림차순"으로 정렬된 엔트리의 NavigableMap return.
+-18.NavigableMap<K, V> Navi객체명 = TreeMap객체명.headMap(K toKey, boolean inclusive);
+-19.NavigableMap<K, V> Navi객체명 = TreeMap객체명.tailMap(K fromKey, boolean inclusive);
+-20.NavigableMap<K, V> Navi객체명 = TreeMap객체명.subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive);
 ----------------------------------------------------------------------------------------------------------
 Comparable<E>과 Comparator
 자동적으로 정렬을 가능하려면 해당 객체가 Comparable<E>인터페이스 - compareTo(obj) 구현하고 있어야함. - 대부분의 클래스가 구현클래스지만 안되어있으면 사용자정의구현해야함.
