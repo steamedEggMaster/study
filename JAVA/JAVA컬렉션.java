@@ -83,7 +83,7 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 
 1. HashMap<K, V> - 키로 사용할 객체가 hashCode()의 리턴값이 같고 equals()가 true일 경우 저장 X. -> 값은 마지막에 저장하는 키의 값으로 변경.
 2. HashTable<K, V> - hashMap과 내부 구조가 동일. but, 모든 함수 synchronized.
-3. Properties<K, V> - HashTable의 자식클래스. key와 value의 타입을 String으로 제한. / 주로 .properties 확장자 파일을 읽을 때 사용(.
+3. Properties<K, V> - HashTable의 자식클래스. key와 value의 타입을 String으로 제한. / 주로 .properties 확장자 파일을 읽을 때 사용.
 ----------------------------------------------------------------------------------------------------------
 검색기능 강화 컬렉션
 1. TreeSet - 이진 트리 기반 Set컬렉션. / 자동적으로 "객체의 크기를 비교"하여 정렬함(오름차순 default).
