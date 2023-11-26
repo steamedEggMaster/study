@@ -93,12 +93,12 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 -2. TreeSet객체명.last(); - "가장 큰" 크기 객체 return, empty면 NoSuchElementException.
 -3. TreeSet객체명.lower(E e); - 주어진 객체의 "바로 아래" 크기 객체 return, 없다면 null.
 -4. TreeSet객체명.higher(E e); - 주어진 객체의 "바로 위" 크기 객체 return, 없다면 null.
--5. TreeSet객체명.floor(E e); - 주어진 객체와 동등한 객체 존재 시 해당 객체 return, 없으면 "바로 아래" 크기 객체 return.
--6. TreeSet객체명.ceiling(E e); - 주어진 객체와 동등한 객체 존재 시 해당 객체 return, 없으면 "바로 위" 크기 객체 return.
--7. TreeSet객체명.pollFirst(); - 가장 작은 크기 객체 return 후 "해당 객체 제거". empty면 null.
--8. TreeSet객체명.pollLast(); - 가장 큰 크기 객체 return 후 "해당 객체 제거". empty면 null.
--9. TreeSet객체명.descendingIterator(); - 내림차순으로 정렬된 Itorator return.
--10. TreeSet객체명.descendingSet(); - 내림차순으로 정렬된 NavigableSet return.
+-5. TreeSet객체명.floor(E e); - 주어진 객체와 "동등한 객체 존재 시" 해당 객체 return, 없으면 "바로 아래" 크기 객체 return.
+-6. TreeSet객체명.ceiling(E e); - 주어진 객체와 "동등한 객체 존재 시" 해당 객체 return, 없으면 "바로 위" 크기 객체 return.
+-7. TreeSet객체명.pollFirst(); - "가장 작은 크기" 객체 return 후 "해당 객체 제거". empty면 null.
+-8. TreeSet객체명.pollLast(); - "가장 큰 크기" 객체 return 후 "해당 객체 제거". empty면 null.
+-9. TreeSet객체명.descendingIterator(); - "내림차순"으로 정렬된 Itorator return.
+-10. TreeSet객체명.descendingSet(); - "내림차순"으로 정렬된 NavigableSet return.
   
 2. TreeMap - 이진 트리 기반 Map컬렉션. / 자동적으로 "키를 비교"하여 낮은 키 왼쪽 자식노드, 높은 키 오른쪽 자식노드에 "Entry객체" 저장.(오름차순 default)
   TreeMap<K, V> 객체명 = new TreeMap<>;
@@ -111,14 +111,14 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 -6. TreeMap객체명.lowerKey(K key); - 주어진 키값 "바로 아래" 키값 return, 없다면 null.
 -7. TreeMap객체명.higherEntry(K key); - 주어진 키값 "바로 위" 엔트리 return, 없다면 null.
 -8. TreeMap객체명.higherKey(K key); - 주어진 키값 "바로 위" 키값 return, 없다면 null.
--9. TreeMap객체명.floorEntry(K key); - 주어진 키와 동등한 키 존재 시 해당 Enetry return, 없다면 바로 아래 키 Entry return, empty면 null.
--10.TreeMap객체명.floorKey(k key); - 주어진 키와 동등한 키 존재 시 해당 키값 return, 없다면 바로 아래 키값 return, empty면 null.
--11.TreeMap객체명.ceilingEntry(K key); - 주어진 키와 동등한 키 존재 시 해당 Enetry return, 없다면 바로 위 키 Entry return, empty면 null.
--12.TreeMap객체명.ceilingKey(K key); - 주어진 키와 동등한 키 존재 시 해당 키값 return, 없다면 바로 위 키값 return, empty면 null.
--13.TreeMap객체명.pollFirstEntry(); - 가장 작은 키값 엔트리 return 후 해당 엔트리 제거, empty면 null.
--14.TreeMap객체명.pollLastEntry(); - 가장 큰 키값 엔트리 return 후 해당 엔트리 제거, empty면 null.
--15.TreeMap객체명.descendingKeySet(); - 내림차순으로 정렬된 키의 NavigableSet return.
--16.TreeMap객체명.descendingMap(); - 내림차순으로 정렬된 엔트리의 NavigableMap return.
+-9. TreeMap객체명.floorEntry(K key); - 주어진 키와 "동등한 키 존재 시" 해당 Enetry return, 없다면 바로 아래 키 Entry return, empty면 null.
+-10.TreeMap객체명.floorKey(k key); - 주어진 키와 "동등한 키 존재 시" 해당 키값 return, 없다면 바로 아래 키값 return, empty면 null.
+-11.TreeMap객체명.ceilingEntry(K key); - 주어진 키와 "동등한 키 존재 시" 해당 Enetry return, 없다면 바로 위 키 Entry return, empty면 null.
+-12.TreeMap객체명.ceilingKey(K key); - 주어진 키와 "동등한 키 존재 시" 해당 키값 return, 없다면 바로 위 키값 return, empty면 null.
+-13.TreeMap객체명.pollFirstEntry(); - "가장 작은 키값" 엔트리 return 후 해당 엔트리 제거, empty면 null.
+-14.TreeMap객체명.pollLastEntry(); - "가장 큰 키값" 엔트리 return 후 해당 엔트리 제거, empty면 null.
+-15.TreeMap객체명.descendingKeySet(); - "내림차순"으로 정렬된 키의 NavigableSet return.
+-16.TreeMap객체명.descendingMap(); - "내림차순"으로 정렬된 엔트리의 NavigableMap return.
 -17.TreeMap객체명.headMap(K toKey, boolean inclusive);
 -18.TreeMap객체명.tailMap(K fromKey, boolean inclusive);
 -19.TreeMap객체명.subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive);
