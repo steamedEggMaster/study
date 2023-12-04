@@ -72,7 +72,7 @@ String객체명.concat(String str) - str을 뒤에 연결하여 반환(new)
 문자열 -> 여러 타입으로 변환
 byte 바이트명 = Byte.parseByte(str);
 short 쇼트명 = Short.parseShort(str);
-int 인트명 = integer.parseInt(str);
+int 인트명 = Integer.parseInt(str);
 long 롱명 = Long.parseLong(str);
 float 플롯명 = Float.parseFloat(str);
 double 더블명 = Double.parseDouble(str);
