@@ -1,8 +1,8 @@
 컬렉션은 제네릭 사용 - 기초 자료형 X, 객체만 가능.
 Collections 클래스는 여러 유용한 알고리즘을 구현한 메서드 제공 - 나중에 자세히 알아보기
-1. binarySearch(list, value)
-2. sort(list)
-3. shuffle(list)
+1. Collections.binarySearch(list, value)
+2. Collections.sort(list)
+3. Collections.shuffle(list)
 컬렉션 프레임워크
 1. List 인터페이스 - 구현 클래스 : ArrayList, Vector, LinkedList
   특징 : 순서 유지 및 중복
