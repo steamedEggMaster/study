@@ -33,8 +33,9 @@ List<E> 컬렉션 - 구현 클래스 : ArrayList, Vector, LinkedList
 1. ArrayList<E> - 제한 없이 객체 추가 가능. / "삭제, 삽입이 빈번한 경우 LinkedList를 사용하는 것이 바람직"
 2. Vector<E> - ArrayList와 동일구조 / "동기화된 메소드로 구성되어 있음" -> 멀티스레드 환경에서 안전하게 사용 가능.
 3. LinkedList - 인접 객체를 링크로 연결하여 관리. / "삭제, 삽입 용이"
+  위에 없는 연산 - addFirst(e), addLast(e), removeFirst(), removeLast(), getFirst(), getLast(), peek() - 첫요소 반환, poll() - 첫요소 삭제 후 반환
 ----------------------------------------------------------------------------------------------------------
-Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet, TreeSet
+Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet - 원소들의 순서 존재(add한 순서), TreeSet
 객체 추가.
 1. Set객체명.add(E e);
 
