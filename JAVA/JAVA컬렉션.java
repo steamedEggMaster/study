@@ -38,16 +38,20 @@ List<E> 컬렉션 - 구현 클래스 : ArrayList, Vector, LinkedList
 Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet - 원소들의 순서 존재(add한 순서), TreeSet
 객체 추가.
 1. Set객체명.add(E e);
+   Set객체명.addAll(Set객체명2); - 객체명1을 1과 2의 합집합으로 만듬.
+   Set객체명.retainAll(Set객체명2); - 객체명1을 1과 2의 교집합으로 만듬.
 
 객체 삭제.
 2. Set객체명.clear();
 3. Set객체명.remove(obj); - 값 제거 후 true return / "요소 얻기 2번 방법에서 사용시 에러 발생, 1번(Iterator)으로 해야함."
+   Set객체명.removeAll(Set객체명2); - 객체명1을 1과 2의 차집합으로 만듬.
 
 정보 얻기.
 4. Set객체명.size();
 5. Set객체명.isEmpty();
 6. Set객체명.equals(obj);
 7. Set객체명.contains(obj);
+   Set객체명.containsAll(Set객체명2);
 8. Set객체명.hashCode();
 
 Set의 요소들 하나씩 얻기 - List에서도 됨.
