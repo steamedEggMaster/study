@@ -78,7 +78,7 @@ float 플롯명 = Float.parseFloat(str);
 double 더블명 = Double.parseDouble(str);
 boolean 불린명 = Boolean.parseBoolean(str);
 여러 타입 -> 문자열 변환
-String객체명.valueOf(int, double, boolean, char, str)
+String.valueOf(int, double, boolean, char, str)
 --------------------------------------------------------------------------------
 StringBuilder 클래스 - 가변적 문자열을 다룸, 동기화되어있지 않음.
 StringBuffer 클래스 - 가변적 문자열을 다룸, 동기화 되어있음.
