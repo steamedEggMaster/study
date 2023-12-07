@@ -173,9 +173,9 @@ Stack<E> stack객체명 = new Stack<E>();
 
 2. Queue<E>인터페이스 - 대표적인 구현 클래스:LinkedList<E>
 Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
--1. queue객체명.offer(E e);
--2. queue객체명.poll(); - 맨 위의 객체 삭제하면서 return, empty면 null.
--3. queue객체명.peek(); - 맨 위의 객체 삭제안하고 return, empty면 null. 
+-1. queue객체명.offer(E e); - 맨 뒤의 객체 삽입. 성공시 true / 실패 시 false.
+-2. queue객체명.poll(); - 맨 앞의 객체 삭제하면서 return, empty면 null.
+-3. queue객체명.peek(); - 맨 앞의 객체 삭제안하고 return, empty면 null. 
 ----------------------------------------------------------------------------------------------------------
 동기화된 컬렉션
 ArrayList, HashSet, HashMap를 멀티스레드에서 사용하고 싶을 때 동기화시킴.
