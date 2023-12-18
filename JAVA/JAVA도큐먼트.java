@@ -42,7 +42,7 @@ LocalDateTime date2 = LocalDateTime.of(year, month, dayOfMonth, hour, minute, se
 --1. date1.isAfter(date2);
 --2. date1.isBefore(date2);
 --3. date1.isEqual(date2);
---4. date1.until(date2, ChronoUnit.YEAR/MONTH 등의 상수 필드); - 해당 필드의 차이를 long으로 리턴.
+--4. date1.until(date2, ChronoUnit.YEARS/MONTHS 등의 상수 필드); - 해당 필드의 차이를 long으로 리턴.
 ---------------------------------------------------------------------------------------------------
 java.text.Format(형식) 클래스 - 숫자, 날짜를 원하는 형태의 문자열로 변환해주는 기능
 
