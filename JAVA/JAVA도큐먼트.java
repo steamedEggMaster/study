@@ -20,7 +20,9 @@ Date now = new Date();
   
 2. java.util.Calendar - 현재 컴퓨터 시간을 읽어와 년월일시간 등을 얻어올 수 있는 추상 클래스
 사용방법
-Calendar now = Calendar.getInstance();
+Calendar now = Calendar.getInstance(); //추상클래스라 객체 생성 불가능.
+                        getInstance(Locale/Timezone/Locale, Timezone) 으로 특정 나라, 나라 안의 지역 별 다른 시간의 정보를 얻을 수 있음
+                                                            Timezone은 ID 정보를 알고 있어야 하는데, Calendar.getAvailableIDs() 함수로 ID배열을 얻을 수 있음
 int year = now.get(Calendar.YEAR);              int month = now.get(Calendar.MONTH) + 1;
 int day = now.get(Calendar.DAY_OF_MONTH);       int week = now.get(Calendar.DAY_OF_WEEk);
 int amPm = now.get(Calendar.AM_PM);             int hour = now.get(Calendar.HOUR);
