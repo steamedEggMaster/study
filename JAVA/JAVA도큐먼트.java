@@ -36,6 +36,7 @@ DateTimeFormatter dtf = DateTimeFormatter.ofPattern("날짜 기호들을 사용�
 println(now.format(dtf));
 ---------------------------------------------------------------------------------------------------
 java.text.Format(형식) 클래스 - 숫자, 날짜를 원하는 형태의 문자열로 변환해주는 기능
+
 자주 사용하는 클래스
 1. DecimalFormat 클래스 - 숫자 -> 형식화된 문자열로 변환
 기호
