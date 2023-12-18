@@ -13,6 +13,21 @@ java.base 모듈 : 모든 모듈이 의존하는 모듈.
 java.lang 패키지 : import없이 사용할 수 있는 언어의 기본적인 클래스가 담긴 패키지
 Object 클래스 : 모든 클래스의 최상위 클래스.
 ---------------------------------------------------------------------------------------------------
+날짜와 시간 클래스
+1. java.util.Date - 현재 컴퓨터 시간을 읽어와 저장하기 위한 클래스
+사용방법
+Date now = new Date();
+  
+2. java.util.Calendar - 현재 컴퓨터 시간을 읽어와 년월일시간 등을 얻어올 수 있는 추상 클래스
+사용방법
+Calendar now = Calendar.getInstance();
+int year = now.get(Calendar.YEAR);              int month = now.get(Calendar.MONTH) + 1;
+int day = now.get(Calendar.DAY_OF_MONTH);       int week = now.get(Calendar.DAY_OF_WEEk);
+int amPm = now.get(Calendar.AM_PM);             int hour = now.get(Calendar.HOUR);
+int minute = now.get(Calendar.MINUTE);          int second = now.get(Calendar.SECOMD);
+
+3. java.time.LocalDateTime
+---------------------------------------------------------------------------------------------------
 java.text.Format(형식) 클래스 - 숫자, 날짜를 원하는 형태의 문자열로 변환해주는 기능
 자주 사용하는 클래스
 1. DecimalFormat 클래스 - 숫자 -> 형식화된 문자열로 변환
