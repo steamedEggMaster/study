@@ -1,1 +1,6 @@
+API(Application Programming Interface) 도큐먼트 : 클래스 및 인터페이스들을 사용하기 위한 방법을 기술해 놓은 것.
+public과 protected 접근 제한자 메서드, 멤버, 생성자만 적혀있음.
 
+검색방법
+1. 검색
+2. F1 키 -> Javadoc for 'java.lang.String' 클릭
