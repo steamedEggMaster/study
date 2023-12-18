@@ -3,7 +3,7 @@ public과 protected 접근 제한자 메서드, 멤버, 생성자만 적혀있�
 
 검색방법
 1. 검색
-2. F1 키 -> Javadoc for 'java.lang.String' 클릭
+2. F1 키 -> Javadoc for '~~~~~~' 클릭
 
 since : - 자바 몇 버전부터 사용될 수 있는지
 modifier : 접근 제한자 - protected : 동일 패키지 및 자식 클래스에서 사용 가능.
@@ -20,7 +20,7 @@ Date now = new Date();
   
 2. java.util.Calendar - 현재 컴퓨터 시간을 읽어와 년월일시간 등을 얻어올 수 있는 추상 클래스
 사용방법
-Calendar now = Calendar.getInstance(); //추상클래스라 객체 생성 불가능.
+Calendar now = Calendar.getInstance(); //추상클래스라 객체 생성 불가능. //getIntance메서드 안에 로컬자식클래스를 만들어서 자식클래스를 반환
                         getInstance(Locale/Timezone/Locale, Timezone) 으로 특정 나라, 나라 안의 지역 별 다른 시간의 정보를 얻을 수 있음
                                                             Timezone은 ID 정보를 알고 있어야 하는데, Calendar.getAvailableIDs() 메서드로 배열을 얻을 수 있음
 int year = now.get(Calendar.YEAR);              int month = now.get(Calendar.MONTH) + 1;
