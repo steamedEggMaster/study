@@ -32,7 +32,7 @@ int minute = now.get(Calendar.MINUTE);          int second = now.get(Calendar.SE
 사용방법
 LocalDateTime now = LocalDateTime.now();
 LocalDateTime result = now.plusYears(1); //많은 직관적인 함수들이 있기에 API 참조할 것.
-DateTimeFormatter dtf = DateTimeFormatter.ofPattern("2번 기호들을 사용한 정규표현식");
+DateTimeFormatter dtf = DateTimeFormatter.ofPattern("날짜 기호들을 사용한 정규표현식");
 println(now.format(dtf));
 ---------------------------------------------------------------------------------------------------
 java.text.Format(형식) 클래스 - 숫자, 날짜를 원하는 형태의 문자열로 변환해주는 기능
