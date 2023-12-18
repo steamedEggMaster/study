@@ -16,7 +16,7 @@ Object 클래스 : 모든 클래스의 최상위 클래스.
 날짜와 시간 클래스
 1. java.util.Date - 현재 컴퓨터 시간을 읽어와 저장하기 위한 클래스
 사용방법
-Date now = new Date();
+Date now = new Date(); - SimpleDateFormat
   
 2. java.util.Calendar - 현재 컴퓨터 시간을 읽어와 년월일시간 등을 얻어올 수 있는 추상 클래스
 사용방법
@@ -29,6 +29,11 @@ int amPm = now.get(Calendar.AM_PM);             int hour = now.get(Calendar.HOUR
 int minute = now.get(Calendar.MINUTE);          int second = now.get(Calendar.SECOMD);
 
 3. java.time.LocalDateTime
+사용방법
+LocalDateTime now = LocalDateTime.now();
+LocalDateTime result = now.plusYears(1); //많은 직관적인 함수들이 있기에 API 참조할 것.
+DateTimeFormatter dtf = DateTimeFormatter.ofPattern("2번 기호들을 사용한 정규표현식");
+println(now.format(dtf));
 ---------------------------------------------------------------------------------------------------
 java.text.Format(형식) 클래스 - 숫자, 날짜를 원하는 형태의 문자열로 변환해주는 기능
 자주 사용하는 클래스
@@ -42,7 +47,7 @@ java.text.Format(형식) 클래스 - 숫자, 날짜를 원하는 형태의 문�
 DecimalFormat df = new DecimalFormat("표현식");
 String result = df.format(숫자);
 
-2. SimpleDateFormat 클래스 - 날짜 -> 형식화된 문자열로 변환
+2. SimpleDateFormat 클래스 - 날짜 -> 형식화된 문자열로 변환 / not synchronized
 기호
   y : 년        M : 월        d : 일              D : 월 구분이 없는 일(1~365)
   E : 요일      a : 오전/오후  w : 년의 몇 번째 주  W : 월의 몇 번째 주
@@ -51,5 +56,10 @@ String result = df.format(숫자);
 사용방법
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
 String strDate = sdf.format(new Date());
+
+3. DateTimeFormatter 클래스 - 날짜 -> 형식화된 문자열로 변환 / synchronized
+사용방법
+DateTimeFormatter dtf = DateTimeFormatter.ofPattern("2번 기호들을 사용한 정규표현식");
+println(now.format(dtf));
 ---------------------------------------------------------------------------------------------------
 정규 표현식 클래스
