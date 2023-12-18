@@ -31,5 +31,8 @@ String result = df.format(숫자);
   E : 요일      a : 오전/오후  w : 년의 몇 번째 주  W : 월의 몇 번째 주
   H : 시(0~23)  h : 시(1~12)  K : 시(0~11)        k : 시(1~24)
   m : 분        s : 초        S : 밀리 세컨드(1/1000초)
+사용방법
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+String strDate = sdf.format(new Date());
 ---------------------------------------------------------------------------------------------------
 정규 표현식 클래스
