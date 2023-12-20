@@ -34,11 +34,25 @@ lombok 다운로드 -> cmd -> lombok있는 파일로 -> java -jar lombok.jar -> 
 2. @NoArgsConstructor - 매개변수X 생성자 포함.
 3. @AllArgsConstructor - 모든 필드 매개변수 생성자 포함.
 4. @RequiredArgsConstructor - 기본적 = 매개변수X 생성자 포함, if final or @NonNull이 붙은 필드 -> 이 필드만 매개변수인 생성자 포함.
-5. @Getter - Getter메서드 포함.
+5. @Getter - Getter메서드 포함.                                           = null이 아닌 값으로 Setter을 통해 변경 가능.
 6. @Setter - Setter메서드 포함.
 7. @EqualsAndHashCode - equals()와 hashCode()메서드 포함.
 8. @ToString - toString()메서드 포함.
----------------------------------------------------------------------------------------------------  
+---------------------------------------------------------------------------------------------------
+System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
+정적 Field 종류
+1. static final InputStream in - System.in.read() 메서드로 enter을 누르면, enter이전 누른 키들 + enter키의 값을 하나씩 읽음.
+2. static final OutputStream out
+3. static final PrintStream err - 보통 에러메시지 출력 시 사용. 빨간색으로 출력됨.
+정적 Method 종류
+1. void exit(int status); - JVM 자체를 종료 / 정상종료 0, 비정상종료 -1 or 1
+2. long currentTimeMillis(); 
+3. long nanoTime();
+   2,3번 - 처리시간의 측정을 위해 주로 사용.
+4. System.getProperty(String 속성키); - 속성키에 해당되는 현재 OS의 정보들을 얻기위해 사용.
+5. Properties System.getProperties(); - OS의 모든 정보가 담긴 Properties 객체 반환.
+ 
+--------------------------------------------------------------------------------------------------- 
 날짜와 시간 클래스
 1. java.util.Date - 현재 컴퓨터 시간을 읽어와 저장하기 위한 클래스
 사용방법
