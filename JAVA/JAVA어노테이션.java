@@ -23,7 +23,7 @@ public @interface AnnotationName {
 "속성 중엔 기본 속성이라는 것이 존재. = value"
 ex)
  public @interface AnnotationName {
-  String value(); - value라는 이름은 고정 이름.
+  String value(); - value라는 이름은 고정 이름. default 적용 가능.
   int prop2() default 1;
 }
 코드에서 사용 시
@@ -49,3 +49,7 @@ public @interface AnnotationName {}
 @Target( [ ElementType.TYPE, ElementType.FIELD, ... ] )
 "@Retention( RetentionPolicy.Runtime )"
 public @interface AnnotationName {}
+------------------------------------------------------------------------------------------------------
+"어노테이션 정보 얻기" - 리플렉션을 이용하여 어노테이션 적용 대상으로부터 어노테이션 정보를 얻음.
+메서드 종류
+1. boolean b = 
