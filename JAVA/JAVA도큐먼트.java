@@ -93,4 +93,23 @@ println(now.format(dtf));
   () : 그룹핑
 
 Pattern 클래스
-boolean result = Pattern.matches("정규식", "검증할 문자열");
+boolean result = Pattern.matches("정규식", "검증할 문자열"); - true, false 반환
+---------------------------------------------------------------------------------------------------
+리플렉션
+자바는 클래스, 인터페이스의 "메타 정보(패키지 정보, 타입 정보, 멤버(생성자, 필드, 메서드) 정보 등)"을 Class객체로 관리.
+  이 메타 정보를 "프로그램에서 읽고, 수정"하는 행위 = 리플렉션
+
+프로그램에서 Class객체를 얻는 방법
+1. Class clazz = 클래스이름.class;
+2. Class clazz = Class.forName("패키지...클래스이름(클래스 전체 이름)");
+3. Class clazz = 객체참조변수.getClass();
+
+패키지 및 클래스 이름 정보 얻기
+1. clazz.getPackage().getName() - 패키지 이름
+2. clazz.getSimpleName() - 클래스 이름
+3. clazz.getName() - 패키지~클래스 이름
+
+멤버 정보 얻기
+1. Constructor[] constructors = clazz.getDeclaredConstructors();
+2. Field[] fields = clazz.getDeclaredFields();
+3. Method[] methods = clazz.getDeclaredMethods();
