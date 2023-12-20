@@ -116,3 +116,5 @@ boolean result = Pattern.matches("정규식", "검증할 문자열"); - true, fa
 생성자 및 메서드의 매개변수 정보 얻기
 1. Class[] parameters = constructor.getParameterTypes(); - constructors 배열의 원소를 for-each 구문으로 constructor에게 넘겨준 상태.
 2. Class[] parameters = method.getParameterTypes(); - methods 배열의 원소를 for-each 구문으로 method에게 넘겨준 상태.
+
+리소스 경로 얻기
