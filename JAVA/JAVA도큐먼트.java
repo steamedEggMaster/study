@@ -117,4 +117,9 @@ boolean result = Pattern.matches("정규식", "검증할 문자열"); - true, fa
 1. Class[] parameters = constructor.getParameterTypes(); - constructors 배열의 원소를 for-each 구문으로 constructor에게 넘겨준 상태.
 2. Class[] parameters = method.getParameterTypes(); - methods 배열의 원소를 for-each 구문으로 method에게 넘겨준 상태.
 
-리소스 경로 얻기
+리소스 경로 얻기 - 이미지를 불러오기 위해선, 프로젝트 파일 아래에 이미지를 위치 해야, "이미지파일명.확장자" 만으로 불러올 수 있음.
+                  패키지 안에 넣을 경우 "src/패키지명/이미지파일명.확장자" 해주어야 함.
+                  자바 프로젝트 기본 경로 = 프로젝트 폴더.
+1. String path = clazz.getResource("파일명.확장자").getPath(); - getResource는 URL객체를 리턴함.
+2. ("디렉명/파일명.확장자").getPath(); 이런 식으로 해주어야함.
+  1,2 -> 절대 경로를 리턴.
