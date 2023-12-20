@@ -1,4 +1,4 @@
-API(Application Programming Interface) 도큐먼트 : 클래스 및 인터페이스들을 사용하기 위한 방법을 기술해 놓은 것.
+ API(Application Programming Interface) 도큐먼트 : 클래스 및 인터페이스들을 사용하기 위한 방법을 기술해 놓은 것.
 public과 protected 접근 제한자 메서드, 멤버, 생성자만 적혀있음.
 
 검색방법
@@ -17,9 +17,27 @@ Object 클래스
 1. boolean euqals(obj); - 객체의 번지 비교 후 true/false return. / object의 equals는 ==와 동일. 재정의하여 사용할 것.
 2. getClass();
 3. int hashCode(); - 객체의 메모리 번지를 이용하여 생성한 객체 해시코드 return.
-4. String toString(); - 객체 문자 정보 리턴.(print)
+4. String toString(); - 객체 문자 정보 리턴.(print) / 클래스명@16진수해시코드 return.
 
 자바에선 두 객의 동등함 판단 시 hashCode()값 -> equals()값이 같으면 동등.
+
+레코드 선언 - 데이터 전달을 위한 "DTO(Data Transfer Object)" 작성 시 반복적으로 사용되는 코드를 줄이는 기능
+사용법
+public "record" 클래스명(타입 필드명1, 타입 필드명2, ...) {}
+ - 컴파일러는 위의 클래스 정의에 대해 [private final 필드, 생성자, getter/setter(필드이름 = 메서드이름), hashCode()/equals()/toString()] 재정의 자동 추가.
+
+롬복(Lombok) - JDK에 포함된 표준 라이브러리 X, but 개발자들이 즐겨사용.
+ - 레코드와의 차이점 : private 필드, 생성자, get필드명/set필드명
+lombok 다운로드 -> cmd -> lombok있는 파일로 -> java -jar lombok.jar -> eclipse.exe 선택 후 설치 -> eclipse 실행 -> 사용할 프로젝트에 새파일 생성 -> lombok 파일 붙여넣기 -> build path.
+어노테이션 종류
+1. @Data - 4~8번을 합친 효과.
+2. @NoArgsConstructor - 매개변수X 생성자 포함.
+3. @AllArgsConstructor - 모든 필드 매개변수 생성자 포함.
+4. @RequiredArgsConstructor - 기본적 = 매개변수X 생성자 포함, if final or @NonNull이 붙은 필드 -> 이 필드만 매개변수인 생성자 포함.
+5. @Getter - Getter메서드 포함.
+6. @Setter - Setter메서드 포함.
+7. @EqualsAndHashCode - equals()와 hashCode()메서드 포함.
+8. @ToString - toString()메서드 포함.
 ---------------------------------------------------------------------------------------------------  
 날짜와 시간 클래스
 1. java.util.Date - 현재 컴퓨터 시간을 읽어와 저장하기 위한 클래스
