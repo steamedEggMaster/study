@@ -94,33 +94,3 @@ println(now.format(dtf));
 
 Pattern 클래스
 boolean result = Pattern.matches("정규식", "검증할 문자열"); - true, false 반환
----------------------------------------------------------------------------------------------------
-리플렉션
-자바는 클래스, 인터페이스의 "메타 정보(패키지 정보, 타입 정보, 멤버(생성자, 필드, 메서드) 정보 등)"을 Class객체로 관리.
-  이 메타 정보를 "프로그램에서 읽고, 수정"하는 행위 = 리플렉션
-
-프로그램에서 Class객체를 얻는 방법
-1. Class clazz = 클래스이름.class;
-2. Class clazz = Class.forName("패키지...클래스이름(클래스 전체 이름)");
-3. Class clazz = 객체참조변수.getClass();
-
-패키지 및 클래스 이름 정보 얻기
-1. clazz.getPackage().getName() - 패키지 이름
-2. clazz.getSimpleName() - 클래스 이름
-3. clazz.getName() - 패키지~클래스 이름
-
-멤버 정보 얻기
-1. Constructor[] constructors = clazz.getDeclaredConstructors();
-2. Field[] fields = clazz.getDeclaredFields();
-3. Method[] methods = clazz.getDeclaredMethods();
-생성자 및 메서드의 매개변수 정보 얻기
-1. Class[] parameters = constructor.getParameterTypes(); - constructors 배열의 원소를 for-each 구문으로 constructor에게 넘겨준 상태.
-2. Class[] parameters = method.getParameterTypes(); - methods 배열의 원소를 for-each 구문으로 method에게 넘겨준 상태.
-
-리소스 경로 얻기 - 이미지를 불러오기 위해선, 프로젝트 파일 아래에 이미지를 위치 해야, "이미지파일명.확장자" 만으로 불러올 수 있음.
-                  패키지 안에 넣을 경우 "src/패키지명/이미지파일명.확장자" 해주어야 함.
-                  자바 프로젝트 기본 경로 = 프로젝트 폴더.
-                  배포를 하기 위해선 보통 src/resource 같은 파일에 모아서 저장하고, 컴파일 시 bin파일에 같이 생성되며, 
-1. String path = clazz.getResource("파일명.확장자").getPath(); - getResource는 URL객체를 리턴함.
-2. ("디렉명/파일명.확장자").getPath(); 이런 식으로 해주어야함.
-  1,2 -> 절대 경로를 리턴. 이 파일 안의 데이터를 읽어들일때 사용함.
