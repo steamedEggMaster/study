@@ -67,7 +67,7 @@ ex)
 5. METHOD : 메소드                        6. LOCAL_VARIABLE : 로컬 변수
 7. PACKAGE : 패키지
 사용방법
-"@Target( [ ElementType.TYPE, ElementType.FIELD, ... ] )" - Target어노테이션의 value속성은 ElementType 배열을 가짐.
+"@Target( { ElementType.TYPE, ElementType.FIELD, ... } )" - Target어노테이션의 value속성은 ElementType 배열을 가짐.
 public @interface AnnotationName {}
 
 "어노테이션 유지 정책" - RetentionPolicy열거 상수를 통해 유지 시점을 설정.
@@ -76,7 +76,7 @@ public @interface AnnotationName {}
 2. CLASS : 메모리로 로딩할 때까지만 적용.
 3. RUNTIME : 실행할 때도 적용.
 사용방법
-@Target( [ ElementType.TYPE, ElementType.FIELD, ... ] )
+@Target( { ElementType.TYPE, ElementType.FIELD, ... } )
 "@Retention( RetentionPolicy.Runtime )"
 public @interface AnnotationName {}
 ---------------------------------------------------------------------------------------------------------------------------------------
