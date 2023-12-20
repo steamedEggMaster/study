@@ -9,3 +9,5 @@ src파일의 .java(소스 파일) complie -> .class(바이트 코드 파일) -> 
 참조 변수 간의 비교는 주솟값을 비교함.
 
 객체를 출력시 컴파일러는 자동으로 toString함수를 부르고, Overriding하여 객체를 출력하고자 하는 형태로 출력가능.
+
+for문과 iterator는 외부 반복자
