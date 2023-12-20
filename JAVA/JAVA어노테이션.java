@@ -30,14 +30,22 @@ ex)
 @AnnotationName("값"); 만으로 value에 자동으로 값이 들어감.
 @AnnotationName(value = "값", prop2 + 3); - 다른 속성의 값을 줄땐 생략 불가.
 ------------------------------------------------------------------------------------------------------
-"어노테이션 적용 대상"
-ElementType열거 상수를 통해 어노테이션을 어떤 대상에 적용할 지 설정.
+"어노테이션 적용 대상" - ElementType열거 상수를 통해 어노테이션을 어떤 대상에 적용할 지 설정.
 종류
 1. TYPE  : 클래스, 인터페이스, 열거 타입    2. ANNOTATION_TYPE : 어노테이션
 3. FIELD : 필드                           4. CONSTRUCTOR : 생성자
 5. METHOD : 메소드                        6. LOCAL_VARIABLE : 로컬 변수
 7. PACKAGE : 패키지
 사용방법
-@Target( [ ElementType.TYPE, ElementType.FIELD, ... ] ) - Target어노테이션의 value속성은 ElementType 배열을 가짐.
+"@Target( [ ElementType.TYPE, ElementType.FIELD, ... ] )" - Target어노테이션의 value속성은 ElementType 배열을 가짐.
 public @interface AnnotationName {}
 
+"어노테이션 유지 정책" - RetentionPolicy열거 상수를 통해 유지 시점을 설정.
+종류
+1. SOURCE : 컴파일 할 때까지만 적용.
+2. CLASS : 메모리로 로딩할 때까지만 적용.
+3. RUNTIME : 실행할 때도 적용.
+사용방법
+@Target( [ ElementType.TYPE, ElementType.FIELD, ... ] )
+"@Retention( RetentionPolicy.Runtime )"
+public @interface AnnotationName {}
