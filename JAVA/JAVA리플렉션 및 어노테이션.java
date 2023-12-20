@@ -12,10 +12,10 @@
 2. clazz.getSimpleName() - 클래스 이름
 3. clazz.getName() - 패키지~클래스 이름
 
-멤버 정보 얻기
+멤버 정보 얻기 - 정의된 순서가 인덱스 순서는 아님.
 1. Constructor[] constructors = clazz.getDeclaredConstructors();
 2. Field[] fields = clazz.getDeclaredFields();
-3. Method[] methods = clazz.getDeclaredMethods();
+3. Method[] methods = clazz.getDeclaredMethods(); 
 생성자 및 메서드의 매개변수 정보 얻기
 1. Class[] parameters = constructor.getParameterTypes(); - constructors 배열의 원소를 for-each 구문으로 constructor에게 넘겨준 상태.
 2. Class[] parameters = method.getParameterTypes(); - methods 배열의 원소를 for-each 구문으로 method에게 넘겨준 상태.
