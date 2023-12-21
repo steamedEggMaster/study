@@ -64,4 +64,4 @@ Path객체를 파일에서 얻는법.
 -> Paths.get(URI객체) 메서드를 통해 path객체를 받음.
 2. Stream<String> stream = Files.lines(path, Charset.defaultCharset());
 3. stream.forEach(line -> System.out.println(line));
-4. stream.close();
+4. stream.close(); - 열어주었으니 닫아야함
