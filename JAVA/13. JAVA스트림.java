@@ -45,7 +45,7 @@ IntStream, LongStream, DoubleStream : 기본 타입 요소 처리 스트림.
          메소드                                                                            리소스
 1. Stream<T> 컬렉션객체명.Stream();                                                   List 컬렉션,  Set 컬렉션
 2. Stream<T> 컬렉션객체명.parallelStream();                                              
-3. Stream<T> Arrays.tream(T[]);             4. Stream<T> Stream.of(T[]);                  배열
+3. Stream<T> Arrays.stream(T[]);            4. Stream<T> Stream.of(T[]);                  배열
 5. IntStream Arrays.stream(int[]);          6. IntStream IntStream.of(int[]);                
 7. LongStream Arrays.stream(long[]);        8. LongStream LongStream.of(long[]);              
 9. DoubleStream Arrays.stream(double[]);   10. DoubleStream DoubleStrea.of(double[]);
