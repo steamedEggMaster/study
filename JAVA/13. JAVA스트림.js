@@ -119,11 +119,11 @@ sort()를 사용하는 Stream은 Comparable<T>인터페이스를 구현한 객�
        or 2번을 이용하여 람다식으로 비교식을 줄 수 있음.
 ---------------------------------------------------------------------------------------------------------------
 요소를 하나씩 처리(루핑) - 스트림에서 요소를 하나씩 반복해서 가져와 처리
--- peek() - 중간 처리 단계에서 수행. -> Stream을 반환함. -> peek() 다음 "최종처리 메서드"가 오지 않으면 해당 스트림 동작 X
+-- peek() - "중간 처리 단계"에서 수행. -> Stream을 반환함. -> peek() 이후 "최종처리 메서드"가 오지 않으면 해당 스트림 동작 X
 1. Stream<T> peek(Consumer<? super T>);
 2. IntStream peek(IntConsumer action);
 3. DoubleStream peek(DoubleConsumer action);
--- forEach() - 최종 처리 단계에서 수행.
+-- forEach() - "최종 처리 단계"에서 수행.
 4. void forEach(Consumer<? super T> action);
 5. void forEach(IntConsumer action);
 6. void forEach(DoubleConsumer action);
@@ -132,4 +132,5 @@ Consumer<T> - void accept(T t)
 IntConsumer - void accept(int value)
 LongConsumer - void accept(long value)
 DoubleConsumer - void accept(double value)
-
+---------------------------------------------------------------------------------------------------------------
+요소 조건 맍
