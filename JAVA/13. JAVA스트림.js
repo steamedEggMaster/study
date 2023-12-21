@@ -78,7 +78,7 @@ predicate는 FuntionalInterface임. -> "람다식으로 구현"
 ---------------------------------------------------------------------------------------------------------------
 요소 타입 변환(매핑)
 메서드
-1. mapXxx
+1. mapXxx - 모든 Function은 FunctionalInterface
 -1. Stream<R> map(Function<T, R>); - T -> R
 -2. IntStream mapToInt(ToIntFunction<T>); - T -> int
 -3. LongStream mapToLong(ToLongFunction<T>); - T -> long
