@@ -61,9 +61,24 @@ String data = new StringBuilder()
    .replace(~)
    .toString(); - 세미콜론은 마지막에만!
 
-3. StringTokenizer - "문자 구분자"로 문자열 분리 시 사용. split()은 정규표현식.
- 
+3. StringTokenizer - "문자 구분자 1개"로 문자열 분리 시 사용. split()은 정규표현식.
+사용법
+StringTokenizer st = new StringTokenizer(String객체명[, "문자"]); - 문자 생략 시 공백이 문자구분자.
+인스턴스 메서드
+1. int countTokens(); - 분리된 문자열 총 갯수 return.
+2. boolean hasMoreTokens(); - 다음 가져올 문자열 존재 O ture, X false return.
+3. String nextToken(); - 분리된 문자열 하나씩 return, 없으면 Exception.
 --------------------------------------------------------------------------------------------------- 
+포장 클래스(Wrapper Class) - 기본 타입을 객체화 하는 역할.
+Charactor, Integer을 제외한 6가지 타입은 첫자리 대문자.
+박싱 : 기본 타입 -> 포장 객체 
+ - Integer i = 100;(autoBoxing)
+언박싱 : 포장 객체 -> 기본 타입. 
+ - int v = i + 50;(autoUnboxing)
+ - i.intValue(); - Wrapper객체.기본타입+Value() -> 언박싱 한 기본타입값 반환.
+
+ 
+---------------------------------------------------------------------------------------------------  
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
 정적 Field 종류
 1. static final InputStream in - System.in.read() 메서드로 enter을 누르면, enter이전 누른 키들 + enter키의 값을 하나씩 읽음.
@@ -76,7 +91,6 @@ System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일�
    2,3번 - 처리시간의 측정을 위해 주로 사용.
 4. System.getProperty(String 속성키); - 속성키에 해당되는 현재 OS의 정보들을 얻기위해 사용.
 5. Properties System.getProperties(); - OS의 모든 정보가 담긴 Properties 객체 반환.
- 
 --------------------------------------------------------------------------------------------------- 
 날짜와 시간 클래스
 1. java.util.Date - 현재 컴퓨터 시간을 읽어와 저장하기 위한 클래스
