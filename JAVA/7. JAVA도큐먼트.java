@@ -41,9 +41,18 @@ lombok 다운로드 -> cmd -> lombok있는 파일로 -> java -jar lombok.jar -> 
 ---------------------------------------------------------------------------------------------------
 문자열 클래스
 1. String - 불변
- String -> byte배열 : "byte[] 배열명 = String객체명.getBytes([문자셋]);" - 기본 문자셋 : UTF-8
- byte배열 -> String : "String 객체명 = new String(byte배열명 [, 문자셋]);"
-2. StringBuilder - 변경 가능.
+  String -> byte배열 (인코딩) : "byte[] 배열명 = String객체명.getBytes([문자셋]);" - 기본 문자셋 : UTF-8
+  byte배열 -> String (디코딩) : "String 객체명 = new String(byte배열명 [, 문자셋]);"
+   인코딩/디코딩 시 문자셋이 동일해야 한글 복원 가능.
+   알파벳은 무조건 한바이트로 구성되어있음.
+ 
+2. StringBuilder - 변경가능 : 내부 버퍼에 문자열을 저장해두고 그 안에서 추가, 수정, 삭제 가능. -> "객체 생성 안해도 됨."
+버퍼 조작 메서드
+-1. StringBuilder append(기본값 | 문자열);
+-2. StringBuilder insert(index, 기본값 | 문자열);
+-3. StringBuilder delete(Sindex, Eindex);
+-4. StringBuilder replace(Sindex, Eindex, 문자열);
+-5. String toString();
 3. StringTokenizer - 구분자로 문자열 분리 시 사용
 --------------------------------------------------------------------------------------------------- 
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
