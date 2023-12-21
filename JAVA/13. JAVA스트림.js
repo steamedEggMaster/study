@@ -114,6 +114,22 @@ predicate는 FuntionalInterface임. -> "람다식으로 구현"
 3. DoubleStream sorted();
 4. IntStream sorted();
 5. LongStream sorted();
-()은 Comparable<T>인터페이스를 구현한 객체로써 자동 비교 후 정렬. / "내림차순 정렬" 시 sorted(Conparator.reverseOrder()) 사용
+sort()를 사용하는 Stream은 Comparable<T>인터페이스를 구현한 객체를 담은 Stream으로써 자동 비교 후 정렬. / "내림차순 정렬" 시 sorted(Conparator.reverseOrder()) 사용
 사용자 정의 클래스는 Comparable의 compareTo()를 구현해야 sorted() 사용가능.
        or 2번을 이용하여 람다식으로 비교식을 줄 수 있음.
+---------------------------------------------------------------------------------------------------------------
+요소를 하나씩 처리(루핑) - 스트림에서 요소를 하나씩 반복해서 가져와 처리
+-- peek() - 중간 처리 단계에서 수행.
+1. Stream<T> peek(Consumer<? super T>);
+2. IntStream peek(IntConsumer action);
+3. DoubleStream peek(DoubleConsumer action);
+-- forEach() - 최종 처리 단계에서 수행.
+4. void forEach(Consumer<? super T> action);
+5. void forEach(IntConsumer action);
+6. void forEach(DoubleConsumer action);
+
+Consumer<T> - void accept(T t)
+IntConsumer - void accept(int value)
+LongConsumer - void accept(long value)
+DoubleConsumer - void accept(double value)
+
