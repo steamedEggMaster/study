@@ -99,11 +99,11 @@ predicate는 FuntionalInterface임. -> "람다식으로 구현"
 -5. Stream<Double> boxed(); - double -> Double
 
 3. 요소를 복수 개의 요소로 변환
--1. Stream<R> flatMap(Function<T, Stream<R>);
--2. DoubleStream flatMap(DoubleFunction<DoubleStream>);
--3. IntStream flatMap(IntFunction<IntStream>);
--4. LongStream flatMap(LongFunction<LongStream>);
--5. DoubleStream flatMapToDouble(Function<T, DoubleStream>);
--6. IntStream flatMapToInt(Function<T, IntStream>);
--7. LongStream flatMapToLong(Function<T, LongStream>);
+-1. Stream<R> flatMap(Function<T, Stream<R>); - T -> Stream<R>
+-2. DoubleStream flatMap(DoubleFunction<DoubleStream>); - double -> DoubleStream
+-3. IntStream flatMap(IntFunction<IntStream>); - int -> IntStream
+-4. LongStream flatMap(LongFunction<LongStream>); - long -> LongStream
+-5. DoubleStream flatMapToDouble(Function<T, DoubleStream>); - T -> DoubleStream
+-6. IntStream flatMapToInt(Function<T, IntStream>); - T -> IntStream
+-7. LongStream flatMapToLong(Function<T, LongStream>); - T -> LongStream
 
