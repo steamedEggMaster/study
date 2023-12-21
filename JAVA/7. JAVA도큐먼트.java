@@ -50,9 +50,17 @@ lombok 다운로드 -> cmd -> lombok있는 파일로 -> java -jar lombok.jar -> 
 버퍼 조작 메서드
 -1. StringBuilder append(기본값 | 문자열);
 -2. StringBuilder insert(index, 기본값 | 문자열);
--3. StringBuilder delete(Sindex, Eindex);
--4. StringBuilder replace(Sindex, Eindex, 문자열);
+-3. StringBuilder delete(Sindex, Eindex + 1);
+-4. StringBuilder replace(Sindex, Eindex + 1, 문자열);
 -5. String toString();
+예시(메소드 체이닝 패턴)
+String data = new StringBuilder()
+   .append(~)
+   .insert(~)
+   .delete(~)
+   .replace(~)
+   .toString(); - 세미콜론은 마지막에만!
+
 3. StringTokenizer - 구분자로 문자열 분리 시 사용
 --------------------------------------------------------------------------------------------------- 
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
