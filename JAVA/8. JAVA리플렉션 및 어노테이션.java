@@ -17,8 +17,8 @@
 2. Field[] fields = clazz.getDeclaredFields();
 3. Method[] methods = clazz.getDeclaredMethods(); 
 생성자 및 메서드의 매개변수 정보 얻기
-1. Class[] parameters = constructors.getParameterTypes(); - constructors 배열의 원소를 for-each 구문으로 constructor에게 넘겨준 상태.
-2. Class[] parameters = methods.getParameterTypes(); - methods 배열의 원소를 for-each 구문으로 method에게 넘겨준 상태.
+1. Class[] parameters = constructor.getParameterTypes(); - constructors 배열의 원소를 for-each 구문으로 constructor에게 넘겨준 상태.
+2. Class[] parameters = method.getParameterTypes(); - methods 배열의 원소를 for-each 구문으로 method에게 넘겨준 상태.
 
 리소스 경로 얻기 - 이미지를 불러오기 위해선, 프로젝트 파일 아래에 이미지를 위치 해야, "이미지파일명.확장자" 만으로 불러올 수 있음.
                   패키지 안에 넣을 경우 "src/패키지명/이미지파일명.확장자" 해주어야 함.
