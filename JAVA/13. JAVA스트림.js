@@ -92,12 +92,18 @@ predicate는 FuntionalInterface임. -> "람다식으로 구현"
 -11. LongStream mapToInt(DoubleToLongFunction); - double -> long
 
 2. 기본 타입 간의 변화 or 기본 타입->Wrapping 메서드
--1. LongStream asLongStream() - int -> long
--2. DoubleStream asDoubleStream() - int -> double, long -> double
--3. Stream<Integer> boxed() - int -> Integer
--4. Stream<Long> boxed() - long -> Long
--5. Stream<Double> boxed() - double -> Double
+-1. LongStream asLongStream(); - int -> long
+-2. DoubleStream asDoubleStream(); - int -> double, long -> double
+-3. Stream<Integer> boxed(); - int -> Integer
+-4. Stream<Long> boxed(); - long -> Long
+-5. Stream<Double> boxed(); - double -> Double
 
-
-
+3. 요소를 복수 개의 요소로 변환
+-1. Stream<R> flatMap(Function<T, Stream<R>);
+-2. DoubleStream flatMap(DoubleFunction<DoubleStream>);
+-3. IntStream flatMap(IntFunction<IntStream>);
+-4. LongStream flatMap(LongFunction<LongStream>);
+-5. DoubleStream flatMapToDouble(Function<T, DoubleStream>);
+-6. IntStream flatMapToInt(Function<T, IntStream>);
+-7. LongStream flatMapToLong(Function<T, LongStream>);
 
