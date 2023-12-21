@@ -1,4 +1,4 @@
-컬렉션은 제네릭 사용 - 기초 자료형 X, 객체만 가능.
+컬렉션은 제네릭 사용 - 기초 자료형 X, 객체만 가능. -> 기초 자료형은 autoboxing됨.
 Collections 클래스는 여러 유용한 알고리즘을 구현한 메서드 제공 - 나중에 자세히 알아보기
 1. Collections.binarySearch(list, value)
 2. Collections.sort(list)
