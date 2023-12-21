@@ -52,7 +52,7 @@ IntStream, LongStream, DoubleStream : 기본 타입 요소 처리 스트림.
 11. IntStream IntStream.range(int, int);   12. IntStream.rangeClosed(int, int(포함));     int 범위
 13. LongStream IntStream.range(long, long);14. LongStream.rangeClosed(long, long(포함));  long 범위
 15. Stream<Path> Files.list(Path);                                                        디렉토리 - 디렉토리 안의 파일들의 경로들에 대한 스트림. 
-16. Stream<String> Files.lines(Path, 문자셋);                                             텍스트 파일
+*16. Stream<String> Files.lines(Path, 문자셋);                                             텍스트 파일
 17. DoubleStream Random.doubles(...);                                                     랜덤 수
 18. IntStream Random.ints();
 19. LongStream Random.longs();
@@ -65,3 +65,13 @@ Path객체를 파일에서 얻는법.
 2. Stream<String> stream = Files.lines(path, Charset.defaultCharset());
 3. stream.forEach(line -> System.out.println(line));
 4. stream.close(); - 열어주었으니 닫아야함
+---------------------------------------------------------------------------------------------------------------
+요소 걸러내기(필터링)
+메서드
+1. distinct(); - 중복 제거 / 객체Stream일 경우 equals()가 true면 동일 요소로 판단. / IntStream, LongStream, DoubleStream은 같은 값이면 동일요소.
+--Predicate가 true인 요소만 필터링.
+2. filter(Predicate<T>); - 추상메서드 : boolean test(T t);
+3. filter(IntPredicate); - 추상메서드 : boolean test(int value);
+4. filter(LongPredicate); - 추상메서드 : boolean test(long value);
+5. filter(DoublePredicate); - 추상메서드 : boolean test(double value);
+predicate는 FuntionalInterface임. -> "람다식으로 구현"
