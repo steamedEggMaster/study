@@ -76,8 +76,20 @@ Charactor, Integer을 제외한 6가지 타입은 첫자리 대문자.
 언박싱 : 포장 객체 -> 기본 타입. 
  - int v = i + 50;(autoUnboxing)
  - i.intValue(); - Wrapper객체.기본타입+Value() -> 언박싱 한 기본타입값 반환.
+1. JAVA기초 파일에 String -> 기본 타입, 기본 타입 -> String 변환 방법 있음.
 
- 
+포장된 내부 값 비교 - ==/!= 가 아닌 equals() 사용할 것.
+---------------------------------------------------------------------------------------------------  
+Math 클래스 - 모든 메서드 static
+1. Math.abs(obj);        2. Math.ceil(obj);       3. Math.floor(obj);
+4. Math.max(obj1, obj2); 5. Math.min(obj1, obj2); 6. Math.random(); - 0.0 <= < 1.0  --- (Math.random() * n) + start
+7. Math.round(obj);
+
+난수 얻는 또다른 클래스 - Random 클래스
+new Random() - "시간에 따른 난수 생성이기에 2개의 객체 생성시 서로 다른 난수 얻음."
+new Random(long seed) - "seed가 동일한 2개의 객체 생성시 동일한 난수 얻음."
+
+new Random().nextInt(exclusive수) + n; == (Math.random() * n) + start
 ---------------------------------------------------------------------------------------------------  
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
 정적 Field 종류
