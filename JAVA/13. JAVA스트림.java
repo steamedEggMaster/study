@@ -4,7 +4,7 @@
             3. 중간 처리 및 최종 처리를 수행하도록 파이프 라인 형성 가능.
 
 Stream<T> stream = 컬렉션객체명.stream(); - Stream을 한번 이용하면 재사용 불가능 -> 다시 stream()을 통해 받아야 함.
-stream.forEach((item)->{ 처리 내용 });
+1. stream.forEach((item)->{ 처리 내용 });
 
 void forEach(Consumer<? super T> action)에 대해.
 -> Consumer가 FunctionalInterface임. -> void accept(T t) 메서드를 구현하는 것.
@@ -13,7 +13,7 @@ void forEach(Consumer<? super T> action)에 대해.
 
 "병렬 처리를 하는법 - 논리 프로세서 수만큼 병렬 Thread를 만들어 처리"
        순서 상관 X / 요소 적을땐 not good.
-Stream<T> stream = 컬렉션객체명.parallelStream();
+2. Stream<T> stream = 컬렉션객체명.parallelStream();
 stream.forEach((item) -> { 처리 내용 })
 ---------------------------------------------------------------------------------------------------------------
 중간 처리 및 최종 처리
@@ -40,3 +40,16 @@ IntStream mapToInt(ToIntFunction<? super T> mapper)에 대해
          ----------------> --------------->  <------------------- <-------------------             
          |               |                                    |                      |
        Stream        IntStream                            LongStream           DoubleStream       
+Stream : 객체 요소 처리 스트림
+IntStream, LongStream, DoubleStream : 기본 타입 요소 처리 스트림.
+         메소드                                               
+1. Stream<T> 컬렉션객체명.Stream();
+2. Stream<T> 컬렉션객체명.parallelStream();
+3. Stream<T> Arrays.tream(T[]);             4. Stream<T> Stream.of(T[]);
+5. IntStream Arrays.stream(int[]);          6. IntStream IntStream.of(int[]);
+7. LongStream Arrays.stream(long[]);        8. LongStream LongStream.of(long[]);
+9. DoubleStream Arrays.stream(double[]);   10. DoubleStream DoubleStrea.of(double[]);
+11. IntStream IntStream.range(int, int);   12. IntStream.rangeClosed(int, int);
+13. LongStream IntStream.range(long, long);14. LongStream.rangeClosed(long, long);
+15. Stream<Path> Files.list(Path)
+16. Stream<String> Files.lines(Path, 
