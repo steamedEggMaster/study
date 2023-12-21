@@ -4,7 +4,7 @@
             3. 중간 처리 및 최종 처리를 수행하도록 파이프 라인 형성 가능.
 
 Stream<T> stream = 컬렉션객체명.stream(); - Stream을 한번 이용하면 재사용 불가능 -> 다시 stream()을 통해 받아야 함.
-1. stream.forEach((item)->{ 처리 내용 });
+1. stream.forEach((item)->{ 처리 내용 }); - Stream의 요소들을 각각 처리할때 사용하면 됨.
 
 void forEach(Consumer<? super T> action)에 대해.
 -> Consumer가 FunctionalInterface임. -> void accept(T t) 메서드를 구현하는 것.
@@ -56,3 +56,12 @@ IntStream, LongStream, DoubleStream : 기본 타입 요소 처리 스트림.
 17. DoubleStream Random.doubles(...);                                                     랜덤 수
 18. IntStream Random.ints();
 19. LongStream Random.longs();
+
+16번 예시
+Path객체를 파일에서 얻는법.
+1. Path path = Paths.get(클래스명.class.getResource("파일명").toURI());
+-> 클래스명.class를 통해 클래스가 있는 파일로 이동 -> getResource()를 통해 URL 객체를 반환하고, URI로 변환하여
+-> Paths.get(URI객체) 메서드를 통해 path객체를 받음.
+2. Stream<String> stream = Files.lines(path, Charset.defaultCharset());
+3. stream.forEach(line -> System.out.println(line));
+4. stream.close();
