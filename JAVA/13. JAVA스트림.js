@@ -106,4 +106,14 @@ predicate는 FuntionalInterface임. -> "람다식으로 구현"
 -5. DoubleStream flatMapToDouble(Function<T, DoubleStream>); - T -> DoubleStream
 -6. IntStream flatMapToInt(Function<T, IntStream>); - T -> IntStream
 -7. LongStream flatMapToLong(Function<T, LongStream>); - T -> LongStream
-
+---------------------------------------------------------------------------------------------------------------
+요소 정렬
+1. Stream<T> sorted();
+2. Stream<T> sorted(Conparator<T>); - Comparator는 int compare(T t1, T t2)를 가진 FunctionalInterface -> 람다식으로 작성.
+       -> ((t1, t2) -> Integer.compare(t1.getXxx(), t2.getXxx())); 처럼 각 Wrapper Class의 compare()메서드를 통해 간단하게 작성 가능.
+3. DoubleStream sorted();
+4. IntStream sorted();
+5. LongStream sorted();
+()은 Comparable<T>인터페이스를 구현한 객체로써 자동 비교 후 정렬. / "내림차순 정렬" 시 sorted(Conparator.reverseOrder()) 사용
+사용자 정의 클래스는 Comparable의 compareTo()를 구현해야 sorted() 사용가능.
+       or 2번을 이용하여 람다식으로 비교식을 줄 수 있음.
