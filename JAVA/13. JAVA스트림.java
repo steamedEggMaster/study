@@ -11,7 +11,7 @@ void forEach(Consumer<? super T> action)에 대해.
 -> 컬렉션객체에 들어있는 자료형과 Stream<>의 자료형이 동일하기 때문에 T 또한 동일.
 -> 따라서 stream의 각 요소를 item으로 넘겨 처리.
 
-병렬 처리를 하는법 - 논리 프로세서 수만큼 병렬 Thread를 만들어 처리
+"병렬 처리를 하는법 - 논리 프로세서 수만큼 병렬 Thread를 만들어 처리"
        순서 상관 X / 요소 적을땐 not good.
 Stream<T> stream = 컬렉션객체명.parallelStream();
 stream.forEach((item) -> { 처리 내용 })
@@ -22,7 +22,7 @@ stream.forEach((item) -> { 처리 내용 })
 최종 처리 : 정제된 요소들을 반복 or 집계(카운팅, 총합, 평균) 처리 작업 수행.
 
 즉, if문이라고 생각하면됨. 해당되는 요소를 걸러내기 위한 작업.
-ex)
+ex) 매핑
 Stream<Student> Ss = list.stream();
 IntStream scoreStream = Ss.mapToInt( student -> student.getScore() );
 double avg = scoreStream.average().getAsDouble(); - IntStream의 average()가 OptionalDouble객체를 반환하고 getAsDouble()을 통해 average값을 얻음.
@@ -33,3 +33,10 @@ IntStream mapToInt(ToIntFunction<? super T> mapper)에 대해
 -> 메서드 체이닝 패턴 사용 가능.
 -> mapToInt같은 메서드들은 찾아볼것.
        1. Stream<R> map(Function<? super T,? extends R> mapper)
+---------------------------------------------------------------------------------------------------------------
+리소스로부터 스트림 얻기
+상속관계                                 BaseStream
+                                            |  
+         ----------------> --------------->  <------------------- <-------------------             
+         |               |                                    |                      |
+       Stream        IntStream                            LongStream           DoubleStream       
