@@ -88,8 +88,11 @@ Math 클래스 - 모든 메서드 static
 난수 얻는 또다른 클래스 - Random 클래스
 new Random() - "시간에 따른 난수 생성이기에 2개의 객체 생성시 서로 다른 난수 얻음."
 new Random(long seed) - "seed가 동일한 2개의 객체 생성시 동일한 난수 얻음."
-
-new Random().nextInt(exclusive수) + n; == (Math.random() * n) + start
+메서드
+1. boolean nextBoolean();
+2. double nextDouble(); - 0.0 <= < 1.0 난수 return.
+3. int nextInt(); 
+4. int nextInt(n); - 0<= <n 사이 난수 return.
 ---------------------------------------------------------------------------------------------------  
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
 정적 Field 종류
