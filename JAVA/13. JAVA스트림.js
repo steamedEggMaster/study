@@ -3,7 +3,7 @@
             2. 람다식으로 요소 처리 가능
             3. 중간 처리 및 최종 처리를 수행하도록 파이프 라인 형성 가능.
 
-Stream<T> stream = 컬렉션객체명.stream(); - Stream을 한번 이용하면 재사용 불가능 -> 다시 stream()을 통해 받아야 함.
+Stream<T> stream = 컬렉션객체명.stream(); - Stream을 최종처리하면 재사용 불가능 -> 다시 stream()을 통해 받아야 함.
 1. stream.forEach((item)->{ 처리 내용 }); - Stream의 요소들을 각각 처리할때 사용하면 됨.
 
 void forEach(Consumer<? super T> action)에 대해.
@@ -90,3 +90,14 @@ predicate는 FuntionalInterface임. -> "람다식으로 구현"
 -9. DoubleStream mapToDouble(LongToDoubleFunction); - long -> double
 -10. IntStream mapToInt(DoubleToIntFunction); - double -> int
 -11. LongStream mapToInt(DoubleToLongFunction); - double -> long
+
+2. 기본 타입 간의 변화 or 기본 타입->Wrapping 메서드
+-1. LongStream asLongStream() - int -> long
+-2. DoubleStream asDoubleStream() - int -> double, long -> double
+-3. Stream<Integer> boxed() - int -> Integer
+-4. Stream<Long> boxed() - long -> Long
+-5. Stream<Double> boxed() - double -> Double
+
+
+
+
