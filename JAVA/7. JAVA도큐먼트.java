@@ -61,7 +61,8 @@ String data = new StringBuilder()
    .replace(~)
    .toString(); - 세미콜론은 마지막에만!
 
-3. StringTokenizer - 구분자로 문자열 분리 시 사용
+3. StringTokenizer - "문자 구분자"로 문자열 분리 시 사용. split()은 정규표현식.
+ 
 --------------------------------------------------------------------------------------------------- 
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
 정적 Field 종류
