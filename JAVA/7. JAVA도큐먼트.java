@@ -39,6 +39,13 @@ lombok 다운로드 -> cmd -> lombok있는 파일로 -> java -jar lombok.jar -> 
 7. @EqualsAndHashCode - equals()와 hashCode()메서드 포함.
 8. @ToString - toString()메서드 포함.
 ---------------------------------------------------------------------------------------------------
+문자열 클래스
+1. String - 불변
+ String -> byte배열 : "byte[] 배열명 = String객체명.getBytes([문자셋]);" - 기본 문자셋 : UTF-8
+ byte배열 -> String : "String 객체명 = new String(byte배열명 [, 문자셋]);"
+2. StringBuilder - 변경 가능.
+3. StringTokenizer - 구분자로 문자열 분리 시 사용
+--------------------------------------------------------------------------------------------------- 
 System 클래스 - JAVA는 OS상이 아닌 JVM위에서 실행됨. -> OS의 일부 기능을 사용하기위한 클래스. / 정적 Field, 정적 Method로 구성.
 정적 Field 종류
 1. static final InputStream in - System.in.read() 메서드로 enter을 누르면, enter이전 누른 키들 + enter키의 값을 하나씩 읽음.
