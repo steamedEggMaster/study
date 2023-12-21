@@ -68,10 +68,10 @@ Path객체를 파일에서 얻는법.
 ---------------------------------------------------------------------------------------------------------------
 요소 걸러내기(필터링)
 메서드
-1. distinct(); - 중복 제거 / 객체Stream일 경우 equals()가 true면 동일 요소로 판단. / IntStream, LongStream, DoubleStream은 같은 값이면 동일요소.
+1. Stream객체.distinct(); - 중복 제거 / 객체Stream일 경우 equals()가 true면 동일 요소로 판단. / IntStream, LongStream, DoubleStream은 같은 값이면 동일요소.
 --Predicate가 true인 요소만 필터링.
-2. filter(Predicate<T>); - 추상메서드 : boolean test(T t);
-3. filter(IntPredicate); - 추상메서드 : boolean test(int value);
-4. filter(LongPredicate); - 추상메서드 : boolean test(long value);
-5. filter(DoublePredicate); - 추상메서드 : boolean test(double value);
+2. Stream객체.filter(Predicate<T>); - 추상메서드 : boolean test(T t);
+3. Stream객체.filter(IntPredicate); - 추상메서드 : boolean test(int value);
+4. Stream객체.filter(LongPredicate); - 추상메서드 : boolean test(long value);
+5. Stream객체.filter(DoublePredicate); - 추상메서드 : boolean test(double value);
 predicate는 FuntionalInterface임. -> "람다식으로 구현"
