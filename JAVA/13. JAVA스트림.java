@@ -25,8 +25,11 @@ stream.forEach((item) -> { 처리 내용 })
 ex)
 Stream<Student> Ss = list.stream();
 IntStream scoreStream = Ss.mapToInt( student -> student.getScore() );
-double avg = scoreStream.average().getAsDouble();
+double avg = scoreStream.average().getAsDouble(); - IntStream의 average()가 OptionalDouble객체를 반환하고 getAsDouble()을 통해 average값을 얻음.
 
 IntStream mapToInt(ToIntFunction<? super T> mapper)에 대해
 -> ToIntFunction은 FuntionalInterface -> int applyAsInt(T value) 메서드를 구현하는 것. -> 람다식을 통해 IntStream을 얻음.
                                          int를 반환하지만 Stream을 map하기 때문에 mapToInt는 IntStream 반환.
+-> 메서드 체이닝 패턴 사용 가능.
+-> mapToInt같은 메서드들은 찾아볼것.
+       1. Stream<R> map(Function<? super T,? extends R> mapper)
