@@ -133,4 +133,19 @@ IntConsumer - void accept(int value)
 LongConsumer - void accept(long value)
 DoubleConsumer - void accept(double value)
 ---------------------------------------------------------------------------------------------------------------
-요소 조건 맍
+요소 조건 만족 여부(매칭) - 최종 처리 기능
+모든 요소가 만족하는지
+1. boolean allMatch(Predicate<T> predicate)
+2. boolean allMatch(IntPredicate predicate)
+3. boolean allMatch(LongPredicate predicate)
+4. boolean allMatch(DoublePredicte predicate)
+최소 하나 요소가 만족하는지
+1. boolean anyMatch(Predicate<T> predicate)
+2. boolean anyMatch(IntPredicate predicate)
+3. boolean anyMatch(LongPredicate predicate)
+4. boolean anyMatch(DoublePredicte predicate)
+모든 요소가 만족하지 않는지
+1. boolean noneMatch(Predicate<T> predicate)
+2. boolean noneMatch(IntPredicate predicate)
+3. boolean noneMatch(LongPredicate predicate)
+4. boolean noneMatch(DoublePredicte predicate)
