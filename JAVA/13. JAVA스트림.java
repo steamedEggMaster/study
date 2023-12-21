@@ -49,8 +49,8 @@ IntStream, LongStream, DoubleStream : 기본 타입 요소 처리 스트림.
 5. IntStream Arrays.stream(int[]);          6. IntStream IntStream.of(int[]);                
 7. LongStream Arrays.stream(long[]);        8. LongStream LongStream.of(long[]);              
 9. DoubleStream Arrays.stream(double[]);   10. DoubleStream DoubleStrea.of(double[]);
-11. IntStream IntStream.range(int, int);   12. IntStream.rangeClosed(int, int);           int 범위
-13. LongStream IntStream.range(long, long);14. LongStream.rangeClosed(long, long);        long 범위
+11. IntStream IntStream.range(int, int);   12. IntStream.rangeClosed(int, int(포함));     int 범위
+13. LongStream IntStream.range(long, long);14. LongStream.rangeClosed(long, long(포함));  long 범위
 15. Stream<Path> Files.list(Path);                                                        디렉토리
 16. Stream<String> Files.lines(Path, 문자셋);                                             텍스트 파일
 17. DoubleStream Random.doubles(...);                                                     랜덤 수
