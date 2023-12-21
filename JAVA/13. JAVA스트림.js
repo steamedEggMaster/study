@@ -75,3 +75,18 @@ Path객체를 파일에서 얻는법.
 4. Stream객체.filter(LongPredicate); - 추상메서드 : boolean test(long value);
 5. Stream객체.filter(DoublePredicate); - 추상메서드 : boolean test(double value);
 predicate는 FuntionalInterface임. -> "람다식으로 구현"
+---------------------------------------------------------------------------------------------------------------
+요소 타입 변환(매핑)
+메서드
+1. mapXxx
+-1. Stream<R> map(Function<T, R>); - T -> R
+-2. IntStream mapToInt(ToIntFunction<T>); - T -> int
+-3. LongStream mapToLong(ToLongFunction<T>); - T -> long
+-4. DoubleStream mapToDouble(ToDoubleFuntion<T>); - T -> double
+-5. Stream<U> mapToObj(IntFunction<U>); - int -> U
+-6. Stream<U> mapToObj(LongFunction<U>); - long -> U
+-7. Stream<U> mapToObj(DoubleFunction<U>); - double -> U
+-8. DoubleStream mapToDouble(IntToDoubleFunction); - int -> double
+-9. DoubleStream mapToDouble(LongToDoubleFunction); - long -> double
+-10. IntStream mapToInt(DoubleToIntFunction); - double -> int
+-11. LongStream mapToInt(DoubleToLongFunction); - double -> long
