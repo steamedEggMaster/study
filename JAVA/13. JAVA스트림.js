@@ -171,8 +171,8 @@ OptionalXxx의 인스턴스 메서드
 3. double orElse(douuble);
 4. int orElse(int);
 5. long orElse(long);
-집계값 O시 Consumer에서 처리
-6. void ifPresent(Consumer);
+집계값 O시 Consumer에서 처리 -> 람다식으로 구현
+6. void ifPresent(Consumer); 
 7. void ifPresent(DoubleConsumer);
 8. void ifPresent(IntConsumer);
 9. void ifPresent(LongConsumer);
