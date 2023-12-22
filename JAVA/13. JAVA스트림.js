@@ -168,25 +168,25 @@ Why Optional로 받는가??
 OptionalXxx의 인스턴스 메서드
 1. boolean isPresent(); - 집계값 존재 여부
 집계값 X시 default값 설정 - 매개변수 값 = default값
-2. T orElse(T);
-3. double orElse(douuble);
-4. int orElse(int);
-5. long orElse(long);
+2. T orElse(T)
+3. double orElse(douuble)
+4. int orElse(int)
+5. long orElse(long)
 집계값 O시 Consumer에서 처리 -> 람다식으로 구현
-6. void ifPresent(Consumer); 
-7. void ifPresent(DoubleConsumer);
-8. void ifPresent(IntConsumer);
-9. void ifPresent(LongConsumer);
+6. void ifPresent(Consumer)
+7. void ifPresent(DoubleConsumer)
+8. void ifPresent(IntConsumer)
+9. void ifPresent(LongConsumer)
 ---------------------------------------------------------------------------------------------------------------
 요소 커스텀 집계 - 프로그래머가 커스텀하여 집계 결과물을 만들 수 있도록 Stream에서 reduce()메서드 제공
-1. Optional<T> reduce(BinaryOperator<T> accumulator);
-2. T reduce(T identity, BinaryOperator<T> accumulator);
-3. OptionalInt reduce(IntBinaryOperator op); 
-4. int reduce(int identity, IntBinaryOperator op);
-5. OptionalLong reduce(LongBinaryOperator op);
-6. long reduce(long identity, LongBinaryOperator op);
-7. OptionalDouble reduce(DoubleBinaryOperator op);
-8. double reduce(double identity, DoubleBinaryOperator op);
+1. Optional<T> reduce(BinaryOperator<T> accumulator)
+2. T reduce(T identity, BinaryOperator<T> accumulator)
+3. OptionalInt reduce(IntBinaryOperator op)
+4. int reduce(int identity, IntBinaryOperator op)
+5. OptionalLong reduce(LongBinaryOperator op)
+6. long reduce(long identity, LongBinaryOperator op)
+7. OptionalDouble reduce(DoubleBinaryOperator op)
+8. double reduce(double identity, DoubleBinaryOperator op)
 
 identity - 집계값 산출이 불가할때, default값으로 설정하는 값
 
@@ -194,6 +194,14 @@ BinaryOperator에 대해
 1. BinaryOperator는 R apply(T t, U u); 메서드를 가진 BiFunction<T,U,R>을 상속한 FunctionalInterface
 -> apply는 처음 2개의 객체를 받아 1개의 객체로 만들고, 그 1개의 객체와 스트림의 1개의 객체를 넣어 다시 1개의 객체로 만들고
 -> 결국 1개의 값을 산출하는 메서드. -> 람다식으로 작성 가능
-2. IntBinaryOperator - int applyAsInt(int a, int b);
-3. LongBinaryOperator - long applyAsLong(long a, long b);
-4. DoubleBinaryOperator - double applyAsDouble(double a, double b);
+2. IntBinaryOperator - int applyAsInt(int a, int b)
+3. LongBinaryOperator - long applyAsLong(long a, long b)
+4. DoubleBinaryOperator - double applyAsDouble(double a, double b)
+---------------------------------------------------------------------------------------------------------------
+요소 수집 - Stream은 요소들을 필터링 or 매핑 후 수집하는 최종 처리 collect()메서드 제공.
+
+collect(Collector<T,A,R) collector) - 요소들을 새로운 컬렉션에 수집 후 해당 컬렉션 return
+- Collector의 구현 객체는 Collectors클래스의 정적메서드로 get
+1. Collector<T,?,List<T>> Collectors.toList()
+2. Collector<T,?,Set<T>> Collectors.toSet()
+3. Collector<T,?,Map<K,U>> Collectors.toMap(Function<T,K> keyMapper, Function<T,U> valueMapper)
