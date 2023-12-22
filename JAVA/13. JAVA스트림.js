@@ -164,6 +164,7 @@ OptioanlXxx 종류 - Optional, OptionalInt, OptionalLong, OptionalDouble
                      get()    getAsInt()  getAsLong()   getAsDouble() 로 최종값 얻음.
 Why Optional로 받는가??
        -> 집계값의 존재 여부, 집계값 X일때 default값 설정, 집계값 처리 메서드 제공
+OptionalXxx의 인스턴스 메서드
 1. boolean isPresent(); - 집계값 존재 여부
 집계값 X시 default값 설정
 2. T orElse(T);
