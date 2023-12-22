@@ -202,6 +202,9 @@ BinaryOperator에 대해
 
 collect(Collector<T,A,R) collector) - 요소들을 새로운 컬렉션에 수집 후 해당 컬렉션 return
 - Collector의 구현 객체는 Collectors클래스의 정적메서드로 get
-1. Collector<T,?,List<T>> Collectors.toList()
-2. Collector<T,?,Set<T>> Collectors.toSet()
+1. Collector<T,?,List<T>> Collectors.toList() -> T 객체 List return.
+2. Collector<T,?,Set<T>> Collectors.toSet() -> T 객체 Set return.
 3. Collector<T,?,Map<K,U>> Collectors.toMap(Function<T,K> keyMapper, Function<T,U> valueMapper)
+  -> Function의 R apply(T t) 메서드를 람다식으로 구현.
+  -> Map<K클래스명,U클래스명> return.
+
