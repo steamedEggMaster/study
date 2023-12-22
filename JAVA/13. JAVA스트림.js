@@ -222,6 +222,6 @@ groupingBy()의 2번째 매개값으로 Collector을 줄 수 있는데, 그룹�
 3. Collector Collectors.counting()
 4. Collector Collectors.maxBy(Comparator<T>) - compare(T o1, T o2) 구현
 5. Collector Collectors.minBy(Comparator<T>) - compare(T o1, T o2) 구현
-6. Collector Collectors.reducing(BinaryOperator<T>)
+6. Collector Collectors.reducing(BinaryOperator<T>) - R apply(T t, U u) 구현
 7. Collector Collectors.reducing(T identity, BinaryOperator<T>)
 살짝 이해 잘 안됨.
