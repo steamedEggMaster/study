@@ -149,7 +149,7 @@ DoubleConsumer - void accept(double value)
 2. boolean noneMatch(IntPredicate predicate)
 3. boolean noneMatch(LongPredicate predicate)
 4. boolean noneMatch(DoublePredicte predicate)
----------------------------------------------------------------------------------------------------------------
+C
 요소 기본 집계 - 집계 연산을 통해 하나의 값을 산출하는 최종 처리 기능
 Stream<T> 제공 메서드
 1. long count();
@@ -166,7 +166,7 @@ Why Optional로 받는가??
        -> 집계값의 존재 여부, 집계값 X일때 default값 설정, 집계값 처리 메서드 제공
 OptionalXxx의 인스턴스 메서드
 1. boolean isPresent(); - 집계값 존재 여부
-집계값 X시 default값 설정
+집계값 X시 default값 설정 - 매개변수 값 = default값
 2. T orElse(T);
 3. double orElse(douuble);
 4. int orElse(int);
@@ -176,3 +176,13 @@ OptionalXxx의 인스턴스 메서드
 7. void ifPresent(DoubleConsumer);
 8. void ifPresent(IntConsumer);
 9. void ifPresent(LongConsumer);
+---------------------------------------------------------------------------------------------------------------
+요소 커스텀 집계 - 프로그래머가 커스텀하여 집계 결과물을 만들 수 있도록 Stream에서 reduce()메서드 제공
+1. Optional<T> reduce(BinaryOperator<T> accumulator);
+2. T reduce(T identity, BinaryOperator<T> accumulator);
+3. OptionalInt reduce(IntBinaryOperator op);
+4. int reduce(int identity, IntBinaryOperator op);
+5. OptionalLong reduce(LongBinaryOperator op);
+6. long reduce(long identity, LongBinaryOperator op);
+7. OptionalDouble reduce(DoubleBinaryOperator op);
+8. double reduce(double identity, DoubleBinaryOperator op);
