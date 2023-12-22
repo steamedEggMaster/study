@@ -200,9 +200,28 @@ BinaryOperator에 대해
 
 collect(Collector<T,A,R) collector) - 요소들을 새로운 컬렉션에 수집 후 해당 컬렉션 return
 - Collector의 구현 객체는 Collectors클래스의 정적메서드로 get
-1. Collector<T,?,List<T>> Collectors.toList() -> T 객체 List return.
-2. Collector<T,?,Set<T>> Collectors.toSet() -> T 객체 Set return.
+1. Collector<T,?,List<T>> Collectors.toList() -> T 객체 List return
+2. Collector<T,?,Set<T>> Collectors.toSet() -> T 객체 Set return
 3. Collector<T,?,Map<K,U>> Collectors.toMap(Function<T,K> keyMapper, Function<T,U> valueMapper)
   -> Function의 R apply(T t) 메서드를 람다식으로 구현.
-  -> Map<K클래스명,U클래스명> return.
+  -> Map<K클래스명,U클래스명> 객체 return.
+JAVA 16부터는 .collect(Collectors.toList()) -> .toList()로 표현 가능
+---------------------------------------------------------------------------------------------------------------
+요소 그룹핑 - collect()는 컬렉션의 요소들을 그룹핑하여 "Map객체 생성 기능"도 제공.     
+       
+Collector<T,?,Map<K,List<T>>> groupingBy(Function<T,K> classfier)
+ -> Map<key클래스명, List<T>> 즉, Entry가 (키, List<T>)인 Map 객체 return
+ -> Function 람다식을 통해 키값을 구함 -> 키값에 해당되는 "T 객체 List" return
+        
+사용법 = .collect(Collectors.groupingBy(람다식))
+사용이유 = 키값에 해당되는 모든 객체를 집계하는 시간 Fast
 
+groupingBy()의 2번째 매개값으로 Collector을 줄 수 있는데, 그룹핑 된 각각의 컬렉션에 집계를 수행하는 메서드를 Collectors가 "정적메서드"로 제공
+1. Collector Collectors.mapping(Function, Collector)
+2. Collector Collectors.averagingDouble(ToDoubleFunction)
+3. Collector Collectors.counting()
+4. Collector Collectors.maxBy(Comparator<T>) - compare(T o1, T o2) 구현
+5. Collector Collectors.minBy(Comparator<T>) - compare(T o1, T o2) 구현
+6. Collector Collectors.reducing(BinaryOperator<T>)
+7. Collector Collectors.reducing(T identity, BinaryOperator<T>)
+살짝 이해 잘 안됨.
