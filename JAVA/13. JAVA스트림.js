@@ -162,3 +162,16 @@ Stream<T> 제공 메서드
 8. int/long/double sum();
 OptioanlXxx 종류 - Optional, OptionalInt, OptionalLong, OptionalDouble
                      get()    getAsInt()  getAsLong()   getAsDouble() 로 최종값 얻음.
+Why Optional로 받는가??
+       -> 집계값의 존재 여부, 집계값 X일때 default값 설정, 집계값 처리 메서드 제공
+1. boolean isPresent(); - 집계값 존재 여부
+집계값 X시 default값 설정
+2. T orElse(T);
+3. double orElse(douuble);
+4. int orElse(int);
+5. long orElse(long);
+집계값 O시 Consumer에서 처리
+6. void ifPresent(Consumer);
+7. void ifPresent(DoubleConsumer);
+8. void ifPresent(IntConsumer);
+9. void ifPresent(LongConsumer);
