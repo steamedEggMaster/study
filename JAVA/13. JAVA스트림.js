@@ -149,7 +149,7 @@ DoubleConsumer - void accept(double value)
 2. boolean noneMatch(IntPredicate predicate)
 3. boolean noneMatch(LongPredicate predicate)
 4. boolean noneMatch(DoublePredicte predicate)
-C
+
 요소 기본 집계 - 집계 연산을 통해 하나의 값을 산출하는 최종 처리 기능
 Stream<T> 제공 메서드
 1. long count();
