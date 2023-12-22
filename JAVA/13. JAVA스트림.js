@@ -149,3 +149,16 @@ DoubleConsumer - void accept(double value)
 2. boolean noneMatch(IntPredicate predicate)
 3. boolean noneMatch(LongPredicate predicate)
 4. boolean noneMatch(DoublePredicte predicate)
+---------------------------------------------------------------------------------------------------------------
+요소 기본 집계 - 집계 연산을 통해 하나의 값을 산출하는 최종 처리 기능
+Stream<T> 제공 메서드
+1. long count();
+2. OptionalXxx findFirst(); - 첫번째 요소
+3. Optional<T> max(Comparator<T>);
+4. OptionalXxx max();
+5. Optional<T> min(Comparator<T>);
+6. OptionalXxx min();
+7. OptionalDouble average();
+8. int/long/double sum();
+OptioanlXxx 종류 - Optional, OptionalInt, OptionalLong, OptionalDouble
+                     get()    getAsInt()  getAsLong()   getAsDouble() 로 최종값 얻음.
