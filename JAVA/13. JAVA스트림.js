@@ -180,9 +180,17 @@ OptionalXxx의 인스턴스 메서드
 요소 커스텀 집계 - 프로그래머가 커스텀하여 집계 결과물을 만들 수 있도록 Stream에서 reduce()메서드 제공
 1. Optional<T> reduce(BinaryOperator<T> accumulator);
 2. T reduce(T identity, BinaryOperator<T> accumulator);
-3. OptionalInt reduce(IntBinaryOperator op);
+3. OptionalInt reduce(IntBinaryOperator op); -
 4. int reduce(int identity, IntBinaryOperator op);
 5. OptionalLong reduce(LongBinaryOperator op);
 6. long reduce(long identity, LongBinaryOperator op);
 7. OptionalDouble reduce(DoubleBinaryOperator op);
 8. double reduce(double identity, DoubleBinaryOperator op);
+
+BinaryOperator에 대해
+1. BinaryOperator는 R apply(T t, U u); 메서드를 가진 BiFunction<T,U,R>을 상속한 FunctionalInterface
+-> apply는 처음 2개의 객체를 받아 1개의 객체로 만들고, 그 1개의 객체와 스트림의 1개의 객체를 넣어 다시 1개의 객체로 만들고
+-> 결국 1개의 값을 산출하는 메서드. -> 람다식으로 작성 가능
+2. IntBinaryOperator - int applyAsInt(int a, int b);
+3. LongBinaryOperator - long applyAsLong(long a, long b);
+4. DoubleBinaryOperator - double applyAsDouble(double a, double b);
