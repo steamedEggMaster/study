@@ -159,9 +159,10 @@ Stream<T> 제공 메서드
 5. Optional<T> min(Comparator<T>);
 6. OptionalXxx min();
 7. OptionalDouble average();
-8. int/long/double sum();
+8. int/long/double sum(); - return reduce(0, Integer::sum);
 OptioanlXxx 종류 - Optional, OptionalInt, OptionalLong, OptionalDouble
                      get()    getAsInt()  getAsLong()   getAsDouble() 로 최종값 얻음.
+                            
 Why Optional로 받는가??
        -> 집계값의 존재 여부, 집계값 X일때 default값 설정, 집계값 처리 메서드 제공
 OptionalXxx의 인스턴스 메서드
@@ -187,6 +188,8 @@ OptionalXxx의 인스턴스 메서드
 7. OptionalDouble reduce(DoubleBinaryOperator op);
 8. double reduce(double identity, DoubleBinaryOperator op);
 
+identity - 집계값 산출이 불가할때, default값으로 설정하는 값
+
 BinaryOperator에 대해
 1. BinaryOperator는 R apply(T t, U u); 메서드를 가진 BiFunction<T,U,R>을 상속한 FunctionalInterface
 -> apply는 처음 2개의 객체를 받아 1개의 객체로 만들고, 그 1개의 객체와 스트림의 1개의 객체를 넣어 다시 1개의 객체로 만들고
@@ -194,5 +197,3 @@ BinaryOperator에 대해
 2. IntBinaryOperator - int applyAsInt(int a, int b);
 3. LongBinaryOperator - long applyAsLong(long a, long b);
 4. DoubleBinaryOperator - double applyAsDouble(double a, double b);
-
-int identity - 집계값 산출이 불가할때, default값으로 설정하는 값
