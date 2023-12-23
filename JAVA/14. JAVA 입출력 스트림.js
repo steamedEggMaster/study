@@ -3,7 +3,7 @@
 - java.io 패키지에서 제공.
 
 바이트 입출력 스트림의 최상위 추상 클래스 : InputStream, OutputStream -> 상속 클래스들은 이 이름을 접미사로 가짐.
-문자 입출력 스트림의 최상위 클래스 : Reader, Writer -> 상속 클래스들은 이 이름을 접미사로 가짐.
+문자 입출력 스트림의 최상위 추상 클래스 : Reader, Writer -> 상속 클래스들은 이 이름을 접미사로 가짐.
 ------------------------------------------------------------------------------------------------------------------------
 바이트 출력 스트림 - OutputStream
 상속 클래스 - FileOutputStream, PrintStream, BufferedOutputStream, DataOutputStream
@@ -44,4 +44,15 @@ FileInputStream 생성자
 1. FileInputStream(File file)
 2. FileInputStream(String 경로)
 해당 파일 없으면 IOException-FileNotFoundException 발생
-
+------------------------------------------------------------------------------------------------------------------------
+문자 입출력 스트림
+문자 출력 - Writer 추상 클래스
+상속 클래스 - FileWriter, BufferedWriter, PrintWriter, OutputStreamWriter
+메서드
+1. void 문자출력스트림객체.write(int c) - 하나의 문자를 출력 버퍼로 보냄
+2. void 문자출력스트림객체.write(char[] cbuf) - 배열의 모든 문자를 출력 버퍼로 보냄
+3. void 문자출력스트림객체.write(char[] cbuf, int off, int len) - (cbuf[off] ~ cbuf[off + len - 1])
+4. void 문자출력스트림객체.write(String str) - 문자열을 출력 버퍼로 보냄
+5. void 문자출력스트림객체.write(String str, int off, int len) - str[off] ~ str[off + len - 1]
+6. void 문자출력스트림객체.flush()
+7. void 문자출력스트림객체.close()
