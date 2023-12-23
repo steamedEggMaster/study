@@ -65,3 +65,5 @@ FileInputStream 생성자
      -> "(char) 강제 형변환"을 통해 문자로 바꿔주어야함.
 2. int 문자입력스트림객체.read(char[] cbuf) - 읽은 문자들을 cbuf배열에 저장 후, 읽은 문자 갯수 return,  **입력스트림객체에서 읽을 것 X -> -1 return**
 3. void close()
+
+생성자는 다 비슷함.
