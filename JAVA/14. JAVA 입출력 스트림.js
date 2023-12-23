@@ -42,6 +42,8 @@ FileInputStream 생성자
 1. FileInputStream(File file)
 2. FileInputStream(String 경로)
 해당 파일 없으면 IOException-FileNotFoundException 발생
+
+FileInputOutputStream-CopyExample 예제 잘보기
 ------------------------------------------------------------------------------------------------------------------------
 문자 입출력 스트림
 문자 출력 - Writer 추상 클래스
