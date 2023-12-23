@@ -67,3 +67,29 @@ FileInputStream 생성자
 3. void close()
 
 생성자는 다 비슷함.
+------------------------------------------------------------------------------------------------------------------------
+보조 스트림 - 다른 스트림과 연결되어 여러가지 기능 제공.
+    자체적으로 입출력 수행 불가.
+사용법 : 보조스트림명 객체명 = new 보조스트림명(입출력스트림);
+자주 사용되는 보조 스트림 - "보조 스트림을 또다른 보조 스트림에 연결 가능"
+1. InputStreamReader - 바이트스트림->문자스트림 변환
+2. OutputStreamWriter - 문자스트림->바이트스트림 변환
+3. BufferedInputStream, BufferedOutputStream - 입출력 성능 향상
+4. BufferedReader, BufferedWriter- 입출력 성능 향상
+5. DataInputStream, DataOutputStream - 기본 타입 데이터 입출력
+6. PrintStream, PrintWriter - 줄바꿈 처리 및 형식화된 문자열 출력
+7. ObjectInputStream, ObjectOutputStream - 객체 입출력
+------------------------------------------------------------------------------------------------------------------------
+문자 변환 스트림
+InputStreamReader - 바이트스트림->문자스트림 으로 자동으로 변환하여 입력 가능.
+     *FileReader는 InputStreamReader의 자식 클래스. -> FileInputStream-InputStreamReader을 거치지 않고, 바로 FileInputStream을 통해 객체 생성이 가능.
+사용 예시
+InputStream is = new FileInputStream(파일경로);
+Reader r = new InputStreamReader(is);
+
+OutputStreamWriter - 문자스트림->바이트스트림 으로 자동으로 변환하여 출력 가능.
+     *FileWriter은 OutputStreamWriter의 자식 클래스. -> FileOutputStream-OutputStreamWriter을 거치지 않고, 바로 FileOutputStream을 통해 객체 생성이 가능.
+사용 예시
+OutputStream os = new FileOutputStream(파일경로);
+Writer w = new OutputStreamWriter(os[, 문자셋]);
+  
