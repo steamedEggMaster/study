@@ -83,13 +83,14 @@ FileInputOutputStream-CopyExample 예제 잘보기
 7. ObjectInputStream, ObjectOutputStream - 객체 입출력
 ------------------------------------------------------------------------------------------------------------------------
 문자 변환 스트림
-InputStreamReader - 바이트스트림->문자스트림 으로 자동으로 변환하여 입력 가능.
+1. InputStreamReader - 바이트스트림->문자스트림 으로 자동으로 변환하여 입력 가능.
 사용 예시
 InputStream is = new FileInputStream(파일경로);
 Reader r = new InputStreamReader(is);
 
-OutputStreamWriter - 문자스트림->바이트스트림 으로 자동으로 변환하여 출력 가능.
+2. OutputStreamWriter - 문자스트림->바이트스트림 으로 자동으로 변환하여 출력 가능.
 사용 예시
 OutputStream os = new FileOutputStream(파일경로);
 Writer w = new OutputStreamWriter(os[, 문자셋]);
-  
+------------------------------------------------------------------------------------------------------------------------ 
+성능 향상 스트림
