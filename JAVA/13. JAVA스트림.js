@@ -242,6 +242,6 @@ groupingBy()의 2번째 매개값으로 Collector을 줄 수 있는데, 그룹�
 2. Stream<T>/IntStream/LongStream/DoubleStream 스트림객체명.parallel() - 일반 스트림 -> 병렬 처리 스트림 return
 
 병렬 처리 영향 요인
-1. 요소 수, 요소 당 처리 시간
+1. 요소 수, 요소 당 처리 시간 - 요소 수 적, 요소 당 처리 시간 짧 -> 일반 스트림 good.
 2. 스트림 소스의 종류 - HashSet, TreeSet, LinkedList는 병렬 처리 not good
 3. 코어 수 
