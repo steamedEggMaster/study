@@ -237,6 +237,11 @@ groupingBy()의 2번째 매개값으로 Collector을 줄 수 있는데, 그룹�
        - 분할 알고리즘은 알아서 해주므로 신경쓸필요 X.
 - 병렬 처리를 위해 ThreadPool 사용. 코어에서 서브 요소셋을 처리하는 것은 작업 Thread가 해야하므로 스레드 관리 필요. -> ExecutorService의 구현 객체인 ForkJoinPool 이용하여 작업 스레드 관리.
        
-사용법
+메서드
 1. Stream<T> 컬렉션객체명.parallelStream() - 컬렉션 -> 병렬 처리 스트림 return
 2. Stream<T>/IntStream/LongStream/DoubleStream 스트림객체명.parallel() - 일반 스트림 -> 병렬 처리 스트림 return
+
+병렬 처리 영향 요인
+1. 요소 수, 요소 당 처리 시간
+2. 스트림 소스의 종류 - HashSet, TreeSet, LinkedList는 병렬 처리 not good
+3. 코어 수 
