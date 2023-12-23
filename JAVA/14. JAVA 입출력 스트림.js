@@ -28,9 +28,7 @@ FileOutputStream 생성자
 ------------------------------------------------------------------------------------------------------------------------
 바이트 입력 스트림 - InputStream
 상속 클래스 - FileInputStream, BufferedInputStream, DataInputStream
-   -- "IOException 예외 처리" 필수.
-    -- 모든 상속 클래스가 AutoCloseable을 구현함 -> try-with-resources로 사용 시 자동 close()됨. 
-        or finally 에서 close() 사용 -> try-catch-finally 의 블록 밖에서 객체를 생성해야만함.
+   -- 동일하게 예외 처리.
 메서드
 1. int 입력스트림객체명.read() - 1byte를 읽고 int로 return, **입력 스트림 객체에서 더이상 읽을 것이 없다 -> -1 return** -> while-if-break 문으로 사용함.
 2. int 입력스트림객체명.read(byte[] b) - 읽은 byte를 b배열에 저장 후, 읽은 byte 갯수 return, **입력 스트림 객체에서 더이상 읽을 것이 없다 -> -1 return**
@@ -48,11 +46,22 @@ FileInputStream 생성자
 문자 입출력 스트림
 문자 출력 - Writer 추상 클래스
 상속 클래스 - FileWriter, BufferedWriter, PrintWriter, OutputStreamWriter
+   -- 동일하게 예외 처리
 메서드
-1. void 문자출력스트림객체.write(int c) - 하나의 문자를 출력 버퍼로 보냄
+1. void 문자출력스트림객체.write(int c) - 하나의 문자를 출력 버퍼로 보냄 - char->int 자동형변환
 2. void 문자출력스트림객체.write(char[] cbuf) - 배열의 모든 문자를 출력 버퍼로 보냄
 3. void 문자출력스트림객체.write(char[] cbuf, int off, int len) - (cbuf[off] ~ cbuf[off + len - 1])
 4. void 문자출력스트림객체.write(String str) - 문자열을 출력 버퍼로 보냄
 5. void 문자출력스트림객체.write(String str, int off, int len) - str[off] ~ str[off + len - 1]
 6. void 문자출력스트림객체.flush()
 7. void 문자출력스트림객체.close()
+-- 모든 메서드 "IOException 예외 처리" 필수.
+
+문자 입력 - Reader 추상 클래스
+상속 클래스 - FileReader, BufferedReader, InputStreamReader
+   -- 동일하게 예외 처리
+메서드
+1. int 문자입력스트림객체.read() - 1개의 문자를 읽고 int로 return, **입력스트림객체에서 읽을 것 X -> -1 return** -> while-if-break 문으로 사용함.
+     -> "(char) 강제 형변환"을 통해 문자로 바꿔주어야함.
+2. int 문자입력스트림객체.read(char[] cbuf) - 읽은 문자들을 cbuf배열에 저장 후, 읽은 문자 갯수 return,  **입력스트림객체에서 읽을 것 X -> -1 return**
+3. void close()
