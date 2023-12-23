@@ -12,9 +12,9 @@
         or finally 에서 close() 사용 -> try-catch-finally 의 블록 밖에서 객체를 생성해야만함.
 메서드
 1. void 출력스트림객체명.write(int b) - 매개값 int(4byte)중 끝 1byte만 출력 버퍼로 보냄. - (-128~127) 사이 숫자만 출력이 알맞게 됨.
-2. void 출력스트림객체명.write(byte[] b) - 배열의 모든 바이트 출력.
-3. void 출력스트림객체명.write(byte[] b, int off, int len) - (b[off] ~ b[off + len - 1])까지의 byte만 출력.
-4. void 출력스트림객체명.flush() - 출력 버퍼의 내용을 출력 후 버퍼 비움
+2. void 출력스트림객체명.write(byte[] b) - 배열의 모든 바이트 출력 버퍼로 보냄.
+3. void 출력스트림객체명.write(byte[] b, int off, int len) - (b[off] ~ b[off + len - 1])까지의 byte만 출력 버퍼로 보냄.
+4. void 출력스트림객체명.flush() - 출력 버퍼의 내용을 출력 후 버퍼 비움.
 5. void 출력스트림객체명.close() - 출력 스트림을 닫아 사용한 메모리를 해제 / 자동 flush() 기능이 들어가 있음.
 -- 모든 메서드 "IOException 예외 처리" 필수.
 
