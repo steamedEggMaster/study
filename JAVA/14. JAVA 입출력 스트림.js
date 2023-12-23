@@ -6,6 +6,7 @@
 문자 입출력 스트림의 최상위 클래스 : Reader, Writer -> 상속 클래스들은 이 이름을 접미사로 가짐.
 ------------------------------------------------------------------------------------------------------------------------
 바이트 출력 스트림 - OutputStream
+상속 클래스 - FileOutputStream, PrintStream, BufferedOutputStream, DataOutputStream
 메서드
 1. void write(int b) - 매개값 int(4byte)중 끝 1byte만 출력 버퍼로 보냄. - -128~127 사이 숫자만 출력이 알맞게 됨.
 2. void write(byte[] b) - 
