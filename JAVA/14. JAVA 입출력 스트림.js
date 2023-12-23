@@ -8,10 +8,12 @@
 바이트 출력 스트림 - OutputStream
 상속 클래스 - FileOutputStream, PrintStream, BufferedOutputStream, DataOutputStream
     -- "IOException 예외 처리" 필수.
-    -- 모든 상속 클래스가 AutoCloseable을 구현 -> try(바이트스트림객체명) { } 형태로 사용 시 close()안해도 됨.
+    -- 모든 상속 클래스가 AutoCloseable을 구현함 -> try-with-resources로 사용 시 자동 close()됨. 
+        or finally 에서 close() 사용 -> try-catch-finally 의 블록 밖에서 객체를 생성해야만함.
 메서드
 1. void write(int b) - 매개값 int(4byte)중 끝 1byte만 출력 버퍼로 보냄. - -128~127 사이 숫자만 출력이 알맞게 됨.
 2. void write(byte[] b) - 
 3. void write(byte[] b, int offm int len)
 4. void flush() - 출력 버퍼의 내용을 출력 후 버퍼 비움
 5. void close() - 출력 스트림을 닫아 사용한 메모리를 해제 / 자동 flush() 기능이 들어가 있음.
+-- 모든 메서드에서도 "IOException 예외 처리" 필수.
