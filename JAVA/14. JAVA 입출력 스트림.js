@@ -28,12 +28,17 @@ FileOutputStream 생성자
 ------------------------------------------------------------------------------------------------------------------------
 바이트 입력 스트림 - InputStream
 상속 클래스 - FileInputStream, BufferedInputStream, DataInputStream
-   -- 동일하게 예외처리.
+   -- "IOException 예외 처리" 필수.
+    -- 모든 상속 클래스가 AutoCloseable을 구현함 -> try-with-resources로 사용 시 자동 close()됨. 
+        or finally 에서 close() 사용 -> try-catch-finally 의 블록 밖에서 객체를 생성해야만함.
 메서드
-1. int 입력스트림객체명.read() - 1byte를 읽고 int로 return, **입력 스트림 객체에서 더이상 읽을 것이 없다 -> -1 return**
-2. int 입력스트림객체명.read(byte[] b) - 읽은 byte를 b배열에 저장 후, 읽은 byte 갯수 return
+1. int 입력스트림객체명.read() - 1byte를 읽고 int로 return, **입력 스트림 객체에서 더이상 읽을 것이 없다 -> -1 return** -> while-if-break 문으로 사용함.
+2. int 입력스트림객체명.read(byte[] b) - 읽은 byte를 b배열에 저장 후, 읽은 byte 갯수 return, **입력 스트림 객체에서 더이상 읽을 것이 없다 -> -1 return**
 3. void 입력스트림객체명.close() - 입력 스트림을 닫고, 사용 메모리 해제
 -- 모든 메서드 "IOException 예외 처리" 필수.
+
+read(byte[] b) - b배열의 크기보다 읽어야하는 게 클 경우 여러번 다시 읽어야하는데, 2번째 읽을때부턴 b[0]부터 덮어쓰며 저장
+                -> return 값을 통해 저장된 index 마지막 값을 알아냄.
 
 FileInputStream 생성자
 1. FileInputStream(File file)
