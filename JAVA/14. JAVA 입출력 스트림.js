@@ -76,7 +76,13 @@ FileWriter 생성자
 1. int 문자입력스트림객체.read() - 1개의 문자를 읽고 int로 return, **입력스트림객체에서 읽을 것 X -> -1 return** -> while-if-break 문으로 사용함.
      -> "(char) 강제 형변환"을 통해 문자로 바꿔주어야함.
 2. int 문자입력스트림객체.read(char[] cbuf) - 읽은 문자들을 cbuf배열에 저장 후, 읽은 문자 갯수 return,  **입력스트림객체에서 읽을 것 X -> -1 return**
-3. void close()
+3. void close() - 입력 스트림을 닫고, 사용 메모리 해제.
+
+FileReader 생성자
+1. FileWriter(File file)
+2. FileWriter(File file, Charset charset)
+3. FileWriter(String 경로)
+4. FileWriter(String 경로, Charset charset)
 ------------------------------------------------------------------------------------------------------------------------
 보조 스트림 - 다른 스트림과 연결되어 여러가지 기능 제공.
     자체적으로 입출력 수행 불가.
