@@ -141,7 +141,7 @@ Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으�
 ------------------------------------------------------------------------------------------------------------------------ 
 객체 스트림 - 자바는 메모리에 생성된 객체를 파일 or 네트워크로 출력하기 위해 -> 필드값을 일렬로 늘어선 바이트로 변경 = 직렬화(Serialization) / 그 반대 = 역직렬화(Deerialization)
 1. ObjectInputStream ois = new ObjectInputStream(바이트입력스트림)
-역직렬화 : 객체타입 객체명 = (객체타입)ois.readObject();
+역직렬화 : 객체타입 객체명 = (객체타입)ois.readObject(); - 해당객체를 복원하는 것이 아닌 새로운 객체에 데이터를 같은것을 넣는것.
 2. ObjectOutputStream oos = new ObjectOutputStream(바이트출력스트림)
 직렬화 : oos.writeObject(객체);
 
