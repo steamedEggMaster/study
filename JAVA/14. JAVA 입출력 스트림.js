@@ -98,3 +98,5 @@ Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으�
 2. BufferedOutputStream bos = new BufferedOutputStream(바이트출력스트림)
 3. BufferedReader br = new BufferedReader(문자입력스트림)
 4. BufferedWriter bw = new BufferedWriter(문자출력스트림)
+
+*BufferedReader객체.readLine() 메서드를 통해 행 단위로 문자열을 읽어옴, 읽을 것 X -> null return
