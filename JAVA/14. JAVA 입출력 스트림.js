@@ -153,3 +153,5 @@ Serializable 인터페이스
 SerialVersionUID(Unique IDentifier) 필드
 역직렬화 시 두 클래스가 "이름 동일, 내용 다름, 직렬화된 필드 공통포함" 일때, SerialVersionUID 상수값 동일 -> 역직렬화 가능.
 static final long SerialVersionUID = 상수; -> 이클립스에서 자동 생성 기능 제공.(jdk-bin파일-serialver.exe)
+
+stream-objectInputOutputExample 예제 잘보기
