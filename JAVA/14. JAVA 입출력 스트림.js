@@ -133,5 +133,23 @@ Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으�
 주의 : 입출력은 반드시 기본타입스트림을 통해해야하고, 출력 순서대로 입력을 받아야함. 즉, 객체들의 순서를 지켜야함
 ------------------------------------------------------------------------------------------------------------------------ 
 프린트 스트림 - 단독으로 파일을 연결이 가능
-1. PrintStream
-2. PrintWriter - OutputStream, Writer 둘다 연결 가능.
+    System.out의 out은 PrintStream 타입임.
+1. PrintStream ps = new PrintStream(바이트출력스트림);
+2. PrintWriter pw = new PrintWriter(문자/바이트출력스트림); - OutputStream, Writer 둘다 연결 가능.
+메서드
+1. void print()    2. void println()    3. void printf()
+------------------------------------------------------------------------------------------------------------------------ 
+객체 스트림 - 자바는 메모리에 생성된 객체를 파일 or 네트워크로 출력하기 위해 -> 필드값을 일렬로 늘어선 바이트로 변경 = 직렬화(Serialization) / 그 반대 = 역직렬화(Deerialization)
+1. ObjectInputStream ois = new ObjectInputStream(바이트입력스트림)
+역직렬화 : 객체타입 객체명 = (객체타입)ois.readObject();
+2. ObjectOutputStream oos = new ObjectOutputStream(바이트출력스트림)
+직렬화 : oos.writeObject(객체);
+
+**직렬화를 위해 해당클래스에 "implements Serializable" 선언 필수!!**.
+Serializable 인터페이스
+1. 아무것도 없는 표시용 인터페이스
+2. 직렬화 시 인스턴스 필드값은 직렬화 대상 but, "정적 필드값 and transient 필드"는 직렬화 제외 -> 출력 안됨
+     -> 클래스타입 필드가 올경우 해당 클래스에도 "implements Serializable" 선언이 되어있어야 함.
+SerialVersionUID(Unique IDentifier) 필드
+역직렬화 시 두 클래스가 "이름 동일, 내용 다름, 직렬화된 필드 공통포함" 일때, SerialVersionUID 상수값 동일 -> 역직렬화 가능.
+static final long SerialVersionUID = 상수; -> 이클립스에서 자동 생성 기능 제공.(jdk-bin파일-serialver.exe)
