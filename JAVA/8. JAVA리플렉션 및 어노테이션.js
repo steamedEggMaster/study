@@ -24,7 +24,7 @@
                   패키지 안에 넣을 경우 "src/패키지명/이미지파일명.확장자" 해주어야 함.
                   자바 프로젝트 기본 경로 = 프로젝트 폴더.
                   배포를 하기 위해선 보통 src/resource 같은 파일에 모아서 저장하고, 컴파일 시 bin파일에 같이 생성되며, 
-1. String path = clazz.getResource("파일명.확장자").getPath(); - getResource는 URL객체를 리턴함.
+1. String path = clazz.getResource("파일명.확장자").getPath(); - getResource는 URL객체를 리턴함
                = public클래스명.class.getResource("파일명.확장자").getPath();
 2. ("디렉명/파일명.확장자").getPath(); 이런 식으로 해주어야함.
   1,2 -> 절대 경로를 리턴. 이 파일 안의 데이터를 읽어들일때 사용함.
