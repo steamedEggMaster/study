@@ -86,11 +86,15 @@ FileInputOutputStream-CopyExample 예제 잘보기
 1. InputStreamReader - 바이트스트림->문자스트림 으로 자동으로 변환하여 입력 가능.
 사용 예시
 InputStream is = new FileInputStream(파일경로);
-Reader r = new InputStreamReader(is);
+Reader r = new InputStreamReader(is); -> 문자입력스트림으로 바꿔버림.
 
 2. OutputStreamWriter - 문자스트림->바이트스트림 으로 자동으로 변환하여 출력 가능.
 사용 예시
 OutputStream os = new FileOutputStream(파일경로);
-Writer w = new OutputStreamWriter(os[, 문자셋]);
+Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으로 바꿔버림.
 ------------------------------------------------------------------------------------------------------------------------ 
-성능 향상 스트림
+성능 향상 스트림 - 버퍼를 이용하여 Disk I/O 를 줄여줌
+1. BufferedInputStream bis = new BufferedInputStream(바이트입력스트림)
+2. BufferedOutputStream bos = new BufferedOutputStream(바이트출력스트림)
+3. BufferedReader br = new BufferedReader(문자입력스트림)
+4. BufferedWriter bw = new BufferedWriter(문자출력스트림)
