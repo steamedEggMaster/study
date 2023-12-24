@@ -100,3 +100,17 @@ Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으�
 4. BufferedWriter bw = new BufferedWriter(문자출력스트림)
 
 *BufferedReader객체.readLine() 메서드를 통해 행 단위로 문자열을 읽어옴, 읽을 것 X -> null return
+------------------------------------------------------------------------------------------------------------------------ 
+기본 타입 스트림 - 바이트스트림에서 기본 타입들을 입출력 가능해짐.
+1. DataInputStream dis = new DataInputStream(바이트입력스트림)
+2. DataOutputStream dos = new DataOutputStream(바이트출력스트림)
+메서드
+-1. boolean dis.readBoolean()   void dos.writeBoolean(boolean v)
+-2. byte dis.readByte()         void dos.writeByte(int v)
+-3. char dis.readChar()         void dos.writeChar(int V)
+-4. double dis.readDouble()     void dos.writeDouble(double v)
+-5. float dis.readFloat()       void dos.writeFloat(float v)
+-6. int dis.readInt()           void dos.writeInt(int v)
+-7. long dis.readLong()         void dos.writeLong(long v)
+-8. short dis.readShort()       void dos.writeShort(int v)
+-9. String dis.readUTF()        void dos.writeUTF(String str)
