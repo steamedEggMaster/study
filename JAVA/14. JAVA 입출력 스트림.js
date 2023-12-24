@@ -72,6 +72,7 @@ FileInputOutputStream-CopyExample 예제 잘보기
 ------------------------------------------------------------------------------------------------------------------------
 보조 스트림 - 다른 스트림과 연결되어 여러가지 기능 제공.
     자체적으로 입출력 수행 불가.
+    보조스트림 close() 시 주스트림도 자동 close()됨.
 사용법 : 보조스트림명 객체명 = new 보조스트림명(입출력스트림);
 자주 사용되는 보조 스트림 - "보조 스트림을 또다른 보조 스트림에 연결 가능"
 1. InputStreamReader - 바이트스트림->문자스트림 변환
@@ -114,3 +115,4 @@ Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으�
 -7. long dis.readLong()         void dos.writeLong(long v)
 -8. short dis.readShort()       void dos.writeShort(int v)
 -9. String dis.readUTF()        void dos.writeUTF(String str)
+주의 : 입출력은 반드시 기본타입스트림을 통해해야하고, 출력 순서대로 입력을 받아야함. 즉, 객체들의 순서를 지켜야함
