@@ -61,11 +61,13 @@ FileInputOutputStream-CopyExample 예제 잘보기
 
 FileWriter 생성자
 1. FileWriter(File file)
-2. FileWriter(File file, Charset charset)
-3. FileWriter(File file, Charset charset, boolean append)
-4. FileWriter(String 경로)
-5. FileWriter(String 경로, Charset charset)
-6. FileWriter(String 경로, Charset charset, boolean append)
+2. FileWriter(File file, boolean append)
+3. FileWriter(File file, Charset charset)
+4. FileWriter(File file, Charset charset, boolean append)
+5. FileWriter(String 경로)
+6. FileWriter(String 경로, boolean append)
+7. FileWriter(String 경로, Charset charset)
+8. FileWriter(String 경로, Charset charset, boolean append)
 
 문자 입력 - Reader 추상 클래스
 상속 클래스 - FileReader, BufferedReader, InputStreamReader
