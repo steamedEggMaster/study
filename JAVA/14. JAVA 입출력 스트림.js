@@ -59,6 +59,14 @@ FileInputOutputStream-CopyExample 예제 잘보기
 7. void 문자출력스트림객체.close()
 -- 모든 메서드 "IOException 예외 처리" 필수.
 
+FileWriter 생성자
+1. FileWriter(File file)
+2. FileWriter(File file, Charset charset)
+3. FileWriter(File file, Charset charset, boolean append)
+4. FileWriter(String 경로)
+5. FileWriter(String 경로, Charset charset)
+6. FileWriter(String 경로, Charset charset, boolean append)
+
 문자 입력 - Reader 추상 클래스
 상속 클래스 - FileReader, BufferedReader, InputStreamReader
    -- 동일하게 예외 처리
@@ -67,8 +75,6 @@ FileInputOutputStream-CopyExample 예제 잘보기
      -> "(char) 강제 형변환"을 통해 문자로 바꿔주어야함.
 2. int 문자입력스트림객체.read(char[] cbuf) - 읽은 문자들을 cbuf배열에 저장 후, 읽은 문자 갯수 return,  **입력스트림객체에서 읽을 것 X -> -1 return**
 3. void close()
-
-생성자는 다 비슷함.
 ------------------------------------------------------------------------------------------------------------------------
 보조 스트림 - 다른 스트림과 연결되어 여러가지 기능 제공.
     자체적으로 입출력 수행 불가.
@@ -95,6 +101,7 @@ OutputStream os = new FileOutputStream(파일경로);
 Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으로 바꿔버림.
 ------------------------------------------------------------------------------------------------------------------------ 
 성능 향상 스트림 - 버퍼를 이용하여 Disk I/O 를 줄여줌
+생성자
 1. BufferedInputStream bis = new BufferedInputStream(바이트입력스트림)
 2. BufferedOutputStream bos = new BufferedOutputStream(바이트출력스트림)
 3. BufferedReader br = new BufferedReader(문자입력스트림)
@@ -116,3 +123,7 @@ Writer w = new OutputStreamWriter(os[, 문자셋]); -> 문자출력스트림으�
 -8. short dis.readShort()       void dos.writeShort(int v)
 -9. String dis.readUTF()        void dos.writeUTF(String str)
 주의 : 입출력은 반드시 기본타입스트림을 통해해야하고, 출력 순서대로 입력을 받아야함. 즉, 객체들의 순서를 지켜야함
+------------------------------------------------------------------------------------------------------------------------ 
+프린트 스트림 - 단독으로 파일을 연결이 가능
+1. PrintStream
+2. PrintWriter - OutputStream, Writer 둘다 연결 가능.
