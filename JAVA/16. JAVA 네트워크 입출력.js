@@ -66,3 +66,8 @@ socket.connect( new InetSocketAddress("도메인이름", 서버Port번호) );
 
 서버와의 연결 끊기
 socket.close();
+
+serverExample 예제 잘보기
+-----입출력 스트림으로 데이터 주고 받기
+InputStream is = socket.getInputStream();
+OutputStream os = socket.getInputStream();
