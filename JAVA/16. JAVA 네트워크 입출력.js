@@ -71,7 +71,7 @@ socket.close();
 InputStream is = socket.getInputStream();
 OutputStream os = socket.getOutputStream();
 
-serverExample 예제 잘보기
+tcpExample 예제 잘보기
 ---------------------------------------------------------------------------------------------------------------
 UDP
 - 연결 과정 X -> 전송속도 > TCP
@@ -108,8 +108,10 @@ datagramSocket.close();
 1. DatagramSocket datagramSocket = new DatagramSocket(); - OS가 지정해주기에 서버와 달리 포트번호 지정 X
 
 -클라이언트 -> UDP서버 처리 내용 "전송" 과정
-DatagramPacket sendPacket = new DatagramPacket( bytes, 0, bytes.length, new InetSocketAddress("서버IP주소", 서버Port번호));
+DatagramPacket sendPacket = new DatagramPacket( bytes, 0, bytes.length, new InetSocketAddress("서버IP주소", 서버Port번호)); - 로컬 컴퓨터에 연결 시 "localhost"
 //socketAddress - > new InetSocketAddress("서버IP주소", 서버Port번호) 만 빼고 동일.(socketAddress객체 생성도 당연히 뺌)
 
 -UDP서버와의 연결 종료
 datagramSocket.close();
+
+udpExample 예제 잘보기
