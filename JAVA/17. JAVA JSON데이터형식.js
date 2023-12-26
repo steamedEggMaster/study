@@ -16,3 +16,21 @@ https://github.com/stleary/JSON-java -> click here if you just want the latest r
 - 객체 { ... }
 - 배열 [ ... ]
 
+JSON 표기법 관련 클래스
+1. JSOObject : JSON 객체 표기를 생성하거나 파싱할 때 사용
+2. JSONArray : JSON 배열 표기를 생성하거나 파싱할 때 사용
+
+-JSON 객체 생성
+JSONObject root = new JSONObject();
+-속성 추가
+root.put("속성명", 속성값);
+-객체 속성 추가
+JSONObject tel = new JSONObject();
+tel.put("속성명", 속성값); ...
+root.put("tel", tel);
+-배열 속성 추가
+JSONArray skill = new JSONArray();
+skill.put(속성값); ...
+root.put("skill", skill);
+-JSON 얻기
+String json = root.toString();
