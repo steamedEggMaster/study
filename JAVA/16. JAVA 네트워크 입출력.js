@@ -93,7 +93,7 @@ datagramSocket.receive(receivePacket);
 1. byte[] bytes = receivePacke.getData();
 2. int num = receivePacket.getLength();
 
--UDP서버 -> 클라이언트로 처리 내용 "전송" : "클라이언트" IP주소, 포트번호 필요
+-UDP서버 -> 클라이언트 처리 내용 "전송" 과정 : "클라이언트" IP주소, 포트번호 필요
 SocketAddress socketAddress = receivePacket.getSocketAddresss();
 String data = "처리 내용"
 byte[] bytes = data.getBytes("UTF-8");              시작인덱스         클라이언트 정보 담긴 객체
@@ -103,3 +103,9 @@ datagramSocket.send( sendPacket );
 
 -UDP 서버 종료
 datagramSocket.close();
+
+-----UDP 클라이언트
+1. DatagramSocket datagramSocket = new DatagramSocket(); - OS가 지정해주기에 서버와 달리 포트번호 지정 X
+
+-클라이언트 -> UDP서버 처리 내용 "전송" 과정
+DatagramPacket sendPacket = new DatagramPacket( bytes, 0, bytes.length, new InetSocketAddress("서버IP주소", 서버Port번호));
