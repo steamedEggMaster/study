@@ -32,13 +32,15 @@ TCP
 ServerSocket 클래스 : 클라이언트의 연결을 수락하는 서버 쪽 클래스
 Socket 클래스 : 클라이언트에서 "연결 요청" 시 and 클라이언트와 서버 양쪽에서 "데이터 주고받을 때" 사용.
 
-TCP 서버
+------TCP 서버 - 예외처리해주기
 1. ServerSocket serverSocket = new ServerSocket(바인딩할 포트번호);
 2. ServerSocket serverSocket = new ServerSocket();
    serverSocket.bind(new InetSocketAdderss(바인딩할 포트번호);
 서버 컴퓨터에 여러 개의 IP가 할당된 경우, 특정 IP에서만 서비스하고자 할때
 3. serverSocket.bind(new InetSocketAdderss("xxx.xxx.xxx.xxx", 바인딩할 포트번호);
 -> 포트번호가 다른 프로그램에서 사용중이면, "BindException" 발생
+-> 포트를 설정 시 방화벽을 해제해야함. 
+        -> 해제 설정창이 안뜬다면, 방화벽 상태 확인-고급설정-인바운드 규칙-새 규칙-포트-(TCP, 특정로컬포트:포트번호)-다음-다음-이름 및 마침
 
 ServerSocket 생성 후 연결 요청 수락
 Socket socket = serverSocket.accept();
@@ -46,8 +48,21 @@ Socket socket = serverSocket.accept();
 
 return 된 Socket객체를 통해 연결된 "클라이언트"의 IP주소, 포트번호 얻는 방법
 InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();
-String clientIp = isa.getHostName();
+String clientIp = isa.getHostName()/getHostStirng();
 String portNo = isa.getPort();
 
 서버 종료 -> 사용한 포트번호 다른 프로그램에서 사용 가능해짐(언바인딩)
 serverSocket.close();
+
+-----TCP 클라이언트
+객체 생성과 동시에 클라->서버로 연결 요청
+1. Socket socket = new Socket("서버 IP주소", 서버Port번호);
+2. Socket socket = new Socket( InetAddress.getByName("도메인이름"), 서버Port번호 );
+객체 생성 후 connect()를 통해 연결 요청
+Socket socket = new Socket();
+socket.connect( new InetSocketAddress("도메인이름", 서버Port번호) );
+-> UnknownHostException, IOException 예외 발생 가능.
+   (IP주소 잘못 표기시)   (제공된 IP, Port번호로 연결할 수 없을 때)
+
+서버와의 연결 끊기
+socket.close();
