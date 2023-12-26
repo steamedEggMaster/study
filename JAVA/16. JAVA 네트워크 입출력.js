@@ -79,7 +79,7 @@ UDP
 - 실시간 전송 스트리밍 서비스에서 많이 사용
 
 DatagramSocket : 발신점과 수신점
-DatagramPacket : 주고 받는 데이터
+DatagramPacket : 주고 받는 데이터 - Packet을 통해 주고받아 패킷의 내용을 확인하는 getData() 등이 있는 것.
 
 -----UDP 서버
 1. DatagramSocket datagramSocket = new DatagramSocket(바인딩할 포트번호);
