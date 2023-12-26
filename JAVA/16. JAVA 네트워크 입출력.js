@@ -69,7 +69,7 @@ socket.close();
 
 -----입출력 스트림으로 데이터 주고 받기
 InputStream is = socket.getInputStream();
-OutputStream os = socket.getInputStream();
+OutputStream os = socket.getOutputStream();
 
 serverExample 예제 잘보기
 ---------------------------------------------------------------------------------------------------------------
