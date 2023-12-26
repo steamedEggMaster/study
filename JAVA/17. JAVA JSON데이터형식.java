@@ -34,3 +34,19 @@ skill.put(속성값); ...
 root.put("skill", skill);
 -JSON 얻기
 String json = root.toString();
+
+속성 순서 중요X, 줄바꿈처리 X -> 네트워크 전송량 줄여줌
+
+-----파일로부터 JSON읽기
+BufferedReader객체 생성 -> 객체.readLine(); -> JSON을 String객체로 받고, JSON파싱(해석)
+JSONObject root = new JSONObject(String객체);
+-속성 정보 읽기
+root.getString("속성명")
+root.getInt("속성명")
+root.getBoolean("속성명")
+-객체 속성 정보 읽기.
+JSONObject tel = root.getJSONObject("tel")
+동일하기 속성 정보 읽으면 됨.
+-배열 속성 읽기
+JSONArray skill = root.getJSONArray("skill");
+skill.get(index);
