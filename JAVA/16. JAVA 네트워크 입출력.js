@@ -42,32 +42,64 @@ Socket 클래스 : 클라이언트에서 "연결 요청" 시 and 클라이언트
 -> 포트를 설정 시 방화벽을 해제해야함. 
         -> 해제 설정창이 안뜬다면, 방화벽 상태 확인-고급설정-인바운드 규칙-새 규칙-포트-(TCP, 특정로컬포트:포트번호)-다음-다음-이름 및 마침
 
-ServerSocket 생성 후 연결 요청 수락
+-ServerSocket 생성 후 연결 요청 수락
 Socket socket = serverSocket.accept();
 -> 클라이언트가 연결 요청하기 전까지 블로킹(실행 멈춤 상태)됨. -> 요청 오면 통신용 Socket return
 
-return 된 Socket객체를 통해 연결된 "클라이언트"의 IP주소, 포트번호 얻는 방법
+-return 된 Socket객체를 통해 연결된 "클라이언트"의 IP주소, 포트번호 얻는 방법
 InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();
 String clientIp = isa.getHostName()/getHostStirng();
 String portNo = isa.getPort();
 
-서버 종료 -> 사용한 포트번호 다른 프로그램에서 사용 가능해짐(언바인딩)
+-서버 종료 -> 사용한 포트번호 다른 프로그램에서 사용 가능해짐(언바인딩)
 serverSocket.close();
 
 -----TCP 클라이언트
-객체 생성과 동시에 클라->서버로 연결 요청
+-객체 생성과 동시에 클라->서버로 연결 요청
 1. Socket socket = new Socket("서버 IP주소", 서버Port번호); - 로컬 컴퓨터에 연결 시 "localhost"
 2. Socket socket = new Socket( InetAddress.getByName("도메인이름"), 서버Port번호 );
-객체 생성 후 connect()를 통해 연결 요청
+-객체 생성 후 connect()를 통해 연결 요청
 Socket socket = new Socket();
 socket.connect( new InetSocketAddress("도메인이름", 서버Port번호) );
 -> UnknownHostException, IOException 예외 발생 가능.
 (IP or 도메인 잘못 표기시)(제공된 IP, Port번호로 연결할 수 없을 때)
 
-서버와의 연결 끊기
+-서버와의 연결 끊기
 socket.close();
 
-serverExample 예제 잘보기
 -----입출력 스트림으로 데이터 주고 받기
 InputStream is = socket.getInputStream();
 OutputStream os = socket.getInputStream();
+
+serverExample 예제 잘보기
+---------------------------------------------------------------------------------------------------------------
+UDP
+- 연결 과정 X -> 전송속도 > TCP
+- 데이터 순서 X, 손실 발생 가능
+- 실시간 전송 스트리밍 서비스에서 많이 사용
+
+DatagramSocket : 발신점과 수신점
+DatagramPacket : 주고 받는 데이터
+
+-----UDP 서버
+1. DatagramSocket datagramSocket = new DatagramSocket(바인딩할 포트번호);
+
+-DatagramSocket 생성 후 데이터 "수신" 과정
+DataramPacket receivePacket = new DatagramPacket(new byte[1024], 1024); - 1번 매개값 : 수신된 데이터를 저장할 배열 / 2번 매개값 : 수신가능한 최대 바이트 수
+datagramSocket.receive(receivePacket);
+-> 클라이언트가 보낸 데이터 수신하기 전까지 블로킹(실행 멈춤 상태)됨. -> 수신 시 매개변수(receivePacket)에 내용 저장
+
+-receivePacket에 수신된 데이터와 바이트 수를 얻는 방법
+1. byte[] bytes = receivePacke.getData();
+2. int num = receivePacket.getLength();
+
+-UDP서버 -> 클라이언트로 처리 내용 "전송" : "클라이언트" IP주소, 포트번호 필요
+SocketAddress socketAddress = receivePacket.getSocketAddresss();
+String data = "처리 내용"
+byte[] bytes = data.getBytes("UTF-8");              시작인덱스         클라이언트 정보 담긴 객체
+DatagramPacket sendPacket = new DatagramPacket( bytes, 0, bytes.length, socketAddress ); - 시작인덱스는 빼도 댐
+                                            바이트 배열    보낼 바이트 수
+datagramSocket.send( sendPacket );
+
+-UDP 서버 종료
+datagramSocket.close();
