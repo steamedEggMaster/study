@@ -3,7 +3,7 @@ https://github.com/stleary/JSON-java -> click here if you just want the latest r
 
 객체 표기
 {
-  "속성명":속성값,                  속성명 - 반드시 " " 로 감싸야함!!
+  "속성명":속성값,                  속성명 - 반드시 큰따옴표로 감싸야함!!
   "속성명":속성값,                  속성값으로 가능한것 
   ...                              - "문자열", 숫자, true/false
 }                                  - 객체 { ... } //객체 표기법 고대로 사용
