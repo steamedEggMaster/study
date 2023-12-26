@@ -115,3 +115,6 @@ DatagramPacket sendPacket = new DatagramPacket( bytes, 0, bytes.length, new Inet
 datagramSocket.close();
 
 udpExample 예제 잘보기
+---------------------------------------------------------------------------------------------------------------
+서버의 동시 요청 처리 - 스레드풀
+
