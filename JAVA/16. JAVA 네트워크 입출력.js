@@ -56,13 +56,13 @@ serverSocket.close();
 
 -----TCP 클라이언트
 객체 생성과 동시에 클라->서버로 연결 요청
-1. Socket socket = new Socket("서버 IP주소", 서버Port번호);
+1. Socket socket = new Socket("서버 IP주소", 서버Port번호); - 로컬 컴퓨터에 연결 시 "localhost"
 2. Socket socket = new Socket( InetAddress.getByName("도메인이름"), 서버Port번호 );
 객체 생성 후 connect()를 통해 연결 요청
 Socket socket = new Socket();
 socket.connect( new InetSocketAddress("도메인이름", 서버Port번호) );
 -> UnknownHostException, IOException 예외 발생 가능.
-   (IP주소 잘못 표기시)   (제공된 IP, Port번호로 연결할 수 없을 때)
+(IP or 도메인 잘못 표기시)(제공된 IP, Port번호로 연결할 수 없을 때)
 
 서버와의 연결 끊기
 socket.close();
