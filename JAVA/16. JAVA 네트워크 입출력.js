@@ -40,7 +40,7 @@ Socket 클래스 : 클라이언트에서 "연결 요청" 시 and 클라이언트
 3. serverSocket.bind(new InetSocketAdderss("xxx.xxx.xxx.xxx", 바인딩할 포트번호);
 -> 포트번호가 다른 프로그램에서 사용중이면, "BindException" 발생
 -> 포트를 설정 시 방화벽을 해제해야함. 
-        -> 해제 설정창이 안뜬다면, 방화벽 상태 확인-고급설정-인바운드 규칙-새 규칙-포트-(TCP, 특정로컬포트:포트번호)-다음-다음-이름 및 마침
+        -> 해제 설정창이 안뜬다면, 방화벽 상태 확인-고급설정-인바운드 규칙-새 규칙-포트-(TCP, 특정로컬포트:포트번호)-다음-다음-이름설정 및 마침
 
 -ServerSocket 생성 후 연결 요청 수락
 Socket socket = serverSocket.accept();
