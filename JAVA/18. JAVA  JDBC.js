@@ -9,4 +9,4 @@ DriverManager
 Connection - DB도 하나의 서버, TCP이기에 연결을 해야함
   /    Statement - sql 실행 가능한 객체
   /    PreparedStatement
-  /    CallableStatement - 프로시져, 함수를 실행시켜주는 객체
+  /    CallableStatement - 프로시져, 함수를 실행가능한 객체
