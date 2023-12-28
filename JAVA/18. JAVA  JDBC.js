@@ -36,8 +36,8 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 -2. Class.forName()을 통해 클래스가 메모리에 로딩이 되며, OracleDriver클래스의 static블록이 로딩됨.
 -3. static 블록 내부에서 Driver객체가 upcasting되어 생성되고, DriverManager.registerDriver(Driver객체) 함수를 통해 등록.
 
-3. Connection conn = DriverManager.getConnection(
-    "연결 문자열", - DBMS마다 다른 형식을 가짐. 검색해서 찾기
-    "사용자", 
+3. Connection conn = DriverManager.getConnection(                             (TCP로 연결한것)          (DB명)       
+    "연결 문자열", - DBMS마다 다른 형식을 가짐. 검색해서 찾기 - 오라클은 "jdbc:oracle:thin:@localhost:1521/orcl"
+    "사용자",                                                                           (ip주소) (포트번호)
     "비밀번호");를 통해 연결.
                                                
