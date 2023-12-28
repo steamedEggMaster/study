@@ -16,4 +16,4 @@ sqlplus / as sysdba -> alter profile default limit password_life_time unlimited;
 
 원격 연결
 1. Oracle-OraDB19Home1 -> Net Configuration Assistant 클릭 -> 재구성 및 다음 -> 다음 및 예 -> 다음 -> 다음 -> 아니오 및 다음 -> 완료
-해당 포트번호 1521 방화벽 해제
+해당 포트번호 1521 방화벽 해제 - 16번 참고
