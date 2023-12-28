@@ -3,10 +3,11 @@ JDBC(Java Database Connectivity) 인터페이스 (java.sql 패키지)
 - DBMS의 종류 상관 X 동일하게 사용 가능
 
 JDBC Driver - JDBC 인터페이스를 통해 DB와 작업하는 JDBC 인터페이스를 구현한 것.
-            - DBMS마다 별도로 다운로드 해야함.
+            - DBMS마다 "별도로" 다운로드 해야함
 
-DriverManager
-Connection - DB도 하나의 서버, TCP이기에 연결을 해야함
-  /    Statement - sql 실행 가능한 객체
-  /    PreparedStatement
-  /    CallableStatement - 프로시져, 함수를 실행가능한 객체
+DriverManager 클래스 - JDBC Driver 관리 및 DB와 연결하여 Connection 구현 객체 생성.
+  /    Connection 인터페이스 - Statement, PreparedStatement, CallableStatement 구현 객체 생성 및, 트랜젝션 처리 및 DB 연결 끊을 때 사용
+    /    Statement 인터페이스 - SQL의 DDL, DML 실행 시 사용, 주로 정적SQL문 실행 시 사용.
+    /    PreparedStatement 인터페이스 - SQL의 DDL, DML 실행 시 사용, 매개변수화된 SQL문 사용 가능. -> 편리성, 보안성 good
+    /    CallableStatement 인터페이스 - DB에 저장된 프로시져 및 함수 호출 시 사용.
+      /    ResultSet - DB에서 가져온 데이터 읽을 때 사용.
