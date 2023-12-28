@@ -31,5 +31,13 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 2. 클라이언트 프로그램을 DB와 연결하기 위해 가장 먼저 해야 할 일 : JDBC Driver를 메모리로 로딩!
 : Class.forName("JDBC Driver클래스") - oracle은 "oracle.jdbc.OracleDriver"
 -> DriverManager에 JDBC Driver 객체를 등록하게 됨. JDBC Driver 클래스를 찾지 못하면 "ClassNotFoundException" 발생
+실행과정
+-1. OracleDriver클래스는 Driver인터페이스의 구현 클래스.
+-2. Class.forName()을 통해 클래스가 메모리에 로딩이 되며, OracleDriver클래스의 static블록이 로딩됨.
+-3. static 블록 내부에서 Driver객체가 upcasting되어 생성되고, DriverManager.registerDriver(Driver객체) 함수를 통해 등록.
 
-3. Connection conn = DriverManager.getConnection("연결 문자열", "사용자", "비밀번호"
+3. Connection conn = DriverManager.getConnection(
+    "연결 문자열", - DBMS마다 다른 형식을 가짐. 검색해서 찾기
+    "사용자", 
+    "비밀번호");를 통해 연결.
+                                               
