@@ -39,5 +39,6 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 3. Connection conn = DriverManager.getConnection(                             (TCP로 연결한것)          (DB명)       
     "연결 문자열", - DBMS마다 다른 형식을 가짐. 검색해서 찾기 - 오라클은 "jdbc:oracle:thin:@localhost:1521/orcl"
     "사용자",                                                                           (ip주소) (포트번호)
-    "비밀번호");를 통해 연결.
-                                               
+    "비밀번호");  를 통해 연결
+
+4. conn.close(); - 연결 끊기
