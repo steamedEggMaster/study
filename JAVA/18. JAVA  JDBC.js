@@ -58,10 +58,13 @@ in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매
 4. int rows = ps.executeUpdate(); - 테이블에 행 저장 후 DB에 반영된 행의 개수 return
  -> java에서 sql 실행 시 autoCommit
 5. ps.close(); - PreparedStatement가 사용하는 메모리 해제
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------------
+데이터 수정
+in Oracle
+1. UPDATE 테이블명 SET 컬럼명1=데이터1, 컬럼명2=데이터2, ... WHERE 조건문
+2. commit; 또는 rollback;
+in JAVA
+1. String sql = "UPDATE 테이블명 SET 컬럼명1=?, 컬럼명2=?, ... WHERE 조건문";
+2. PreparedStatement ps = conn.prepareStatement(sql);
+3. ?에 들어갈 값 지정 - ps.set~(?의 순서(1~), value);
+4. int rows = ps.executeUpdate(); - 테이블에 행 업데이트 후 DB에 반영된 행의 개수 return / 0이 return되어도 이상한것 X
