@@ -54,4 +54,5 @@ in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매
     ps.setString/Int/Boolean(?의 순서(1~), value);
       ex) ps.setString(1, "winter");
 4. int rows = ps.executeUpdate(); - 테이블에 행 저장 후 DB에 반영된 행의 개수 return
+ -> java에서 sql 실행 시 autoCommit
 5. ps.close(); - PreparedStatement가 사용하는 메모리 해제
