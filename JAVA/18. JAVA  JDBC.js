@@ -49,7 +49,7 @@ in Oracle
 2. commit; 또는 rollback;
 in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문
 1. 매개변수화된 INSERT문을 String변수에 문자열로 대입. ex) String sql = "INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...)";
-2. PreparedStatement ps = conn.preparedStatement(sql); - sql문을 실행하기위한 객체 생성
+2. PreparedStatement ps = conn.prepareStatement(sql); - sql문을 실행하기위한 객체 생성
 3. ?에 들어갈 값 지정
     ps.setString/Int/Boolean(?의 순서(1~), value);
       ex) ps.setString(1, "winter");
