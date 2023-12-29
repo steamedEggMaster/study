@@ -46,8 +46,9 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 데이터 저장
 in Oracle 
 1. INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (데이터1, 2, ...); - ''으로 감쌀것!
-2. commit; 또는 rollback;
-in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문 / SYSDATE와 같은 값이 정해지는 상수를 얻어오는 컬럼은 ? 쓰지말것.
+2. commit; 또는 rollback; - 하지않으면 계속 DB를 수정중인 상태라 다른 클라이언트가 접근하지 못함
+in JAVA 
+-INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문 / SYSDATE와 같은 값이 정해지는 상수를 얻어오는 컬럼은 ? 쓰지말것.
 1. 매개변수화된 INSERT문을 String변수에 문자열로 대입. ex) String sql = "INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...)";
 2. PreparedStatement ps = conn.prepareStatement(sql); - sql문을 실행하기위한 객체 생성
 2-1. PreparedStatement ps = conn.prepareStatement(sql, new String[] {컬럼명}); - sql문 실행 후 가져올 컬럼 값.(보통 PK 컬럼 명시)
@@ -64,7 +65,17 @@ in Oracle
 1. UPDATE 테이블명 SET 컬럼명1=데이터1, 컬럼명2=데이터2, ... WHERE 조건문
 2. commit; 또는 rollback;
 in JAVA
-1. String sql = "UPDATE 테이블명 SET 컬럼명1=?, 컬럼명2=?, ... WHERE 조건문";
+1. String sql = "UPDATE 테이블명 SET 컬럼명1=?, 컬럼명2=?, ... WHERE 조건컬럼=?"; - 띄어쓰기 주의
 2. PreparedStatement ps = conn.prepareStatement(sql);
 3. ?에 들어갈 값 지정 - ps.set~(?의 순서(1~), value);
 4. int rows = ps.executeUpdate(); - 테이블에 행 업데이트 후 DB에 반영된 행의 개수 return / 0이 return되어도 이상한것 X
+------------------------------------------------------------------------------------------
+데이터 삭제
+in Oracle
+1. DELETE FROM 테이블명 WHERE 조건문
+2. commit; 또는 rollback;
+in JAVA
+1. String sql = "DELETE FROM 테이블명 WHERE 조건컬럼=?";
+2. PreparedStatement ps = conn.prepareStatement(sql);
+3. ?에 들어갈 값 지정 - ps.set~(?의 순서(1~), value);
+4. int rows = ps.executeUpdate(); - 테이블에 행 삭제 후 DB에 반영된 행의 개수 return
