@@ -47,12 +47,21 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 in Oracle 
 1. INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (데이터1, 2, ...); - ''으로 감쌀것!
 2. commit; 또는 rollback;
-in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문
+in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문 / SYSDATE와 같은 값이 정해지는 상수를 얻어오는 컬럼은 ? 쓰지말것.
 1. 매개변수화된 INSERT문을 String변수에 문자열로 대입. ex) String sql = "INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...)";
 2. PreparedStatement ps = conn.prepareStatement(sql); - sql문을 실행하기위한 객체 생성
+2-1. PreparedStatement ps = conn.prepareStatement(sql, new String[] {컬럼명}); - sql문 실행 후 가져올 컬럼 값.(보통 PK 컬럼 명시)
 3. ?에 들어갈 값 지정
-    ps.setString/Int/Boolean(?의 순서(1~), value);
+    ps.setString/Int/Boolean/등등(?의 순서(1~), value);
       ex) ps.setString(1, "winter");
+      ex2) ps.setBlob(4, new FileInputStream("경로")); - setBlob은 3개의 오버로딩된 메서드가 있으니 document를 볼것.
 4. int rows = ps.executeUpdate(); - 테이블에 행 저장 후 DB에 반영된 행의 개수 return
  -> java에서 sql 실행 시 autoCommit
 5. ps.close(); - PreparedStatement가 사용하는 메모리 해제
+
+
+
+
+
+
+
