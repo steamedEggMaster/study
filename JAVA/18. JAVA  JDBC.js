@@ -44,12 +44,14 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 4. conn.close(); - 연결 끊기
 ------------------------------------------------------------------------------------------
 데이터 저장
-in Oracle - INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (데이터1, 2, ...); - ''으로 감쌀것!
+in Oracle 
+1. INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (데이터1, 2, ...); - ''으로 감쌀것!
+2. commit; 또는 rollback;
 in JAVA -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문
 1. 매개변수화된 INSERT문을 String변수에 문자열로 대입. ex) String sql = "INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...)";
 2. PreparedStatement ps = conn.preparedStatement(sql); - sql문을 실행하기위한 객체 생성
 3. ?에 들어갈 값 지정
     ps.setString/Int/Boolean(?의 순서(1~), value);
       ex) ps.setString(1, "winter");
-4. int rows = ps.executeUpdate(); - 테이블에 1개 행 저장 후 저장된 행의 개수 return
+4. int rows = ps.executeUpdate(); - 테이블에 행 저장 후 DB에 반영된 행의 개수 return
 5. ps.close(); - PreparedStatement가 사용하는 메모리 해제
