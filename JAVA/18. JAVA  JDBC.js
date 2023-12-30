@@ -36,7 +36,7 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 -2. Class.forName()을 통해 클래스가 메모리에 로딩이 되며, OracleDriver클래스의 static블록이 로딩됨.
 -3. static 블록 내부에서 Driver객체가 upcasting되어 생성되고, DriverManager.registerDriver(Driver객체) 함수를 통해 등록.
 
-3. Connection conn = DriverManager.getConnection(                             (TCP로 연결한것)          (DB명)       
+3. Connection conn = DriverManager.getConnection(                          (TCP로 연결한것을 의미)      (DB명)       
     "연결 문자열", - DBMS마다 다른 형식을 가짐. 검색해서 찾기 - 오라클은 "jdbc:oracle:thin:@localhost:1521/orcl"
     "사용자",                                                                           (ip주소) (포트번호)
     "비밀번호");  를 통해 연결
@@ -84,8 +84,10 @@ in JAVA
 in Oracle
 1. SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건문;
 in JAVA
-4. ResultSet rs = ps.executeQuery();
-5. rs.close(); - 다 사용한 후
+1. String sql = "DELETE FROM 테이블명 WHERE 조건컬럼=?";
+2. PreparedStatement ps = conn.prepareStatement(sql);
+3. ResultSet rs = ps.executeQuery();
+4. rs.close(); - 다 사용한 후
 
 - ResultSet 구조 - next()만 사용
 컬럼명1, 1   |      컬럼명2, 2   |      컬럼명3, 3    |     ...     |   - SELECT문에 기술된 컬럼 순번
@@ -96,6 +98,6 @@ in JAVA
                  데이터 없음                                           - afterLast 행 / false = rs.next();
 
 1. 컬럼 이름으로 읽기 
-rs.get타입명("컬럼명");
+타입 변수 = rs.get타입명("컬럼명");
 2. 컬럼 순번으로 읽기 / SELECT문에 "연산식 or 함수 호출"이 포함되면 -> "컬럼 순번"으로만 읽기 가능. but alias 설정 시 "컬럼 별명" 으로 읽기 가능
-rs.get타입명(1~);
+타입 변수 = rs.get타입명(1~);
