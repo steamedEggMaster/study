@@ -79,3 +79,17 @@ in JAVA
 2. PreparedStatement ps = conn.prepareStatement(sql);
 3. ?에 들어갈 값 지정 - ps.set~(?의 순서(1~), value);
 4. int rows = ps.executeUpdate(); - 테이블에 행 삭제 후 DB에 반영된 행의 개수 return
+------------------------------------------------------------------------------------------
+데이터 읽기
+in Oracle
+1. SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건문;
+in JAVA
+4. ResultSet rs = ps.executeQuery();
+
+- ResultSet 구조
+컬럼명1      |      컬럼명2      |      컬럼명3       |     ...     |
+                 데이터 없음                                           - BeforeFirst 행 / 최초 커서 위치
+데이터1      |      데이터1      |      데이터1       |     ...     |   true = rs.next()
+데이터2      |      데이터2      |      데이터2       |     ...     |   true = rs.next()
+...
+                 데이터 없음                                           - AfterLast 행 / false = rs.next()
