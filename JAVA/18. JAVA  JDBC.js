@@ -16,14 +16,16 @@ sqlplus / as sysdba -> alter profile default limit password_life_time unlimited;
 
 원격 연결
 1. Oracle-OraDB19Home1 -> Net Configuration Assistant 클릭 -> 재구성 및 다음 -> 다음 및 예 -> 다음 -> 다음 -> 아니오 및 다음 -> 완료
-해당 포트번호 1521 방화벽 해제 - 16번 참고
+해당 포트번호 1521 방화벽 해제 - 16. JAVA 참고
 ------------------------------------------------------------------------------------------
 DB 연결
+
 JDBC Driver 및 
 1. DBMS가 설치된 컴퓨터의 IP주소
 2. DBMS가 허용하는 포트 번호
 3. 사용자(DB계정) 및 비밀번호
 4. 사용하고자 하는 DB 이름
+필요
 
 Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 있음.
 1. java에서 Build Path 시켜주기
@@ -31,6 +33,7 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 2. 클라이언트 프로그램을 DB와 연결하기 위해 가장 먼저 해야 할 일 : JDBC Driver를 메모리로 로딩!
 : Class.forName("JDBC Driver클래스") - oracle은 "oracle.jdbc.OracleDriver"
 -> DriverManager에 JDBC Driver 객체를 등록하게 됨. JDBC Driver 클래스를 찾지 못하면 "ClassNotFoundException" 발생
+
 실행과정
 -1. OracleDriver클래스는 Driver인터페이스의 구현 클래스.
 -2. Class.forName()을 통해 클래스가 메모리에 로딩이 되며, OracleDriver클래스의 static블록이 로딩됨.
@@ -44,9 +47,11 @@ Oracle은 다운 시 jdbc\lib\ojdbc8.jar 이라는 JDBC Driver 파일이 이미 
 4. conn.close(); - 연결 끊기
 ------------------------------------------------------------------------------------------
 데이터 저장
+            
 in Oracle 
 1. INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (데이터1, 2, ...); - ''으로 감쌀것!
 2. commit; 또는 rollback; - 하지않으면 계속 DB를 수정중인 상태라 다른 클라이언트가 접근하지 못함
+            
 in JAVA 
 -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문 / SYSDATE와 같은 값이 정해지는 상수를 얻어오는 컬럼은 ? 쓰지말것.
 1. 매개변수화된 INSERT문을 String변수에 문자열로 대입. ex) String sql = "INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...)";
@@ -99,8 +104,61 @@ in JAVA
                  데이터 없음                                           - afterLast 행 / false = rs.next();
 
 1. 컬럼 이름으로 읽기 
-타입 변수 = rs.get타입명("컬럼명");
+ 타입 변수 = rs.get타입명("컬럼명");
 2. 컬럼 순번으로 읽기 / SELECT문에 "연산식 or 함수 호출"이 포함되면 -> "컬럼 순번"으로만 읽기 가능. but alias 설정 시 "컬럼 별명" 으로 읽기 가능
-타입 변수 = rs.get타입명(1~);
+ 타입 변수 = rs.get타입명(1~);
 
-하나의 행 = 하나의 객체(DTO) -> 객체들의 리스트로 관리하는 것이 좋음.
+**하나의 행 = 하나의 객체(DTO) -> 객체들의 리스트로 관리하는 것이 좋음.
+
+Blob 객체에 저장된 binary데이터를 얻기 위해선 입력스트림 or 배열을 얻어야함.
+1. 입력스트림 - 파일로 저장할 때
+ Blob blob = board.getBfileData();
+ InputStream is = blob.getBinaryStream();
+ OutputStream os = new FileOutputStream("경로");
+ is.transferTo(os); os.flush(); os.close(); is.close();
+2. 배열 - UI프로그램에서 화면상에 그림을 그려야 하는 경우
+ Blob blob - board.getBfileData();
+ byte[] bytes = blob.getBytes(0, blob.length());
+
+oracle.select 예제 잘보기
+------------------------------------------------------------------------------------------
+프로시저와 함수 호출 - Oracle DB에 저장되는 PL/SQL 프로그램
+"클라이언트 프로그램 및 다른 프로시저 or 함수"에서 매개값과 함께 프로시저 or 함수 호출 -> DB 내부에서 일련의 SQL문 실행 -> 실행 결과 프로그램으로 return
+
+----- 프로시저
+    - 업무처리 시 많이 사용 ex) 문을 연다 / 옷을 입는다
+    - return 있/없 설정 가능 (IN, OUT)
+in Oracle
+create or replace PROCEDURE 프로시저명 {
+    매개변수명1    IN  매개변수의type, - 매개변수의type : PLS_INTEGER 등 "PL/SQL에서 사용하는 타입"을 쓰기
+    매개변수명2    IN  매개변수의type, - 테이블과 밀접한 연관이 있어 처리하는 테이블의 타입을 얻어오기 위해
+                ...                  - "테이블명.컬럼명%TYPE" 사용하기도 함.
+    매개변수명n   OUT  매개변수의type, - return 할 값
+}
+IS
+BEGIN
+    처리내용 (insert, delete 등);
+    commit;
+END;
+
+in JAVA
+JDBC에서 프로시저를 호출할 시 
+-1. String sql = "{ call 프로시저명(?, ?, ...) }";
+-2. CallableStatement cs = conn.prepareCall(sql);
+-3. cs.set타입명(?의 순서(1~), value);
+-4. cs.resisterOutParameter(OUT 처리된 매개변수의 ? 번호, return 타입); - return 타입에는 JAVA가 아닌 sql에서 사용하는 타입을 사용해야함 - java.sql.Types에 정의되어 있음.
+-5. cs.execute();
+-6. 타입 변수 = cs.get타입명(OUT 처리된 매개변수의 ? 번호);
+-7. cs.close(); - 다 사용하고 난 후
+
+----- 함수
+함수를 호출할 시 
+            - 연산처리 시 많이 사용
+            - return 값 존재 - 1번째 ?가 무조건 return 값
+-1. String sql = "{ ? = call 함수명(?, ?, ...) }";
+-2. CallableStatement cs = conn.prepareCall(sql);
+-3. cs.resisterOutParameter(1, return 타입); - return 타입에는 JAVA가 아닌 sql에서 사용하는 타입을 사용해야함 - java.sql.Types에 정의되어 있음.
+-4. cs.set타입명(?의 순서(2~), value);
+-5. cs.execute();
+-6. 타입 변수 = cs.get타입명(1);
+-7. cs.close(); - 다 사용하고 난 후
