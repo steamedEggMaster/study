@@ -188,4 +188,10 @@ JDBC에서 함수를 호출할 시
 -6. 타입 변수 = cs.get타입명(1);
 -7. cs.close(); - 다 사용하고 난 후
 
-팁 : "프로시저 및 함수를 정의할때"는 returnType에 "PL/SQL", "JAVA"에서 프로시저,함수 관련 returnType에는 "SQL"에서 사용하는 타입 쓸것.
+팁
+1. "프로시저 및 함수를 정의할때"는 returnType에 "PL/SQL", "JAVA"에서 프로시저,함수 관련 returnType에는 "SQL"에서 사용하는 타입 쓸것.
+2. JAVA에서 sql문을 작성하여 실행하는 것보다 프로시저나 함수를 이용하는 것이 더 좋음
+                                                            why? sql문을 보내는 것보다 적은 양의 코드를 보내며,
+                                                                 프로시저, 함수는 이미 컴파일되어져 있어 실행할 때마다 컴파일해야하는 JAVA의 sql문보다 훨씬 빠름,
+                                                                 보안 상으로도 더 좋음.
+                                                                        그러나 ORM(object Relational Mapping)으로 인해 sql문을 작성해서 사용하는 것이 사용됨.
