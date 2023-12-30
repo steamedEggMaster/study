@@ -66,9 +66,11 @@ in JAVA
 5. ps.close(); - PreparedStatement가 사용하는 메모리 해제
 ------------------------------------------------------------------------------------------
 데이터 수정
+            
 in Oracle
 1. UPDATE 테이블명 SET 컬럼명1=데이터1, 컬럼명2=데이터2, ... WHERE 조건문
 2. commit; 또는 rollback;
+
 in JAVA
 1. String sql = "UPDATE 테이블명 SET 컬럼명1=?, 컬럼명2=?, ... WHERE 조건컬럼=?"; - 띄어쓰기 주의
 2. PreparedStatement ps = conn.prepareStatement(sql);
@@ -76,9 +78,11 @@ in JAVA
 4. int rows = ps.executeUpdate(); - 테이블에 행 업데이트 후 DB에 반영된 행의 개수 return / 0이 return되어도 이상한것 X
 ------------------------------------------------------------------------------------------
 데이터 삭제
+            
 in Oracle
 1. DELETE FROM 테이블명 WHERE 조건문
 2. commit; 또는 rollback;
+
 in JAVA
 1. String sql = "DELETE FROM 테이블명 WHERE 조건컬럼=?";
 2. PreparedStatement ps = conn.prepareStatement(sql);
@@ -86,8 +90,10 @@ in JAVA
 4. int rows = ps.executeUpdate(); - 테이블에 행 삭제 후 DB에 반영된 행의 개수 return
 ------------------------------------------------------------------------------------------
 데이터 읽기
+            
 in Oracle
 1. SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건문;
+
 in JAVA
 1. String sql = "SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건컬럼=?";
 2. PreparedStatement ps = conn.prepareStatement(sql);
@@ -116,6 +122,7 @@ Blob 객체에 저장된 binary데이터를 얻기 위해선 입력스트림 or 
  InputStream is = blob.getBinaryStream();
  OutputStream os = new FileOutputStream("경로");
  is.transferTo(os); os.flush(); os.close(); is.close();
+
 2. 배열 - UI프로그램에서 화면상에 그림을 그려야 하는 경우
  Blob blob - board.getBfileData();
  byte[] bytes = blob.getBytes(0, blob.length());
@@ -128,6 +135,7 @@ oracle.select 예제 잘보기
 ----- 프로시저
     - 업무처리 시 많이 사용 ex) 문을 연다 / 옷을 입는다
     - return 있/없 설정 가능 (IN, OUT)
+            
 in Oracle
 create or replace PROCEDURE 프로시저명 {
     매개변수명1    IN  매개변수의type, - 매개변수의type : PLS_INTEGER 등 "PL/SQL에서 사용하는 타입"을 쓰기
@@ -152,9 +160,26 @@ JDBC에서 프로시저를 호출할 시
 -7. cs.close(); - 다 사용하고 난 후
 
 ----- 함수
-함수를 호출할 시 
-            - 연산처리 시 많이 사용
-            - return 값 존재 - 1번째 ?가 무조건 return 값
+    - 연산처리 시 많이 사용
+    - return 값 존재 - 1번째 ?가 무조건 return 값
+            
+in Oracle
+create or replace FUNTION 함수명 {
+    매개변수명1    매개변수의type, - 매개변수의type : PLS_INTEGER 등 "PL/SQL에서 사용하는 타입"을 쓰기
+    매개변수명1    매개변수의type, - 테이블과 밀접한 연관이 있어 처리하는 테이블의 타입을 얻어오기 위해
+            ...                  - "테이블명.컬럼명%TYPE" 사용하기도 함.
+} RETURN returnType //PLS_INTEGER 등 "PL/SQL에서 사용하는 타입"을 쓰기
+IS //BEGIN-END 사이에 사용할 변수 선언
+    변수명1 변수type;
+    변수명2 변수type; ...
+BEGIN
+    처리내용
+[EXCEPTION
+    예외처리]
+END;
+
+in JAVA
+JDBC에서 함수를 호출할 시 
 -1. String sql = "{ ? = call 함수명(?, ?, ...) }";
 -2. CallableStatement cs = conn.prepareCall(sql);
 -3. cs.resisterOutParameter(1, return 타입); - return 타입에는 JAVA가 아닌 sql에서 사용하는 타입을 사용해야함 - java.sql.Types에 정의되어 있음.
@@ -162,3 +187,5 @@ JDBC에서 프로시저를 호출할 시
 -5. cs.execute();
 -6. 타입 변수 = cs.get타입명(1);
 -7. cs.close(); - 다 사용하고 난 후
+
+팁 : "프로시저 및 함수를 정의할때"는 returnType에 "PL/SQL", "JAVA"에서 프로시저,함수 관련 returnType에는 "SQL"에서 사용하는 타입 쓸것.
