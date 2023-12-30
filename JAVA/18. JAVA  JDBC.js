@@ -85,11 +85,17 @@ in Oracle
 1. SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건문;
 in JAVA
 4. ResultSet rs = ps.executeQuery();
+5. rs.close(); - 다 사용한 후
 
-- ResultSet 구조
-컬럼명1      |      컬럼명2      |      컬럼명3       |     ...     |
-                 데이터 없음                                           - BeforeFirst 행 / 최초 커서 위치
-데이터1      |      데이터1      |      데이터1       |     ...     |   true = rs.next()
-데이터2      |      데이터2      |      데이터2       |     ...     |   true = rs.next()
-...
-                 데이터 없음                                           - AfterLast 행 / false = rs.next()
+- ResultSet 구조 - next()만 사용
+컬럼명1, 1   |      컬럼명2, 2   |      컬럼명3, 3    |     ...     |   - SELECT문에 기술된 컬럼 순번
+                 데이터 없음                                           - beforeFirst 행 / 최초 커서 위치
+데이터1      |      데이터1      |      데이터1       |     ...     |   true = rs.next(); / 커서 이동 후 읽기 가능. / first행
+데이터2      |      데이터2      |      데이터2       |     ...     |   true = rs.next(); 
+...                                                                   - last 행
+                 데이터 없음                                           - afterLast 행 / false = rs.next();
+
+1. 컬럼 이름으로 읽기 
+rs.get타입명("컬럼명");
+2. 컬럼 순번으로 읽기 / SELECT문에 "연산식 or 함수 호출"이 포함되면 -> "컬럼 순번"으로만 읽기 가능. but alias 설정 시 "컬럼 이름" 가능
+rs.get타입명(1~);
