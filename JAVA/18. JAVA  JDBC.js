@@ -51,13 +51,13 @@ in JAVA
 -INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...); - 매개변수화된 INSERT문 / SYSDATE와 같은 값이 정해지는 상수를 얻어오는 컬럼은 ? 쓰지말것.
 1. 매개변수화된 INSERT문을 String변수에 문자열로 대입. ex) String sql = "INSERT INTO 테이블명 (컬럼명1, 2, ...) VALUES (?, ?, ...)";
 2. PreparedStatement ps = conn.prepareStatement(sql); - sql문을 실행하기위한 객체 생성
-2-1. PreparedStatement ps = conn.prepareStatement(sql, new String[] {컬럼명}); - sql문 실행 후 가져올 컬럼 값.(보통 PK 컬럼 명시)
+2-1. PreparedStatement ps = conn.prepareStatement(sql, new String[] {컬럼명}); - sql문 실행 후 가져올 컬럼 값.(보통 PK 컬럼 명시) - oracle.insert.BoardWithFileInsertExample 예제 잘보기
 3. ?에 들어갈 값 지정
     ps.setString/Int/Boolean/등등(?의 순서(1~), value);
       ex) ps.setString(1, "winter");
       ex2) ps.setBlob(4, new FileInputStream("경로")); - setBlob은 3개의 오버로딩된 메서드가 있으니 document를 볼것.
 4. int rows = ps.executeUpdate(); - 테이블에 행 저장 후 DB에 반영된 행의 개수 return
- -> java에서 sql 실행 시 autoCommit
+ -> java에서 sql 실행 시 "autoCommit"
 5. ps.close(); - PreparedStatement가 사용하는 메모리 해제
 ------------------------------------------------------------------------------------------
 데이터 수정
@@ -84,10 +84,11 @@ in JAVA
 in Oracle
 1. SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건문;
 in JAVA
-1. String sql = "DELETE FROM 테이블명 WHERE 조건컬럼=?";
+1. String sql = "SELECT 컬럼명1, 컬럼명2, ... FROM 테이블명 WHERE 조건컬럼=?";
 2. PreparedStatement ps = conn.prepareStatement(sql);
-3. ResultSet rs = ps.executeQuery();
-4. rs.close(); - 다 사용한 후
+3. ?에 들어갈 값 지정 - ps.set~(?의 순서(1~), value);
+4. ResultSet rs = ps.executeQuery();
+5. rs.close(); - 다 사용한 후
 
 - ResultSet 구조 - next()만 사용
 컬럼명1, 1   |      컬럼명2, 2   |      컬럼명3, 3    |     ...     |   - SELECT문에 기술된 컬럼 순번
@@ -101,3 +102,5 @@ in JAVA
 타입 변수 = rs.get타입명("컬럼명");
 2. 컬럼 순번으로 읽기 / SELECT문에 "연산식 or 함수 호출"이 포함되면 -> "컬럼 순번"으로만 읽기 가능. but alias 설정 시 "컬럼 별명" 으로 읽기 가능
 타입 변수 = rs.get타입명(1~);
+
+하나의 행 = 하나의 객체(DTO) -> 객체들의 리스트로 관리하는 것이 좋음.
