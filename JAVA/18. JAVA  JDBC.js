@@ -195,3 +195,43 @@ JDBC에서 함수를 호출할 시
                                                                  프로시저, 함수는 이미 컴파일되어져 있어 실행할 때마다 컴파일해야하는 JAVA의 sql문보다 훨씬 빠름,
                                                                  보안 상으로도 더 좋음.
                                                                         그러나 ORM(object Relational Mapping)으로 인해 sql문을 작성해서 사용하는 것이 사용됨.
+------------------------------------------------------------------------------------------
+트랜잭션 처리
+트랜잭션 : 기능 처리의 최소 단위
+하나의 기능 -> 여러 가지 소작업들로 구성.
+최소 단위 : 이 소작업들을 분리 불가, 전체를 하나로 본다는 개념 -> all or nothing
+
+DB는 commit과 rollback 제공.
+JDBC는 autoCommit에 의해 문제가 발생. -> conn.setAutoCommit(false); 로 autoCommit 기능 off
+conn.commit();
+conn.rollback();
+
+- 트랜잭션을 위한 일반적인 코드 작성 패턴
+Connection conn = null
+try {
+    //DB와 연결
+    //트랜잭션 시작 ----------------------------------
+    //자동 커밋 기능 끄기
+    conn.setAutoCommit(false);
+    //소작업처리
+    //...
+    //커밋 -> 모두 성공 처리
+    conn.commmit();
+    //트랜잭션 종료 ---------------------------------
+} catch(Exception e) {
+ try {
+    //롤백 -> 모두 실패 처리
+    conn.rollback();
+ } catch (SQLException e) {}
+} finally {
+ if(conn != null){
+    try {
+        //원래대로 자동 커밋 기능 켜기
+        conn.setAutoCommit(true); - 다시 켜는 이유 : 실제 프로젝트에선 커넥션 풀을 사용함
+        //연결 끊기
+        conn.close(); -> 커넥션 풀에 반납
+    } catch(SQLException e) {} } }
+
+커넥션 풀 : DB와의 연결 객체 Connection을 여러개 만들어놓고 필요할때마다 가져다 쓰고 반납하는 방식 -> DB 연결 시간 감소 및 Connection 수 관리 가능
+------------------------------------------------------------------------------------------
+게시판 구현 - CRUD(Create, Read, Update, Delete)
