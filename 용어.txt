@@ -1,3 +1,6 @@
 JPEG(Joint Photographic Experts Group)
 - 확장자 : .jpg .jpeg .jpe .jif .jfif .jfi
 - 최대 24bit 색상 지원, 손실 압축 방식(인간이 인지하기 어려운 부분을 잘라냄) 사용
+
+JPA(Java Persistence API) : 자바 진영에서 ORM(Object-Relational Mapping) 기술 표준으로 사용되는 인터페이스의 모음.
+ORM : 어플리케이션의 객체를 RDB 테이블에 자동으로 영속화 해주는 것
