@@ -15,9 +15,12 @@ Client <-DTO-> Controller <-DTO-> Service <-Entity-> DAO(Repository) <-Entity-> 
                                 ServiceImpl             DAOImpl
 Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
 
-메이븐(Maven) - pom.xml
-대표적 태그 설명
-0. parent : 상위 pom파일의 dependency들을 상속받아 사용하기 위한
+메이븐(Maven)
+  - XML 기반의 빌드 스크립트
+  - 라이프 사이클 도입 : 미리 정해진 빌드순서(https://m.blog.naver.com/zzang9ha/222055186683)
+  - pom.xml(자동 라이브러리 관리)
+대표적 태그 설명 
+0. parent : 상위 pom파일의 dependency들을 상속받아 사용하기 위한 태그
 1. modelVersion : 메이븐 버전 의미
 2. groupId : 프로젝트 그룹 id 의미, 대표 사이트 도메인을 역순으로 적어 사용.
 3. artifactId : groupId외에 다른 프로젝트와는 구분될 수 있는 프로젝트의 Id를 작성
