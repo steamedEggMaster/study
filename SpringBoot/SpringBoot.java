@@ -1,5 +1,12 @@
 **alt + insert 키** / CRUD(Create, Review, Update, Delete)
 
+------------------------------------------------------------------------
+Group : 도메인 이름
+Artifact : 프로젝트 이름
+
+application.properties : 프로젝트에서 DB의 위치, 아이디 등이 바뀔때마다 바꿔적어주면 자동으로 적용해주는 파일
+test : 실무 적용 전 작동 상태를 확인 하는 파일
+------------------------------------------------------------------------
 Spring Boot 서비스 구조
 (F.E)  (------------------Spring Boot------------------------------)
                                                     (DB와직접통신영역)
@@ -10,6 +17,7 @@ Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
 
 메이븐(Maven) - pom.xml
 대표적 태그 설명
+parent : 상위 pom파일의 dependency들을 상속받아 사용하기 위한
 1. modelVersion : 메이븐 버전 의미
 2. groupId : 프로젝트 그룹 id 의미, 대표 사이트 도메인을 역순으로 적어 사용.
 3. artifactId : groupId외에 다른 프로젝트와는 구분될 수 있는 프로젝트의 Id를 작성
