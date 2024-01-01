@@ -53,13 +53,17 @@ GoF 디자인 패턴
 REST(Representational State Tranfer) API : 자원의 이름으로 구분하여 해당 자원의 상태를 교환하는 것
  - REST는 서버와 클라이언트의 통신 방식 중 하나
  - HTTP URI를 통해 자원을 명시하고 HTTP Method(CRUD)를 통해 자원을 교환하는 것
-특징
+ - REST 아키텍쳐를 구현하는 웹서비스 : "RESTful" 이라 표현
+REST 특징
 1. Server-Client 구조
 2. Stateless - 요청 간에 클라이언트 정보가 서버에 저장되지 않음 
 3. Cacheable - HTTP 프로토콜을 사용하기에 HTTP 특징인 캐싱 기능 적용
 4. 계층화(Layered System)
 5. Code on Demand
 6. 인터페이스 일관성(Uniform Interface) : HTTP 프로토콜을 따르는 모든 플랫폼에서 사용 가능하게끔 설계
+REST API 특징
+1. REST 기반으로 시스템을 분산하여 확장성과 재사용성 높임
+2. HTTP 표준을 따르고 있어 여러 프로그래밍 언어로 구현 가능
 설계 규칙
 1. 웹 기반 REST API 설계할 경우 URI를 통해 자원을 표현해야함
 2. 자원에 대한 조작은 HTTP Method(CRUD)를 통해 표현해야함
@@ -68,6 +72,8 @@ REST(Representational State Tranfer) API : 자원의 이름으로 구분하여 �
 5. Resource 이름이나 URI가 길어질 경우 하이픈(-)을 통해 가독성을 높일 수 있음
 6. 언더바 사용 X
 7. 파일 확장자를 표현하지 않음.
+
+
 ------------------------------------------------------------------------
 pom.xml 설정하기
 프로젝트 관련 태그
