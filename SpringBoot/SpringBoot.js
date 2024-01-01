@@ -52,7 +52,7 @@ GoF 디자인 패턴
 ------------------------------------------------------------------------
 REST(Representational State Tranfer) API : 자원의 이름으로 구분하여 해당 자원의 상태를 교환하는 것
  - REST는 서버와 클라이언트의 통신 방식 중 하나
- - HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 자원을 교환하는 것
+ - HTTP URI를 통해 자원을 명시하고 HTTP Method(CRUD)를 통해 자원을 교환하는 것
 설계 규칙
 1. 웹 기반 REST API 설계할 경우 URl을 통해 자원을 표현해야함
 2. 자원에 대한 조작은 HTTP Method(CRUD)를 통해 표현해야함
