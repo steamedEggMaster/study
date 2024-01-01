@@ -17,7 +17,7 @@ Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
 
 메이븐(Maven) - pom.xml
 대표적 태그 설명
-parent : 상위 pom파일의 dependency들을 상속받아 사용하기 위한
+0. parent : 상위 pom파일의 dependency들을 상속받아 사용하기 위한
 1. modelVersion : 메이븐 버전 의미
 2. groupId : 프로젝트 그룹 id 의미, 대표 사이트 도메인을 역순으로 적어 사용.
 3. artifactId : groupId외에 다른 프로젝트와는 구분될 수 있는 프로젝트의 Id를 작성
