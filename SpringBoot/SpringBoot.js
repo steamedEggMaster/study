@@ -19,15 +19,15 @@ Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
 대표적 태그 설명 
 0. parent : 상위 pom파일의 dependency들을 상속받아 사용하기 위한 태그
 1. modelVersion : 메이븐 버전 의미
-2. groupId : 프로젝트 그룹 id 의미, 대표 사이트 도메인을 역순으로 적어 사용.
+2. groupId : 프로젝트 그룹 id 의미, 대표 사이트 도메인을 역순으로 적어 사용
 3. artifactId : groupId외에 다른 프로젝트와는 구분될 수 있는 프로젝트의 Id를 작성
-4. version : 프로젝트 버전 의미. 개발 단계에 따라 구분하여 작성.
-5. name : 프로젝트 이름.
+4. version : 프로젝트 버전 의미. 개발 단계에 따라 구분하여 작성
+5. name : 프로젝트 이름
 6. description : 해당 프로젝트의 간략한 설명
 7. properties : pom.xml 파일 내 빈번하게 사용되는 중복 상수 정의 영역
                 해당 영억 상수 사용을 위해선 ${태그명} 형태로 사용
 8. dependendies : 해당 프로젝트에서 의존성을 가지고 사용하는 라이브러리를 정의하는 영역
-                  각 라이브러리마다 <dependency> 태그를 사용하여 구분.
+                  각 라이브러리마다 <dependency> 태그를 사용하여 구분
 9. build : 프로젝트 빌드 관련 정보 설정 영역
 
 Maven Repository : https://mvnrepository.com/
