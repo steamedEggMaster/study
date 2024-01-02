@@ -122,13 +122,22 @@ SwaggerConfiguration 예제 잘보기
 ------------------------------------------------------------------------
 Lombok - 반복되는 메서드를 annotation을 사용하여 자동으로 작성해주는 라이브러리
 Pom파일에서 라이브러리 의존성 설정을 해줘야함.
-@Data
+  <dependency>
+   <groupId>org.projectlombok</groupId>
+   <artifactId>lombok</artifactId>
+   <optional>true</optional>
+  </dependency>
+@Data - getter + setter + toString + RequiredArgConstructor + equalsAndHashCode
 @Getter@Setter 
 @ToString - toString 메소드 자동 생성
+          - @ToString(exclude = "필드명")으로 제외 가능
 @NoArgConstructor - 파라미터 없는 생성자 생성
 @AllArgConstructor - 모든 필드값을 파라미터로 갖는 생성자 생성
 @RequiredArgsConstructor - 필드값 중 final이나 @NotNull 값을 갖는 생성자를 생성
+@EqualsAndHashCode - equals(내용 동일 여부), hashCode(동일 객체 여부) 메서드 자동 생성
 등등 있음.
+
+어노테이션 우클릭 -> Refactor -> delombok을 통해 롬복을 풀기 가능
 ------------------------------------------------------------------------
 Entity(Domain) : 실제 DB table과 1:1 매핑됨. / 이 클래스의 필드는 각 테이블 내부의 컬럼(애트리뷰트)을 의미
 Repository : Entity에 의해 생성된 DB에 접근하는 메소드를 사용하기 위한 interface 
