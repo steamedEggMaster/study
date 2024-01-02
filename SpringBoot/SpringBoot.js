@@ -141,14 +141,21 @@ Post API : 리소스를 추가하기 위해 사용되는 API
 - 파라미터 받는 방식
 1. @RequestBody Map<~,~>
 2. @RequestBody DTO
+
+PostController 예제 잘보기
 ------------------------------------------------------------------------
 기존에는 서버 개발자가 변경될 때마다 문서를 만들어 프론트엔드 개발자에게 보내줘야 했음.
-Swagger 라이브러리 - 서버로 요청되는 API 리스트를 HTML 화면으로 문서화하여 테스트 할 수 있는 라이브러리
-서버가 가동되며 @RestController를 읽어 API를 분석하여 HTML 문서 작성.
+Swagger 라이브러리 : 서버로 요청되는 API 리스트를 HTML 화면으로 문서화하여 테스트 할 수 있는 라이브러리
+                  - 서버가 가동되며 @RestController를 읽어 API를 분석하여 HTML 문서 작성.
 
 Swagger 설정 방법
 @Configuration : 어노테이션 기반 환경 구성을 돕는 어노테이션
+               - IoC Container에게 해당 클래스를 Bean 구성 Class임을 알려줌
 @Bean : 개발자가 직접 제어가 불가능한 외부 라이브러리 등을 Bean으로 만들 경우에 사용.
+
+http://localhost:8080/swagger-ui.html
+
+SwaggerConfiguration 예제 잘보기
 ------------------------------------------------------------------------
 Put API - 해당 리소스 존재 시 갱신, 리소스 존재 X 시 새로 생성하는 API (=POST API)
 Delete API - 서버를 통해 리소스를 삭제하기 위해 사용되는 API
@@ -156,6 +163,7 @@ ResponseEntity 클래스 - Spring Framework에서 제공하는 클래스 중 Htt
 ------------------------------------------------------------------------
 Lombok - 반복되는 메서드를 annotation을 사용하여 자동으로 작성해주는 라이브러리
 Pom파일에서 라이브러리 의존성 설정을 해줘야함.
+@Data
 @Getter@Setter 
 @ToString - toString 메소드 자동 생성
 @NoArgConstructor - 파라미터 없는 생성자 생성
