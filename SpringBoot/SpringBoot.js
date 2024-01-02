@@ -106,7 +106,7 @@ View - 데이터를 보여주는 화면 영역 (UI 요소들) / 별도의 데이
 ------------------------------------------------------------------------
 @RestContorller = @Controller + @ResponseBody - 컨트롤러 클래스 하위 메서드에 @ResponseBody 어노테이션 안붙여도 문자열 및 JSON 전송 가능
                                               - VIW를 거치지 않고 HTTP ResponseBody에 직접 Return 값 담아 보내게 됨  
-@RequestMapping - value(URL 설정), method(GET, POST, DELETE 등)로 정의하여 API 개발
+@RequestMapping - value(URL 설정), method(RequestMethod.GET/POST/DELETE 등)로 정의하여 API 개발
                 - 클래스와 메소드의 RequestMapping을 통해 URL을 매핑하여 경로를 설정하여 해당 메서드에서 처리  
                 - 고전 방법이라 사용 X
 @GetMapping(value = "/~")
