@@ -7,14 +7,6 @@ Talend API
 application.properties : 프로젝트에서 DB의 위치, 아이디 등이 바뀔때마다 바꿔적어주면 자동으로 적용해주는 파일
 test : 실무 적용 전 작동 상태를 확인 하는 파일
 ------------------------------------------------------------------------
-Spring Boot 서비스 구조
-(F.E)  (------------------Spring Boot------------------------------)
-                                                    (DB와직접통신영역)
-Client <-DTO-> Controller <-DTO-> Service <-Entity-> DAO(Repository) <-Entity-> DB
-                                     |                     |
-                                ServiceImpl             DAOImpl
-Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
-
 메이븐(Maven)
   - XML 기반의 빌드 스크립트
   - 라이프 사이클 도입 : 미리 정해진 빌드순서(https://m.blog.naver.com/zzang9ha/222055186683)
@@ -139,10 +131,18 @@ Pom파일에서 라이브러리 의존성 설정을 해줘야함.
 
 어노테이션 우클릭 -> Refactor -> delombok을 통해 롬복을 풀기 가능
 ------------------------------------------------------------------------
+Spring Boot 서비스 구조
+(F.E)  (------------------Spring Boot------------------------------)
+                                                    (DB와직접통신영역, Repository 인터페이스를 사용하여 DAO 작성)
+Client <-DTO-> Controller <-DTO-> Service <-Entity-> DAO(Repository) <-Entity-> DB
+                                     |                     |
+                                ServiceImpl             DAOImpl
+Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
+
 Entity(Domain) : 실제 DB table과 1:1 매핑됨. / 이 클래스의 필드는 각 테이블 내부의 컬럼(애트리뷰트)을 의미
 Repository : Entity에 의해 생성된 DB에 접근하는 메소드를 사용하기 위한 interface 
 DAO(Data Access Object) : DB에 접근하는 객체를 의미(Persistence Layer) / DB를 사용하여 데이터 조회 및 조작 기능 전담.
-DTO(Data Transfer Object) : VO(Value Object, VO일땐 읽기 전용)로 불리기도함 / 계층간 데이터 교환을 위한 객체를 의미.
+DTO(Data Transfer Object) : VO(Value Object, VO는 읽기 전용)로 불리기도함 / 계층간 데이터 교환을 위한 객체를 의미.
 ------------------------------------------------------------------------
 ORM(Object Relational Mapping) : 어플리케이션의 객체(Java의 데이터 클래스)와 관계형 DB의 데이터를 자동으로 매핑해주는 것. / 대표적으로 JPA, Hibernate 등
 장점 : "SQL 쿼리가 아닌 직관적인 코드로 조작" / "재사용 및 유지보수 편리" - ORM은 독립적으로 작성됨. / "DBMS에 대한 종속성 감소".
