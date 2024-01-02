@@ -110,7 +110,8 @@ View - 데이터를 보여주는 화면 영역 (UI 요소들) / 별도의 데이
 @RequestMapping - value(URL 설정), method(RequestMethod.GET/POST/DELETE 등)로 정의하여 API 개발
                 - 클래스와 메소드의 RequestMapping을 통해 URL을 매핑하여 경로를 설정하여 해당 메서드에서 처리  
                 - 고전 방법이라 사용 X
------Get API
+------------------------------------------------------------------------
+Get API
 1. @GetMapping(value = "/~")
 2. @PathVariable - get형식의 요청에서 매개변수(파라미터)를 전달하기 위해 URL에 값을 담아 요청하는 방법
    방법
@@ -123,7 +124,7 @@ View - 데이터를 보여주는 화면 영역 (UI 요소들) / 별도의 데이
 3. @RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
 4. DTO - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법으로 별도의 객체를 생성하여 받는 방식
 ------------------------------------------------------------------------
-POST API - 리소스를 추가하기 위해 사용되는 API
+Post API - 리소스를 추가하기 위해 사용되는 API
 @PostMapping : POST API를 제작하기 위해 사용되는 어노테이션(annotation) / @RequestMapping + POST method의 조합
 @RequestBody를 사용하여 Body에 담겨있는 값을 받아야함. - Talend API에서 JSON으로 작성함.
 { //간략한 JSON 예시
