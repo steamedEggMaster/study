@@ -1,5 +1,5 @@
 **alt + insert 키**
-  
+Talend API
 ------------------------------------------------------------------------
 application.properties : 프로젝트에서 DB의 위치, 아이디 등이 바뀔때마다 바꿔적어주면 자동으로 적용해주는 파일
 test : 실무 적용 전 작동 상태를 확인 하는 파일
@@ -104,7 +104,11 @@ Model - 데이터 처리 영역
       - DB와 연동을 위한 DAO, 데이터 구조를 표현하는 DO로 구성
 View - 데이터를 보여주는 화면 영역 (UI 요소들) / 별도의 데이터 보관 X
 ------------------------------------------------------------------------
-@RequestMapping = value, method로 정의하여 API 개발 / 고전 방법이라 사용 X
+@RestContorller = @Controller + @ResponseBody - 컨트롤러 클래스 하위 메서드에 @ResponseBody 어노테이션 안붙여도 문자열 및 JSON 전송 가능
+                                              - VIW를 거치지 않고 HTTP ResponseBody에 직접 Return 값 담아 보내게 됨  
+@RequestMapping - value(URL 설정), method(GET, POST, DELETE 등)로 정의하여 API 개발
+                - 클래스와 메소드의 RequestMapping을 통해 URL을 매핑하여 경로를 설정하여 해당 메서드에서 처리  
+                - 고전 방법이라 사용 X
 @GetMapping(value = "/~")
 @PathVariable - get형식의 요청에서 매개변수(파라미터)를 전달하기 위해 URL에 값을 담아 요청하는 방법
 @RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
