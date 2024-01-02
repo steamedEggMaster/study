@@ -105,45 +105,6 @@ Model - 데이터 처리 영역
       - DB와 연동을 위한 DAO, 데이터 구조를 표현하는 DO로 구성
 View - 데이터를 보여주는 화면 영역 (UI 요소들) / 별도의 데이터 보관 X
 ------------------------------------------------------------------------
-@RestContorller = @Controller + @ResponseBody - 컨트롤러 클래스 하위 메서드에 @ResponseBody 어노테이션 안붙여도 문자열 및 JSON 전송 가능
-                                              - VIEW를 거치지 않고 HTTP ResponseBody에 직접 Return 값 담아 보내게 됨  
-@RequestMapping - value(URL 설정), method(RequestMethod.GET/POST/DELETE 등)로 정의하여 API 개발
-                - 클래스와 메소드의 RequestMapping을 통해 URL을 매핑하여 경로를 설정하여 해당 메서드에서 처리  
-                - 고전 방법이라 사용 X
-------------------------------------------------------------------------
-Get API : 서버에 있는 리소스를 가져오기 위해 사용하는 API
-
-@GetMapping(value = "/~")
-- 파라미터 받는 방식
-1. @PathVariable - get형식의 요청에서 매개변수(파라미터)를 전달하기 위해 URL에 값을 담아 요청하는 방법
-   방법
-    -1. 파라미터의 이름 == value에서 사용된 변수이름
-      @GetMapping(value = "/variable1/{variable}")
-      접근제어자 반환값 함수명(@PathVariable 타입 variable) { ~ }
-    -2. 파라미터의 이름 != value에서 사용된 변수이름
-      @GetMapping(value = "/variable2/{variable}")
-      접근제어자 반환값 함수명(@PathVariable("variable") 타입 변수명) { ~ }
-2. @RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
-3. DTO - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법으로 별도의 객체를 생성하여 받는 방식
-
-GetController 예제 잘 보기
-------------------------------------------------------------------------
-Post API : 리소스를 추가하기 위해 사용되는 API
-         - @PostMappingPOST API를 제작하기 위해 사용되는 어노테이션(annotation)
-         - @RequestMapping + POST method의 조합
-         - @RequestBody를 사용하여 Body에 담겨있는 값을 받아야함. - Talend API에서 JSON으로 작성함.
-{ //간략한 JSON 예시
-  "name" : "Flature",
-  "email" : "cksdud5014@naver.com",
-  "organization" : "cksdud-Studio"
-}
-@PostMapping(value = "~")
-- 파라미터 받는 방식
-1. @RequestBody Map<~,~>
-2. @RequestBody DTO
-
-PostController 예제 잘보기
-------------------------------------------------------------------------
 기존에는 서버 개발자가 변경될 때마다 문서를 만들어 프론트엔드 개발자에게 보내줘야 했음.
 Swagger 라이브러리 : 서버로 요청되는 API 리스트를 HTML 화면으로 문서화하여 테스트 할 수 있는 라이브러리
                   - 서버가 가동되며 @RestController를 읽어 API를 분석하여 HTML 문서 작성.
@@ -156,10 +117,6 @@ Swagger 설정 방법
 http://localhost:8080/swagger-ui.html
 
 SwaggerConfiguration 예제 잘보기
-------------------------------------------------------------------------
-Put API - 해당 리소스 존재 시 갱신, 리소스 존재 X 시 새로 생성하는 API (=POST API)
-Delete API - 서버를 통해 리소스를 삭제하기 위해 사용되는 API
-ResponseEntity 클래스 - Spring Framework에서 제공하는 클래스 중 HttpEntity라는 클래스를 상속받아 사용하는 클래스
 ------------------------------------------------------------------------
 Lombok - 반복되는 메서드를 annotation을 사용하여 자동으로 작성해주는 라이브러리
 Pom파일에서 라이브러리 의존성 설정을 해줘야함.
