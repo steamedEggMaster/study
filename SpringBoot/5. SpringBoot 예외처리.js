@@ -31,3 +31,9 @@
 - 전역 설정(@ControllerAdvice)보다 지역 설정(Controller)으로 정의한 Handler가 우선순위를 가짐.
              -> 뭔말이냐면, @ControllerAdvice 나 @RestcontrollerAdvice 로 정의된 클래스의 ExceptionHandler보다, 
                            @RestController 처럼 컨트롤러에 정의된 ExceptionHandler가 우선순위를 가짐.
+----------------------------------------------------------------------------------
+Custom Exception
+
+HttpStatus는 Enum Class
+Enum Class : 서로 관련 있는 상수들을 모아 심볼릭한 명칭의 집합으로 정의한 것.
+           - 클래스처럼 보이게 하는 상수
