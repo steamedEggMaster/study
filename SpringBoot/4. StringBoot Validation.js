@@ -37,3 +37,5 @@ Hibernate Validation은 Bean Validation 명세에 대한 구현체
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
+
+*****이 Validation이 동작하기 위해선 해당 메소드의 파라미터 맨 앞에 @valid 를 써주어야함.
