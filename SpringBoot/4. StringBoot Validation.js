@@ -14,7 +14,7 @@ Hibernate Validation은 Bean Validation 명세에 대한 구현체
 2.3버전 이상부턴 starter-validation dependency를 추가 해야함.
 
 -----Validation 관련 어노테이션
-1. @Size : 문자의 길이 조건
+1. @Size : 문자의 길이 조건 - @Size(min = 수, max = 수)
 2. @NotNull : null값 불가
 3. @NotEmpty : @NotNull  + ""값 불가
 4. @NotBlank : @BotEmpty + " "값 불가
