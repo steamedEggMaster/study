@@ -29,3 +29,5 @@
   처리 되지 못하는 예외 처리에 대해 ExceptionClass에서 핸들링함.
 - @ControllerAdvice로 설정된 클래스 내에서도 메서드로 정의할 수 있지만, 각 Controller 안에 설정도 가능
 - 전역 설정(@ControllerAdvice)보다 지역 설정(Controller)으로 정의한 Handler가 우선순위를 가짐.
+             -> 뭔말이냐면, @ControllerAdvice 나 @RestcontrollerAdvice 로 정의된 클래스의 ExceptionHandler보다, 
+                           @RestController 처럼 컨트롤러에 정의된 ExceptionHandler가 우선순위를 가짐.
