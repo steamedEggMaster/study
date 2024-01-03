@@ -60,3 +60,5 @@
 15. %I : 로깅이 발생한 호출지의 정보                 16. %L : 로깅이 발생한 호출지의 라인 수
 사용 예시
 <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}][%-5level][%thread]%logger%msg%n</pattern>
+
+logback을 사용하기 위해선 pom 파일에서 dependency 설정을 해주어야 하지만, SpringBoot에선 기본적으로 의존성을 잡고 있음.
