@@ -25,7 +25,7 @@
 - 예외 처리 상황이 발생하면, 해당 Handler로 처리하겠다고 명시하는 어노테이션
 - 어노테이션 뒤에 괄호를 붙여 어떤 ExceptionClass를 처리할 지 설정 가능.
      Ex) @ExceptionHandler(~Exception.class)
-- Exception.class는 최상위 클래스로 하위 세부 예외 처리 클래스로 설정한 핸들러 존재 시, "그 핸들러가 우선처리"하게 하며
+- Exception.class는 최상위 클래스로 하위 세부 예외 처리 클래스로 설정한 핸들러 존재 시 "그 핸들러가 우선처리"하게 하며
   처리 되지 못하는 예외 처리에 대해 ExceptionClass에서 핸들링함.
 - @ControllerAdvice로 설정된 클래스 내에서도 메서드로 정의할 수 있지만, 각 Controller 안에 설정도 가능
 - 전역 설정(@ControllerAdvice)보다 지역 설정(Controller)으로 정의한 Handler가 "우선순위"를 가짐.
