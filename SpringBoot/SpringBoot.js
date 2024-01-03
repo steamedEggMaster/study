@@ -156,3 +156,29 @@ JPA(Java Persistance API) : ORM과 관련된 interface 모음(Java 진영에서 
                     - CRUD 처리용 인터페이스 제공
                     - Repository 개발 시 인터페이스만 작성하면 구현 객체를 동적으로 생성하여 주입
                     - 데이터 접근 계층 개발 시 인터페이스만 작성해도 됨.
+-----------------------------------------------------------------------------------------------------------
+로그백(logback) : Log4J 기반으로 개발된 로깅 라이브러리
+               - Log4J에 비해 10배 정도 빠른 퍼포먼스 및 메모리 효율성 증대
+               - 로그에 특정 레벨 설정 가능(Trace -> Debug -> Info -> Warn -> Error)
+               - 실운영과 테스트 상황에서 각각 다른 출력 레벨을 설정하여 로그를 확인할 수 있음.
+               - 출력 방식에 대해 설정 가능
+               - 설정 파일을 일정 시간마다 스캔하여 어플리케이션 "중단 없이" 설정 변경 가능.
+               - 별도의 프로그램 없이 자체적으로 로그 압축 지원
+               - 로그 보관 기간 설정 가능
+
+                                      Appender<Interface>
+                                               ^
+                                               |
+                                  UnsynchronizedAppenderBase
+                                               ^
+                                               |
+                          Filter ---> OutputStreamAppender <--- Encoder<Interface>
+                                               ^
+                                               |
+                                    ----------- -----------
+                                   ^                       ^
+                                   |                       |
+                            ConsolAppender            FileAppender
+                                                           ^
+                                                           |
+                                                     RollingFileAppender
