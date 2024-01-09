@@ -1,3 +1,5 @@
+Test 파일의 Test클래스와 경로가 같아야함
+
 TDD(Test-Driven Development, 테스트 주도 개발)
 : 테스트를 먼저 설계 및 구축 후 테스트를 통과할 수 있는 코드를 짜는 것 <-> 일반적인 방식은 코드 작성 후 테스트 진행
 
@@ -49,7 +51,7 @@ JUnit Vintage
 ----- JUnit Main Annotation
 1. @SpringBootTest
   - 통합 테스트 용도로 사용
-  - @SpringBootApplication을 찾아가 하위의 모든 Bean을 스캔하여 로드
+  - @SpringBootApplication을 찾아가 하위의 "모든 Bean을 스캔하여 로드"
   - 그 후 Test용 Application Context를 만들어 Bean을 추가하고, MockBean을 찾아 교체
 2. @ExtendWith
   - JUnit4에서 @RunWith로 사용되던 어노테이션이 @ExtendWith로 변경됨
@@ -63,6 +65,30 @@ JUnit Vintage
   - Controller의 API를 테스트하는 용도인 MockMvc 객체를 주입 받음
   - perform() 메서드를 활용하여 컨트롤러의 동작 확인 가능
      -- andExpect(), andDo(), andReturn() 등의 메서드 같이 활용
+5. @MockBean
+  - 테스트할 클래스에서 주입 받고 있는 객체에 대해 "가짜 객체를 생성"해주는 어노테이션
+  - 해당 객체는 실제 행위를 하지 않음
+  - given() 메서드를 활용하여 가짜 객체의 동작에 대해 정의하여 사용 가능
+6. @AutoConfigureMockMvc
+  - spring.test.mockmvc의 설정을 로드하면서 "MockMvc의 의존성"을 자동으로 주입
+  - MockMvc 클래스는 "REST API 테스트를 할 수 있는 클래스"
+7. @Import
+  - 필요한 Class들을 Configuration으로 만들어 사용 가능
+  - Configuration Component 클래스도 의존성 설정 가능
+  - Import된 클래스는 주입으로 사용 가능
 
+----- 통합 테스트
+: 여러 기능을 조합하여 전체 비지니스 조직이 제대로 동작하는 지 확인하는 것
+- @SpringBootTest를 사용하여 진행
+     -> 대규모 프로젝트에서 사용 시, 테스트 실행시마다 모든 Bean을 스캔하고 로드하는 작업이 반복되어 매번 무거운 작업 수행해야함
 
+----- 단위 테스트(Unit Test)
+: 프로젝트에 필요한 모든 기능에 대한 테스트를 각각 진행하는 것 의미
+- 스트링 부트에서는 일반적으로 'org.springframework.boot:spring-boot-starter-test' 디펜던시만으로 의존성 모두 가질 수 있음
 
+F.I.R.S.T 원칙
+- F(Fast) : 테스트 코드의 실행은 빠르게 진행되어야 함
+- I(Independent) : 독립적인 테스트가 가능해야 함
+- R(Repeatable) : 테스트는 매번 같은 결과를 만들어야 함
+- S(Self-Validating) : 테스트는 그 자체로 실행하여 결과를 확인할 수 있어야함
+- T(Timely) : 단위 테스트는 비지니스 코드가 완성되기 전에 구성하고 테스트가 가능해야함 - 코드 완성 전부터 테스트가 따라와야 한다는 TDD의 원칙을 담고 잇음
