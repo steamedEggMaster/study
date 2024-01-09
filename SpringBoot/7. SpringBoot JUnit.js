@@ -137,3 +137,5 @@ F.I.R.S.T 원칙
 ----- Jacoco 와 Maven LifeCycle
 메이븐의 라이프 사이클 : Compile -> Test -> Package -> Install -> deploy
 Jacoco 플러그인은 Maven 라이프 사이클에 의해 동작, "Test phase" 이후에 "측정" 가능 - "Package phase" 이후로 "동작" 가능
+
+실무에서는 Code Coverage가 70~80% 정도 보장을 해줘야 빌드를 하고 배포 가능. -> 회사에선 jacoco의 report를 소나큐브라는 플랫폼을 통해 통합관리
