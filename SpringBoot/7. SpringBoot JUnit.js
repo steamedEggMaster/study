@@ -92,3 +92,48 @@ F.I.R.S.T 원칙
 - R(Repeatable) : 테스트는 매번 같은 결과를 만들어야 함
 - S(Self-Validating) : 테스트는 그 자체로 실행하여 결과를 확인할 수 있어야함
 - T(Timely) : 단위 테스트는 비지니스 코드가 완성되기 전에 구성하고 테스트가 가능해야함 - 코드 완성 전부터 테스트가 따라와야 한다는 TDD의 원칙을 담고 잇음
+----------------------------------------------------------------------------------------------------------
+코드 커버리지
+: S/W의 테스트 수준이 충분한지 표현 가능한 지표 중 하나
+- 테스트를 진행했을 때 해당 코드가 실행되었는지 표현하는 방법
+- 가장 보편적으로 사용되는 도구 : Jacoco
+
+----- Jacoco
+: Java 코드의 커버리지를 체크하는 라이브러리
+- 작성된 코드의 테스트 커버리지(Test Coverage) 측정 도구
+- Runtime으로 Test Case를 실행하여, Coverage를 체크하는 방식으로 사용됨
+- 테스트 코드를 통해 테스트를 실행하고, 그 결과를 html, xml, csv등의 형식으로 Report 제공
+
+----- Jacoco pom.xml 파일 설정
+<execution> 내부에 사용되는 값
+- prepare-agent : 테스트 중인 어플리케이션에서 인수를 전달하는 Jacoco Runtime Agent에 대한 property를 준비
+- merge : 여러 실행 데이터 파일들을 하나로 통합하는 명령어
+- report : 하나의 프로젝트 테스트에 대한 Code Coverage 리포트를 생성하는 명령어
+- check : code coverage metric이 충돌하는 지 확인하는 명령어
+
+----- Jacoco Rule
+1. Element type - 코드 커버리지 체크 기준
+   -1. BUNDLE(default) : 패키지 번들
+   -2. PACKAGE : 패키지
+   -3. CLASS : 클래스
+   -4. SOURCEFILE : 소스 파일
+   -5. METHOD : 메서드
+
+2. Counter - 코드 커버리지를 측정할 때 사용하는 지표
+   -1. LINE : 빈 줄을 제외한 실제 코드의 라인 수
+   -2. BRANCH : 조건문 등의 분기 수
+   -3. CLASS : 클래스 수
+   -4. METHOD : 메서드 수
+   -5. INSTRUCTION : java 바이트 코드 명령 수
+   -6. COMPLEXITY : 복잡도
+
+3. Value - 커버리지 정도를 나타내는 지표
+   -1. TOTALCOUNT : 전체 개수
+   -2. MISSEDCOUNT : 커버되지 않은 개수
+   -3. COVEREDCOUNT : 커버된 개수
+   -4. MISSEDRATIO : 커버되지 않은 비율(0~1)
+   -5. COVEREDRATIO(default) : 커버된 비율(0~1)
+
+----- Jacoco 와 Maven LifeCycle
+메이븐의 라이프 사이클 : Compile -> Test -> Package -> Install -> deploy
+Jacoco 플러그인은 Maven 라이프 사이클에 의해 동작, "Test phase" 이후에 "측정" 가능 - "Package phase" 이후로 "동작" 가능
