@@ -144,6 +144,7 @@ Swagger 설정 방법
 @Configuration : 어노테이션 기반 환경 구성을 돕는 어노테이션
                - IoC Container에게 해당 클래스를 Bean 구성 Class임을 알려줌
 @Bean : 개발자가 직접 제어가 불가능한 외부 라이브러리 등을 Bean으로 만들 경우에 사용.
+  *Bean이란? IoC(Inversion of Control) container를 사용하는 스프링에 의하여 관리당하는 자바 객체
 
 http://localhost:8080/swagger-ui.html
 
