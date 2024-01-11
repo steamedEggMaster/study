@@ -49,7 +49,7 @@ GoF 디자인 패턴
 -----------------------------------------------------------------------------------------------------------
 REST(Representational State Tranfer) API(Application Programming Interface) : 자원의 이름으로 구분하여 해당 자원의 상태를 교환하는 것
  - REST는 서버와 클라이언트의 통신 방식 중 하나
- - HTTP URI를 통해 자원을 명시하고 HTTP Method(CRUD)를 통해 자원을 교환하는 것
+ - HTTP URI(Uniform Resource Identifier)를 통해 자원을 명시하고 HTTP Method(CRUD)를 통해 자원을 교환하는 것
  - REST 아키텍쳐를 구현하는 웹서비스 : "RESTful" 이라 표현
 REST 특징
 1. Server-Client 구조
