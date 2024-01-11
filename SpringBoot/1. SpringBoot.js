@@ -47,7 +47,7 @@ GoF 디자인 패턴
 - 행동패턴 : 반복적으로 사용되는 객체들의 커뮤니케이션 패턴화
             (책임 연쇄, 커맨드, 인터프리터, 반복자, 중재자, 메멘토, 옵저버, 상태, 전략, 템플릿 메소드, 방문자)
 -----------------------------------------------------------------------------------------------------------
-REST(Representational State Tranfer) API(Application Programming Interface) : 자원의 이름으로 구분하여 해당 자원의 상태를 교환하는 것
+REST(Representational State Tranfer) : 자원의 이름으로 구분하여 해당 자원의 상태를 교환하는 것
  - REST는 서버와 클라이언트의 통신 방식 중 하나
  - HTTP URI(Uniform Resource Identifier)를 통해 자원을 명시하고 HTTP Method(CRUD)를 통해 자원을 교환하는 것
  - REST 아키텍쳐를 구현하는 웹서비스 : "RESTful" 이라 표현
@@ -55,22 +55,26 @@ REST 특징
 1. Server-Client 구조
 2. Stateless - 요청 간에 클라이언트 정보가 서버에 저장되지 않음 
 3. Cacheable - HTTP 프로토콜을 사용하기에 HTTP 특징인 캐싱 기능 적용
-4. 계층화(Layered System)
-5. Code on Demand
+4. 계층화(Layered System) : 클라이언트는 서버의 구성과 상관없이 REST API 서버로 요청 - 서버는 다중 계충 구성 가능(보안요소, 캐싱 등)
+5. Code on Demand(Optional) : 요청을 받으면 서버에서 클라이언트로 코드 or 스크립트(로직)을 전달하여 클라이언트 기능 확장
 6. 인터페이스 일관성(Uniform Interface) : HTTP 프로토콜을 따르는 모든 플랫폼에서 사용 가능하게끔 설계
+
+REST  API(Application Programming Interface) : REST 아키텍쳐의 조건을 준수하는 API
 REST API 특징
 1. REST 기반으로 시스템을 분산하여 확장성과 재사용성 높임
 2. HTTP 표준을 따르고 있어 여러 프로그래밍 언어로 구현 가능
 REST API 설계 규칙
-1. 웹 기반 REST API 설계할 경우 URI를 통해 자원을 표현해야함
+1. 웹 기반 REST API 설계할 경우 URI를 통해 자원을 표현해야함 ex) https://thinkground.studio/member/589
+                                                              Resource : member
+                                                              Resource ID : 589
 2. 자원에 대한 조작은 HTTP Method(CRUD)를 통해 표현해야함 - URI에 행위가 들어가선 안됨.
-3. 메세지를 통한 리소스 조작
+3. 메세지를 통한 리소스 조작 - HEADER을 통해 content-type을 지정하여 데이터 전달
 4. URI에는 소문자 사용
 5. Resource 이름이나 URI가 길어질 경우 하이픈(-)을 통해 가독성을 높일 수 있음
 6. 언더바 사용 X
 7. 파일 확장자를 표현하지 않음.
 -----------------------------------------------------------------------------------------------------------
-pom.xml 설정하기
+pom.xml 설정하기 - Project Object Model 정보를 담고 있음
 프로젝트 관련 태그
 1. <name> : 프로젝트 명
 2. <url> : 프로젝트 사이트 URL
@@ -91,6 +95,10 @@ pom.xml 설정하기
 5. <version> : 의존성 라이브러리의 버전
 6. <scope> : 해당 라이브러리의 이용 범위를 지정 /compile(default), provided, runtime, test, system 옵션
 7. <optional> : 다른 프로젝트에서 이 프로젝트를 의존성 설정을 할 경우 사용할지 결정
+
+1. Spring Boot Starter Parent : 프로젝트에서 사용하는 다양한 라이브러리 간의 버전 충돌 문제 발생 방지
+2. Spring Boot Starter Web : Spring MVC를 사용한 REST 서비스를 개발하는데 사용
+3. Spring Boot Starter Test : JUnit, Hamcrest, Mockito를 포함한 스프링 어플리케이션의 테스트 기능 제공
 -----------------------------------------------------------------------------------------------------------
 MVC(Model View Controller) 패턴 - 디자인 패턴 중 하나 / 분업 및 협업 원활 / 독립적 운영 가능 -> 한 영역 업데이트 시 다른 영역에 영향 X
 Controller - 모델, 뷰 사이의 브리지 역할
@@ -100,6 +108,24 @@ Controller - 모델, 뷰 사이의 브리지 역할
 Model - 데이터 처리 영역
       - DB와 연동을 위한 DAO, 데이터 구조를 표현하는 DO로 구성
 View - 데이터를 보여주는 화면 영역 (UI 요소들) / 별도의 데이터 보관 X
+-----------------------------------------------------------------------------------------------------------
+-----------           --------------  -------> Handler Mapping
+|         |  Request  | Dispatcher |                  ↓
+|         |  -------> |  Servlet   |              Controller
+|         |           |            |                  ↓
+|  Client |           --------------           Message Converter
+|         |                                           ↓
+|         |  <--------------------------------   HTTP Response
+-----------  
+
+@RequestMapping
+MVC의 Handler Mapping을 위해 DefaultAnnotationHandlerMapping 사용
+DefaultAnnotationHandlerMapping 매핑정보로 @RequestMapping 어노테이션 활용
+클래스와 메서드의 RequestMapping을 통해 URL을 매핑하여 경로를 설정하여 해당 메서드에서 처리
+
+현재는 공동 경로 설정시 사용하고 ex) @RequestMapping("/~/~/")
+  메서드에 @GetMapping(value = "/~/~/"), @PostMapping(value = "/~/~/"), @DeleteMapping(value = "/~/~/")
+          @PutMapping(value = "/~/~/"), @PacthMapping(value = "/~/~/") 등으로 붙여 사용
 -----------------------------------------------------------------------------------------------------------
 기존에는 서버 개발자가 변경될 때마다 문서를 만들어 프론트엔드 개발자에게 보내줘야 했음.
 Swagger 라이브러리 : 서버로 요청되는 API 리스트를 HTML 화면으로 문서화하여 테스트 할 수 있는 라이브러리
