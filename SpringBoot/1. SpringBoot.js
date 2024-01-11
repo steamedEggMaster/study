@@ -173,9 +173,10 @@ Spring Boot 서비스 구조
 (F.E)  (------------------Spring Boot------------------------------)
                                                     (DB와직접통신영역, Repository 인터페이스를 사용하여 DAO 작성)
 Client <-DTO-> Controller <-DTO-> Service <-Entity-> DAO(Repository) <-Entity-> DB
-                                     |                     |
+                                     ↑                     ↑
                                 ServiceImpl             DAOImpl
-Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현.
+Service와 DAO는 interface로 만듬. 밑의 두개는 두 interface를 구현
+Service겍체에서 회원정보 기반 다른 정보를 추가하는 역할 수행 ex) 회원등급
 
 Entity(Domain) : 실제 DB table과 1:1 매핑됨. / 이 클래스의 필드는 각 테이블 내부의 컬럼(애트리뷰트)을 의미
 Repository : Entity에 의해 생성된 DB에 접근하는 메소드를 사용하기 위한 interface 
