@@ -16,7 +16,12 @@ Get API : 서버에 있는 리소스를 가져오기 위해 사용하는 API
     -2. 파라미터의 이름 != value에서 사용된 변수이름
       @GetMapping(value = "/variable2/{variable}")
       접근제어자 반환값 함수명(@PathVariable("variable") 타입 변수명) { ~ }
+
 2. @RequestParam - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
+                 - '?'를 기준으로 우측에 {키}={값} 형태로 전달되며, 복수 형태로 전달될 경우 & 사용
+   *어떤 요청값이 들어올지 모르는 경우
+    @RequestParam Map<~,~>으로 사용
+
 3. DTO - get형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법으로 별도의 객체를 생성하여 받는 방식
 
 GetController 예제 잘 보기
