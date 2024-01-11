@@ -27,9 +27,10 @@ Get API : 서버에 있는 리소스를 가져오기 위해 사용하는 API
 GetController 예제 잘 보기
 ------------------------------------------------------------------------
 Post API : 리소스를 추가하기 위해 사용되는 API
-         - @PostMappingPOST API를 제작하기 위해 사용되는 어노테이션(annotation)
+         - @PostMapping : POST API를 제작하기 위해 사용되는 Annotation
          - @RequestMapping + POST method의 조합
          - @RequestBody를 사용하여 Body에 담겨있는 값을 받아야함. - Talend API에서 JSON으로 작성함.
+                                                               - 사용 안할 시 null 값으로 표현되는 에러 발생
 { //간략한 JSON 예시
   "name" : "Flature",
   "email" : "cksdud5014@naver.com",
