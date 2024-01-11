@@ -59,7 +59,7 @@ REST 특징
 5. Code on Demand(Optional) : 요청을 받으면 서버에서 클라이언트로 코드 or 스크립트(로직)을 전달하여 클라이언트 기능 확장
 6. 인터페이스 일관성(Uniform Interface) : HTTP 프로토콜을 따르는 모든 플랫폼에서 사용 가능하게끔 설계
 
-REST  API(Application Programming Interface) : REST 아키텍쳐의 조건을 준수하는 API
+REST API(Application Programming Interface) : REST 아키텍쳐의 조건을 준수하는 API
 REST API 특징
 1. REST 기반으로 시스템을 분산하여 확장성과 재사용성 높임
 2. HTTP 표준을 따르고 있어 여러 프로그래밍 언어로 구현 가능
@@ -73,6 +73,13 @@ REST API 설계 규칙
 5. Resource 이름이나 URI가 길어질 경우 하이픈(-)을 통해 가독성을 높일 수 있음
 6. 언더바 사용 X
 7. 파일 확장자를 표현하지 않음.
+
+REST 관련 Annotation - 출처 : https://january-diary.tistory.com/entry/Spring-REST-API
+1. @RestController : Controller가 REST 방식을 처리하기 위한 것임을 명시 - @Controller + @ResponseBody
+2. @ResponseBody : JSP같은 view로 전달되는 것이 아닌 데이터 자체를 전달
+3. @PathVariable : URI 경로에 있는 값을 파라미터로 추출
+4. @CrossOrigin : Ajax 크로스 도메인 문제 해결. 기본적으로 모든 도메인, 모든 요청 방식에 대해 허용하게 됨.
+5. @RequestBody : JSON 데이터를 원하는 타입으로 바인딩해서 수신
 -----------------------------------------------------------------------------------------------------------
 pom.xml 설정하기 - Project Object Model 정보를 담고 있음
 프로젝트 관련 태그
@@ -124,8 +131,8 @@ DefaultAnnotationHandlerMapping 매핑정보로 @RequestMapping 어노테이션 
 클래스와 메서드의 RequestMapping을 통해 URL을 매핑하여 경로를 설정하여 해당 메서드에서 처리
 
 현재는 공동 경로 설정시 사용하고 ex) @RequestMapping("/~/~/")
-  메서드에 @GetMapping(value = "/~/~/"), @PostMapping(value = "/~/~/"), @DeleteMapping(value = "/~/~/")
-          @PutMapping(value = "/~/~/"), @PacthMapping(value = "/~/~/") 등으로 붙여 사용
+  메서드에 @GetMapping("/~/~/"), @PostMapping("/~/~/"), @DeleteMapping("/~/~/")
+          @PutMapping("/~/~/"), @PacthMapping("/~/~/") 등으로 붙여 사용
 -----------------------------------------------------------------------------------------------------------
 기존에는 서버 개발자가 변경될 때마다 문서를 만들어 프론트엔드 개발자에게 보내줘야 했음.
 Swagger 라이브러리 : 서버로 요청되는 API 리스트를 HTML 화면으로 문서화하여 테스트 할 수 있는 라이브러리
