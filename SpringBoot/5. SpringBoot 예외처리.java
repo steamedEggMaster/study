@@ -7,7 +7,7 @@
 
 ----- 예외클래스 - 모든 예외 클래스는 Throwable 클래스를 상속 받고 있음
 가장 상위 클래스 : Exeception
-                         Checked Exception                 Unchecked Exception
+                         Checked Exception                 Unchecked Exception(Runtime Exception)
 처리 여부                반드시 예외 처리(try-catch) 필요    명시적 처리 강제하지 않음
 확인 시점                컴파일 단계                        실행 중 단계
 예외발생 시 트랜잭션      롤백하지 않음                      설정에 따라 롤백하거나 안함
