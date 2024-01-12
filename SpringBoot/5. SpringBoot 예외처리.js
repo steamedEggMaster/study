@@ -19,7 +19,7 @@
 - @Controller or @RestController에서 발생하는 예외를 한 곳에서 관리하고 처리할 수 있게 하는 어노테이션
 - 설정을 통해 범위 지정이 가능하며, Default 값으로 모든 Controller에 대해 예외 처리를 관리함 
       Ex) @RestControllerAdvice(basePackages = "com.example.demo") 처럼 패키지 범위 설정 가능
-- 예외 발생 시 json의 형태로 결과를 반환하기 위해선 "@RestControllerAdvice" 를 사용하면 됨.
+- 예외 발생 시 "json의 형태"로 결과를 반환하기 위해선 @RestControllerAdvice 를 사용하면 됨.
 
 ----- @ExceptionHandler
 - 예외 처리 상황이 발생하면, 해당 Handler로 처리하겠다고 명시하는 어노테이션
