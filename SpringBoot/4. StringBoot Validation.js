@@ -3,7 +3,7 @@ Validation : 들어오는 데이터에 대해 의도한 형식의 값이 제대�
 
 일반적인 어플리케이션에서 사용되던 Validation 방식은 몇가지 문제가 존재.
 1. 어플리케이션 전체적으로 분산되어 존재.
-2. 코드의 중복이 심함 -> 코드가 복잡해짐
+2. 코드의 중복이 심함 -> 코드가 복잡해짐 - 직접 조건을 걸어줘야하는구만
 3. 비지니스 로직에 섞여 있어 검사 로직 추적이 어려움.
 ->
 JAVA 에서 Bean Validation이라는 데이터 유효성 검사 프레임워크를 제공
@@ -12,6 +12,10 @@ Hibernate Validation은 Bean Validation 명세에 대한 구현체
     -SpringBoot의 유효성 검사 표준
 
 2.3버전 이상부턴 starter-validation dependency를 추가 해야함.
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
 
 -----Validation 관련 어노테이션
 1. @Size : 문자의 길이 조건 - @Size(min = 수, max = 수)
@@ -26,9 +30,9 @@ Hibernate Validation은 Bean Validation 명세에 대한 구현체
 
 9. @Pattern : 정규식을 통한 조건
 
-10. @Max : 최대값 조건 설정
-11. @Min : 최소값 조건 설정
-12. @AssertTrue / AssertFalse : 참/거짓 조건 설정
+10. @Max(value = ~) : 최대값 조건 설정
+11. @Min(value = ~) : 최소값 조건 설정
+12. @AssertTrue / @AssertFalse : 참/거짓 조건 설정
 
 13. @Valid : 해당 객체의 유효성 검사
 
@@ -39,3 +43,4 @@ Hibernate Validation은 Bean Validation 명세에 대한 구현체
 </dependency>
 
 *****이 Validation이 동작하기 위해선 해당 메소드의 파라미터 맨 앞에 @Valid 를 써주어야함.
+ex) public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto productDto)
