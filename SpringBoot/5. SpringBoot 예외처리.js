@@ -21,7 +21,7 @@
       Ex) @RestControllerAdvice(basePackages = "com.example.demo") 처럼 패키지 범위 설정 가능
 - 예외 발생 시 "json의 형태"로 결과를 반환하기 위해선 "@RestControllerAdvice" 를 사용하면 됨.
 
------ @ExceptionHandler
+----- @ExceptionHandler.
 - 예외 처리 상황이 발생하면, 해당 Handler로 처리하겠다고 명시하는 어노테이션
 - 어노테이션 뒤에 괄호를 붙여 어떤 ExceptionClass를 처리할 지 설정 가능.
      Ex) @ExceptionHandler(~Exception.class)
