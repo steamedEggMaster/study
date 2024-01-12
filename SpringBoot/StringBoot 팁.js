@@ -14,3 +14,6 @@ PutController의 DTO객체를 이용한 방법 3가지 자세히 볼것.
 port번호 변경 방법
 1. application.properties 파일에서 server.port=원하는 포트번호
 2. Run -> Edit Configurations -> Environment variables에서 server.port=원하는 포트번호
+
+DB 연결을 위해선
+해당 DB Dependency 설정 및 properties 설정.
