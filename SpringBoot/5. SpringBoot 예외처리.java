@@ -37,4 +37,7 @@ Custom Exception
 HttpStatus는 Enum Class
 Enum Class : 서로 관련 있는 상수들을 모아 심볼릭한 명칭의 집합으로 정의한 것.
            - 클래스처럼 보이게 하는 상수
-
+생성자
+HttpStatus(int value, Series series, String reasonPhrase){this.value = value; this.seires = series; this.reasonPhrase = reasonPhrase;}
+사용법
+HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
