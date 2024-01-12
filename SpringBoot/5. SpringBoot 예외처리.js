@@ -40,4 +40,7 @@ Enum Class : 서로 관련 있는 상수들을 모아 심볼릭한 명칭의 집
 생성자
 HttpStatus(int value, Series series, String reasonPhrase){this.value = value; this.seires = series; this.reasonPhrase = reasonPhrase;}
 사용법
-HttpStatus httpStatus = HttpStatus.BAD_REQUEST; -> BAD_REQUEST(400, Series.CLIENT_ERROR, "Bad Request") 로 되어 있음.
+HttpStatus httpStatus = HttpStatus.BAD_REQUEST; -> BAD_REQUEST(400, Series.CLIENT_ERROR, "Bad Request") 로 되어 있음
+httpStatus.value() : value값 return
+httpStatus.series() : Series return
+httpStatus.getReasonPhrase() : reasonPhrase값 return
