@@ -10,6 +10,8 @@ Spring이란?
 - AOP를 통해 기존 프로젝트에 다양한 기능을 로직 수정 없이 추가 가능 -> 결합도 감소
 *알아보면 좋은 것 : 프록시 디자인 패턴, 핵심적인 관점, 부가적인 관점, 흩어진관심사(Crosscutting Concerns)
 
+프록시 디자인 패턴 : https://velog.io/@newtownboy/디자인패턴-프록시패턴Proxy-Pattern
+
 -----스프링 프레임워크의 대표적 모듈
 - Spring JDBC
 - Spring MVC
