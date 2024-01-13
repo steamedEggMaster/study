@@ -45,9 +45,11 @@ JUnit Vintage
 1. @Test       : 테스트 메서드 표현 어노테이션
 2. @BeforEach  : 각 테스트 메서드가 시작되기 전에 실행되어야 하는 메서드 표현
 3. @AfterEach  : 각 테스트 메서드가 시작된 후 실행되어야 하는 메서드 표현
-4. BeforeAll   : 테스트 시작 전에 실행되어야 하는 메서드를 표현(static 처리 필요)
-5. AtferAll    : 테스트 종료 후에 실행되어야 하는 메서드를 표현(static 처리 필요)
+4. @BeforeAll   : 테스트 시작 전에 실행되어야 하는 메서드를 표현(static 처리 필요)
+5. @AtferAll    : 테스트 종료 후에 실행되어야 하는 메서드를 표현(static 처리 필요)
 
+6. @DisplayName("~") : 해당 테스트의 이름을 설정
+7. @Disabled : 테스트를 실행하지 않게 설정
 ----- JUnit Main Annotation
 1. @SpringBootTest
   - 통합 테스트 용도로 사용
