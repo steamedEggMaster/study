@@ -1,4 +1,8 @@
 Test 파일의 Test클래스와 경로가 같아야함
+mokito의 given() 메서드 : Mock 객체가 특정 상황에서 해야하는 행위를 정의하는 메서드
+         ex) given(Mock객체명.메서드(~)).willReturn(T t);
+verify() 메서드 : 해당 객체의 메서드가 실행되었는지 체크해줌
+         ex) verify(객체명).메서드(~);
 
 TDD(Test-Driven Development, 테스트 주도 개발)
 : 테스트를 먼저 설계 및 구축 후 테스트를 통과할 수 있는 코드를 짜는 것 <-> 일반적인 방식은 코드 작성 후 테스트 진행
