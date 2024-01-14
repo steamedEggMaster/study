@@ -45,3 +45,5 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 
 ----- Property 관련 Annotation
 1. beans의 @Value("${property명}") : 프로퍼티에 설정된 값을 변수에 넣어줌
+
+------ 
