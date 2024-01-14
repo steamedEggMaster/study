@@ -50,7 +50,7 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 1. @MappedSuperclass : 상속하는 클래스의 필드들이 상속받은 엔티티클래스의 컬럼으로 매핑됨.
                      - 해당 어노테이션을 정의한 상속하는 클래스는 @Entity없이 필드들을 컬럼으로써 사용 가능 -> @Column, @Id 등 사용가능
 2. @EntityListeners(엔티티에 이벤트가 발생했을때 사용할 리스너클래스)
-                    - 1. AuditingEntityListener.class : 엔티티의 생성일시, 마지막 수정 일시 자동관리
+                    - 1. AuditingEntityListener.class : 엔티티의 생성일시, 마지막 수정 일시 자동관리 -> Application 파일에 @EnableJpaAuditing 추가해야함
                                                         @CreatedDate, @LastModifiedDate, @CreaetedBy, @LastModifiedBy 등을 컬럼에 붙여 사용
 ------ Hibernate 관련 Annotation
 1. @Entity
