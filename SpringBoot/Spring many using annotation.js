@@ -43,4 +43,5 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 4. @CrossOrigin - Ajax의 크로스 도메인 문제를 해결한다
 5. @RequestBody - JSON 데이터를 원하는 타입으로 바인딩한다.
 
- 
+----- Property 관련 Annotation
+1. @Value("${property명}") : 프로퍼티에 설정된 값을 변수에 넣어줌
