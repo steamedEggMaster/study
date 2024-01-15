@@ -14,13 +14,13 @@ ex) findByNameOrderByStockAscPriceDesc
 ----- 매개변수를 활용한 정렬 처리
 - Sort 객체를 활용하여 정렬 기준 설정 가능
 ex) findByName(String name, Sort sort)
-    findByName("pen", Sort.by(Order.asc("price")));
+    findByName("pen", Sort.by(Order.asc("productPrice")));
 
 ----- 매개변수를 활용한 페이징 처리
 - 페이징 처리를 하면 return 타입으로 "Page"를 설정하고 매개변수로 "Pageable" 객체 사용
 ex) findByNmae(String name, Pageable pageable);
     findBtName("공책", PageRequest.of(0,2));
-- PageRequest의 of 메서드
+- PageRequest의 of 메서드    //페이지 번호는 size로 나눈 페이지 중 보고 싶은 페이지 번호를 의미
 1. of(int page, int size) : 페이지 번호(Zero-based), 페이지당 데이터 개수
 2. of(int page, int size, Sort) : 페이지 번호(Zero-based), 페이지당 데이터 개수, 정렬
 3. of(int page, int size, Direction, String··· properties) : 페이지 번호(Zero-based), 페이지당 데이터 개수, (enum) 정렬방향, 컬럼
