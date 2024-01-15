@@ -24,3 +24,4 @@ ex) @Query("SELECT p FROM ProductEntity p WHERE p.productPrice > :productPrice")
 ex) @Query("SELECT p FROM ProductEntity p WHERE p.productPrice > :pri")
     List<ProductEntity> findByPriceWithParameterNaming2(@Param("pri") Integer productPrice);
                                                         //매핑 어노테이션
+- ?, :parameter, :pri @Param의 쿼리는 모두 동일
