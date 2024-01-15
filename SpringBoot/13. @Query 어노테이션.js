@@ -13,7 +13,7 @@
                                        Native Query는 List<객체>를 return -> 후처리를 해주는 것이 중요
 - 메서드 이름은 아무렇게나 지정 가능
 - 직접 쿼리에선 FROM 다음에 Entity명
-  NaitiveQuery에선 FROM 다음에 Table명
+  NaitiveQuery에선 FROM 다음에 Table명 - 실제 SQL 문처럼 사용하면 됨
 
 ----- @Query 문법 - 파라미터를 쿼리에 주입하는 방법                                         //? 뒤의 숫자 : 파라미터의 순서 중 사용할 파라미터 번호
 1. 파라미터를 쿼리에 주입하는 방법 ex) @Query("SELECT p FROM ProductEntity p WHERE p.productPrice > ?1")
