@@ -21,9 +21,9 @@ Filter와 HandlerInterceptor는 비슷
 차이점은 DispatcherServlet 우측의 내용들은 Spring Context에 존재하는데 Filter는 그 바깥에 있어 Spring Component에 접근하기 어렵다
                                                                     HandlerInterceptor는 Compoent에 접근이 쉽다
 
-HandlerInterceptor 인터페이스
+----- HandlerInterceptor 인터페이스
 public interface HandlerInterceptor {
-    default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) Exception { }
+    default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { }
 
     default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, 
       @Nullable ModelAndView modelAndView) throws Exception {  }
@@ -37,3 +37,13 @@ default 메서드는 인터페이스의 기본 메서드로 구현클래스에�
                     - Object handler : 요청을 전달할 컨트롤러 객체가 담겨있음
 2. postHandle 메서드 : 컨트롤러 로직이 수행된 후 "View가 렌더링 되기 전"에 수행할 코드를 작성하는 메서드
 3. afterCompletion 메서드 : "View가 렌더링 된 후"에 실행되는 메서드
+
+----- HttpServletRequest 와 HttpServletResponse
+: WAS 가 Request를 받으면 HttpServletRequest 와 HttpServletResponse 객체를 생성하여 웹 application으로 전달
+1. HttpServletRequest 
+          - Http 프로토콜의 Request 정보를 Servlet으로 전달하기 위해 사용되는 객체
+          - Header, Parameter, Cookie, URL, URI 등의 정보를 가짐
+          - Body의 값을 읽기 위한 메서드를 가짐
+2. HttpServletResponse
+          - Request에 대한 Response값을 담기 위한 객체
+          - Content-Type, 응답코드, 메시지 를 가짐
