@@ -8,20 +8,15 @@
                - 로그 보관 기간 설정 가능
 
                                       Appender<Interface>
-                                               ^
-                                               |
+                                               ↑
                                   UnsynchronizedAppenderBase
-                                               ^
-                                               |
+                                               ↑
                           Filter ---> OutputStreamAppender <--- Encoder<Interface>
-                                               ^
-                                               |
-                                    ----------- -----------
-                                   ^                       ^
-                                   |                       |
+                                               ↑
+                                    ----------> <----------
+                                   ↑                       ↑
                             ConsolAppender            FileAppender
-                                                           ^
-                                                           |
+                                                           ↑
                                                      RollingFileAppender
 
 일반적으로 Classpath에 있는 logback 설정 파일을 참조하게 됨.
