@@ -27,12 +27,13 @@
 대표적인 Appender 형식
 1. .ConsoleAppender : 콘솔에 로그 출력
 2. .FileAppender : 파일에 로그를 저장
-3. .RollingFileAppender : 여러 개의 파일을 순회하며 로그를 저장 - 로그의 레벨을 기준으로 순회
+3. .RollingFileAppender : 여러 개의 파일을 순회하며 로그를 저장 - 로그의 레벨을 기준으로 순회 - 실무에서 가장 많이 사용
 4. .SMTPAppender : 로그를 메일로 보냄
 5. .DBAppender : DB에 로그를 저장
 
 <encoder> : Appender 내에 포함되는 항목, <pattern>을 사용하여 원하는 형식으로 로그를 표현할 수 있음.
 <root> : 설정한 Appender를 참조하여 로그의 레벨을 설정할 수 있음 -> 전역 설정임, 지역 설정을 위해선 <logger> 사용
+<appender-ref ref="appender name" /> : appender name과 동일해야 함
 
 -----로그 레벨
 1. ERROR : 로직 수행 중에 오류가 발생한 경우, 시스템적으로 심각한 문제가 발생하여 작동이 불가한 경우
