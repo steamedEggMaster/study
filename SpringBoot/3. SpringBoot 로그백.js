@@ -12,12 +12,12 @@
                                   UnsynchronizedAppenderBase
                                                ↑
                           Filter ---> OutputStreamAppender <--- Encoder<Interface>
-                                               ↑
-                                    ----------> <----------
-                                   ↑                       ↑
-                            ConsolAppender            FileAppender
-                                                           ↑
-                                                     RollingFileAppender
+                                             ↗ ↖
+                                          ↗       ↖
+                                        ↑             ↑
+                                ConsolAppender   FileAppender
+                                                      ↑
+                                                RollingFileAppender
 
 일반적으로 Classpath에 있는 logback 설정 파일을 참조하게 됨.
   - Java Legacy, Spring의 경우 logback.xml 파일을 참조
