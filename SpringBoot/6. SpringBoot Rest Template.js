@@ -17,3 +17,6 @@ Method                                                          HTTP       설�
 6. put              PUT        PUT 형식으로 요청
 7. patchForObject   PATCH      PATCH 형식으로 요청
 8. exchange(requestEntity, Class<T> responseType)               any        HTTP 헤더를 생성하여 추가할 수 있고, "어떤 형식"에서도 사용 가능
+
+- uri에 @PathVariable, @RequestParam에 해당하는 파라미터 지정 가능
+- Object에 @Requestbody에 해당하는 객체 넣기 가능
