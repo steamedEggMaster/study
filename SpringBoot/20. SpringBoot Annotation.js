@@ -28,3 +28,7 @@ Annotation
 @Documented : Java Doc 생성 시 Document에 포함되도록 하는 설정
 @Inherited : 해당 어노테이션을 하위 클래스에 적용
 @Repeatable : Java 8 버전부터 지원하며, 연속적으로 어노테이션을 선언하는 것을 허용
+
+- 어노테이션의 필드에는 default값을 설정 가능하다
+ex) String value() default "I'm Method";
+- 어노테이션의 모든 필드뒤에 ()를 붙인다
