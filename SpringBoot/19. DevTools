@@ -1,0 +1,14 @@
+DevTools - 애플리케이션을 자동으로 재시작하고 reload를 해줌
+
+설정순서
+1. 의존성 설정
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-devtools</artifactId>
+  <optional>true</optional>
+</dependency>
+
+2. Setting -> Build, Execution, Deployment -> Automatically show first error in editor 체크
+3. Setting -> Advenced Settins -> Allow auto-make to start even if developed application is currently running 체크
+
+에러난 코드를 작성 후 ctrl + s 시 에러나기 전 껄로 자동 실행함
