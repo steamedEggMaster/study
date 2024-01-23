@@ -1,0 +1,40 @@
+----- 유용한 익스텐션
+Material Theme 익스텐션 : 비쥬얼 스튜디오 코드 테마 설정 쉽게 해줌
+Material Icon Theme 익스텐션 : 각 파일 아이콘 설정 쉽게 해줌
+auto rename tag 익스텐션: html 태그 시작과 끝을 한번에 변경해줌
+HTML to CSS autocompletion 익스텐션 : html 코드를 css에서 자동완성 시키는 기능 생기게 함
+HTML CSS Support 익스텐션 : css 코드를 html에서 자동완성 시키는 기능 생기게 함
+CSS Peek 익스텐션 : ctrl + 좌클릭으로 클래스로 가주는 기능 - springboot랑 동일
+Autoprefixer 익스텐션 : CSS의 벤더프리픽스를 자동으로 붙여줌
+indent-rainbow 익스텐션 : 들여쓰기 컬러 색상을 설정해줌
+Live Server 익스텐션 : 코드 변화 후 저장 시 자동으로 브라우저를 새로고침 해줌 - springboot의 devtools
+                    - html 파일을 명령 팔레트(ctrl + shift + p) -> live server:Open with live server로 실행하기
+language 한국어 익스텐션 : 한국어로 띄워줌
+
+html 파일 생성 후 ! -> enter 시 기본 html 형태 자동완성됨
+-------------------------------------------------------------------------------------------------------------------
+html은 태그와 속성으로 이루어짐
+태그 : <body> <head> 등
+속성 : 태그에 기능이나 의미를 보충해주기 위한 기능
+
+----- html의 문법
+1. 콘텐츠가 있는 문법 
+   - 시작태그와 종료태그가 있는 태그 ex) <p></p>
+2. 콘텐츠가 없는 문법
+   - 시작태그와 종료태그가 없는 태그 ex) <meta ~~>
+
+요소 = 시작태그 + 콘텐츠 + 종료태그
+
+주석 사용법 <!-- -->
+-------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html> : 문서가 어떤 형식을 따라야하는지 알려주는 정보
+<html lang="ko"> </html> : html의 시작과 끝
+           -en을 ko로 변환시켜 주기
+<head></head> : html의 meta데이터를 정의하는 곳
+    - <meta charset="UTF-8">
+    - <meta http-equiv="X-UA-compatible" content="IE-edge"> : 인터넷 익스플로러를 최신버전으로 변환 시킴
+    - <meta name="viewport" content="width=device-width, initial-scale=1.0"> : 반응형 웹을 위해 추가하는 영역
+    - <title></title> : 이게 없으면 웹페이지로 인식하지 않음
+<body></body> : 웹브라우저 화면 상에 노출할 내용을 나타내는 영역
+    - 블록요소 : <p></p> 태크처럼 동일한 태그를 2번이상 사용시 줄바꿈 처리되어 나타나는 것
+    - 인라인요소 : <span></span> 태그처럼 동일한 태그를 2번이상 사용시 줄바꿈이 처리되지 않는 태그
