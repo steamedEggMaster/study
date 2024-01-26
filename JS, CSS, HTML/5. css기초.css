@@ -8,4 +8,11 @@ css 적용방법
   background-color: red;
 } 으로 사용
 
-2. 외부 style sheet - css 파일을 
+2. 외부 style sheet - "주로 사용을 권장"
+- css 파일을 link 태그를 이용하여 연결
+link 태그
+- 속성 rel="stylesheet" 
+- 속성 href="css파일경로"
+
+3. inline style 방법
+- html 태그의 속성 style="css선언부" 로 사용하는 것
