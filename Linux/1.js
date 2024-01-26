@@ -13,3 +13,5 @@ pw : password
 사용자 계정
 id : rocky
 pw : rocky
+
+pro와 player 동시 실행 불가 
