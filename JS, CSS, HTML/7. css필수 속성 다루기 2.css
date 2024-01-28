@@ -30,3 +30,11 @@
 4. content : 요소의 내용 - 텍스트 속성들은 모두 content 영역 제어 속성
            - width: Npx;
            - height: Npx;
+             - box-sizing: border-box | content-box;
+                         - border-box : width, height 속성의 적용범위를 border 영역으로 제한
+                         - content-box : width, height 속성의 적용범위를 content 영역으로 제한
+
+박스 모델은 3가지의 성격이 존재
+1. 블록 성격 : hn, p , div 태그 등 사용 시 요소의 width가 컨텐츠 유무 상관없이 항상 가로 한줄 다 차지
+2. 인라인 성격 : a, span, strong 태그 등 사용 시 요소의 width가 컨텐츠 크기만큼만 차지하는 성격
+3. 인라인 블록 성격 : 인라인 성격처럼 요소 width가 컨텐츠 크기만큼만 차지하지만, 그 외 성격은 블록 성격 ex) img
