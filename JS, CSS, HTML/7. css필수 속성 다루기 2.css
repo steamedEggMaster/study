@@ -1,0 +1,13 @@
+박스 모델을 구성하는 속성 다루기
+
+박스 모델은 크게 4가지 요소로 구성됨
+1. margin : 요소 외부 여백
+          - margin: Npx;
+          - margin: Npx Mpx; - 2개를 쓰면 N은 위-아래, M은 좌-우 여백
+          - margin: Npx Mpx Zpx; - 순서대로 위-우-아래, 좌는 우의 값을 가져다 씀
+          - margin: Npx Mpx Zpx Gpx; - 순서대로 위-우-아래-좌
+          - margin-top | right | left | bottom: Npx;
+2. border : 요소의 테두리
+          - 
+3. padding : 요소의 내부 여백
+4. content : 요소의 내용
