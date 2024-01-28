@@ -11,13 +11,13 @@
      - inline 성격의 박스 모델은 margin이 좌-우 만 적용됨
 
 2. border : 요소의 테두리
-          - border: Npx 테두리모영 테두리색깔;
+          - border: Npx 테두리모영 테두리색깔(색상표기법);
                       - 테두리모양 종류 : none | hidden | solid | double | dotted | dashed | groove | ridge | inset | outset
           - border-top | right | left | bottom: Npx 굵기종류 굵기색깔;
           - 3개의 값을 따로 사용할 수 있는 속성 존재(축약 속성)
             - 1. border-width: Npx;
             - 2. border-style: 테두리모양;
-            - 3. border-color: 테두리색깔;
+            - 3. border-color: 테두리색깔(색상표기법);
 
 3. padding : 요소의 내부 여백
            - padding: Npx;
@@ -46,5 +46,21 @@
 ----------------------------------------------------------------------------------------------------
 배경 속성으로 요소의 배경 설정하기
 
-1. background-color: 색깔; - 
-2. background-
+1. background-color: 색상표기법;
+2. background-image: url('경로');
+                   - 요소의 width, height 크기를 잘 설정해줄 것.
+3. background-repeat: no-repeat | repeat-x | repeat-y | repeat | round | space
+                    - no-repeat : 반복 안함
+                    - repeat-x : 이미지를 가로 방향으로 반복
+                    - repeat-y : 이미지를 세로 방향으로 반복
+                    - repeat : 이미지를 가로, 세로 방향으로 반복
+                    - round : 이미지를 반복하되, 이미지가 요소에 딱 맞도록 크기 자동 조절
+                    - space : 이미지가 잘리지 않도록 반복
+4. background-size: auto | cover | contain | Npx Mpx
+                  - auto : 이미지 크기 유지
+                  - cover : 이미지 가로 세로 비율 유지하면서 크기 확대 or 축소하여 요소의 배경에 꽉채움
+                            -> 반복되지 않고 하나의 이미지로 꽉채워 안보이는 부분이 생길 수 있음
+                  - contain : 이미지 가로 세로 비율 유지하면서 이미지가 배경 요소 안에 들어가도록 크기 확대 or 축소
+                              -> 가로 세로 중 크기가 꽉차면 덜 찬 부분을 반복하여 채움
+                  - Npx Mpx : 가로 세로 크기 지정
+5. backgorund-position: 
