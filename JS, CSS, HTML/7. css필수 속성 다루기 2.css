@@ -7,7 +7,11 @@
           - margin: Npx Mpx Zpx; - 순서대로 위-우-아래, 좌는 우의 값을 가져다 씀
           - margin: Npx Mpx Zpx Gpx; - 순서대로 위-우-아래-좌
           - margin-top | right | left | bottom: Npx;
+     - margin 겹침 현상 : 인접한 두 요소 중 margin값이 큰 것으로 적용되는 것
+     - inline 성격의 박스 모델은 margin이 좌-우 만 적용됨
+
 2. border : 요소의 테두리
-          - 
+          - border: Npx;
+          - border-top | right | left | bottom: Npx;
 3. padding : 요소의 내부 여백
 4. content : 요소의 내용
