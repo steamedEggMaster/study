@@ -63,4 +63,12 @@
                   - contain : 이미지 가로 세로 비율 유지하면서 이미지가 배경 요소 안에 들어가도록 크기 확대 or 축소
                               -> 가로 세로 중 크기가 꽉차면 덜 찬 부분을 반복하여 채움
                   - Npx Mpx : 가로 세로 크기 지정
-5. backgorund-position: 
+5. backgorund-position: X위치 Y위치;
+   backgorund-position: X위치; - Y위치는 자동으로 center
+                      - X위치의 종류 : left | center | right
+                      - Y위치의 종류 : top | center | bottom
+                      - px, rem, em, % 로 직접 위치 지정 가능
+6. background-attachment: local | scroll | fixed
+                        - local : 웹브라우져의 스크롤만 있음
+                        - scroll : 개별적 스크롤 만들어줌
+                        - fized : 스크롤을 내리던 올리던 항상 같은 위치에서 나한테 보임
