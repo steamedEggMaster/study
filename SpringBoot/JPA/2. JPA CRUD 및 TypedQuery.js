@@ -51,3 +51,47 @@
 -----------↓ ↘-
            ↓   ■  Exception. 3~5 단계에서 예외 발생 시 transaction.rollback()
            ■      6. EntityManager.close() 
+
+----- TypedQuery : 작성한 JPQL 쿼리를 실행시키기 위한 객체
+      JPQL : 엔티티 객체를 조회하는 객체 지향 쿼리 언어
+
+- 쿼리의 반환 타입 명확 -> TypedQuery 사용, 명확 X -> Query 사용
+TypedQuery 예시                                                      테이블명 X, 객체의 타입
+TypedQuery<UserEntity> query = entityManager.createQuery("select u from UserEntity u", UserEntity.class);
+                                                            쿼리문(sql과 거의 동일)        return 타입
+List<UserEntity> userEntities = query.getResultList();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
