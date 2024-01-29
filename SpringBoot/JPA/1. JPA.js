@@ -50,3 +50,4 @@ javax.persistence.Persistence;
 * EntityManagerFactory는 EntityManager를 생성하기 위한 팩토리 인터페이스로 
   persistence 단위 별로 팩토리를 생성
 * EMF를 Custom하여 싱글톤 방식으로 EMF를 불러와 작업량을 줄일 수 있음 (basic_jpa 와 entity_manager_factory 비교)
+* JPA 규약으로 Entity 클래스에는 기본 생성자가 있어야함. *
