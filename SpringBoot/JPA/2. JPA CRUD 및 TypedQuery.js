@@ -59,7 +59,8 @@
 TypedQuery 예시                                                      테이블명 X, 객체의 타입
 TypedQuery<UserEntity> query = entityManager.createQuery("select u from UserEntity u", UserEntity.class);
                                                             쿼리문(sql과 거의 동일)        return 타입
-List<UserEntity> userEntities = query.getResultList();
+List<UserEntity> userEntities = query.getResultList(); - 값이 여러개
+   UserEntity userEntity = query.getSingleResult(); - 값이 하나
 
 
 
