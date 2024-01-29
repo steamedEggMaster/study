@@ -30,3 +30,23 @@ JPA 어노테이션을 활용하여 엔티티 클래스를 정의
 2. @Table  : 해당 클래스가 DB의 어느 테이블에 매핑되는지 정의
 3. @Id     : DB 테이블의 Primary Key 컬럼과 매핑
 4. @Column : 매핑할 DB의 칼럼 이름과 필드 변수의 이름이 다를 경우 매핑하기 위해 사용
+
+
+javax.persistence.EntityManager;
+javax.persistence.EntityManagerFactory;
+javax.persistence.EntityTransaction;
+javax.persistence.Persistence;
+
+1. Persistence의 createEntityManagerFactory()를 통해 EntityManagerFactory의 객체를 만들고
+2. entityManagerFactory의 createEntityManager()를 통해 EntityManager의 객체를 만들고
+3. entityManager의 getTransaction()을 통해 EntityTransaction의 객체를 만들고
+4. entityTransaction.begin()을 통해 트랜잭션을 시작
+5. 저장하고자 하는 entity객체를 생성하여 entityManager.persist(엔티티객체)로 entity객체를 Persistence Context에 추가
+6. entityTransction.commit()을 통해 DB에 반영
+7. 예외 발생 시 entityTransaction.rollback()
+8. 다 사용후 1. entityManager.close() - 
+            2. entityManaagerFactory.close() - 커넥션 풀 자원 반납
+
+* EntityManagerFactory는 EntityManager를 생성하기 위한 팩토리 인터페이스로 
+  persistence 단위 별로 팩토리를 생성
+* EMF를 Custom하여 싱글톤 방식으로 EMF를 불러와 작업량을 줄일 수 있음 (basic_jpa 와 entity_manager_factory 비교)
