@@ -20,6 +20,34 @@
         ↓ 
   ↗→→→ ■           2. EntityManager.find() 메서드를 활용하여 Entity 조회
 🛢   ↙ ↓ ↘
-   ↙   ■   ↘      3. EntityManager.close() 
+   ↙   ■   ↘      3. EntityManager.close() 종료
   ■           ↘    4-1. 조회 성공
-                ■   4-2. 조회된 값이 없다면 Null
+                ■   4-2. 조회된 값이 없다면 null
+
+3. 데이터 변경하기
+           ■      1. EntityManager를 생성 (by EntityManagerFactory)
+           ↓  
+           ■      2. EntityTransaction을 시작 (by EntityManager)
+-----------↓----   
+|try{}     ■   |  3. 변경하고자 하는 Entity 조회
+|          ↓   |
+|          ■   |  4. 조회된 Entity 객체에서 값을 변경
+|          ↓   | 
+|  🛢  ←←  ■   |  5. EntityTracsaction.commit() 메서드를 통해 변경 감지 및 DB에 실제 반영 (Dirty Check)
+-----------↓ ↘-
+           ↓   ■  Exception. 3~5 단계에서 예외 발생 시 transaction.rollback()
+           ■      6. EntityManager.close() 
+
+4. 데이터 삭제하기
+           ■      1. EntityManager를 생성 (by EntityManagerFactory)
+           ↓  
+           ■      2. EntityTransaction을 시작 (by EntityManager)
+-----------↓----   
+|try{}     ■   |  3. 삭제하고자 하는 Entity 조회
+|          ↓   |
+|          ■   |  4. EntityManager.remove() 메서드를 통해 영속성 컨텍스트에서 영속객체 삭제
+|          ↓   | 
+|  🛢  ←←  ■   |  5. EntityTracsaction.commit() 메서드를 통해 변경 감지 및 DB에 실제 반영 (Dirty Check)
+-----------↓ ↘-
+           ↓   ■  Exception. 3~5 단계에서 예외 발생 시 transaction.rollback()
+           ■      6. EntityManager.close() 
