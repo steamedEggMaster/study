@@ -21,7 +21,7 @@
 
 3. Sequence
 - @Entity                              
-  @SequenceGenerator( // Sequence 방식을 사용하기 위해선 @SequenceGenerator 어노테이션을 아래와 같이 적어줘야 함
+  @SequenceGenerator( // @SequenceGenerator 어노테이션을 아래와 같이 적어줘야 함. Sequence 방식을 사용하기 위해
     name = "sequence_generator",     // name : 시퀀스 생성기의 이름을 지정. 이 이름은 @GeneratedValue 에서 사용됨
     sequenceName = "my_seq",         // sequenceName : 식별자(Id)를 생성할 때 사용할 Sequence 이름을 지정
     allocationSize = 1)              // initialValue : DDL을 통해 DB를 생성할 때 사용되는 값으로, 최초 설정되는 값을 정의
