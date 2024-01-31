@@ -64,6 +64,12 @@
 - Sequence를 지원하지 않는 DB 사용 시 이용
 - 다만 목적에 맞게 최적화된 테이블 X -> 성능 상 이슈 발생 가능
 
+----- TableGenerator 는 아래와 같은 과정을 통해 id 값을 생성함
+* 1. id_generator 테이블에 entity 컬럼 값이 table 인 레코드를 구함
+       - 레코드가 존재하지 않으면 initialValue 인 0에 1을 더한 값을 id 값으로 사용하고 이 값을 id_generator 테이블에 삽입
+       - 기존에 레코드가 존재할 경우에는 next_id 값을 가져와서 사용
+* 2. 다음 id 값(table, id + 1)을 id_generator 테이블에 반영
+
 
 5. Auto
 - @GeneratedValue(strategy = GenerationType.Auto)
