@@ -19,6 +19,20 @@
          - float: none | left | right;
                 - left : 대상 요소를 공중에 띄워 왼쪽 배치 후 다음에 오는 요소 주변에 자연스럽게 배치
                 - right : 대상 요소를 공중에 띄워 오른쪽 배치 후 다음에 오는 요소 주변에 자연스럽게 배치
-         - 모든 자식 요소의 float 값이 동일하다면,
-           부모 요소는 자식 요소의 height 를 감싸지 못함
+         - 모든 자식 요소의 float 값이 동일하다면, 부모 요소는 자식 요소의 height 를 감싸지 못함
            -> 부모 요소에 overflow: auto|hidden; 으로 감쌀 수 있음.
+         - clear 속성 : 마지막 float 적용 요소 뒤의 요소에 써서 float의 영향을 안받게 하는 요소
+
+----- 전환 효과 속성 적용하기 -----
+전환 : 한 요소에 적용된 style 속성 값을 다른 속성 값으로 변하게 하는 것
+    -
+
+1. transition-property : 전환 효과를 적용할 대상 속성 지정
+                       - transition-property: 속성명1[, 속성명2[, ...]] | none | all;
+                                            - all : 모든 속성을 전환 효과 대상으로 지정
+2. transition-duration : 전환 효과의 지속 시간 설정
+                       - transition-duration: Ns|Nms;
+-- 1,2번 함께 사용해야 전환 효과 제대로 적용 가능
+
+3. transition-delay : 전환 효과의 발생 지연
+                    - transition-delay: Ns|Nms;
