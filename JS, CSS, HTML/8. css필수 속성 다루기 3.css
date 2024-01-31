@@ -1,2 +1,4 @@
 ----- 위치 속성으로 HTML 요소 배치하기 -----
-1. posi
+1. position : 특정 HTML 요소를 좌표값에 따라 배치 시 사용
+            - position: static | fixed | relative | absolute | sticky
+                      
