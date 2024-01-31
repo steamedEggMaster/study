@@ -9,12 +9,12 @@
 } 
 
 -- 정의 후 사용할 요소에서 애니메이션 속성으로 적용
-1. animation-name: 키프레임명
-2. animation-duration: Ns|Nms;
+- animation-name: 키프레임명
+- animation-duration: Ns|Nms;
 *** "키프레임 정의, 1,2번 3가지"가 모두 있어야 애니메이션 적용됨 ***
 
-3. animation-delay: Ns|Nms;
-4. animation-fill-mode : 애니메이션 실행 전 후 스타일 지정
+- animation-delay: Ns|Nms;
+- animation-fill-mode : 애니메이션 실행 전 후 스타일 지정
                        - animation-fill-mode
 
 
