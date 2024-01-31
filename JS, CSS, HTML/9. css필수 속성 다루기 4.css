@@ -41,16 +41,30 @@
              - animation : 키프레임명 진행시간 속도 지연시간 횟수 방향 필모드 재생상태;
                          - 일부만 적어도 됨
 
+----- 변형 효과 적용하기 ------------------------------------------------------------------------------
+변형 효과 : 크기 변경 or 위치 변경 or 회전 등 요소 자체를 변하게 하는 것
+         - 2D 및 3D 가능
+         - 배우는건 2D 만. 3D는 찾아보기
 
+1. transform : 요소에 특정 변형 효과 지정
+             - transform: 함수;
+                        - 함수종류 1. translate(x, y)   : 현재 위치에서 x, y 만큼 이동
+                                  2. translateX(n)     : 현재 위치에서 x축 n 만큼 이동
+                                  3. translateY(n)     : 현재 위치에서 y축 n 만큼 이동
+                                  ====== 단위 : px, 위로 이동은 "음수" ===============
+                                  4. scale(x, y)       : 요소를 x, y 만큼 확대 or 축소
+                                  5. scaleX(n)         : 요소를 n 만큼 x축으로 확대 or 축소
+                                  6. scaleY(n)         : 요소를 n 만큼 y축으로 확대 or 축소
+                                  ====== 단위 : 소수점~정수(n배) =================================
+                                  7. skew(xdeg, ydeg)  : 요소를 x축과 y축으로 xdeg, ydeg 만큼 기울임
+                                  8. skewX(deg)        : 요소를 deg 만큼 x 축을 기준으로 기울임
+                                  9. skewY(deg)        : 요소를 deg 만큼 y 축을 기준으로 기울임
+                                  10. rotate(deg)      : 요소를 deg 만큼 회전
+                                  ====== 단위 : 0~180인듯, 단위 뒤에 deg 붙이기, 디폴트 기준은 중앙=====
 
-
-
-
-
-
-
-
-
-
+1. transform-origin : 변형 시 요소의 기준점을 변경
+                    - transform-origin: N% M%;
+                    - transform-origin: left|center|right top|center|bottom;
+                                      - x축위치 y축위치 임.
 
 
