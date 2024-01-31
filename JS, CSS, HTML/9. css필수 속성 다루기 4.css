@@ -35,9 +35,11 @@
                                             - reverse : to -> from
                                             - alternate : 1회 이상 실행 시 홀수-normal / 짝수-reverse
                                             - alternate-reverse : 1회 이상 실행 시 홀수-reverse / 짝수-normal
-
-
-
+8. animation-timing-function : 애니메이션의 속도 지정
+                              (== transition-timing-function)
+9. animation : 단축 속성
+             - animation : 키프레임명 진행시간 속도 지연시간 횟수 방향 필모드 재생상태;
+                         - 일부만 적어도 됨
 
 
 
