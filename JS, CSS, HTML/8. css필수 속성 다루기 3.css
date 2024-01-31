@@ -32,7 +32,16 @@
                                             - all : 모든 속성을 전환 효과 대상으로 지정
 2. transition-duration : 전환 효과의 지속 시간 설정
                        - transition-duration: Ns|Nms;
+                                            - property에 여러 개 지정 시 위치에 맞춰 시간을 , 로 구분하여 주면 속성에 맞춰 시간 조정 가능
 -- 1,2번 함께 사용해야 전환 효과 제대로 적용 가능
 
 3. transition-delay : 전환 효과의 발생 지연
                     - transition-delay: Ns|Nms;
+4. transition-timing-function : 전환 효과의 진행 속도 지정
+                              - transition-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cublic-bezier(p1, p2, p3, p4);
+                                                          - linear : 처음, 마지막 속도 일정
+                                                          - ease : 처음에는 속도 점점 빨라지다 중간부터 점점 느려짐
+                                                          - ease-in : 처음에는 속도 느리지만 완료될 때까지 점점 빨라짐
+                                                          - ease-out : 처음에는 속도 빠르지만 완료될 때까지 점점 느려짐
+                                                          - ease-in-out : 처음에는 속도 느리지만 점점 빨라지다 점점 느려짐
+                                                          - cublic-bezier(p1, p2, p3, p4) : 사용자가 정의한 속도로 진행
