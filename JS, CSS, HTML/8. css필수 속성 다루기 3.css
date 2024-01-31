@@ -1,4 +1,14 @@
 ----- 위치 속성으로 HTML 요소 배치하기 -----
-1. position : 특정 HTML 요소를 좌표값에 따라 배치 시 사용
-            - position: static | fixed | relative | absolute | sticky
-                      
+
+position : 특정 HTML 요소를 좌표값에 따라 배치 시 사용 
+         - position: static(=none) | relative | sticky | fixed | absolute
+                   - static : 요소를 기본 흐름에 따라 배치(default)
+                   -----↓↓↓↓ position 설정 후 right|left|top|bottom: Npx;로 배치 가능 ↓↓↓↓-----
+                   - relative : 요소를 기본 흐름에 따라 배치. but 좌표 속성 사용 가능 -> 원래 지위를 유지 시키면서 배치
+                              - 부모 요소 속성 position: relative; 로 지정 시 -> 자식 요소의 (0, 0)의 위치는 부모 요소의 왼쪽 위 꼭짓점이 됨
+                   - sticky : 요소를 기본 흐름에 따라 배치. but 지정한 좌표의 임계점에 이르면 fixed 처럼 화면에 고정됨
+                   - fixed : 요소를 기본 흐름에서 벗어나 절대적인 좌표 위치에 따라 배치 - 스크롤 시에도 고정
+                   - absolute : 요소를 기본 흐름에서 벗어나 절대적인 좌표 위치에 따라 배치
+   - z-index 속성 : position 속성으로 배치한 요소의 Z축 위치 설정
+                  - z-index: 정수;
+* 모든 구성 요소를 position 으로 설정하는 것은 잘못된 코딩 습관!
