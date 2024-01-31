@@ -47,6 +47,7 @@
          - 배우는건 2D 만. 3D는 찾아보기
 
 1. transform : 요소에 특정 변형 효과 지정
+             - position 속성과 많이 사용됨. why? position 속성 적용 시 기준점은 왼쪽 위 꼭짓점이기 때문
              - transform: 함수;
                         - 함수종류 1. translate(x, y)   : 현재 위치에서 x, y 만큼 이동
                                   2. translateX(n)     : 현재 위치에서 x축 n 만큼 이동
