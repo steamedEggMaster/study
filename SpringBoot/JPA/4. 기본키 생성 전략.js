@@ -8,6 +8,8 @@
                           - @GeneratedValue 어노테이션 사용 안하고 직접 값 주입
                           - 이 방식은 애플리케이션에서 별도의 키 생성 규칙을 정의하여 사용해야 중복 문제 발생 X
 
+-----↓↓↓↓↓ 이 아래 방법들은 entityManager.persist()로 영속성 컨텍스트에 추가 시 id값을 얻어오기 위한 추가 질의 수행 ↓↓↓↓↓-----
+
 2. Identity
 -   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
