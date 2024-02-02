@@ -55,6 +55,7 @@ String객체명.startsWith(String str) - 해당 접두사 시작 여부 true/fal
 String객체명.endsWith(String str) - 해당 접미사 끝 여부 true/false 반환
 *String객체명.contains(CharSequence s) - 특정 문자(열) 포함 여부 true/false 반환
 *String객체명.replace(기존문자(열), 변경문자(열)) - 변경문자로 바꾼 새 문자열 반환(new)
+String객체명.repeat(int r)
 *String객체명.split(정규표현식(regex)) - 정규표현식으로 문자열을 나눈 문자열 배열 반환(String[])
 String객체명.trim() - 앞뒤 공백 제거 문자열 반환(new)
 String객체명.isEmpty() - 빈 문자열 여부 true/false
