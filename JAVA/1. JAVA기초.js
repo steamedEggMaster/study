@@ -58,6 +58,7 @@ String객체명.endsWith(String str) - 해당 접미사 끝 여부 true/false �
 String객체명.repeat(int r) - r만큼 반복한 문자열 반환(new)
 *String객체명.split(정규표현식(regex)) - 정규표현식으로 문자열을 나눈 문자열 배열 반환(String[])
 String객체명.trim() - 앞뒤 공백 제거 문자열 반환(new)
+String객체명.toCharArray() - String은 Array로써 보지 않기 때문에 String객체의 각각의 글자들을 배열의 요소로 가지는 배열 return
 String객체명.isEmpty() - 빈 문자열 여부 true/false
 String객체명.concat(String str) - str을 뒤에 연결하여 반환(new)
 
