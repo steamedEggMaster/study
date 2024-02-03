@@ -23,7 +23,7 @@ SecurityConfig 클래스
     |   {filters} {filters} {filters} ... {filters}   |  <---------------------- | WebSecurity |
                             ↓                                                           ↑                         |---------------------------------------------------------------|
                             ↓                                                           ----------------------------- { HttpSecurity }  <------- { WebSecurityConfigurerAdopter } |
-                            ↓                                                                     Filter 전달     |                        생성                                    |
+                            ↓                                                                     Filter 전달     |                        생성                   SecurityConfig2  |
                             ↓                                                                                     -----------------------------------------------------------------     
                             ↓
          ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,4 +31,13 @@ SecurityConfig 클래스
 | SecurityContext | → { LogoutFilter } → |  UsernamePassword  | → | Concurrent  | → |   RememberMe   | → |     Anonymous      | → |     Session    | → |    Exception    | → |FilterSecurity|
 |PersistenceFilter|                      |AuthenticationFilter|   |SessionFilter|   |AuthenticaFilter|   |AuthenticationFilter|   |ManagementFilter|   |TranslationFilter|   | Interceptor  |
 
-- 많은 필터들이 있지만, 
+- Spring Security에서는 인증, 인가에 대한 처리를 여러 개의 필터를 통해 연쇄적으로 실행하여 수행
+- 이때, 상황에 따라서 필요, 필요 X 필터 존재
+  -> SecurityConfig 클래스에서 제어
+  -> @Bean
+     public SecurityFilterChain filterChain(HttpSecurity http){} 
+     메서드 안에서 http 객체를 통해 사용하고자 하는 필터와 사용자가 직접 정의한 필터를 정의 가능
+
+----- HttpSecurity
+HttpSecurity의 인스턴스 메서드
+1. HttpSecurity객체명.csrf( auth -> auth.disable() );
