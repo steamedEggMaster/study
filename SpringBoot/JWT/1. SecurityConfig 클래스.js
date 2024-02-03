@@ -41,3 +41,19 @@ SecurityConfig 클래스
 ----- HttpSecurity
 HttpSecurity의 인스턴스 메서드
 1. HttpSecurity객체명.csrf( auth -> auth.disable() );
+
+
+-------------------------------------------------------------------------------------------------------------
+BCryptPasswordEncoder
+: SpringSecurity에서 제공하는 비밀번호 해싱 기능 구현 클래스 중 하나
+- salt를 사용하여 공격에 대한 강력한 방어 기능 제공
+  salt : 암호화된 비밀번호를 더욱 안전하게 만들기 위해 사용되는 임의의 데이터 조각
+- SecurityConfig 클래스에서 @Bean을 통해 BCryptPasswordEncoder의 객체를 얻는 메서드 사용
+  ex) @Bean
+      public BCryprPasswordEncoder bCryptPasswordEncoder() { return new BCryprPasswordEncoder(); }
+--- 사용법
+1. 비밀번호 해싱
+ - 사용자로부터 얻은 password 값을
+   BCryprPasswordEncoder의객체명.encode(사용자의password); 로 해싱하여 Entity 객체에 저장 후 DB에 저장
+2. 비밀번호가 틀렸는지 비교
+ - BCryprPasswordEncoder의객체명.matches(사용자입력비번, 해싱된비번); 으로 true | false 를 return 하여 확인
