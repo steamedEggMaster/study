@@ -38,11 +38,6 @@ SecurityConfig 클래스
      public SecurityFilterChain filterChain(HttpSecurity http){} 
      메서드 안에서 http 객체를 통해 사용하고자 하는 필터와 사용자가 직접 정의한 필터를 정의 가능
 
------ HttpSecurity
-HttpSecurity의 인스턴스 메서드
-1. HttpSecurity객체명.csrf( auth -> auth.disable() );
-
-
 -------------------------------------------------------------------------------------------------------------
 BCryptPasswordEncoder
 : SpringSecurity에서 제공하는 비밀번호 해싱 기능 구현 클래스 중 하나
