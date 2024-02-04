@@ -83,7 +83,7 @@ Charactor, Integer을 제외한 6가지 타입은 첫자리 대문자.
 Math 클래스 - 모든 메서드 static
 1. Math.abs(obj);        2. Math.ceil(obj);       3. Math.floor(obj);
 4. Math.max(obj1, obj2); 5. Math.min(obj1, obj2); 6. Math.random(); - 0.0 <= < 1.0  --- (Math.random() * n) + start
-7. Math.round(obj);
+7. Math.round(obj);      8. Math.sqrt(double a);
 
 난수 얻는 또다른 클래스 - Random 클래스
 new Random() - "시간에 따른 난수 생성이기에 2개의 객체 생성시 서로 다른 난수 얻음."
