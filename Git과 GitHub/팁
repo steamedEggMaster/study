@@ -1,0 +1,5 @@
+1. private, public 변경은 
+   변경할리포지토리 -> setting -> 맨아래 Change visivility 클릭 -> 변경하고 Confirm Message 입력 후 확인
+
+2. 내 리포지토리를 볼 수 있거나 접근가능하게 하는 방법
+   https://docs.github.com/ko/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository 참조
