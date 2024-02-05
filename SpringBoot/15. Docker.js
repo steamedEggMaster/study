@@ -12,3 +12,11 @@ image 실행 : docker run -p 3306:3306 --name mariadb -e MARIADB_ROOT_PASSWORD=a
 4. bash shell에서 mysql을 실행하는 방법
    - 1. mysql -u root -p
    - 2. 패스워드 입력
+
+
+docker 삭제 방법
+1. 앱 및 기능 -> Docker Desktop 삭제
+2. %appdata% 검색 후
+   C:\Users\TT\AppData\Roaming 에서 Docker 과 Docker Desktop 삭제 후
+   C:\Users\TT\AppData\Local 에서 Docker 삭제
+   
