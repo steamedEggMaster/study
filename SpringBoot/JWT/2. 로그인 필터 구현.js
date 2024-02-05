@@ -28,7 +28,7 @@
   9. Saml2WebSsoAuthenticationRequestFilter            10. X509AuthenticationFilter
  11. AbstractPreAuthenticatedProcessingFilter          12. CasAuthenticationFilter
  13. 0Auth2LoginAuthenticationFilter                   14. Saml2WebSsoAuthenticationFilter
- 15. UsernamePasswordAuthenticationFilter              16. DefaultLoginPageGeneratingFilter
+ 15. UsernamePasswordAuthenticationFilter **           16. DefaultLoginPageGeneratingFilter
  17. DefaultLogoutPageGenerationFilter                 18. ConcurrentSessionFilter
  19. DigestAuthenticationFilter                        20. BearerTokenAuthenticationFilter
  21. BasicAuthenticationFilter                         22. RequestCacheAwareFilter
@@ -38,3 +38,12 @@
  29. ExceptionTranslationFilter                        30. FilterSecurityInterceptor
  31. SwitchUserFilter
   
+------------------------------------------------------------------------------------------------------
+  Form 로그인 방식에서 UsernamePasswordAuthenticationFilter
+- Form 로그인 방식에선 클라이언트에서 username, password 전송 후 Security Filter 를 통과 하는데
+  UsernamePasswordAuthenticationFilter 에서 회원 검증을 시작함.
+  - 회원 검증 과정 : UsernamePasswordAuthenticationFilter 가 호출한 AuthenticationManager 를 통해 진행하며,
+                    DB에서 조회한 데이터를 UserDetailsService 를 통해 받음
+
+- 내가 보는 유튜브에선 Form 로그인 방식을 disable 시켜 UsernamePasswordAuthenticationFilter 가 작동하지 않기 때문에,
+                      직접 커스텀하여 JWT 에서 작동이 되게끔 한다.
