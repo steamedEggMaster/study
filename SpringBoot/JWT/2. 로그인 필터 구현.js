@@ -47,3 +47,23 @@
 
 - 내가 보는 유튜브에선 Form 로그인 방식을 disable 시켜 UsernamePasswordAuthenticationFilter 가 작동하지 않기 때문에,
                       직접 커스텀하여 JWT 에서 작동이 되게끔 한다.
+
+1.  jwt 패키지 생성 후 UsernamePasswordAuthenticationFilter 를 상속받는 LoginFilter 클래스 생성
+    3개의 메서드를 Overriding
+    1. public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException
+       - 사용자로부터 입력받은 username, password 를 
+         String username = obtainUsername(request);
+         String password = obtainPassword(request); 로 값 가져오기
+       - 이 내용을 스프링시큐리티에서 검증하기 위해 토큰에 담아야함
+         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticToken(username, password, null);
+       - 토큰을 검증을 위한 AuthenticationManager에게 전달
+         authenticationManager.authenticate(authToken);
+         - AuthenticationManager의 인스턴스는 SecurityConfig에서 
+    2. protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication)
+       - 로그인 성공 시 JWT 발급하는 메서드
+    3. protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed)
+       - 로그인 실패 시 실행하는 메서드
+
+2.  SecurityConfig 클래스의 filterChain 메서드에서 필터를 추가해주기
+    http
+        .addFilterAt(new LoginFilter(), UsernamePasswordAuthenticationFilter.class);
