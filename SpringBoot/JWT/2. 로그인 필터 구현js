@@ -1,0 +1,17 @@
+스프링 Security Filter 동작 원리
+- 스프링 Security는 클라이언트의 요청이 여러 개의 필터를 거쳐 DispatcherServlet(Controller)으로 향하는 장간 필터에서
+  요청을 가로 챈 후 검증(인증 / 인가) 진행
+
+  • 클라이언트 요청 -> Servlet Filter -> DispatcherServlet(컨트롤러)
+                Servlet Container(Tomcat)
+                ◤------------------------------------------------------------◥
+                |  Servlet Filters        ◤----------------------◥           |
+                |  (FilterChain)          | SpringSecurity config |           |
+                | ◤-◥ ◤-◥ ◤-◥ ◤-◥     ◣----------------------◢           |
+     Client ->  | |  | |  | |  | |  |   ◤---------------------------------◥  |
+                | |  | |  | |  | |  |   |  Spring Boot Application         |  |
+                | |  | |  | |  | |  |   |  { }  { }  { }                   |  |
+                | ◣-◢ ◣-◢ ◣-◢ ◣-◢   ◣---------------------------------◢  |
+                ◣------------------------------------------------------------◢
+
+  • Delegating Filter Proxy
