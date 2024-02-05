@@ -15,3 +15,26 @@
                 ◣------------------------------------------------------------◢
 
   • Delegating Filter Proxy
+    - 서블릿 컨테이너(톰캣)에 존재하는 필터체인에 DelegatingFilter 등록 후 모든 요청을 가로 챔
+
+  • 서블릿 필터 체인의 DelegatingFilter 에서 요청 가로 챔 -> Security 필터 체인 (내부 처리 후) -> 서블릿 필터 체인의 DelegatingFilter 로 반환
+    - 서블릿 필터 체인과 Security 필터 체인은 별개의 것
+
+  • SecurityFilterChain 의 목록과 순서
+  1. ChannelProcessingFilter                            2. WebAsyncManagerIntegrationFilter
+  3. SecurityContextPersistenceFilter                   4. HeaderWriterFilter
+  5. CorsFilter                                         6. CsrfFilter
+  7. LogoutFilter                                       8. 0Auth2AuthorizationRequestRedirectFilter
+  9. Saml2WebSsoAuthenticationRequestFilter            10. X509AuthenticationFilter
+ 11. AbstractPreAuthenticatedProcessingFilter          12. CasAuthenticationFilter
+ 13. 0Auth2LoginAuthenticationFilter                   14. Saml2WebSsoAuthenticationFilter
+ 15. UsernamePasswordAuthenticationFilter              16. DefaultLoginPageGeneratingFilter
+ 17. DefaultLogoutPageGenerationFilter                 18. ConcurrentSessionFilter
+ 19. DigestAuthenticationFilter                        20. BearerTokenAuthenticationFilter
+ 21. BasicAuthenticationFilter                         22. RequestCacheAwareFilter
+ 23. SecurityContextHolderAwareRequestfilter           24. JaasApiIntegrationFilter
+ 25. RememberMeAuthenticationFilter                    26. AnonymousAuthenticationFilter
+ 27. 0Auth2AuthorizationCodeGrantFilter                28. SessionManagementFilter
+ 29. ExceptionTranslationFilter                        30. FilterSecurityInterceptor
+ 31. SwitchUserFilter
+  
