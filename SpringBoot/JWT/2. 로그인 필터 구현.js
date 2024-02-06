@@ -66,4 +66,11 @@
 
 2.  SecurityConfig 클래스의 filterChain 메서드에서 필터를 추가해주기
     http
-        .addFilterAt(new LoginFilter(), UsernamePasswordAuthenticationFilter.class);
+     1. .addFilterAt(new LoginFilter(), UsernamePasswordAuthenticationFilter.class); - 해당 필터클래스 자리에 추가
+     2. .addFilterBefore(추가할 필터, 필터클래스) - 해당 필터클래스 전에 추가
+     3. .addFilterAfter(추가할 필터, 필터클래스) - 해당 필터클래스 후에 추가
+
+3.  LoginFilter는 AuthenticationManager 를 인자로 받아야하고, AuthenticationManager 는 AuthenticationConfiguration의 인스턴스로부터 얻을 수 있기 때문에
+    AuthenticationConfiguration을 생성자 주입 받고, AuthenticationManager 를 얻는 메서드를 @Bean 으로 만든 후에, 2번의 new LoginFilter() 에서 메서드 부르기
+    - 최종 : new LoginFilter(authenticationManager(authenticationConfiguration))
+  
