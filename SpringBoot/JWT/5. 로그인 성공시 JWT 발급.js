@@ -18,6 +18,10 @@ JWTUtil을 만들고 나서
 
    -3. JWT 토큰 생성 요청                                      //만료시간
        코드 : String token = jwtUtil.createJwt(username, role, 60*60*10L);
+            //토큰은 Json String 타입임.
 
    -4. JWT 토큰을 response의 헤더부분에 넣어주기
        코드 : response.addHeader("Authorization", "Bearer " + token);
+                               //Authorization 이라는 키에
+                               //인증방식(Bearer)을 접두사로 붙이고, 띄어쓰기 한칸 필수, 후 토큰 이어쓰기
+              //response의 header 또한 Json 임
