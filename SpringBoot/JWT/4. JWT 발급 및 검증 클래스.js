@@ -30,3 +30,40 @@ JWT(Json Web Token)
 2. username 확인 메서드
 3. role 확인 메서드
 4. 만료일 확인 메서드
+
+1. @Component
+   public class JWTUtil 생성
+
+2. 생성자로 암호화키를 받아와서 SecretKey 클래스의 객체로 변환해야함.
+   public JWTUtil(@Value("${spring.jwt.secret}")String secret){
+        secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), SIG.HS256.key().build().getAlgorithm());
+                        SecretKeySpec(byte[] key, String algorithm); }
+
+3. 검증 메서드
+   1. 토큰에서 사용자의 username 을 가져오는 메서드
+      public String getUsername(String token) {
+        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("username", String.class); }
+   2. 토큰에서 사용자의 role 을 가져오는 메서드
+      public String getRole(String token) {
+        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("role", String.class); }
+   3. 토큰의 만료일 을 가져오는 메서드
+      public Boolean isExpired(String token) {
+        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().getExpiration().before(new Date()); }
+
+3-1. 검증 메서드 해석
+   - Jwts.parser() : JWT 토큰을 파싱하기 위한 JwtParser 인스턴스 생성
+   - verifyWith(secretKey) : secretKey를 이용하여 JWT의 유효성 검사
+   - build() : 위의 내용을 바탕으로 JwtParser 빌더를 빌드
+   - parseSignedClaims(token) : 주어진 토큰을 파싱하고, 서명(sign)된 클레임들을 추출
+   - getPayload() : 파싱된 토큰의 Payload 부분 가져오기
+   - get("키", 형변환클래스.class) : 형변환하여 원하는 값 return
+ 
+4. 발급 메서드
+  public String createJwt(String username, String role, Long expiredMs){
+        return Jwts.builder()
+            .claim("username", username)
+            .claim("role", role)
+            .issuedAt(new Date(System.currentTimeMillis()))
+            .expiration(new Date(System.currentTimeMillis() + expiredMs))
+            .signWith(secretKey)
+            .compact(); }
