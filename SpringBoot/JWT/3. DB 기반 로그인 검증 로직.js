@@ -29,6 +29,8 @@ POST : login -----> | AuthenticationFilter | -----> |     Manager    |  --> | Us
      - Overriding 해야하는 메서드
      1. @Override
         public Collection<? extends GrantedAuthority> getAuthorities() --- 사용자의 권한 목록 return
+        - GrantedAuthority 의 객체를 생성시 getAuthority 메서드를 Overriding 해야함.
+                                           - 이때 사용자의 Role 만 빼서 return 해주면 됨
      2. @Override
         public String getPassword()
      3. @Override
