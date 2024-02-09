@@ -54,7 +54,7 @@ JWT(Json Web Token)
 1. @Component
    public class JWTUtil 생성
 
-2. 생성자로 암호화키를 받아와서 SecretKey 클래스의 객체로 변환해야함.
+2. secretKey를 생성자 주입 시 생성자로 암호화키를 받아와서 SecretKey 클래스의 객체로 변환해야함.
    public JWTUtil(@Value("${spring.jwt.secret}")String secret){
         secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), SIG.HS256.key().build().getAlgorithm());
                         SecretKeySpec(byte[] key, String algorithm); }
