@@ -58,7 +58,8 @@
          UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticToken(username, password, null);
        - 토큰을 검증을 위한 AuthenticationManager에게 전달
          authenticationManager.authenticate(authToken);
-         - AuthenticationManager의 인스턴스는 SecurityConfig에서 
+         - AuthenticationManager의 인스턴스는 SecurityConfig에서 @Bean 으로 AuthenticationManager의 인스턴스를 얻는 메서드를 만들어주고,
+           LoginFilter 에서 생성자 주입 해주기
     2. protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication)
        - 로그인 성공 시 JWT 발급하는 메서드
     3. protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed)
