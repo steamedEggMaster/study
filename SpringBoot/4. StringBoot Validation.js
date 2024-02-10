@@ -29,6 +29,7 @@ Hibernate Validation은 Bean Validation 명세에 대한 구현체
 8. @FutureOrPresent : @Future + 오늘 날짜
 
 9. @Pattern : 정규식을 통한 조건
+            - ^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$
 
 10. @Max(value = ~) : 최대값 조건 설정
 11. @Min(value = ~) : 최소값 조건 설정
