@@ -17,7 +17,7 @@
 5. Controller 의 매개변수에 Model 패키지 추가하기
    Model model
 6. model 에 변수 등록하기
-   - model.aadAttribute("변수명", "값");
+   - model.aadAttribute("변수명", 값);
 
 ----- 뷰 템플릿 페이지에 레이아웃 적용 - 부트스트랩 사용하기
 1. 헤더-푸터 레이아웃(header-footer layout)
