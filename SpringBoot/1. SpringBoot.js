@@ -91,6 +91,10 @@ pom.xml 설정하기 - Project Object Model 정보를 담고 있음
 1. <groupId> : 프로젝트 그룹 ID 설정
 2. <artifactId> : 프로젝트 아티펙트 ID 설정
 3. <version> : 프로젝트의 버전
+             - SNAPSHOT : 현재 테스트 단계
+             - Mx(Milestone) : 주요 기능 및 버그 수정 단계
+             - RC(Release Candidate) : 전반적 기능 및 버그 모두 수정된 최종 배포 전 단계
+             - GA(General Availability) : 최종 배포 단계(대부분 기능과 버그 안정화)
 4. <packaging>  : 패키징 타입 설정
     - jar : 자바 프로젝트 압축 파일
     - war : 웹 어플리케이션을 위한 패키징 방식
