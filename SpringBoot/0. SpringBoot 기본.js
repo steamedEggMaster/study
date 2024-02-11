@@ -6,6 +6,7 @@
           - ex) http://localhost:8080/hello.html
 
 4. template : 타임리프(Thymeleaf) 와 같은 서버 사이드 템플릿 엔진이 사용하는 뷰 템플릿 파일들을 저장하는 디렉토리
+            - mustache 등 있음
 5. 프로젝트명ApplicationTests.java : 애플리케이션의 테스트 코드 작성 파일.
                                   - 스프링부트 프로젝트는 기본적으로 JUnit 테스트 프레임워크 사용
 6. .gitignore : Git 버전 관리 시 무시할 파일과 디렉토리 지정 파일
@@ -25,3 +26,6 @@
 ----- form data(폼 데이터)
 : HTML 요소인 <form> 태그에 실려 전송되는 데이터
 - 웹 브라우저에서 서버로 데이터 전송 시 사용
+
+----- 웹 브라우져 한글 깨짐 현상 
+properties 에 server.servlet.encoding.force=true 추가
