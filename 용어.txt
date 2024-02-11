@@ -12,3 +12,6 @@ JPA(Java Persistence API) : 자바 진영에서 ORM(Object-Relational Mapping) �
 ORM : 어플리케이션의 객체를 RDB 테이블에 자동으로 영속화 해주는 것
 
 CI/CD(Continuous Integration/Continuous Delivery) - 관련 툴 : Buildkite, GitHub Actions
+
+JDK(Java Development Kit)
+IDE(Integrated Development Environment)
