@@ -7,6 +7,8 @@
 
 4. template : 타임리프(Thymeleaf) 와 같은 서버 사이드 템플릿 엔진이 사용하는 뷰 템플릿 파일들을 저장하는 디렉토리
             - mustache 등 있음
+              의존성
+              - implementation 'org.springframework.boot:spring-boot-starter-mustache'
 5. 프로젝트명ApplicationTests.java : 애플리케이션의 테스트 코드 작성 파일.
                                   - 스프링부트 프로젝트는 기본적으로 JUnit 테스트 프레임워크 사용
 6. .gitignore : Git 버전 관리 시 무시할 파일과 디렉토리 지정 파일
