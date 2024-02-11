@@ -23,9 +23,9 @@ Method                                                          HTTP       설�
 - Object에 @Requestbody에 해당하는 객체 넣기 가능
 
 @PathVariable - url에 변수가 있을때 사용                                              *
-              - UriComponentsBuilder().fromUriString(~).path(~).encode().build().expand(~).encode().build().toUri();로 사용 - 복수 개 일시 , 으로 구분
+              - UriComponentsBuilder.fromUriString(~).path(~).encode().build().expand(~).encode().build().toUri();로 사용 - 복수 개 일시 , 으로 구분
 @RequestParam - '경로끝?파라미터명=~'로 보낼 시 사용                               *  
-              - Uri 생성 시 UriComponentsBuilder().fromUriString(~).path(~).queryParam(name, value).encode().build().toUri();로 사용 - 경로 가장끝에 표현해야해서
+              - Uri 생성 시 UriComponentsBuilder.fromUriString(~).path(~).queryParam(name, value).encode().build().toUri();로 사용 - 경로 가장끝에 표현해야해서
 @@RequestBody는 restTemplate을 통해 보낼 때 설정                                                     //encode() - UTF-8 로 Encoding
 
 ----- Http 헤더에 무언가를 추가해야할 때
