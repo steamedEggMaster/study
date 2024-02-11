@@ -4,7 +4,7 @@
 3. Controller 에서 뷰페이지 return 하기
    - @Controller   // not RestController
      public class FirtsController {
-       @GetMapping("/hi")
+       @GetMapping("/hi") // Get 요청임
        public String niceToMeetYou(Model model) {
          model.addAttribute("username", "지호");
          return "greetings"; }}
