@@ -23,4 +23,8 @@
 ----- 내장서버 
 - 기본적으로 내장 톰캣 사용, 필요한 경우 Jetty, Undertow 등으로 변경 가능
 
-
+----- H2 Database
+: 내 컴퓨터를 DB로 사용하는 DB
+- 어플리케이션 실행 시 마다 reset 되기 때문에 가볍게 사용가능
+- 의존성
+  runtimeOnly 'com.h2database:h2'
