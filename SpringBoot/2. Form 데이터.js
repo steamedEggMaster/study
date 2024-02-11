@@ -24,3 +24,9 @@
 2. Help -> Edit Custom VM Options 클릭
    -> idea64.exe.vmoptions 편집기 열림 -> 맨아래에 -Dfile.encoding=UTF-8 추가
    -> 닫고, intellij 종료 후 재실행
+
+
+----- 로그
+@Slf4j 어노테이션
+(Simple Logging Facade for Java)
+- 해당 어노테이션 추가 후 log.info() 로 사용 가능 //info 안은 aroundhub 에서 배운 것과 동일
