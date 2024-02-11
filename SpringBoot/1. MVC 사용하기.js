@@ -27,4 +27,4 @@
 
 2. 템플릿화 하기
 각 영역을 따로 템플릿에 파일을 만들어 저장하고, ex) header.mustache
-사용 시 {{>경로}} 로 사용. ex) {{>layouts/header}}
+사용 시 {{>경로/파일명}} 로 사용. ex) {{>layouts/header}}
