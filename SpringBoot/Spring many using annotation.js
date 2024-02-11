@@ -2,6 +2,7 @@
 1. @Repository - Data Access Layer의 DAO or Repository 클래스에 사용
                - DataAccessException 자동변환 같은 AOP의 적용 대상을 선정하기 위해 사용
 2. @Service - Service Layer의 클래스에 사용
+            - impl 사용시 impl 에 붙이기
 3. @Controller - Presentation Layer의 MVC Controller에 사용
 4. @Component - 위의 Layer 구분을 적용하기 어려운 일반적인 경우에 설정
 
