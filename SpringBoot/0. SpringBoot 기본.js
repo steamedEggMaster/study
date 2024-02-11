@@ -23,9 +23,4 @@
 ----- 내장서버 
 - 기본적으로 내장 톰캣 사용, 필요한 경우 Jetty, Undertow 등으로 변경 가능
 
------ form data(폼 데이터)
-: HTML 요소인 <form> 태그에 실려 전송되는 데이터
-- 웹 브라우저에서 서버로 데이터 전송 시 사용
 
------ 웹 브라우져 한글 깨짐 현상 
-properties 에 server.servlet.encoding.force=true 추가
