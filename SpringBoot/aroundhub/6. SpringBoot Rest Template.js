@@ -29,6 +29,7 @@ Method                                                          HTTP       설�
 @@RequestBody는 restTemplate을 통해 보낼 때 설정                                                     //encode() - UTF-8 로 Encoding
 
 ----- Http 헤더에 무언가를 추가해야할 때
+1. naver
 HttpHeaders headers = new HttpHeaders();
 headers.setAccept(Arrays.asList(new MediaType[]{MediaType.APPLICATION_JSON}));
 headers.setContentType(MediaType.APPLICATION_JSON);
@@ -37,7 +38,8 @@ headers.set("X-Naver-Client-Secret", clientSecret);
 
 HttpEntity<String> entity = new HttpEntity<>("", headers);
 
------ 
+2. 
+
 
 ----------------------------------------------------------------------------------------------
 WebClient 
@@ -51,3 +53,6 @@ WebClient
 2. build.gradle
 implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
+-------------------------------------------------------------------------------------------------
+팁
+1. xml -> json 변환 시 xml 의 최상위 태그가 사라짐
