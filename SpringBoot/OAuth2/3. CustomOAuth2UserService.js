@@ -16,6 +16,7 @@ SecurityConfig 와 소셜 로그인 서비스 API 신청 후 CustomOAuth2UserSer
    코드 - String registrationId = userRequest.getClientRegistration().getRegistrationId();
                                               //클라이언트 등록정보    // 등록 ID
 5. registrationId 를 비교하여 그에 맞는 json을 받을 ResponseDto 생성
+   - Dto 는 각 서비스별로 오는 json 이 다르니 그에 맞게 각각 Dto클래스를 만들어주기
    코드 -  if(registrationId.equals("naver")){ oAuth2Response = new NaverResponse(oAuth2User.getAttributes()); }
            else if (registrationId.equals("google")){ oAuth2Response = new GoogleResponse(oAuth2User.getAttributes()); }
            else { return null; }
