@@ -74,6 +74,10 @@ REST API 설계 규칙
 6. 언더바 사용 X
 7. 파일 확장자를 표현하지 않음.
 
+----- @RestController 와 @Controller 차이점
+* @RestController 는 REST 를 수행하는 Controller 임을 명시함. 해당 Annotation 이 붙은 컨트롤러의 메서드들의 return 값은 모두 http response의 body 값에 들어감
+  @Controller 는 MVC 를 수행하는 Controller 임을 명시. 해당 Annotation 이 붙은 컨트롤러의 메서드의 return 값은 template의 View 를 찾는 파일명으로 해석됨.
+
 REST 관련 Annotation - 출처 : https://january-diary.tistory.com/entry/Spring-REST-API
 1. @RestController : Controller가 REST 방식을 처리하기 위한 것임을 명시 - @Controller + @ResponseBody
 2. @ResponseBody : JSP같은 view로 전달되는 것이 아닌 데이터 자체를 전달
