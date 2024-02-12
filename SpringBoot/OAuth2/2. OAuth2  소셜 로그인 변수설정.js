@@ -16,7 +16,9 @@ spring.security.oauth2.client.provider.서비스명.user-name-attribute=응답 �
   OAuth2AuthorizationRequestRedirectFilter -> OAuth2LoginAuthenticationFilter -> OAuth2LoginAuthenticationProvider 까지의 과정을
   추가 설정 없이도 자동 진행
 * 사용자는 UserDetailsService와 UserDetails만 구현
-
+  - UserDetailsService 는 extends DefaultOAuth2UserService
+  - UserDetails 는 implements OAuth2User
+    
 * #registration 은 외부 서비스에서 우리 서비스를 특정하기 위해 등록하는 정보 - 필수!
 * #provider 은 서비스 별로 정해진 값이 존재하고, 유명 서버의 경우 내부적으로 데이터 가짐 - 필수 X 
   - 필요한 서버
