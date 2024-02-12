@@ -1,4 +1,4 @@
-SecurityConfig 와 소셜 로그인 서비스 API 신청 후 CustomOAuth2UserService 구현하기
+SecurityConfig 와 소셜 로그인 서비스 API 신청 후 CustomOAuth2UserService 구현 후 SecurityConfig 에 추가하기
 
 1. DefaultOAuth2UserService 를 상속받는 CustomOAuth2UserService 생성
    코드 - @Service 
@@ -19,4 +19,11 @@ SecurityConfig 와 소셜 로그인 서비스 API 신청 후 CustomOAuth2UserSer
    코드 -  if(registrationId.equals("naver")){ oAuth2Response = new NaverResponse(oAuth2User.getAttributes()); }
            else if (registrationId.equals("google")){ oAuth2Response = new GoogleResponse(oAuth2User.getAttributes()); }
            else { return null; }
-6. 
+6. DB랑 비교하여 기존 회원 여부 파악 후 Role 을 정해준 후 ("ROLE_~")
+   OAuth2User을 implements 한 Dto의 객체에 담아 return
+
+7. SecurityConfig 에서 CustomOAuth2UserService 를 추가해주기 - OAuth2 토큰을 사용해 사용자 인증 후 사용자 정보를 가져오기 위한 설정
+   코드 -  http
+               .oauth2Login(oauth2 -> oauth2 // oauth2 로그인 구성
+                  .userInfoEndpoint(userInfoEndpointConfig -> 
+                     userInfoEndpointConfig.userService(customOAuth2UserService)));
