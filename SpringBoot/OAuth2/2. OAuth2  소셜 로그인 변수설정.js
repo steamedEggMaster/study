@@ -2,7 +2,7 @@
 spring.security.oauth2.client.registration.서비스명.client-name=서비스명
 spring.security.oauth2.client.registration.서비스명.client-id=서비스에서 발급 받은 아이디
 spring.security.oauth2.client.registration.서비스명.client-secret=서비스에서 발급 받은 비밀번호
-spring.security.oauth2.client.registration.서비스명.redirect-uri=서비스에 등록한 우리쪽 로그인 성공 URI
+spring.security.oauth2.client.registration.서비스명.redirect-uri=서비스에 등록한 우리쪽 로그인 성공 URI - redirection 할 주소 
 spring.security.oauth2.client.registration.서비스명.authorization-grant-type=authorization_code
 spring.security.oauth2.client.registration.서비스명.scope=리소스 서버에서 가져올 데이터 범위
 
