@@ -30,3 +30,11 @@
 - 어플리케이션 실행 시 마다 reset 되기 때문에 가볍게 사용가능
 - 의존성
   runtimeOnly 'com.h2database:h2'
+- 웹으로 접근하는 방법
+  1. properties 에서 spring.h2.console.enabled=true
+  2. 애플리케이션 실행 후 localhost:8080/h2-console 접속
+  3. JDBC URL 을 변경해주어야 함
+  4. intellij 의 Run 탭 가서 ctrl + F
+  5. jdbc 검색 후 H2 console available at '/h2-console'. Database available at 뒤의
+    'jdbc:h2:mem:~~' 코드 복사
+  6. JDBC URL 에 붙여넣고, connect 클
