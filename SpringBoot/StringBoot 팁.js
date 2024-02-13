@@ -22,3 +22,6 @@ Entity의 필드가 대문자를 경계로 "~_~"(모두 소문자)로 컬럼이�
 return "redirect:/경로"
       - redirect: 라는 접두사를 사용
       - 어떤 경로에 대한 요청을 redirect 하여 설정 경로로 보내줌.
+
+1. 웹페이지와 서버간에 데이터가 왔다갔다 할때는 @RestController
+   MVC에서 변수를 받아 뷰 템플릿에 보여주기 위해 사용하는 컨트롤러는 @Controller
