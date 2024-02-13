@@ -16,15 +16,6 @@
    - name 속성에 지정 ex) <input type= "text" class="form-control" name="title">
 4-1. Controller의 메서드에 매개변수로 해당 객체 지정
 
------ 인텔리제이의 콘솔에 출력할때 한글이 깨진다면 파일 인코딩 설정을 UTF-8 로 변경
-1. File -> Setting -> Editor > File Encodings 클릭
-   -> Global Encoding 및 Project Encoding, Default encoding for properties files
-      이 3가지를 전부 UTF-8 로 설정 후
-      apply -> ok
-2. Help -> Edit Custom VM Options 클릭
-   -> idea64.exe.vmoptions 편집기 열림 -> 맨아래에 -Dfile.encoding=UTF-8 추가
-   -> 닫고, intellij 종료 후 재실행
-
 
 ----- 로그
 @Slf4j 어노테이션
