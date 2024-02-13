@@ -9,11 +9,12 @@
        @GetMapping("/hi") // Get 요청임
        public String niceToMeetYou(Model model) { // String return
          model.addAttribute("username", "지호");
+         - model.addAttribute(String name, Object value)
          return "greetings"; // 확장자 작성 필요 X, 서버가 알아서 templates 의 해당 뷰 템플릿 페이지를 찾아 웹 브라우져로 전송
      }}
 4. 뷰 페이지에 변수 삽입
    - <h1>{{username}}님, 반갑습니다</h1>
-   - {{ 변수명 }} in mustache 방식
+   - {{ 변수명 }} is mustache 방식
 5. Controller 의 매개변수에 Model 패키지 추가하기
    Model model
 6. model 에 변수 등록하기
