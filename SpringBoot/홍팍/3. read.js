@@ -27,3 +27,5 @@ ex) value 가 Article객체고, Article의 field 가 id, title, content 라고 �
 {{id}}
 {{title}}
 {{content}}
+
+** 만약 List같은 객체일 경우 List 안의 갯수만큼 ~ 가 반복 실행됨 **
