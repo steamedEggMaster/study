@@ -11,7 +11,7 @@
        으로 null을 받거나 있다면 <> 안의 객체로 받음.
      - 메서드
        1. 객체명.isPresent() - 있/없 여부 return
-       2. 객체명.get() - <> 안의 객체 return / 없으면 nullpointException return
+       2. 객체명.get() - <> 안의 객체 return, 없으면 nullPointException return
   3. .orElse(null) 사용
      ex) Article articleEntity = repository.findById(id).orElse(null);
 
