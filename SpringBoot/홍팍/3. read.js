@@ -21,4 +21,9 @@
 ~
 {{/name}}
 
-2.
+2. ~ 에서 객체의 field 들을 사용하여 값 넣기
+                                  - field명을 사용하면 됨
+ex) value 가 Article객체고, Article의 field 가 id, title, content 라고 할때
+{{id}}
+{{title}}
+{{content}}
