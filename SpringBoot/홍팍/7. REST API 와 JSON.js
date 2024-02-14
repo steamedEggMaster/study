@@ -16,3 +16,14 @@ REST API
 2. 헤더(header)         : HTTP 전송에 필요한 부가 정보 존재
 3. 빈 라인(blank line)  : 헤더의 끝을 알리는 빈줄, 헤더가 모두 전송되었음을 알림
 4. 본문(body)           : 실제 전송하는 데이터 존재
+
+----- ResponseEntity<T>
+: REST API의 응답을 위해 사용하는 클래스
+- 응답 시 원하는 HTTP 상태 코드, 헤더, 본문 실어보내기 가능
+  ex) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+
+  - HttpStatus : HTTP 상태 코드 관리 enum 클래스
+               - HttpStatus.OK : 상태코드 200
+               - HttpStatus.CREATED : 상태코드 201
+               - HttpStatus.BAD_REQUEST : 상태코드 400
+  - body() : T 에 해당하는 객체 집어넣기
