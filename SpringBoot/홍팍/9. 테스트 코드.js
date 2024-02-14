@@ -22,3 +22,10 @@
 5. 예상 데이터와 실제 데이터를 만들고,
    JUnit 에서 제공하는
    assertEquals(Object expected, Object actual) 로 비교.
+
+6. 테스트 메서드 여러 개를 실행 시 select 를 제외한 나머지는 DB에 데이터가 생성, 삭제되니,
+   하나의 테스트가 끝날 때마다 DB 를 원상태로 되돌리기 위해
+   테스트 메서드에 @Transactional 사용.
+   ex) @Transactional
+       @Test
+       void create_성공_title과_content만_있는_dto_입력()
