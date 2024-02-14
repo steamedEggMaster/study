@@ -34,7 +34,7 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 5. @RequestHeader
 6. @CookieValue
 7. @RequestBody - HTTP 요청의 본문(body)을 메서드의 파라미터로 바인딩할 때 사용
-8. @ResponseBody
+8. @ResponseBody - REST에서 BODY의 json 을 객체로 받기 위한 어노테이션
 
 ----- @View 관련 Annotation
 1. @ModelAttribute : RequestMapping 어노테이션이 적용되지 않은 별도 method로 모델이 추가될 객체를 생성
