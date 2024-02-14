@@ -27,10 +27,8 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 ----- @Controller 관련 Annotation
 1. @Controller
 2. @RequestMapping
-3. @PathVariable - url에 변수가 있을때 사용
-                 - UriComponentsBuilder().fromUriString(~).path(~).encode().build().expand(~)로 사용 - 복수 개 일시 , 으로 구분
-4. @RequestParam - '경로끝?파라미터명=~'로 보낼 시 사용
-                 - Uri 생성 시 UriComponentsBuilder().fromUriString(~).path(~).queryParam(name, value)로 사용 - 경로 가장끝에 표현해야해서
+3. @PathVariable
+4. @RequestParam
 5. @RequestHeader
 6. @CookieValue
 7. @RequestBody - HTTP 요청의 본문(body)을 메서드의 파라미터로 바인딩할 때 사용
