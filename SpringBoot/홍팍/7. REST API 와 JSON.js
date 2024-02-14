@@ -27,3 +27,5 @@ REST API
                - HttpStatus.CREATED : 상태코드 201
                - HttpStatus.BAD_REQUEST : 상태코드 400
   - body() : T 에 해당하는 객체 집어넣기
+  - build() : body 가 비어있는 ResponseEntity 생성
+    ex) return ResponseEntity.status(HttpStatus.OK).build();
