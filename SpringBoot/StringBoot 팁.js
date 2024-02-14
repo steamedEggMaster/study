@@ -25,7 +25,7 @@ return "redirect:/경로"
 
 ----- @RestController 와 @Controller 차이
    웹페이지와 서버간에 데이터가 왔다갔다 할때는 @RestController
-   MVC에서 변수를 받아 뷰 템플릿에 보여주기 위해 사용하는 컨트롤러는 @Controller
+   MVC에서 매개변수를 받아 뷰 템플릿에 보여주기 위해 사용하는 컨트롤러는 @Controller
 
 ----- template 에 한국어 ??? 로 나타날 때
    application.properties 에서 server.servlet.encoding.force=true
