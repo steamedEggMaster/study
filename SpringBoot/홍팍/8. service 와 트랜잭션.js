@@ -21,3 +21,4 @@ ex) articleRepository.findById(-1L).orElseThrow(() -> new IllegalArgumentExcepti
 - 간단한 사용법
   : service의 메서드에 @Transactional 어노테이션 붙이기
                       - 예외 발생 시 롤백
+                      - org.springframework.transaction.annotation 클릭
