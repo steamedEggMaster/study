@@ -32,7 +32,7 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 5. @RequestHeader
 6. @CookieValue
 7. @RequestBody - HTTP 요청의 본문(body)을 메서드의 파라미터로 바인딩할 때 사용
-8. @ResponseBody - REST에서 BODY의 json 을 객체로 받기 위한 어노테이션
+8. @ResponseBody
 
 ----- @View 관련 Annotation
 1. @ModelAttribute : RequestMapping 어노테이션이 적용되지 않은 별도 method로 모델이 추가될 객체를 생성
@@ -42,7 +42,7 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 2. @ResponseBody - JSP 같은 뷰로 전달되는 것이 아니라 데이터 자체를 전달
 3. @PathVariable - URL 경로에 있는 값을 파라미터로 추출한다.
 4. @CrossOrigin - Ajax의 크로스 도메인 문제를 해결한다
-5. @RequestBody - JSON 데이터를 원하는 타입으로 바인딩한다.
+5. @RequestBody - JSON 데이터를 원하는 타입으로 바인딩한다. - REST에서 BODY의 json 을 객체로 받기 위한 어노테이션
 
 ----- Property 관련 Annotation
 1. beans의 @Value("${property명}") : 프로퍼티에 설정된 값을 변수에 넣어줌
