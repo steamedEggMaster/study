@@ -16,16 +16,20 @@
      ex) Article articleEntity = repository.findById(id).orElse(null);
 
 ----- mustache 에서 model.addAttribute(String name, Object value) 로 등록한 객체를 사용하는 방법
-1. 객체가 사용될 범위 지정
-{{#name}}
-~
-{{/name}}
+1. 범위 안에서
+   1. 객체가 사용될 범위 지정
+      {{#name}}
+      ~
+      {{/name}}
 
-2. ~ 에서 객체의 field 들을 사용하여 값 넣기
-                                  - field명을 사용하면 됨
-ex) value 가 Article객체고, Article의 field 가 id, title, content 라고 할때
-{{id}}
-{{title}}
-{{content}}
+   2. ~ 에서 객체의 field 들을 사용하여 값 넣기
+                                     - field명을 사용하면 됨
+      ex) value 가 Article객체고, Article의 field 가 id, title, content 라고 할때
+      {{id}}
+      {{title}}
+      {{content}}
 
-** 만약 List같은 객체일 경우 List 안의 갯수만큼 ~ 가 반복 실행됨 **
+      ** 만약 List같은 객체일 경우 List 안의 갯수만큼 ~ 가 반복 실행됨 **
+2. 범위 없이 사용
+   {{name.field명}} 
+
