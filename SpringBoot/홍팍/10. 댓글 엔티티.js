@@ -15,7 +15,7 @@
                   ◣--------------◢
 
 ------------------------------------------------------------------------------------------------------------
------ 게시글 엔티티 와 댓글 엔티티를 연결하기
+------ 게시글 엔티티 와 댓글 엔티티를 연결하기
 1. 댓글 엔티티의 필드로 게시글 엔티티 선언
    코드 - private Article article;
 
@@ -30,7 +30,7 @@
           private Article article;
    -> DB 상에는 article 컬럼이 아닌 article_id 컬럼이 생성됨.
 
------ 네이티브 쿼리 메서드 생성하기
+------ 네이티브 쿼리 메서드 생성하기
 네이티브 쿼리 메서드 : 직접 작성한 sql 쿼리를 repository 메서드로 실행 가능하게 해주는 것.
 
 1. 원하는 메서드를 Repository interface 에 적기
@@ -73,3 +73,14 @@
                              ]]>
                          </query>
                      </named-native-query>
+
+------ Repository의 메서드 Test 하기
+1. 동일하게 Generate -> Test 로 생성
+
+2. Test 클래스에 @DataJpaTest 붙이기
+   - ex) @DataJpaTest
+         class CommentRepositoryTest
+
+3. 테스트 하려는 메서드가 있는 Repository 의존성 주입하기
+   - ex) @Autowired
+         CommentRepository commentRepository;
