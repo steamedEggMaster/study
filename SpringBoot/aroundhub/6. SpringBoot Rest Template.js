@@ -64,6 +64,9 @@ WebClient
 implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
 - 사용법
+0. 간단한 WebClient 객체 생성
+   1. WebClient w = new WebClient();
+   2. WebClient w = new WebClient(String baseUrl)
 1. return 객체로 Flux<T> or Mono<T> 사용
    Flux 는 값이 여러개가 올때, Mono는 단일 리소스일때
 2. 기본적인 요청 예시 - naver 단축 url api
