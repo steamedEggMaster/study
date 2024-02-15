@@ -44,13 +44,32 @@
 
    2. orm.xml 파일 - 네이티브 쿼리 XML
       - 무조건 경로는 resource -> META-INF -> orm.xml
-      - orm.xml 파일에서 엔티티 매핑을 위한 xml 코드
-        <?xml version="1.0" encoding="utf-8" ?>
-        <entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
-                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                       xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm
-                       https://jakarta.ee/xml/ns/persistence/orm/orm_3_0.xsd"
-                       version="3.0">
-        </entity-mappings>
+      - 작성 방법      
+        1. orm.xml 파일에서 엔티티 매핑을 위한 xml 코드
+           <?xml version="1.0" encoding="utf-8" ?>
+           <entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm
+                          https://jakarta.ee/xml/ns/persistence/orm/orm_3_0.xsd"
+                          version="3.0">
+           </entity-mappings>
 
-                  
+        2. <entity-mappings> 와 </entity-mappings> 태그 사이에 <named-native-query> 와 <query> 태그로 쿼리 작성
+           - 형식 : <named-native-query
+                            name="쿼리_수행_대상_엔티티.메서드_이름"
+                            result-class="쿼리_수행_결과를_반환하는_타입의_전체_패키지_경로">
+                        <query>
+                            <![CDATA[
+                                 //쿼리
+                            ]]>
+                        </query>
+                    </named-native-query>
+           - 코드 :  <named-native-query
+                             name="Comment.findByNickname"
+                             result-class="com.example.firstproject.entity.Comment">
+                         <query>
+                             <![CDATA[
+                                 SELECT * FROM comment WHERE nickname = :nickname
+                             ]]>
+                         </query>
+                     </named-native-query>
