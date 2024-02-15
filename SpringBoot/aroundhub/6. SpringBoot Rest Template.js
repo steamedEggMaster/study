@@ -49,8 +49,12 @@ HttpEntity<String> entity = new HttpEntity<>("", headers);
 
 ----------------------------------------------------------------------------------------------
 WebClient 
+- 한번 생성하면 immutable - mutate() 로 변경 가능
+- Spring 5 이후 제공
+- Publish 클래스의 자식클래스로써 stream 형식으로 데이터를 처리
+- "자동으로 encoding"
 
-의존성 추가
+- 의존성 추가
 1. pom.xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -59,6 +63,44 @@ WebClient
 2. build.gradle
 implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
+- 사용법
+1. return 객체로 Flux<T> or Mono<T> 사용
+   Flux 는 값이 여러개가 올때, Mono는 단일 리소스일때
+2. 기본적인 요청 예시 - naver 단축 url api
+   Mono<NaverUriDto> mono = WebClient.builder()
+                                     .baseUrl(baseUrl)
+                                     .defaultHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
+                                     .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                                     .defaultHeader("X-Naver-Client-Id", clientId)
+                                     .defaultHeader("X-Naver-Client-Secret", clientSecret)
+                                     .build()
+                                    .get() //어떤 요청인가 .
+                                    .uri(uriBuilder -> uriBuilder
+                                                      .path(path)
+                                                      .queryParam("url", originalUrl)
+                                                      .build()) //.toUri() 는 안써도 됨
+                                    .retrieve()
+                                    .bodyToMono(NaverUriDto.class);
+3. 상대측이 RequestBody 로 받을 때
+ex)SomeData data = new SomeData("value1", "value2");
+   webClient.post()
+         .uri("/endpoint")
+         .contentType(MediaType.APPLICATION_JSON)
+         .body(BodyInserters.fromValue(data)) // BodyInserters.fromValue(T value) : 해당 객체를 requestBody에 해당 객체를 포함시킴
+         .retrieve()                                                            // - json으로 하기 위해선 ObjectMapper 객체를생성하여 String s = ob.writeValueAsString(T) 로
+         .bodyToMono(Response.class)                                            // 변환시킨 후 body 사용
+
+4. retrieve() 메서드 : body 를 받아 decoding
+- 이후 데이터는 크게 2가지 타입으로 받음
+  1. Mono<ResponseEntity<T>> 를 return 하는 toEntity(T.class);
+  2. Body를 T에 바인딩하여 Mono<T> 를 return 하는 toMono(T.class); / toFlux(T.class);
+
+5. 요청 method
+   1. WebClient.RequestHeadersUriSpec<?> get()
+   2. WebClient.RequestBodyUriSpec post()
+   3. WebClient.RequestBodyUriSpec put()
+   4. WebClient.RequestHeadersUriSpec<?> delete()
+   - get과 delete 는 body() 메서드 사용 불가
 -------------------------------------------------------------------------------------------------
 팁
 1. xml -> json 변환 시 xml 의 최상위 태그가 사라짐
