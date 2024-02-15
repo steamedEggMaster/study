@@ -37,3 +37,8 @@
 - ex) @Test
       @DisplayName("특정 게시글의 모든 댓글 조회")
       void findByArticleId()
+
+----- assertEquals
+의 3번째 매개변수로 테스트 실패시 띄울 메세지 설정 가능
+ex) assertEquals(expected.toString(), comments.toString(), "1번 글은 댓글이 없음");
+                                                           // 실패 시 터미널에 띄워짐
