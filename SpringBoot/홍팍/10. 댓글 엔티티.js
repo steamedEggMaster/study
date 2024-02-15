@@ -84,3 +84,4 @@
 3. 테스트 하려는 메서드가 있는 Repository 의존성 주입하기
    - ex) @Autowired
          CommentRepository commentRepository;
+4. 입력 데이터, 실제 데이터, 예상 데이터 생성 후 assertEquals 로 비교하기
