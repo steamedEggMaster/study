@@ -29,3 +29,11 @@
    ex) @Transactional
        @Test
        void create_성공_title과_content만_있는_dto_입력()
+
+----- @DisplayName
+: 테스트 결과에 메서드 이름 "대신" 보여줄 이름 설정 어노테이션
+- @Test 가 붙은 메서드에 붙이면 됨.
+- 형식 : @DisplayName("테스트_결과에_보여줄_이름")
+- ex) @Test
+      @DisplayName("특정 게시글의 모든 댓글 조회")
+      void findByArticleId()
