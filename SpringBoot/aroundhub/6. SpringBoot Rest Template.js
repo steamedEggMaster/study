@@ -51,6 +51,12 @@ HttpEntity<String> entity = new HttpEntity<>("", headers);
 - 사용법 ex) 1. JsonParser parser = new JsonParser();
              2. JsonElement element = parser.parse(result);
              3. String accessToken = element.getAsJsonObject().get("access_token").getAsString();
+            - n겹일때
+              getAsJsonObject()로 받고 다시 get("~")
+              ex) JsonParser parser = new JsonParser();
+                  JsonElement element =  parser.parse(result);
+			          	JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();;
+			            String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 
 ----------------------------------------------------------------------------------------------
 WebClient 
