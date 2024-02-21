@@ -46,6 +46,11 @@ HttpEntity<String> entity = new HttpEntity<>("", headers);
 2. xml을 객체로 변환할 때 일부값만 바인딩하는 방법은 @XmlElement(name = "~") 이고,
    Json 과 달리 xml을 객체로 바인딩할때는 생성자가 필요함. @No/AllArgumentConstructor를 써줄것.
 
+----- 파싱
+- 바인딩 대신 ResponseEntity<String> 으로 받았을 때, Json을 파싱하여 원하는 값을 얻어올 수 있음.
+- 사용법 ex) 1. JsonParser parser = new JsonParser();
+             2. JsonElement element = parser.parse(result);
+             3. String accessToken = element.getAsJsonObject().get("access_token").getAsString();
 
 ----------------------------------------------------------------------------------------------
 WebClient 
