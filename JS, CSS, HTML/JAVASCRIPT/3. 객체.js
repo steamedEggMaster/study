@@ -36,6 +36,8 @@ ex) const superman = {
       fly : function() { ~; }
    == fly() { ~; }
 
+- 사용법
+  superman[fly]();
 
 ----- 배열
 let 배열명 = [~,~,...];
