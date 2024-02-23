@@ -8,7 +8,7 @@ ex) let a = 'age';
 - [] 안에 식 자체를 넣는 것도 가능
   ex) [1 + 4] : 5
 
------ 객체 메서드
+-----  메서드
 1. Object.assign(초깃값, 복제할객체1, ...) : 객체 복제
    ex) const newUser = Object.assign({ gender : 'male' }, user);
                                      - {}안의 초기 프로퍼티에, user 객체가 덧붙여서 복제됨
