@@ -37,3 +37,22 @@
 12. Math.pow(n, m); : n의m제곱
 13. Math.sqrt(수); : 수의 제곱근
 ----------------------------------------------------------------------------------------------------------
+----- 문자열 메서드
+1. 문자열변수명.length : 문자열 길이
+2. 문자열변수명[index] : 특정 문자접근
+                      - 문자열변수명[index] = '~'; 로 변경 불가
+3. 문자열변수명.toUpperCase();
+4. 문자열변수명.toLowerCase();
+5. 문자열변수명.indexOf(문자(열)); : 해당 문자(열)이 처음 나타나는 곳이 몇번째 index에 있는지 return // 없다면 -1 return 
+6. 문자열변수명.slice(n[, m]); : n번째 index부터 m-1번째 index까지 return
+                              - m 없으면 n~끝까지
+                              - m 음수면 끝부터 셈
+7. 문자열변수명.substring(n, m) : n번째 index부터 m-1번째 index까지 return
+                               - m과 n 바꿔도 동작
+                               - 음수는 0으로 인식
+8. 문자열변수명.substr(n, m) : n번째 index부터 m개의 문자 return
+9. 문자열변수명.trim() : 앞 뒤 공백 제거
+10. 문자열변수명.repeat(n) : 문자열 n번 반복
+11. "문자".codePointAt(0); : 해당 문자의 AsciiCode값 return
+12. String.fromCodePoint(AsciiCode값) : 해당 AsciiCode에 해당하는 문자 return
+13. 문자열변수명.includes(문자(열)) : 문자 있 -> true / 문자 없 -> false
