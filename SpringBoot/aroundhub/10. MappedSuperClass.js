@@ -11,6 +11,7 @@
  @EntityListener을 필수로 사용하게 됨.
  : 엔티티 객체를 DB에 적용하기 전/후에 콜백을 요청하는 어노테이션
  - @EntityListener(콜백을 요청할 클래스명.class) 로 사용
+   -ex) @EntityListeners(AuditingEntityListener.class)
  - @EntityListener의 요청 시점
       1. @PostLoad - get요청 후
       2. @PrePersist - Persist는 일반적으로 save
