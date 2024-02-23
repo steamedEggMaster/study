@@ -29,3 +29,11 @@ Spring Security 는 로그인 시 비밀번호에 대해
 @Bean
 public BCryptPasswordEncoder bCryptPasswordEncoder() {
     return new BCryptPasswordEncoder(); }
+
+-------------------------------------------------------------------------------------------
+DB 연결
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/security?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=security
