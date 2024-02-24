@@ -17,3 +17,5 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 
 - 위의 코드 작성 시 httpBasic 방식으로 인증하게 됨
   -> login 창에 header에 username, password를 입력가능한 prompt 창이 나타남
+------------------------------------------------------------------------------------------------
+Role Hierarchy
