@@ -19,3 +19,13 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
   -> login 창에 header에 username, password를 입력가능한 prompt 창이 나타남
 ------------------------------------------------------------------------------------------------
 Role Hierarchy
+: 각각의 권한들에 계층을 구분하기 위해 사용
+
+1. SecurityConfig에 메서드 추가하기
+   @Bean
+   public RoleHierarchy roleHierarchy() {
+       RoleHierarchyImpl hierarchy = new RoleHierarchyImpl();
+       hierarchy.setHierarchy("ROLE_C > ROLE_B\n" + "ROLE_B > ROLE_A"); // 작성법이니 따를 것
+       return hierarchy; }
+
+2. .requestMatchers("/admin").hasAnyRole("C") 등으로 사용하기
