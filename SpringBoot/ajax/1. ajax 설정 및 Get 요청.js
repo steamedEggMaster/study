@@ -12,9 +12,11 @@ AJAX(Asynchronous Javascript And Xml)
 
 ajax 를 사용하기 위해선
 1. jQuery 가 필요하다
-   - jQuery CDN 방식 사용
+   - jQuery CDN 방식 사용 //이외의 방식도 많음
+
 2. body 태그 안에서 원하는 태그에 함수 설정해주기
    ex) <body> <button onclick="ex01Fn()">ex01 함수 호출</button> </body>
+     
 3. *** <script></script> 태그 안에 함수를 작성하기 ***
    - 작성방법 예시
     <script>
@@ -34,8 +36,8 @@ ajax 를 사용하기 위해선
 
 4. 2, 3번 실행 시 @GetMapping("/ex01")
                  public String ex01(){
-                 System.out.println("AjaxController.ex01");
-                 return "index"; } //index.html 파일이 있음
+                     System.out.println("AjaxController.ex01");
+                     return "index"; } //index.html 파일이 있음
    가 실행되게 설정
 
 5. 중요!! 
@@ -43,5 +45,5 @@ ajax 를 사용하기 위해선
    매개변수 res가 받아오는 값은 페이지 변환 X
    index.html 파일의 모든 String을 받아옴.
 
-   -> ajax의 특징 : 함수의 실행으로 페이지 변환이 아닌 실행 값을 가져옴.
+   -> ajax의 특징 : 함수의 실행으로 페이지 변환이 아닌 컨트롤러에서의 실행 값을 가져옴.
 
