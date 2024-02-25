@@ -27,3 +27,10 @@ ex) const Bmw = function (color) { this.color = color; } 일때
 
 -- 객체명.constructor : 해당 객체의 생성자 객체를 가리키는 프로퍼티 값을 가져옴
  ex) x5.constructor === Bmw; -> true
+
+----- 객체 내 프로퍼티 값을 변경하지 못하게 하기위할때
+ex) const Bmw = function (color) {
+        const c = color;
+        this.getColor = function() { console.log(c); }; };
+    일때, c를 통해 color 값을 얻을 수 만있고, 변경은 불가함
+          why? Closure에 의해 생성될 당시의 c 값을 기억하기 때문에
