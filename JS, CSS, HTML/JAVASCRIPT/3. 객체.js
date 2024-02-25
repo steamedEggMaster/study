@@ -25,7 +25,8 @@ ex) const 객체명 = {  ==  const 객체명 = {
 ex) 객체명.없는키; -> undefined
 
 -- 키가 있는지 확인 연산자
-'키' in 객체명;
+1. '키' in 객체명;
+2. 객체명.hasOwnProperty('필드명');
 
 -- 객체의 필드 반복문
 for(x in 객체명)
