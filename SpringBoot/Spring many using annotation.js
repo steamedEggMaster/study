@@ -32,7 +32,7 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
                        public String user(@PathVariable("id") ~
 4. @RequestParam - 키=밸류 로 이루어진 경로에서 키에 해당하는 밸류 추출
                  - ex) @RequestParam("키") String key
-                 - ex) @RequestParam(name = "~", defaultValue = "fiction")
+                 - ex) @RequestParam(name = "키", defaultValue = "안들어올때기본값")
 5. @RequestHeader
 6. @CookieValue
 7. @RequestBody - HTTP 요청의 본문(body)을 메서드의 파라미터로 바인딩할 때 사용
