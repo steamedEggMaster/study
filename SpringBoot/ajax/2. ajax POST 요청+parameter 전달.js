@@ -1,5 +1,4 @@
-템플릿에서 get 과
- type: "post" 만 다름
+템플릿에서 get 과 type: "Post", 컨트롤러에서 @PostMapping() 만 다름
 
 컨트롤러에서는 @PostMapping() 으로 받고
 @ResponseBody 를 통해 res에 뷰의 내용이 아닌 데이터를 전달함
@@ -24,7 +23,6 @@
 
 ---------------------------------------------------------------------------------------------
 - parameter 넘기기
-템플릿에서 get 과
- type: "Post" 만 다름
+템플릿에서 get 과 type: "Post", 컨트롤러에서 @PostMapping() 만 다름
 
 - 동일하게 @RequestParam 으로 넘김
