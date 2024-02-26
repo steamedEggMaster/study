@@ -47,3 +47,14 @@ ajax 를 사용하기 위해선
 
    -> ajax의 특징 : 함수의 실행으로 페이지 변환이 아닌 컨트롤러에서의 실행 값을 가져옴.
 
+-----------------------------------------------------------------------------------------------
+ajax의 get 요청에서 parameter 보내기
+1. $.ajax({ }) 안에 data 프로퍼티 추가
+   - ex) $.ajax({
+             data: {
+                 "param1": val1,
+                 "param2": "안녕" } });
+
+2. 컨트롤러에서 @ReqeustParam("키") 로 받기
+   - ex) @GetMapping("/~")
+         public @ResponseBody String ex03(@RequestParam("param1") String param1, @RequestParam("param2") String param2)
