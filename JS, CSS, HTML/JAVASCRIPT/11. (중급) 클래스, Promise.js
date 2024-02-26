@@ -40,12 +40,12 @@ const pr = new Promise((resolve, reject) => { /* Code */ });
      result : undefined    ->    result : value
                            2-2. 실패 시 reject(new Error('에러메세지')) 실행
                            ->    state : rejected
-                           ->    result : error
+                           ->    result : new Error('에러메세지')
 
 - 프라미스 실행 후
   pr.then(
       function(result){}, // 이행되었을 때 실행 - result 에는 value 가 들어감
-      function(err){} );// 거부되었을 때 실행 - err 에는 error 가 들어감
+      function(err){} );// 거부되었을 때 실행 - err 에는 Error: '에러메세지' 가 들어감
 
 - catch : reject 되었을 때만 실행
   ex) pr.then(
