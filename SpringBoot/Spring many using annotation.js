@@ -27,8 +27,12 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 ----- @Controller 관련 Annotation
 1. @Controller
 2. @RequestMapping
-3. @PathVariable
-4. @RequestParam
+3. @PathVariable - {경로변수} 에 있는 값 추출
+                 - ex) @PostMapping("/{id}")
+                       public String user(@PathVariable("id") ~
+4. @RequestParam - 키=밸류 로 이루어진 경로에서 키에 해당하는 밸류 추출
+                 - ex) @RequestParam("키") String key
+                 - ex) @RequestParam(name = "~", defaultValue = "fiction")
 5. @RequestHeader
 6. @CookieValue
 7. @RequestBody - HTTP 요청의 본문(body)을 메서드의 파라미터로 바인딩할 때 사용
