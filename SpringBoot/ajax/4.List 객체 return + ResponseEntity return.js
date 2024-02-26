@@ -8,3 +8,5 @@ ex) @PostMapping("/ex09")
     public ResponseEntity ex09(@RequestBody AjaxDto ajaxDto){
         return new ResponseEntity<>(HttpStatus.NOT_FOUND); }
     -> ajax 가 실패하여 error: 프로퍼티 실행됨.
+
+-- DTO 객체와 같이 보낸다고 해도, res 는 status 값을 가지고 있지 않음(Body 값만 가짐)
