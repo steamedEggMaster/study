@@ -41,7 +41,7 @@ HttpEntity<String> entity = new HttpEntity<>("", headers);
 2. 
 
 ----- 바인딩
-1. restTemplate으로 수행한 요청을 내가 원하는 객체로 변환할때는 JsonProperty("키명") 으로 일부만 적어도 됨. - @RequestBody로 받는 DTO 객체에서도 JsonProperty("키명") 사용가능 hwy? @RequestBody는 Json 데이터를 바인딩하기때문.
+1. restTemplate으로 수행한 요청을 내가 원하는 객체로 변환할때는 JsonProperty("키명") 으로 일부만 적어도 됨. - @RequestBody로 받는 DTO 객체에서도 JsonProperty("키명") 사용가능. hwy? @RequestBody는 Json 데이터를 바인딩하기때문.
    xml->json으로 변경 후 json을 객체로 변환할땐 복잡하고, 모든 json의 키값을 받아야 하니 사용 X.
 2. xml을 객체로 변환할 때 일부값만 바인딩하는 방법은 @XmlElement(name = "~") 이고,
    Json 과 달리 xml을 객체로 바인딩할때는 생성자가 필요함. @No/AllArgumentConstructor를 써줄것.
