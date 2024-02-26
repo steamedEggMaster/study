@@ -13,4 +13,19 @@ public @ResponseBody AjaxDto ex05(@ModelAttribute AjaxDto ajaxDto){
 -- POST 요청
 도 동일.
 
+---------------------------------------------------------------------------------------------------------------------
+--- 컨트롤러에서 @RequestBody 로 ajax data 프로퍼티 value 를 받기 위해
+사용법
+$.ajax({
+    type: "post",
+    url: "/ex05",
+    // parameter 전달하기 for @RequestBody
+    data: JSON.stringify(params),
+    contentType: "application/json", /*밑부분 생략*/ });
+
+1. data: JSON.stringify(JS객체명)
+2. contentType: "application/json"
+
+-> @RequestBody 를 통해 JS 객체를 Java 객체에 바인딩
+
 
