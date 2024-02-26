@@ -26,6 +26,3 @@ $.ajax({
 1. data: JSON.stringify(JS객체명)
 2. contentType: "application/json"
 
--> @RequestBody 를 통해 JS 객체를 Java 객체에 바인딩
-
-
