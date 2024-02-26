@@ -3,6 +3,7 @@
 컨트롤러에서
 @GetMapping("/ex05")
 public @ResponseBody AjaxDto ex05(@ModelAttribute AjaxDto ajaxDto){
+                                // ModelAttribute 어노테이션을 통해 자동으로 ajax data 프로퍼티의 JS 객체를 Java 객체에 바인딩
     System.out.println("ajaxDto = " + ajaxDto);
     return ajaxDto; }
 와 같이 @ResponseBody에 객체를 담아 return 할때,
@@ -11,3 +12,5 @@ public @ResponseBody AjaxDto ex05(@ModelAttribute AjaxDto ajaxDto){
 
 -- POST 요청
 도 동일.
+
+
