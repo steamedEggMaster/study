@@ -43,7 +43,7 @@ ajax 를 사용하기 위해선
 5. 중요!! 
    success: function (res) 에서
    매개변수 res가 받아오는 값은 페이지 변환 X
-   index.html 파일의 모든 String을 받아옴.
+   index.html 파일의 모든 String을 받아옴(index.html에 작성된 내용).
 
    -> ajax의 특징 : 함수의 실행으로 페이지 변환이 아닌 컨트롤러에서의 실행 값을 가져옴.
 
