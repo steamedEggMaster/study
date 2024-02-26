@@ -5,6 +5,8 @@
 @ResponseBody 를 통해 res에 뷰의 내용이 아닌 데이터를 전달함
                      -> res는 body 값을 가져온다는 것을 알 수 있음
 
+- @ResponseBody 는 @GetMapping() 에서도 사용 가능
+
 - in controller
      @PostMapping("/ex02")
      public @ResponseBody String ex02(){
@@ -19,3 +21,5 @@
         console.log("성공", res); },
       error: function (){
         console.log("실패"); }
+
+
