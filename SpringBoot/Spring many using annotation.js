@@ -5,6 +5,7 @@
             - impl 사용시 impl 에 붙이기
 3. @Controller - Presentation Layer의 MVC Controller에 사용
 4. @Component - 위의 Layer 구분을 적용하기 어려운 일반적인 경우에 설정
+5. @Bean
 
 Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계층별로 Bean의 특성이나 종류를 구분하고 AOP PointCut 표현식 사용시 특정 Annotation이 달린 클래스만 설정 가능
                                                      - 특정 계층의 Bean에 부가기능 부여 가능
