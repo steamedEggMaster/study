@@ -40,8 +40,14 @@ Bean 자동인식을 위한 Annotationa 종류가 여러가지인 이유 - 계�
 8. @ResponseBody
 
 ----- @View 관련 Annotation
-1. @ModelAttribute : RequestMapping 어노테이션이 적용되지 않은 별도 method로 모델이 추가될 객체를 생성
-
+1. @ModelAttribute - RequestMapping 어노테이션이 적용되지 않은 별도 method로 모델이 추가될 객체를 생성(메서드 레벨에서의 사용)
+                   - Mapping 어노테이션이 적용된 컨트롤러 메서드의 매개변수로 사용하여, form 데이터를 손쉽게 객체로 바인딩 가능(메서드 매개변수로의 사용)
+                   - ex) @ModelAttribute("user") 
+                         public User getDefaultUser() { return new User(); // 기본 사용자 객체 생성 }
+                         @PostMapping("/user")
+                         public String submitUserForm(@ModelAttribute("user") User user) { /* 데이터 처리 로직 */ return "userConfirmation"; }
+                     - DTO 객체의 필드명 == 폼 입력 필드의 이름 -> true 해야함
+                     
 ----- REST 관련 Annotation
 1. @RestController - Controller가 REST방식을 처리하기 위한 것임을 명시한다.
 2. @ResponseBody - JSP 같은 뷰로 전달되는 것이 아니라 데이터 자체를 전달
