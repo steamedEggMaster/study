@@ -54,6 +54,7 @@ ajax의 get 요청에서 parameter 보내기
              data: {
                  "param1": val1,
                  "param2": "안녕" } });
+   - JS객체를 따로 만들어 놓고, data: 객체명 도 가능
 
 2. 컨트롤러에서 @ReqeustParam("키") 로 받기
    - ex) @GetMapping("/~")
