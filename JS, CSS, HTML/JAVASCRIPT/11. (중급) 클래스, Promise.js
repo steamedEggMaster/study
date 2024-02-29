@@ -55,8 +55,16 @@ const pr = new Promise((resolve, reject) => { /* Code */ });
 - finally : 이행 or 거절 둘다 실행
   pr.then().catch().finally( function(){ /*코드*/ }
 
------ 한번에 여러 작업을 요청할 경우
+----- 한번에 여러 작업을 요청할 경우(Promise.all) - 모든작업 끝날 때까지 대기
 - 사용법
   Promise.all([fn1(), fn2(), ...]).then(res => ~~; ); 
 - [fn1(), fn2(), ...] 는 실행하며 각 인덱스에 함수의 결과를 남김.
   then의 res는 결과배열을 가지고 있음.
+
+- 여러 작업 시 new Promise 방식보다 Promise.all() 방식이 더 fast.
+- Promise.all 방식은 하나라도 reject 시 배열의 내용을 알 수 없음. -> 다 보여주거나, 아예 안보여주거나 할때 사용
+
+----- 한번에 여러 작업을 요청할 경우 but, 1등 작업만 then으로 보내고 뒤의 작업 안하고 끝냄(Promise.race)
+- 사용법
+  Promise.race([fn1(), fn2(), ...]).then(res => ~~; );
+  - ex) fn1이 제일먼저 끝난다면, res에 fn1 작업결과만 가고, fn2부터는 무시됨
