@@ -3,6 +3,9 @@
 ----- console.log()
       - console.log(String(3), String(null)) 처럼 , 로 구분하여 
                                              "3" "null" 로 콘솔에 출력 가능
+----- console.time("x");
+      //코드
+      console.timeEnd("x"); 로 시간차를 구할 수 있음.
 
 ----- 정의한 변수를 재정의하지 못하게 하는 방법
 1. let 변수명 = ~;
