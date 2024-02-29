@@ -54,3 +54,9 @@ const pr = new Promise((resolve, reject) => { /* Code */ });
           function(err){} );
 - finally : 이행 or 거절 둘다 실행
   pr.then().catch().finally( function(){ /*코드*/ }
+
+----- 한번에 여러 작업을 요청할 경우
+- 사용법
+  Promise.all([fn1(), fn2(), ...]).then(res => ~~; ); 
+- [fn1(), fn2(), ...] 는 실행하며 각 인덱스에 함수의 결과를 남김.
+  then의 res는 결과배열을 가지고 있음.
