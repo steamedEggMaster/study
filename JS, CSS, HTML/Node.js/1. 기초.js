@@ -59,5 +59,9 @@ res.send("~") - "<태그>content</태그>" 로 html 내용 보내기 가능 -> �
             const q = req.body; //Axios 나 Fetch 로만 Post 요청 가능
             console.log(q); })  //해당 요청의 body 값을 가져오는 것
 
----- cors 오류
+---- cors 
 cors에 대한 내용 : evan-moon.github.io/2020/05/21/about-cors/
+cors : Html 파일로 서버 요청 시 보안을 위해 기본적으로 요청을 막아 놓음
+
+1. npm install cors
+2. 사용법 : https://www.npmjs.com/package/cors
