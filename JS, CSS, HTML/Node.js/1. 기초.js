@@ -65,3 +65,14 @@ cors : Html 파일로 서버 요청 시 보안을 위해 기본적으로 요청�
 
 1. npm install cors
 2. 사용법 : https://www.npmjs.com/package/cors
+- 간단 사용법
+  1. 모든 경로 허용 - 아래 2줄 추가
+     var express = require('express');
+     var cors = require('cors'); // 이줄
+     var app = express();
+     app.use(cors()); // 이줄
+  2. 한 경로만 허용
+     var cors = require('cors');
+     app.get|post('경로', cors(), ~);
+
+----- Fetch
