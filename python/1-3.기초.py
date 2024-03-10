@@ -25,3 +25,8 @@ def checkpoint(soldiers):
 2. print("안녕", end=" ") - 큰따옴표 안의 문자를 끝에 쓰고, 다음 print문을 다음줄로 넘기지 않고 연속 출력
 3. print("하이", file=sys.stdout)
                  file=sys.stderr) - 에러 로깅 처리시 사용
+4. print(문자열.ljust(칸수), 문자열.rjust(칸수))
+5. print(문자열.zfill(칸수)) - 칸수만큼 크기 만들고 빈칸은 0으로 채움
+--- 입력
+input("입력하세요 : ")
+int(input("입력하세요 : "))
