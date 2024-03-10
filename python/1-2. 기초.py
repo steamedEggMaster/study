@@ -17,7 +17,7 @@
 5. del 딕명[key]               - 해당 키밸류 삭제
 6. 딕명.keys()                 - dict_keys([key1, ...]) return
 7. 딕명.values()               - dict_values([values1, ...]) return
-8. 딕명.items()                - dict_items([(key, value)]) return
+8. 딕명.items()                - dict_items([(key, value), (...)]) return
 9. 딕명.clear()
 
 ----- 튜플 () - 내용 변경 및 추가 불가
@@ -56,6 +56,7 @@
 ----- for
 for 변수 in iterable객체:
             range(n, m+1):
+for 변수1, 변수2 in 튜플명:
 ----- 한줄 for - [] / () / {} 로 감싸기
 실행문 for 변수명 in iterable객체
 
