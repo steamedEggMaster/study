@@ -60,7 +60,7 @@ for 변수 in iterable객체:
 실행문 for 변수명 in iterable객체
 
 ----- while
-while 조건문: //True 시 무한루프, ctrl + c 로 취소
+while 조건문: #True 시 무한루프, ctrl + c 로 취소
 
 ----- continue
 ----- break
