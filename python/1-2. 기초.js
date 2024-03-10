@@ -18,3 +18,37 @@
 6. 딕명.keys()                 - dict_keys([key1, ...]) return
 7. 딕명.values()               - dict_values([values1, ...]) return
 8. 딕명.items()                - dict_items([(key, value)]) return
+9. 딕명.clear()
+
+----- 튜플 () - 내용 변경 및 추가 불가
+              - 속도 : 튜플 > 리스트
+1. 튜플명[index[:]]
+2. (name, age, hobby) = ("김종국", 20, "코딩")
+   print(name, age, hobby)
+
+----- 집합 {} - 중복 X, 순서 X
+--- 선언법
+1. 변수명 = {obj1, obj2, ...}
+2. 변수명 = set([obj1, obj2, ...])
+--- 교집합
+1. 집합명1 & 집함명2
+2. 집합명1.intersection(집합명2)
+--- 합집합
+1. 집합명1 | 집합명2
+2. 집합명1.union(집합명2)
+--- 차집합
+1. 집합명1 - 집합명2
+2. 집합명1.difference(집합명2)
+--- 메서드
+1. 집합명.add(obj)
+2. 집합명.remove(obj)
+
+----- 자료구조의 변경
+1. list()
+2. tuple()
+3. set()
+
+----- if
+1. if ~
+2. elif ~
+3. else:
