@@ -49,6 +49,19 @@
 3. set()
 
 ----- if
-1. if ~
-2. elif ~
+1. if ~:
+2. elif ~:
 3. else:
+
+----- for
+for 변수 in iterable객체:
+            range(n, m+1):
+----- 한줄 for - [] / () / {} 로 감싸기
+실행문 for 변수명 in iterable객체
+
+----- while
+while 조건문: //True 시 무한루프, ctrl + c 로 취소
+
+----- continue
+----- break
+-----
