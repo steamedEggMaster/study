@@ -48,7 +48,7 @@ Set<E> 컬렉션 - 구현 클래스 : HashSet, LinkedHashSet - 원소들의 순�
 객체 삭제.
 2. Set객체명.clear();
 3. Set객체명.remove(obj); - 값 제거 후 true return / "요소 얻기 2번 방법에서 사용시 에러 발생, 1번(Iterator)으로 해야함."
-   Set객체명.removeAll(Set객체명2); - 객체명1을 1과 2의 차집합으로 만듬.
+   Set객체명.removeAll(Set객체명2); - 객체명1을 1과 2의 차집합으로 만듬. / set객체의 요소가 변경 있을 시 true/없을시 false
 
 정보 얻기.
 4. Set객체명.size();
