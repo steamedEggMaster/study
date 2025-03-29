@@ -98,7 +98,7 @@ Map<K, V> 컬렉션 - 구현 클래스 : HashMap, Hashable, TreeMap, Properties
 ----------------------------------------------------------------------------------------------------------
 검색기능 강화 컬렉션
 1. TreeSet - 이진 트리 기반 Set컬렉션. / 자동적으로 "객체의 크기를 비교"하여 정렬함(오름차순 default).
-  TreeSet<E> TreeSet객체명 = new TreeSet<E>; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
+  TreeSet<E> TreeSet객체명 = new TreeSet<>([Comporator c]; - 검색관련 메서드가 TreeSet클래스에만 정의되어있음.
   - 정렬 + 중복 값 제거 => 미친 컬렉션
 검색관련 메서드
 -1. TreeSet객체명.first(); - "가장 작은" 크기 객체 return, empty면 NoSuchElementException.
