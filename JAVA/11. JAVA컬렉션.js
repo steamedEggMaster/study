@@ -153,7 +153,7 @@ ex)
 
 Comparable을 구현하지 않은 클래스로 TreeSet, TreeMap 생성 시 비교자(Comparator)을 제공하면 비교해줌.
 1. TreeSet<E> 객체명B = new TreeSet<E>( new 클래스명9Comparator() ); //Comparator-compare()을 구현한 클래스를 의미
-2. TreeSet<K, V> 객체명C = new TreeMap<E>( new 클래스명9Comparator() );
+2. TreeMap<K, V> 객체명C = new TreeMap<E>( new 클래스명9Comparator() );
 비교자(Comparator) - Comparator<E>인터페이스-compare(obj1, obj2) 구현 클래스.
 ex)
 [접근제한자] class 클래스명9Comparator implements Comparator<클래스명>{
@@ -163,6 +163,8 @@ ex)
     return 1(객체명1.비교변수 > 객체명2.비교변수)
   }
 }
+또는
+1. TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() 또는 Comparator.reverseOrder() );
 ----------------------------------------------------------------------------------------------------------
 LIFO와 FIFO 컬렉션
 컬렉션 프레임워크는 LIFO(push/pop) - stack<E>클래스 / FIFO(offer/poll)  - Queue<E>인터페이스 제공.
