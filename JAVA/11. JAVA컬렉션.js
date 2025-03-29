@@ -33,7 +33,7 @@ List<E> 컬렉션 - 구현 클래스 : ArrayList, Vector, LinkedList
 12. 객체명.contains(obj);
 13. 객체명.toArray();
 14. 객체명.hashCode();
-15. 객체명.subList(from, to);
+15. 객체명.subList(from, to).sort([Comparator c]) - 원본 리스트의 일부분 정렬
 
 1. ArrayList<E> - 제한 없이 객체 추가 가능. / "삭제, 삽입이 빈번한 경우 LinkedList를 사용하는 것이 바람직"
 2. Vector<E> - ArrayList와 동일구조 / "동기화된 메소드로 구성되어 있음" -> 멀티스레드 환경에서 안전하게 사용 가능.
