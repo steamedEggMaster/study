@@ -163,7 +163,7 @@ ex)
     return 1(객체명1.비교변수 > 객체명2.비교변수)
   }
 }
-또는
+or
 1. TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() || Comparator.reverseOrder() );
 ----------------------------------------------------------------------------------------------------------
 LIFO와 FIFO 컬렉션.
