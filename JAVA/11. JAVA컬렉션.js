@@ -183,6 +183,32 @@ Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
 - 사용예시 -
   1. 캐시 구현(가장 오래된 거 삭제)
   2. 비동기 작업(카프카 - 메시지큐)
+
+3. Queue이지만 Stack처럼 사용 가능하며, Deque 형태(앞뒤로 넣기)인 미친 클래스 : ArrayDeque<E>
+- 1. 모든 메서드가 O(1)인 미친 성능
+Queue<E> queue객체명 = new ArrayDeque<>();
+-1.  queue객체명.addFirst(E e)
+-2.  queue객체명.addLast(E e)
+-3.  queue객체명.offerFirst(E e)
+-4.  queue객체명.offerLast(E e)
+
+-5.  queue객체명.removeFirst()
+-6.  queue객체명.removeLast()
+-7.  queue객체명.pollFirst()
+-8.  queue객체명.pollLast()
+
+-9.  queue객체명.getFirst()
+-10. queue객체명.getLast()
+-11. queue객체명.peekFirst()
+-12. queue객체명.peekLast()
+
+-13. queue객체명.push(E e)
+-14. queue객체명.pop()
+
+-15. queue객체명.size()
+-16. queue객체명.isEmpty()
+-17. queue객체명.clear()
+-18. queue객체명.contains(E e)
 ----------------------------------------------------------------------------------------------------------
 동기화된 컬렉션
 ArrayList, HashSet, HashMap를 멀티스레드에서 사용하고 싶을 때 동기화시킴.
