@@ -164,9 +164,9 @@ ex)
   }
 }
 또는
-1. TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() || Comparator.reverseOrder() )
+1. TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() || Comparator.reverseOrder() );
 ----------------------------------------------------------------------------------------------------------
-LIFO와 FIFO 컬렉션
+LIFO와 FIFO 컬렉션.
 컬렉션 프레임워크는 LIFO(push/pop) - stack<E>클래스 / FIFO(offer/poll)  - Queue<E>인터페이스 제공.
 1. stack<E>클래스 - Vector<E>클래스 상속.
 Stack<E> stack객체명 = new Stack<E>();
@@ -185,7 +185,7 @@ Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
   2. 비동기 작업(카프카 - 메시지큐)
 
 3. Queue이지만 Stack처럼 사용 가능하며, Deque 형태(앞뒤로 넣기)인 미친 클래스 : ArrayDeque<E>
-- 1. 모든 메서드가 O(1)인 미친 성능
+- 1. 모든 메서드가 O(1)인 미친 성능.
 Queue<E> queue객체명 = new ArrayDeque<>();
 -1.  queue객체명.addFirst(E e)
 -2.  queue객체명.addLast(E e)
