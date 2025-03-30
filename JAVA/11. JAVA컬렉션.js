@@ -164,7 +164,7 @@ ex)
   }
 }
 또는
-1. TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() || Comparator.reverseOrder() );
+1. TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() || Comparator.reverseOrder() )
 ----------------------------------------------------------------------------------------------------------
 LIFO와 FIFO 컬렉션
 컬렉션 프레임워크는 LIFO(push/pop) - stack<E>클래스 / FIFO(offer/poll)  - Queue<E>인터페이스 제공.
