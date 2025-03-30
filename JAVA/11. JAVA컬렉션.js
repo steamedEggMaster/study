@@ -186,29 +186,29 @@ Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
 3. Queue이지만 Stack처럼 사용 가능하며, Deque 형태(앞뒤로 넣기)인 미친 클래스 : ArrayDeque<E>
 - 1. 모든 메서드가 O(1)인 미친 성능.
 - 2. 크기 제한도 없네.
-Queue<E> queue객체명 = new ArrayDeque<>();
--1.  queue객체명.addFirst(E e)
--2.  queue객체명.addLast(E e)
--3.  queue객체명.offerFirst(E e) - 성공 시 true, 실패 시 false 반환.
--4.  queue객체명.offerLast(E e)
+ArrayDeque<E> arraydeque객체명 = new ArrayDeque<>();
+-1.  arraydeque객체명.addFirst(E e)
+-2.  arraydeque객체명.addLast(E e)
+-3.  arraydeque객체명.offerFirst(E e) - 성공 시 true, 실패 시 false 반환.
+-4.  arraydeque객체명.offerLast(E e)
 
--5.  queue객체명.removeFirst() - 맨 앞 요소 제거 후 반환, 비어있다면 예외 발생.
--6.  queue객체명.removeLast()
--7.  queue객체명.pollFirst() - 맨 앞 요소 제거 후 반환, 비어있다면 null 반환.
--8.  queue객체명.pollLast()
+-5.  arraydeque객체명.removeFirst() - 맨 앞 요소 제거 후 반환, 비어있다면 예외 발생.
+-6.  arraydeque객체명.removeLast()
+-7.  arraydeque객체명.pollFirst() - 맨 앞 요소 제거 후 반환, 비어있다면 null 반환.
+-8.  arraydeque객체명.pollLast()
 
--9.  queue객체명.getFirst() - 맨 앞 요소 반환, 비어있다면 예외 발생.
--10. queue객체명.getLast()
--11. queue객체명.peekFirst() - 맨 앞 요소 반환, 비어있다면 null 반환.
--12. queue객체명.peekLast()
+-9.  arraydeque객체명.getFirst() - 맨 앞 요소 반환, 비어있다면 예외 발생.
+-10. arraydeque객체명.getLast()
+-11. arraydeque객체명.peekFirst() - 맨 앞 요소 반환, 비어있다면 null 반환.
+-12. arraydeque객체명.peekLast()
 
--13. queue객체명.push(E e) - 주의! **맨 앞**에 요소 추가
--14. queue객체명.pop() - 주의! **맨 앞**에 요소 제거 후 반환, 비어있다면 예외 발생
+-13. arraydeque객체명.push(E e) - 주의! **맨 앞**에 요소 추가
+-14. arraydeque객체명.pop() - 주의! **맨 앞**에 요소 제거 후 반환, 비어있다면 예외 발생
 
--15. queue객체명.size()
--16. queue객체명.isEmpty()
--17. queue객체명.clear()
--18. queue객체명.contains(E e)
+-15. arraydeque객체명.size()
+-16. arraydeque객체명.isEmpty()
+-17. arraydeque객체명.clear()
+-18. arraydeque객체명.contains(E e)
 ----------------------------------------------------------------------------------------------------------
 동기화된 컬렉션
 ArrayList, HashSet, HashMap를 멀티스레드에서 사용하고 싶을 때 동기화시킴.
