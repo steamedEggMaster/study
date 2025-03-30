@@ -161,10 +161,9 @@ ex)
     return -1(객체명1.비교변수 < 객체명2.비교변수)
     return 0(객체명1.비교변수 = 객체명2.비교변수)
     return 1(객체명1.비교변수 > 객체명2.비교변수)
-  }
-}
+}}
 or
-- TreeSet<E> 객체명B = new TreeSet<>( Comparator.naturalOrder() || Comparator.reverseOrder() );
+TreeSet<E> 객체명B = new TreeSet<>(Comparator.naturalOrder() or Comparator.reverseOrder())
 ----------------------------------------------------------------------------------------------------------
 LIFO와 FIFO 컬렉션.
 컬렉션 프레임워크는 LIFO(push/pop) - stack<E>클래스 / FIFO(offer/poll)  - Queue<E>인터페이스 제공.
