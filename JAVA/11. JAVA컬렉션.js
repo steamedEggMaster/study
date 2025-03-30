@@ -173,7 +173,7 @@ Stack<E> stack객체명 = new Stack<E>();
 -1. stack객체명.push(E e);
 -2. stack객체명.pop();
 -3. stack객체명.peek(); - 맨 위의 객체를 리턴.
--4. stack객체명.empty();
+-4. stack객체명.isEmpty();
 
 2. Queue<E>인터페이스 - 대표적인 구현 클래스:LinkedList<E>
 Queue<E> queue객체명 = new LinkedList<E>(); - 다른것도 가능.
