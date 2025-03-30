@@ -152,7 +152,7 @@ ex)
 }
 
 Comparable을 구현하지 않은 클래스로 TreeSet, TreeMap 생성 시 비교자(Comparator)을 제공하면 비교해줌.
-1. TreeSet<E> 객체명B = new TreeSet<E>( new 클래스명9Comparator() ); //Comparator-compare()을 구현한 클래스를 의미
+1. TreeSet<E> 객체명B = new TreeSet<E>( new 클래스명9Comparator() ); - Comparator-compare()을 구현한 클래스를 의미
 2. TreeMap<K, V> 객체명C = new TreeMap<E>( new 클래스명9Comparator() );
 비교자(Comparator) - Comparator<E>인터페이스-compare(obj1, obj2) 구현 클래스.
 ex)
